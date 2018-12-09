@@ -7,7 +7,7 @@
     populate_cmdb: true
 
   tasks:
-    
+
   - name: include vars
     include_role:
-      name: ansible-servicenow
+      name: michaelford85.ansible_servicenow
