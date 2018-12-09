@@ -1,0 +1,13 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: false
+  become: false
+  vars:
+    csvfile: "{{ lookup('file', 'hosts.csv') }}"
+  tasks:
+    - name: Parse CSV To YAML
+      template:
+        src: "./iterate_csv.j2"
+        dest: "./iterate_hosts.yml"
+      run_once: true

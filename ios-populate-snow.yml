@@ -1,0 +1,13 @@
+---
+- name: Populate Service Now CMDB with Network elements
+  hosts: cisco
+  gather_facts: no
+  connection: network_cli
+  vars:
+    populate_cmdb: true
+
+  tasks:
+    
+  - name: include vars
+    include_role:
+      name: ansible-servicenow

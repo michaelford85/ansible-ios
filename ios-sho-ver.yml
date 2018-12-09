@@ -1,0 +1,21 @@
+---
+- hosts: cisco
+  connection: network_cli
+  gather_facts: no
+
+
+  tasks:
+
+  - name: show version
+    ios_command:
+      commands:
+        - show version
+      wait_for:
+        - result[0] contains Version
+    register: results
+
+  - set_fact:
+      ver: "{{ results.stdout[0]|regex_search('Version ([0-9.]+)','\\1') }}"
+
+  - debug:
+      var: ver

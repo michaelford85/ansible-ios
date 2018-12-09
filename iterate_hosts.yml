@@ -1,0 +1,23 @@
+
+---
+ipv6_addresses:
+  host: rtr1
+    loopback20: 2001:DB8:0:1
+    loopback30: 2001:DB8:0:2
+    loopback40: 2001:DB8:0:3
+    loopback50: 2001:DB8:0:4
+  host: rtr2
+    loopback20: 2001:DB8:0:1
+    loopback30: 2001:DB8:0:2
+    loopback40: 2001:DB8:0:3
+    loopback50: 2001:DB8:0:4
+  host: rtr3
+    loopback20: 2001:DB8:0:1
+    loopback30: 2001:DB8:0:2
+    loopback40: 2001:DB8:0:3
+    loopback50: 2001:DB8:0:4
+  host: rtr4
+    loopback20: 2001:DB8:0:1
+    loopback30: 2001:DB8:0:2
+    loopback40: 2001:DB8:0:3
+    loopback50: 2001:DB8:0:4

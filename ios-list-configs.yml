@@ -1,0 +1,43 @@
+---
+- name: Check configuration compliance between running config and archived config
+  hosts: cisco
+  connection: network_cli
+  gather_facts: no
+  vars_files:
+    default_vars.yml
+
+  tasks:
+    # - name: Ensure ios-config-archives directory is absent
+    #   file:
+    #     path: "{{ playbook_dir }}/ios-config-archives"
+    #     state: absent
+    #   run_once: yes
+    #   delegate_to: localhost
+    #   become: yes
+
+    - name: clone configuration archives to ansible control
+      git:
+        repo: "{{ git_repo_path }}"
+        dest: "{{ playbook_dir}}/ios-config-archives"
+        clone: yes
+        force: yes
+      run_once: yes
+      delegate_to: localhost
+
+    - name: list all available configs
+      find:
+        paths: "{{ playbook_dir}}/ios-config-archives"
+        patterns: "*{{ inventory_hostname }}*"
+      register: find_output
+      delegate_to: localhost
+
+    # - debug:
+    #     var: find_output
+
+    - name: Print all configs
+      debug:
+        msg:
+          - "{{ item.path}}"
+      loop: "{{ find_output.files | flatten(levels=1) }}"
+      loop_control:
+        label: "   {{ inventory_hostname }} configs"

@@ -1,0 +1,8 @@
+---
+- hosts: cisco
+  connection: network_cli
+  gather_facts: no
+
+  tasks:
+  - name: test task
+    ping:

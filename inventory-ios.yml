@@ -1,0 +1,55 @@
+---
+- name: build IOS XE inventory
+  hosts: cisco
+  connection: network_cli
+  gather_facts:  False
+
+  vars:
+    desired_ios_version: "16.08.01b"
+
+  tasks:
+
+  - name: gathering IOS XE facts
+    ios_facts:
+    register: all_facts
+
+      # - name: Show all all facts
+      #   debug:
+      #     var: all_facts
+
+  - name: create HTML report
+    template:
+      src: report-ios.j2
+      dest: /tmp/inventory_report_ios.html
+    delegate_to: localhost
+    run_once: true
+        #provider: "{{login_info}}"
+
+- name: Copy inventory document to webserver
+  hosts: webserver
+  become: yes
+
+  tasks:
+
+  - name: copy file to webserver
+    copy:
+      src: /tmp/inventory_report_ios.html
+      dest: /var/www/html/index.html
+    notify:
+      - restart_apache
+
+  handlers:
+    - name: restart_apache
+      service:
+        name: httpd
+        state: restarted
+
+- name: Delete local copy of inventory
+  hosts: localhost
+  connection: local
+
+  tasks:
+  - name: Delete local copy of inventory inventory
+    file:
+      name: /tmp/inventory_report_ios.html
+      state: absent

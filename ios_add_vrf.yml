@@ -1,0 +1,18 @@
+---
+- hosts: cisco
+  connection: network_cli
+  gather_facts: no
+
+  tasks:
+
+  - name: configure the “management” vrf
+    ios_vrf:
+      name: management
+      description: oob mgmt vrf
+      state: present
+
+  # - name: configure the “management” vrf
+  #   ios_config:
+  #   lines:
+  #     description oob mgmt vrf
+  #   parents: vrf definition management

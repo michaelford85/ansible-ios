@@ -1,0 +1,44 @@
+---
+- name: UPGRADE ROUTER FIRMWARE
+  hosts: cisco
+  connection: network_cli
+  gather_facts: no
+
+  vars:
+    compliant_ios_version: 16.08.01a
+
+  tasks:
+    - name: GATHER ROUTER FACTS
+      ios_facts:
+
+    - name: UPGRADE IOS IMAGE IF NOT COMPLIANT
+      block:
+      - name: COPY OVER IOS IMAGE
+        command: "scp system-image-filename.bin {{inventory_hostname}}:/system-image-filename.bin"
+
+      - name: SET BOOT SYSTEM FLASH
+        ios_config:
+          commands:
+            - "boot system flash:system-image-filename.bin"
+
+      - name: REBOOT ROUTER
+        ios_command:
+          commands:
+            - "reload\n"
+
+      - name: WAIT FOR ROUTER TO RETURN
+        wait_for:
+          host: "{{inventory_hostname}}"
+          port: 22
+          delay: 60
+        delegate_to: localhost
+
+      when: ansible_net_version != compliant_ios_version
+
+    - name: GATHER ROUTER FACTS FOR VERIFICATION
+      ios_facts:
+
+    - name: ASSERT THAT THE IOS VERSION IS CORRECT
+      assert:
+        that:
+          - compliant_ios_version == ansible_net_version

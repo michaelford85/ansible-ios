@@ -1,0 +1,44 @@
+---
+- name: create ticket with notes
+  hosts: cisco
+  gather_facts: no
+  connection: network_cli
+  roles:
+    - ansible-network.network-engine
+
+  tasks:
+  - name: include vars
+    include_vars: default_vars.yml
+
+  - name: include vars
+    include_vars: servicenow_credentials.yml
+
+
+  - name: show version
+    ios_command:
+      commands:
+        - show version
+    register: version
+
+  - name: parse show version
+    command_parser:
+      file: "parsers/show_version.yaml"
+      content: "{{ version.stdout.0 }}"
+
+
+  - name: Create an incident
+    snow_record:
+      state: present
+      table: incident
+      username: "{{ SN_USERNAME }}"
+      password: "{{ SN_PASSWORD }}"
+      instance: "{{ SN_INSTANCE }}"
+      data:
+        severity: "{{ severity}}"
+        priority: "{{ priority}}"
+        u_uptime: "{{ system_facts.uptime }}"
+        u_ios_version: "{{ system_facts.version }}"
+        short_description: "This ticket was created by Ansible"
+    register: new_incident
+
+  - debug: var=new_incident.record

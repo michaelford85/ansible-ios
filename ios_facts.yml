@@ -1,0 +1,13 @@
+---
+- name: Gather Facts
+  hosts: cisco
+  connection: network_cli
+  gather_facts: no
+
+  tasks:
+  - name: Gather IOS Facts
+    ios_facts:
+    register: facts_output
+    retries: 5
+    delay: 10
+    until: facts_output is not failed

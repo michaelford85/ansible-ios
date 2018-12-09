@@ -1,0 +1,19 @@
+---
+- name: Upgrade ios
+  hosts: cisco
+  connection: network_cli
+  gather_facts: no
+
+  tasks:
+  - name: configure interface settings
+  ios_config:
+    lines:
+      - boot system flash:c3750-ipservicesk9-mz.122-55.SE11.bin
+    host: "{{ inventory_hostname }}"
+
+- name: reload device
+  ios_command:
+    commands:
+      - "reload in 1\ny"
+    host: "{{ inventory_hostname }}"
+  ignore_errors: yes

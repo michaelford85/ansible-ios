@@ -1,0 +1,10 @@
+---
+- hosts: cisco
+  connection: network_cli
+  gather_facts: no
+
+  tasks:
+  - name: Disable Cisco Discovery Protocol
+    ios_config:
+      lines:
+      - no cdp run

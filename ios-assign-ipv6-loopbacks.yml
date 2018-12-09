@@ -1,0 +1,43 @@
+---
+- name: Add IPv6 addresses to loopback interfaces
+  hosts: cisco
+  connection: network_cli
+  gather_facts: no
+
+  tasks:
+
+  # - name: Include vars of iterate_hosts.yaml
+  #   include_vars:
+  #     file: iterate_hosts.yml
+  #     # name: ipv6_addresses
+  #   run_once: true
+  - name:
+    block:
+      - name: Add IPv6 Addresses to loopback interface 20
+        ios_config:
+          lines:
+            - "ipv6 address 2001:DB8:0:2::/64 eui-64"
+            - no shutdown
+          parents: interface loopback 20
+
+      - name: Add IPv6 Addresses to loopback interface 30
+        ios_config:
+          lines:
+            - "ipv6 address 2001:DB8:0:3::/64 eui-64"
+            - no shutdown
+          parents: interface loopback 30
+
+      - name: Add IPv6 Addresses to loopback interface 40
+        ios_config:
+          lines:
+            - "ipv6 address 2001:DB8:0:4::/64 eui-64"
+            - no shutdown
+          parents: interface loopback 40
+
+      - name: Add IPv6 Addresses to loopback interface 50
+        ios_config:
+          lines:
+            - "ipv6 address 2001:DB8:0:5::/64 eui-64"
+            - no shutdown
+          parents: interface loopback 50
+    when: proceed

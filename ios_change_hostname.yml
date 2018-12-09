@@ -1,0 +1,39 @@
+---
+- hosts: cisco
+  connection: network_cli
+  gather_facts: no
+
+  tasks:
+
+  - name: Check Hostname
+    debug:
+      msg: "Inventory name is: {{ inventory_hostname }}"
+
+
+  - name: Change Hostname
+    ios_config:
+      lines: hostname {{ inventory_hostname }}
+  #
+  # - name: Backup current config
+  #   ios_config:
+  #     backup: yes
+  #   register: backup_config
+  #
+  # - debug:
+  #     var: backup_config.backup_path
+  #     verbosity: 3
+  #
+  # - block:
+  #     - name: Change Hostname
+  #       ios_config:
+  #         lines: hostname {{ new_hostname }}
+  #
+  #   rescue:
+  #     - debug:
+  #         var: backup_config.backup_path
+  #         verbosity: 3
+  #
+  #     - name: Reset to backed up config
+  #       ios_config:
+  #         src: "{{ backup_config.backup_path }}"
+  #         save: yes

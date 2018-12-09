@@ -1,0 +1,16 @@
+---
+- name: Add loopback interfaces
+  hosts: cisco
+  connection: network_cli
+  gather_facts: no
+
+  tasks:
+
+  - name: Add loopback interfaces using aggregate
+    ios_interface:
+      aggregate:
+      - { name: Loopback20, mtu: 256, description: Loopback Interface 20 }
+      - { name: Loopback30, mtu: 256, description: Loopback Interface 30 }
+      - { name: Loopback40, mtu: 256, description: Loopback Interface 40 }
+      - { name: Loopback50, mtu: 256, description: Loopback Interface 50 }
+      state: present

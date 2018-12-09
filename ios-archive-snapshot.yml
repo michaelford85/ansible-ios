@@ -1,0 +1,100 @@
+---
+- name: Back up config snapshot to github
+  hosts: cisco
+  connection: network_cli
+  gather_facts: no
+  vars_files:
+    - default_vars.yml
+
+  tasks:
+    - name: Get date from the system
+      shell: "date +%m-%d-%Y"
+      register: date_stamp
+      delegate_to: localhost
+      run_once: yes
+
+    - name: Get time since epoch from the system
+      shell: "date +%s"
+      register: epoch_stamp
+      delegate_to: localhost
+      run_once: yes
+
+    - name: Set variables
+      set_fact:
+        cur_date: "{{ date_stamp.stdout }}"
+        cur_time: "{{ epoch_stamp.stdout }}"
+      delegate_to: localhost
+      run_once: yes
+
+    - debug:
+        msg:
+          - "{{ cur_date }}"
+          - "{{ cur_time }}"
+
+
+    - name: Ensure that running_config directory exists
+      file:
+        path: "{{ playbook_dir }}/running_config"
+        state: directory
+        mode: 0777
+      run_once: yes
+      delegate_to: localhost
+
+    - name: get active configuration from device
+      include_role:
+        name: ansible-network.config_manager
+        tasks_from: get
+    - name: copy running config to control node
+      copy:
+        content: "{{configuration}}"
+        dest: "{{ playbook_dir }}/running_config/{{inventory_hostname}}.cfg"
+
+    - name: Remove non-config lines
+      lineinfile:
+        path: "{{ playbook_dir }}/running_config/{{inventory_hostname}}.cfg"
+        line: "Building configuration..."
+        state: absent
+
+    - name: Remove non-config lines - Regular Expression
+      lineinfile:
+        path: "{{ playbook_dir }}/running_config/{{inventory_hostname}}.cfg"
+        regexp: 'Current configuration.*'
+        state: absent
+
+    - name: clone configuration archives to ansible control
+      git:
+        repo: "{{ git_repo_path }}"
+        dest: "{{ playbook_dir}}/ios-config-archives"
+        clone: yes
+        force: yes
+      run_once: yes
+      delegate_to: localhost
+
+    - name: list all available configs
+      find:
+        paths: "{{ playbook_dir }}/ios-config-archives"
+        patterns: "*{{ inventory_hostname }}*"
+      register: find_output
+      delegate_to: localhost
+
+    - name: Determine number of configs
+      set_fact:
+        num_configs: find_output.matched
+
+    - debug:
+        var: "{{ num_configs }}"
+
+    - name: copy running configs to ios-config-archives
+      command: "cp -f {{ playbook_dir }}/running_config/{{inventory_hostname}}.cfg {{ playbook_dir }}/ios-config-archives"
+      delegate_to: localhost
+
+    # #TODO: replace with an API call to do a git push
+    # - name: Instruct Operator to back up to github
+    #   debug:
+    #     msg: "Operator: Manually push ios-config-archives to Github"
+    #   delegate_to: localhost
+    #   run_once: yes
+    #
+    # - name: Push ios-config-archives to github
+    #   uri:
+    #     url: https://api.github.com/graphql

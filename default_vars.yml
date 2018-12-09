@@ -1,0 +1,6 @@
+---
+git_username: "{{ vaulted_git_username }}"
+git_password: "{{ vaulted_git_password }}"
+git_name: "{{ vaulted_git_name }}"
+git_repo_path: "https://github.com/michaelford85/ios-config-archives.git"
+state: present

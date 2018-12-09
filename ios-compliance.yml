@@ -1,0 +1,77 @@
+---
+- name: Check configuration compliance between running config and archived config
+  hosts: cisco
+  connection: network_cli
+  gather_facts: no
+  vars_files:
+    default_vars.yml
+
+  tasks:
+    - name: get active configuration from device
+      include_role:
+        name: ansible-network.config_manager
+        tasks_from: get
+
+    - name: Ensure that running_config directory exists
+      file:
+        path: "{{ playbook_dir}}/running_config"
+        state: directory
+        mode: 0777
+      run_once: yes
+      delegate_to: localhost
+
+    - name: Ensure that config_diff directory exists
+      file:
+        path: "{{ playbook_dir}}/config_diff"
+        state: directory
+        mode: 0777
+      run_once: yes
+      delegate_to: localhost
+
+    - name: display the configurations to the terminal window
+      debug:
+        msg: "{{configuration.split('\n')}}"
+
+    - name: copy running config to control node
+      copy:
+        content: "{{configuration}}"
+        dest: "{{ playbook_dir}}/running_config/{{inventory_hostname}}.cfg"
+
+    - name: Remove non-config lines
+      lineinfile:
+        path: "{{ playbook_dir}}/running_config/{{inventory_hostname}}.cfg"
+        line: "Building configuration..."
+        state: absent
+
+    - name: Remove non-config lines - Regular Expression
+      lineinfile:
+        path: "{{ playbook_dir}}/running_config/{{inventory_hostname}}.cfg"
+        regexp: 'Current configuration.*'
+        state: absent
+
+    - name: clone configuration archives to ansible control
+      git:
+        repo: "{{ git_repo_path }}"
+        dest: "{{ playbook_dir}}/ios-config-archives"
+        clone: yes
+        force: yes
+      run_once: yes
+      delegate_to: localhost
+
+    - name: Diff running config with archived config
+      command: "diff {{ playbook_dir}}/running_config/{{inventory_hostname}}.cfg {{ playbook_dir}}/ios-config-archives/{{inventory_hostname}}_master.cfg"
+      register: diff_output
+      delegate_to: localhost
+      failed_when: diff_output.rc < 0
+
+    - name: Print diff output
+      debug:
+        msg:
+          - "{{ inventory_hostname }} differences:"
+          - "{{ diff_output.stdout.split('\n') }}"
+
+    # - name: Ensure diff is saved to config_diff directory
+    #   copy:
+    #     content: "{{ diff_output.stdout }}"
+    #     dest: "{{ playbook_dir }}/config_diff/{{ inventory_hostname}}_diff.txt"
+    #   delegate_to: localhost

@@ -1,0 +1,11 @@
+---
+tasks file for auto_config
+- name: create config
+  set_fact:
+    generated_config: "{{ generated_config | default('') }}{{ lookup('template', 'templates/'+ansible_network_os+'/'+item+'.j2')}}!\n"
+  with_items: "{{ config_blocks }}"
+
+- name: store config
+  set_fact:
+    configuration: "{{ generated_config }}"
+    cacheable: yes

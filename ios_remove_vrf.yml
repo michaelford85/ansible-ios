@@ -1,0 +1,10 @@
+---
+- hosts: cisco
+  connection: network_cli
+  gather_facts: no
+
+  tasks:
+  - name: remove the “management” vrf
+    ios_vrf:
+      name: management
+      state: absent
