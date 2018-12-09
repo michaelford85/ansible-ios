@@ -1,0 +1,4 @@
+#Install network-engine from galaxy
+- src: ansible-network.network-engine
+- src: ansible-network.config_manager
+- src: michaelford85.ansible_servicenow
