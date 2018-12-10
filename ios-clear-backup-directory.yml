@@ -10,5 +10,5 @@
 
   - name: Ensure backup directory is absent
     file:
-      path: "{{playbook_dir}}/backup"
+      path: "{{playbook_dir}}/backup/"
       state: absent
