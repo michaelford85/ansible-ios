@@ -1,0 +1,14 @@
+---
+- name: Remove all configuration directories
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  become: yes
+
+
+  tasks:
+
+  - name: Ensure backup directory is absent
+    file:
+      path: "{{playbook_dir}}/backup"
+      state: absent
