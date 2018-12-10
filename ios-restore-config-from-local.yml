@@ -13,6 +13,6 @@
       name: ansible-network.config_manager
       tasks_from: load
     vars:
-      config_manager_scm_file: "{{ playbook_dir }}/backup/{{inventory_hostname}}.config"
+      config_manager_file: "{{ playbook_dir }}/backup/{{inventory_hostname}}.config"
       config_manager_replace: True
     delegate_to: localhost
