@@ -10,4 +10,4 @@
 
   - name: include vars
     include_role:
-      name: michaelford85.ansible_servicenow
+      name: michaelford85.ansible_servicenow_cmdb
