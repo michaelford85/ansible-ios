@@ -12,7 +12,7 @@
 
   - name: Change Hostname
     ios_config:
-      lines: hostname {{ inventory_hostname }}
+      lines: hostname {{ new_hostname }}
   #
   # - name: Backup current config
   #   ios_config:
