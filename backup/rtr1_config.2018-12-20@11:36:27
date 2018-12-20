@@ -1,0 +1,218 @@
+Building configuration...
+
+Current configuration : 4720 bytes
+!
+! Last configuration change at 16:52:02 UTC Wed Dec 19 2018 by ec2-user
+!
+version 16.9
+service timestamps debug datetime msec
+service timestamps log datetime msec
+platform qfp utilization monitor load 80
+no platform punt-keepalive disable-kernel-core
+platform console virtual
+!
+hostname rtr1
+!
+boot-start-marker
+boot-end-marker
+!
+!
+vrf definition GS
+ rd 100:100
+ !
+ address-family ipv4
+ exit-address-family
+!
+logging persistent size 1000000 filesize 8192 immediate
+!
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+ip admission watch-list expiry-time 0
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+! 
+! 
+! 
+! 
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+crypto pki trustpoint TP-self-signed-1521311633
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-1521311633
+ revocation-check none
+ rsakeypair TP-self-signed-1521311633
+!
+!
+crypto pki certificate chain TP-self-signed-1521311633
+ certificate self-signed 01
+  30820330 30820218 A0030201 02020101 300D0609 2A864886 F70D0101 05050030 
+  31312F30 2D060355 04031326 494F532D 53656C66 2D536967 6E65642D 43657274 
+  69666963 6174652D 31353231 33313136 3333301E 170D3138 31313037 31393333 
+  34345A17 0D333030 31303130 30303030 305A3031 312F302D 06035504 03132649 
+  4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D31 35323133 
+  31313633 33308201 22300D06 092A8648 86F70D01 01010500 0382010F 00308201 
+  0A028201 0100B86B 050D6AB3 2C2656D0 85FB8517 88FA179F E7F5584C 99A60D5D 
+  87A6E1B0 03D76969 EEF1F2E1 DF2E7DE9 1FBA02C5 3B7FF482 237458C6 B31C02AD 
+  E7BFB20B 42AC4E71 A9F9CC2E DB226D29 43B2754C 52A9F73F FFD894F1 D978E838 
+  724BCCE3 00A73116 49C86D74 FA669244 E9D022F6 49866AE5 83EA855D A025FD2B 
+  D7E62F26 F1752712 83314ABA 4E6659AA 06052D28 1452C36A D854D1F0 5743A5BF 
+  AF2BF388 E4C907EA 71F17C72 12952028 B4DC1656 1B006D79 9A37F522 B78C4B16 
+  681A6E7E FB1B0956 504A01F0 1B5EE718 1091005C 1E000F7E 7E6C8F35 D1D86556 
+  F230AC22 0B934523 9119C7AF 06684E55 4BD69C0C 71367706 B35364FE 0ECD3B47 
+  81E194A8 5FFD0203 010001A3 53305130 0F060355 1D130101 FF040530 030101FF 
+  301F0603 551D2304 18301680 14C44CD2 8F701751 89BB78AE 42EB1CEB C41FD8D0 
+  89301D06 03551D0E 04160414 C44CD28F 70175189 BB78AE42 EB1CEBC4 1FD8D089 
+  300D0609 2A864886 F70D0101 05050003 82010100 1D6F68D5 DB818B26 365F1B62 
+  7640F327 F75DDB2E 19D3D58A 967F2F10 D5469AC5 B29AECAA 07B99E44 C1CAD235 
+  DA1B1E69 1E00A3C8 6A98A299 44DB5E40 C188EA7A 538E1ED9 845BDB09 77291840 
+  AB71E19F 59856AEB B5F91E88 3EBD30E0 7E42536A F63CEFAF 4C8342D5 AB9ED623 
+  EF4ABD1E 56DC83F9 AD3DBE84 82922D38 F9ED09BA 3C35B11C 25BE1418 08D46A1B 
+  90F15C1B A51A33E6 BE488E20 496FF076 48E8BA4D CDA3A0CE 53C72243 AE5E22D9 
+  56FF6091 03521D37 C1CE4F71 91304CE6 2C1D258B 58D61433 DDC7BBBB CBE423C6 
+  172151C7 5F33E8E1 94114945 456CFFC5 342F19CB 13492DFC AD024842 96581002 
+  6DD337A7 C224D439 485A20CE 24CECC57 ED98AA13
+  	quit
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid CSR1000V sn 90GVOG9S9OF
+no license smart enable
+diagnostic bootup level minimal
+!
+spanning-tree extend system-id
+!
+!
+!
+username ec2-user privilege 15 secret 5 $1$BLoR$FIDddUxa6zTectNMuPrz31
+!
+redundancy
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+!
+!
+interface Loopback20
+ description Loopback Interface 20
+ no ip address
+ ipv6 address 2001:DB8:0:2::/64 eui-64
+!
+interface Loopback30
+ description Loopback Interface 30
+ no ip address
+ ipv6 address 2001:DB8:0:3::/64 eui-64
+!
+interface Loopback40
+ description Loopback Interface 40
+ no ip address
+ ipv6 address 2001:DB8:0:4::/64 eui-64
+!
+interface Loopback50
+ description Loopback Interface 50
+ no ip address
+ ipv6 address 2001:DB8:0:5::/64 eui-64
+!
+interface VirtualPortGroup0
+ vrf forwarding GS
+ ip address 192.168.35.101 255.255.255.0
+ ip nat inside
+ no mop enabled
+ no mop sysid
+!
+interface GigabitEthernet1
+ ip address dhcp
+ ip nat outside
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+iox
+ip nat inside source list GS_NAT_ACL interface GigabitEthernet1 vrf GS overload
+ip forward-protocol nd
+ip tcp window-size 8192
+ip http server
+ip http authentication local
+ip http secure-server
+ip route 0.0.0.0 0.0.0.0 GigabitEthernet1 172.16.0.1
+ip route vrf GS 0.0.0.0 0.0.0.0 GigabitEthernet1 172.16.0.1 global
+!
+ip ssh rsa keypair-name ssh-key
+ip ssh version 2
+ip ssh pubkey-chain
+  username ec2-user
+   key-hash ssh-rsa 5860CB62F838518832112AEAFCC061D7 ec2-user
+ip scp server enable
+!
+!
+ip access-list standard GS_NAT_ACL
+ permit 192.168.35.0 0.0.0.255
+!
+!
+!
+!
+control-plane
+!
+!
+!
+!
+!
+!
+line con 0
+ stopbits 1
+line vty 0 4
+ login local
+ transport input ssh
+!
+!
+!
+!
+!
+!
+app-hosting appid guestshell
+ app-vnic gateway1 virtualportgroup 0 guest-interface 0
+  guest-ipaddress 192.168.35.102 netmask 255.255.255.0
+ app-default-gateway 192.168.35.101 guest-interface 0
+ name-server0 8.8.8.8
+end
