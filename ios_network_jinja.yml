@@ -1,0 +1,29 @@
+---
+
+- name: CONFIGURE ETHERNET AND PO INTERFACES ON "A" SWITCH
+  hosts: "{{ switch_name }}"
+  connection: local
+  gather_facts: no
+
+  vars:
+    nxos_provider:
+      username: "ansible"
+      password: "Ansible123"
+      transport: nxapi=
+      host: "{{ inventory_hostname }}"
+
+  tasks:
+
+    - name: CONFIGURING ETHERNET INTERFACES
+      template:
+        src: port_channel_config.j2
+        dest: port_channel_config.cfg
+
+    - name: Copy archived config to router and config replace
+    include_role:
+      name: ansible-network.config_manager
+      tasks_from: load
+    vars:
+      config_manager_file: port_channel_config.cfg
+      config_manager_replace: False
+    delegate_to: localhost

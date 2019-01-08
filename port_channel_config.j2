@@ -1,0 +1,14 @@
+interface port-channel{{cvp_num}}
+  description {{ eth_interface_desc }}
+  switchport mode private-vlan trunk secondary
+  no lacp suspend-individual
+  switchport trunk native vlan 999
+  switchport trunk allowed vlan 149
+  spanning-tree port type edge trunk
+  no logging event port link-status
+  switchport private-vlan trunk native vlan 999
+  switchport private-vlan trunk allowed vlan 1600-1601,1610-1611,1800-1801
+  switchport private-vlan association trunk 1800 1801
+  switchport private-vlan association trunk 1600 1601
+  switchport private-vlan association trunk 1610 1611
+  vpc 273
