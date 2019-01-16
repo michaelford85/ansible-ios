@@ -1,8 +1,9 @@
 #NO NOT DELETE - Used in Workflow Template
 ---
-- hosts: cisco
+- name: Back Up Configs
+  hosts: cisco
   connection: network_cli
-  #gather_facts: False
+  gather_facts: False
 
   tasks:
 
