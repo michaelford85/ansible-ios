@@ -1,4 +1,0 @@
----
-- name: display mesage
-  debug:
-    msg: "role version is {{ ansible_network_config_manager_version }}"
