@@ -24,4 +24,14 @@
     vars:
       config_manager_file: templates/loopbacks.j2
       config_manager_replace: False
+    when: not erase
+
+  - name: add config file to router
+    include_role:
+      name: ansible-network.config_manager
+      tasks_from: load
+    vars:
+      config_manager_file: templates/erase-loopbacks.j2
+      config_manager_replace: False
+    when: erase
     # delegate_to: localhost

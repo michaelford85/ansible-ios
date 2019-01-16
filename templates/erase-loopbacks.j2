@@ -1,0 +1,11 @@
+hostname {{inventory_hostname}}
+
+{% for item in csvfile.split("\n") %}
+{%   if loop.index != 1 %}
+{%     set list = item.split(",") %}
+no interface {{ list[0]|trim() }}
+{%   endif %}
+{% endfor %}
+
+no access-list 10
+no access-list 20 

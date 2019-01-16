@@ -1,0 +1,426 @@
+2019-01-16 00:51:56,150 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2019-01-16 00:51:56,156 p=4132 u=mford |  PLAY [Add loopback interfaces to router] **************************************************
+2019-01-16 00:51:56,168 p=4132 u=mford |  TASK [add config file to router] **********************************************************
+2019-01-16 00:51:56,191 p=4132 u=mford |  skipping: [rtr1]
+2019-01-16 00:51:56,206 p=4132 u=mford |  skipping: [rtr2]
+2019-01-16 00:51:56,211 p=4132 u=mford |  skipping: [rtr3]
+2019-01-16 00:51:56,220 p=4132 u=mford |  skipping: [rtr4]
+2019-01-16 00:51:56,228 p=4132 u=mford |  TASK [add config file to router] **********************************************************
+2019-01-16 00:51:56,297 p=4132 u=mford |  ERROR! the role 'ansible-network.config_manager' was not found in /Users/mford/Documents/github-workspace/ansible-ios/roles:/Users/mford/Documents/github-workspace/ansible-ios/roles:/Users/mford/Documents/github-workspace/ansible-ios
+
+The error appears to have been in '/Users/mford/Documents/github-workspace/ansible-ios/ios-csv-template-loopbacks.yml': line 31, column 13, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+    include_role:
+      name: ansible-network.config_manager
+            ^ here
+
+2019-01-16 00:51:56,298 p=4132 u=mford |  	to retry, use: --limit @/Users/mford/Documents/github-workspace/ansible-ios/ios-csv-template-loopbacks.retry
+
+2019-01-16 00:51:56,298 p=4132 u=mford |  PLAY RECAP ********************************************************************************
+2019-01-16 00:51:56,299 p=4132 u=mford |  rtr1                       : ok=0    changed=0    unreachable=0    failed=0   
+2019-01-16 00:51:56,299 p=4132 u=mford |  rtr2                       : ok=0    changed=0    unreachable=0    failed=0   
+2019-01-16 00:51:56,299 p=4132 u=mford |  rtr3                       : ok=0    changed=0    unreachable=0    failed=0   
+2019-01-16 00:51:56,299 p=4132 u=mford |  rtr4                       : ok=0    changed=0    unreachable=0    failed=0   
+2019-01-16 00:53:25,336 p=4164 u=mford |  - downloading role 'network-engine', owned by ansible-network
+2019-01-16 00:53:27,758 p=4164 u=mford |  - downloading role from https://github.com/ansible-network/network-engine/archive/v2.7.2.tar.gz
+2019-01-16 00:53:29,360 p=4164 u=mford |  - extracting ansible-network.network-engine to /Users/mford/Documents/github-workspace/ansible-ios/roles/ansible-network.network-engine
+2019-01-16 00:53:29,460 p=4164 u=mford |  - ansible-network.network-engine (v2.7.2) was installed successfully
+2019-01-16 00:53:38,893 p=4176 u=mford |  - downloading role 'config_manager', owned by ansible-network
+2019-01-16 00:53:41,601 p=4176 u=mford |  - downloading role from https://github.com/ansible-network/config_manager/archive/v2.6.2.tar.gz
+2019-01-16 00:53:43,050 p=4176 u=mford |  - extracting ansible-network.config_manager to /Users/mford/Documents/github-workspace/ansible-ios/roles/ansible-network.config_manager
+2019-01-16 00:53:43,070 p=4176 u=mford |  - ansible-network.config_manager (v2.6.2) was installed successfully
+2019-01-16 00:53:43,074 p=4176 u=mford |   [WARNING]: - dependency ansible-network.network-engine (v2.6.4) from role ansible-
+network.config_manager differs from already installed version (v2.7.2), skipping
+
+2019-01-16 00:53:54,434 p=4185 u=mford |  - downloading role 'cisco_ios', owned by ansible-network
+2019-01-16 00:53:57,220 p=4185 u=mford |  - downloading role from https://github.com/ansible-network/cisco_ios/archive/v2.7.0.tar.gz
+2019-01-16 00:53:58,764 p=4185 u=mford |  - extracting ansible-network.cisco_ios to /Users/mford/Documents/github-workspace/ansible-ios/roles/ansible-network.cisco_ios
+2019-01-16 00:53:58,848 p=4185 u=mford |  - ansible-network.cisco_ios (v2.7.0) was installed successfully
+2019-01-16 00:53:58,851 p=4185 u=mford |   [WARNING]: - dependency ansible-network.network-engine from role ansible-
+network.cisco_ios differs from already installed version (v2.7.2), skipping
+
+2019-01-16 00:54:09,486 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2019-01-16 00:54:09,493 p=4195 u=mford |  PLAY [Add loopback interfaces to router] **************************************************************
+2019-01-16 00:54:09,504 p=4195 u=mford |  TASK [add config file to router] **********************************************************************
+2019-01-16 00:54:09,530 p=4195 u=mford |  skipping: [rtr1]
+2019-01-16 00:54:09,545 p=4195 u=mford |  skipping: [rtr2]
+2019-01-16 00:54:09,548 p=4195 u=mford |  skipping: [rtr3]
+2019-01-16 00:54:09,559 p=4195 u=mford |  skipping: [rtr4]
+2019-01-16 00:54:09,566 p=4195 u=mford |  TASK [add config file to router] **********************************************************************
+2019-01-16 00:54:09,749 p=4195 u=mford |  TASK [ansible-network.config_manager : validate role spec] ********************************************
+2019-01-16 00:54:11,087 p=4214 u=mford |  network_os is set to ios
+2019-01-16 00:54:11,091 p=4215 u=mford |  network_os is set to ios
+2019-01-16 00:54:11,103 p=4216 u=mford |  network_os is set to ios
+2019-01-16 00:54:11,112 p=4217 u=mford |  network_os is set to ios
+2019-01-16 00:54:11,917 p=4243 u=mford | paramiko [3.88.167.60] starting thread (client mode): 0xe939f50L
+2019-01-16 00:54:11,918 p=4243 u=mford | paramiko [3.88.167.60] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2019-01-16 00:54:11,923 p=4240 u=mford | paramiko [54.164.19.80] starting thread (client mode): 0xac5af50L
+2019-01-16 00:54:11,923 p=4237 u=mford | paramiko [52.90.153.144] starting thread (client mode): 0x1a49f50L
+2019-01-16 00:54:11,924 p=4240 u=mford | paramiko [54.164.19.80] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2019-01-16 00:54:11,924 p=4237 u=mford | paramiko [52.90.153.144] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2019-01-16 00:54:11,933 p=4246 u=mford | paramiko [18.212.251.15] starting thread (client mode): 0xa5cdf50L
+2019-01-16 00:54:11,934 p=4246 u=mford | paramiko [18.212.251.15] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2019-01-16 00:54:12,037 p=4243 u=mford | paramiko [3.88.167.60] Remote version/idstring: SSH-2.0-Cisco-1.25
+2019-01-16 00:54:12,038 p=4243 u=mford | paramiko [3.88.167.60] Connected (version 2.0, client Cisco-1.25)
+2019-01-16 00:54:12,049 p=4240 u=mford | paramiko [54.164.19.80] Remote version/idstring: SSH-2.0-Cisco-1.25
+2019-01-16 00:54:12,049 p=4243 u=mford | paramiko [3.88.167.60] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2019-01-16 00:54:12,050 p=4240 u=mford | paramiko [54.164.19.80] Connected (version 2.0, client Cisco-1.25)
+2019-01-16 00:54:12,050 p=4243 u=mford | paramiko [3.88.167.60] Kex agreed: diffie-hellman-group-exchange-sha1
+2019-01-16 00:54:12,050 p=4243 u=mford | paramiko [3.88.167.60] HostKey agreed: ssh-rsa
+2019-01-16 00:54:12,051 p=4243 u=mford | paramiko [3.88.167.60] Cipher agreed: aes128-ctr
+2019-01-16 00:54:12,051 p=4243 u=mford | paramiko [3.88.167.60] MAC agreed: hmac-sha2-256
+2019-01-16 00:54:12,052 p=4243 u=mford | paramiko [3.88.167.60] Compression agreed: none
+2019-01-16 00:54:12,064 p=4246 u=mford | paramiko [18.212.251.15] Remote version/idstring: SSH-2.0-Cisco-1.25
+2019-01-16 00:54:12,064 p=4246 u=mford | paramiko [18.212.251.15] Connected (version 2.0, client Cisco-1.25)
+2019-01-16 00:54:12,164 p=4240 u=mford | paramiko [54.164.19.80] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2019-01-16 00:54:12,165 p=4240 u=mford | paramiko [54.164.19.80] Kex agreed: diffie-hellman-group-exchange-sha1
+2019-01-16 00:54:12,165 p=4240 u=mford | paramiko [54.164.19.80] HostKey agreed: ssh-rsa
+2019-01-16 00:54:12,166 p=4240 u=mford | paramiko [54.164.19.80] Cipher agreed: aes128-ctr
+2019-01-16 00:54:12,166 p=4240 u=mford | paramiko [54.164.19.80] MAC agreed: hmac-sha2-256
+2019-01-16 00:54:12,166 p=4240 u=mford | paramiko [54.164.19.80] Compression agreed: none
+2019-01-16 00:54:12,211 p=4246 u=mford | paramiko [18.212.251.15] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2019-01-16 00:54:12,211 p=4246 u=mford | paramiko [18.212.251.15] Kex agreed: diffie-hellman-group-exchange-sha1
+2019-01-16 00:54:12,212 p=4246 u=mford | paramiko [18.212.251.15] HostKey agreed: ssh-rsa
+2019-01-16 00:54:12,212 p=4246 u=mford | paramiko [18.212.251.15] Cipher agreed: aes128-ctr
+2019-01-16 00:54:12,213 p=4246 u=mford | paramiko [18.212.251.15] MAC agreed: hmac-sha2-256
+2019-01-16 00:54:12,213 p=4246 u=mford | paramiko [18.212.251.15] Compression agreed: none
+2019-01-16 00:54:12,300 p=4240 u=mford | paramiko [54.164.19.80] Got server p (2048 bits)
+2019-01-16 00:54:12,333 p=4246 u=mford | paramiko [18.212.251.15] Got server p (2048 bits)
+2019-01-16 00:54:12,477 p=4243 u=mford | paramiko [3.88.167.60] Got server p (2048 bits)
+2019-01-16 00:54:12,517 p=4240 u=mford | paramiko [54.164.19.80] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2019-01-16 00:54:12,519 p=4240 u=mford | paramiko [54.164.19.80] Switch to new keys ...
+2019-01-16 00:54:12,535 p=4240 u=mford | paramiko [54.164.19.80] Trying discovered key 6f5480be28775d80716b10f37ee54756 in /Users/mford/.ssh/MAF-cisco-demo-private.pem
+2019-01-16 00:54:12,539 p=4246 u=mford | paramiko [18.212.251.15] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2019-01-16 00:54:12,540 p=4246 u=mford | paramiko [18.212.251.15] Switch to new keys ...
+2019-01-16 00:54:12,560 p=4246 u=mford | paramiko [18.212.251.15] Trying discovered key 6f5480be28775d80716b10f37ee54756 in /Users/mford/.ssh/MAF-cisco-demo-private.pem
+2019-01-16 00:54:12,697 p=4243 u=mford | paramiko [3.88.167.60] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2019-01-16 00:54:12,699 p=4243 u=mford | paramiko [3.88.167.60] Switch to new keys ...
+2019-01-16 00:54:12,724 p=4243 u=mford | paramiko [3.88.167.60] Trying discovered key 6f5480be28775d80716b10f37ee54756 in /Users/mford/.ssh/MAF-cisco-demo-private.pem
+2019-01-16 00:54:12,938 p=4240 u=mford | paramiko [54.164.19.80] userauth is OK
+2019-01-16 00:54:12,992 p=4246 u=mford | paramiko [18.212.251.15] userauth is OK
+2019-01-16 00:54:13,079 p=4240 u=mford | paramiko [54.164.19.80] Authentication (publickey) successful!
+2019-01-16 00:54:13,106 p=4240 u=mford | paramiko [54.164.19.80] [chan 0] Max packet in: 32768 bytes
+2019-01-16 00:54:13,113 p=4246 u=mford | paramiko [18.212.251.15] Authentication (publickey) successful!
+2019-01-16 00:54:13,128 p=4243 u=mford | paramiko [3.88.167.60] userauth is OK
+2019-01-16 00:54:13,131 p=4246 u=mford | paramiko [18.212.251.15] [chan 0] Max packet in: 32768 bytes
+2019-01-16 00:54:13,234 p=4240 u=mford | paramiko [54.164.19.80] [chan 0] Max packet out: 4096 bytes
+2019-01-16 00:54:13,235 p=4240 u=mford | paramiko [54.164.19.80] Secsh channel 0 opened.
+2019-01-16 00:54:13,242 p=4243 u=mford | paramiko [3.88.167.60] Authentication (publickey) successful!
+2019-01-16 00:54:13,248 p=4246 u=mford | paramiko [18.212.251.15] [chan 0] Max packet out: 4096 bytes
+2019-01-16 00:54:13,249 p=4246 u=mford | paramiko [18.212.251.15] Secsh channel 0 opened.
+2019-01-16 00:54:13,260 p=4243 u=mford | paramiko [3.88.167.60] [chan 0] Max packet in: 32768 bytes
+2019-01-16 00:54:13,364 p=4240 u=mford | paramiko [54.164.19.80] [chan 0] Sesch channel 0 request ok
+2019-01-16 00:54:13,376 p=4243 u=mford | paramiko [3.88.167.60] [chan 0] Max packet out: 4096 bytes
+2019-01-16 00:54:13,376 p=4243 u=mford | paramiko [3.88.167.60] Secsh channel 0 opened.
+2019-01-16 00:54:13,382 p=4246 u=mford | paramiko [18.212.251.15] [chan 0] Sesch channel 0 request ok
+2019-01-16 00:54:13,485 p=4240 u=mford | paramiko [54.164.19.80] [chan 0] Sesch channel 0 request ok
+2019-01-16 00:54:13,485 p=4243 u=mford | paramiko [3.88.167.60] [chan 0] Sesch channel 0 request ok
+2019-01-16 00:54:13,498 p=4246 u=mford | paramiko [18.212.251.15] [chan 0] Sesch channel 0 request ok
+2019-01-16 00:54:13,599 p=4243 u=mford | paramiko [3.88.167.60] [chan 0] Sesch channel 0 request ok
+2019-01-16 00:54:14,623 p=4195 u=mford |  ok: [rtr4]
+2019-01-16 00:54:14,629 p=4195 u=mford |  ok: [rtr1]
+2019-01-16 00:54:14,656 p=4237 u=mford | paramiko [52.90.153.144] Remote version/idstring: SSH-2.0-Cisco-1.25
+2019-01-16 00:54:14,657 p=4237 u=mford | paramiko [52.90.153.144] Connected (version 2.0, client Cisco-1.25)
+2019-01-16 00:54:14,659 p=4237 u=mford | paramiko [52.90.153.144] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2019-01-16 00:54:14,660 p=4237 u=mford | paramiko [52.90.153.144] Kex agreed: diffie-hellman-group-exchange-sha1
+2019-01-16 00:54:14,660 p=4237 u=mford | paramiko [52.90.153.144] HostKey agreed: ssh-rsa
+2019-01-16 00:54:14,661 p=4237 u=mford | paramiko [52.90.153.144] Cipher agreed: aes128-ctr
+2019-01-16 00:54:14,661 p=4237 u=mford | paramiko [52.90.153.144] MAC agreed: hmac-sha2-256
+2019-01-16 00:54:14,662 p=4237 u=mford | paramiko [52.90.153.144] Compression agreed: none
+2019-01-16 00:54:14,741 p=4195 u=mford |  ok: [rtr3]
+2019-01-16 00:54:15,240 p=4237 u=mford | paramiko [52.90.153.144] Got server p (2048 bits)
+2019-01-16 00:54:15,447 p=4237 u=mford | paramiko [52.90.153.144] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2019-01-16 00:54:15,448 p=4237 u=mford | paramiko [52.90.153.144] Switch to new keys ...
+2019-01-16 00:54:15,472 p=4237 u=mford | paramiko [52.90.153.144] Trying discovered key 6f5480be28775d80716b10f37ee54756 in /Users/mford/.ssh/MAF-cisco-demo-private.pem
+2019-01-16 00:54:15,894 p=4237 u=mford | paramiko [52.90.153.144] userauth is OK
+2019-01-16 00:54:16,043 p=4237 u=mford | paramiko [52.90.153.144] Authentication (publickey) successful!
+2019-01-16 00:54:16,078 p=4237 u=mford | paramiko [52.90.153.144] [chan 0] Max packet in: 32768 bytes
+2019-01-16 00:54:16,190 p=4237 u=mford | paramiko [52.90.153.144] [chan 0] Max packet out: 4096 bytes
+2019-01-16 00:54:16,191 p=4237 u=mford | paramiko [52.90.153.144] Secsh channel 0 opened.
+2019-01-16 00:54:16,306 p=4237 u=mford | paramiko [52.90.153.144] [chan 0] Sesch channel 0 request ok
+2019-01-16 00:54:16,455 p=4237 u=mford | paramiko [52.90.153.144] [chan 0] Sesch channel 0 request ok
+2019-01-16 00:54:17,489 p=4195 u=mford |  ok: [rtr2]
+2019-01-16 00:54:17,497 p=4195 u=mford |  TASK [ansible-network.config_manager : create temp working directory] *********************************
+2019-01-16 00:54:17,529 p=4195 u=mford |  skipping: [rtr1]
+2019-01-16 00:54:17,545 p=4195 u=mford |  skipping: [rtr2]
+2019-01-16 00:54:17,549 p=4195 u=mford |  skipping: [rtr3]
+2019-01-16 00:54:17,567 p=4195 u=mford |  skipping: [rtr4]
+2019-01-16 00:54:17,575 p=4195 u=mford |  TASK [ansible-network.config_manager : checkout scm project] ******************************************
+2019-01-16 00:54:17,601 p=4195 u=mford |  skipping: [rtr1]
+2019-01-16 00:54:17,616 p=4195 u=mford |  skipping: [rtr2]
+2019-01-16 00:54:17,620 p=4195 u=mford |  skipping: [rtr3]
+2019-01-16 00:54:17,636 p=4195 u=mford |  skipping: [rtr4]
+2019-01-16 00:54:17,652 p=4195 u=mford |  TASK [ansible-network.config_manager : discover the configuration file path and load it] **************
+2019-01-16 00:54:17,682 p=4195 u=mford |  skipping: [rtr1]
+2019-01-16 00:54:17,697 p=4195 u=mford |  skipping: [rtr2]
+2019-01-16 00:54:17,703 p=4195 u=mford |  skipping: [rtr3]
+2019-01-16 00:54:17,716 p=4195 u=mford |  skipping: [rtr4]
+2019-01-16 00:54:17,725 p=4195 u=mford |  TASK [ansible-network.config_manager : set the config_manager_file value based on config_manager_scm_file] ***
+2019-01-16 00:54:17,756 p=4195 u=mford |  skipping: [rtr1]
+2019-01-16 00:54:17,771 p=4195 u=mford |  skipping: [rtr2]
+2019-01-16 00:54:17,774 p=4195 u=mford |  skipping: [rtr3]
+2019-01-16 00:54:17,789 p=4195 u=mford |  skipping: [rtr4]
+2019-01-16 00:54:17,799 p=4195 u=mford |  TASK [ansible-network.config_manager : remove temporary working dir] **********************************
+2019-01-16 00:54:17,827 p=4195 u=mford |  skipping: [rtr1]
+2019-01-16 00:54:17,840 p=4195 u=mford |  skipping: [rtr2]
+2019-01-16 00:54:17,844 p=4195 u=mford |  skipping: [rtr3]
+2019-01-16 00:54:17,860 p=4195 u=mford |  skipping: [rtr4]
+2019-01-16 00:54:17,870 p=4195 u=mford |  TASK [ansible-network.config_manager : load config file contents] *************************************
+2019-01-16 00:54:20,301 p=4195 u=mford |  ok: [rtr3]
+2019-01-16 00:54:20,302 p=4195 u=mford |  ok: [rtr1]
+2019-01-16 00:54:20,302 p=4195 u=mford |  ok: [rtr2]
+2019-01-16 00:54:20,303 p=4195 u=mford |  ok: [rtr4]
+2019-01-16 00:54:20,311 p=4195 u=mford |  TASK [ansible-network.config_manager : validate config_manager_text is defined] ***********************
+2019-01-16 00:54:20,342 p=4195 u=mford |  skipping: [rtr1]
+2019-01-16 00:54:20,356 p=4195 u=mford |  skipping: [rtr2]
+2019-01-16 00:54:20,362 p=4195 u=mford |  skipping: [rtr3]
+2019-01-16 00:54:20,376 p=4195 u=mford |  skipping: [rtr4]
+2019-01-16 00:54:20,386 p=4195 u=mford |  TASK [invoke network provider] ************************************************************************
+2019-01-16 00:54:20,621 p=4195 u=mford |  TASK [ansible-network.cisco_ios : initialize function] ************************************************
+2019-01-16 00:54:20,706 p=4195 u=mford |  included: /Users/mford/Documents/github-workspace/ansible-ios/roles/ansible-network.cisco_ios/includes/init.yaml for rtr1, rtr2, rtr3, rtr4
+2019-01-16 00:54:20,720 p=4195 u=mford |  TASK [ansible-network.cisco_ios : set role basic facts] ***********************************************
+2019-01-16 00:54:23,294 p=4195 u=mford |  ok: [rtr1]
+2019-01-16 00:54:23,296 p=4195 u=mford |  ok: [rtr2]
+2019-01-16 00:54:23,297 p=4195 u=mford |  ok: [rtr3]
+2019-01-16 00:54:23,300 p=4195 u=mford |  ok: [rtr4]
+2019-01-16 00:54:23,317 p=4195 u=mford |  TASK [ansible-network.cisco_ios : display the role version to stdout] *********************************
+2019-01-16 00:54:25,275 p=4195 u=mford |  ok: [rtr2] => {
+    "msg": "ansible_network.cisco_ios version is v2.7.0"
+}
+2019-01-16 00:54:25,279 p=4195 u=mford |  ok: [rtr4] => {
+    "msg": "ansible_network.cisco_ios version is v2.7.0"
+}
+2019-01-16 00:54:25,279 p=4195 u=mford |  ok: [rtr3] => {
+    "msg": "ansible_network.cisco_ios version is v2.7.0"
+}
+2019-01-16 00:54:25,280 p=4195 u=mford |  ok: [rtr1] => {
+    "msg": "ansible_network.cisco_ios version is v2.7.0"
+}
+2019-01-16 00:54:25,288 p=4195 u=mford |  TASK [ansible-network.cisco_ios : validate ansible_network_os == 'ios'] *******************************
+2019-01-16 00:54:25,320 p=4195 u=mford |  skipping: [rtr1]
+2019-01-16 00:54:25,338 p=4195 u=mford |  skipping: [rtr2]
+2019-01-16 00:54:25,342 p=4195 u=mford |  skipping: [rtr3]
+2019-01-16 00:54:25,355 p=4195 u=mford |  skipping: [rtr4]
+2019-01-16 00:54:25,366 p=4195 u=mford |  TASK [ansible-network.cisco_ios : validate ansible_connection == 'network_cli'] ***********************
+2019-01-16 00:54:25,396 p=4195 u=mford |  skipping: [rtr1]
+2019-01-16 00:54:25,412 p=4195 u=mford |  skipping: [rtr2]
+2019-01-16 00:54:25,416 p=4195 u=mford |  skipping: [rtr3]
+2019-01-16 00:54:25,431 p=4195 u=mford |  skipping: [rtr4]
+2019-01-16 00:54:25,449 p=4195 u=mford |  TASK [ansible-network.cisco_ios : Validate we have required installed version of dependent roles] *****
+2019-01-16 00:54:27,203 p=4195 u=mford |  ok: [rtr1]
+2019-01-16 00:54:27,268 p=4195 u=mford |  ok: [rtr3]
+2019-01-16 00:54:27,268 p=4195 u=mford |  ok: [rtr4]
+2019-01-16 00:54:27,269 p=4195 u=mford |  ok: [rtr2]
+2019-01-16 00:54:27,279 p=4195 u=mford |  TASK [ansible-network.cisco_ios : Validate we have required installed version of dependent roles from meta] ***
+2019-01-16 00:54:27,309 p=4195 u=mford |  skipping: [rtr1]
+2019-01-16 00:54:27,325 p=4195 u=mford |  skipping: [rtr2]
+2019-01-16 00:54:27,330 p=4195 u=mford |  skipping: [rtr3]
+2019-01-16 00:54:27,346 p=4195 u=mford |  skipping: [rtr4]
+2019-01-16 00:54:27,355 p=4195 u=mford |  TASK [ansible-network.cisco_ios : validate config_manager_text is defined] ****************************
+2019-01-16 00:54:27,382 p=4195 u=mford |  skipping: [rtr1]
+2019-01-16 00:54:27,396 p=4195 u=mford |  skipping: [rtr2]
+2019-01-16 00:54:27,400 p=4195 u=mford |  skipping: [rtr3]
+2019-01-16 00:54:27,415 p=4195 u=mford |  skipping: [rtr4]
+2019-01-16 00:54:27,424 p=4195 u=mford |  TASK [ansible-network.cisco_ios : set ios checkpoint filename] ****************************************
+2019-01-16 00:54:29,270 p=4195 u=mford |  ok: [rtr2]
+2019-01-16 00:54:29,272 p=4195 u=mford |  ok: [rtr4]
+2019-01-16 00:54:29,275 p=4195 u=mford |  ok: [rtr3]
+2019-01-16 00:54:29,275 p=4195 u=mford |  ok: [rtr1]
+2019-01-16 00:54:29,285 p=4195 u=mford |  TASK [ansible-network.cisco_ios : create checkpoint of current configuration] *************************
+2019-01-16 00:54:29,379 p=4195 u=mford |  included: /Users/mford/Documents/github-workspace/ansible-ios/roles/ansible-network.cisco_ios/includes/checkpoint/create.yaml for rtr1, rtr2, rtr3, rtr4
+2019-01-16 00:54:29,400 p=4195 u=mford |  TASK [ansible-network.cisco_ios : validate ios_checkpoint_filename is defined] ************************
+2019-01-16 00:54:29,426 p=4195 u=mford |  skipping: [rtr1]
+2019-01-16 00:54:29,439 p=4195 u=mford |  skipping: [rtr2]
+2019-01-16 00:54:29,443 p=4195 u=mford |  skipping: [rtr3]
+2019-01-16 00:54:29,456 p=4195 u=mford |  skipping: [rtr4]
+2019-01-16 00:54:29,471 p=4195 u=mford |  TASK [ansible-network.cisco_ios : get current files on disk] ******************************************
+2019-01-16 00:54:31,598 p=4195 u=mford |  ok: [rtr4]
+2019-01-16 00:54:31,603 p=4195 u=mford |  ok: [rtr1]
+2019-01-16 00:54:31,622 p=4195 u=mford |  ok: [rtr2]
+2019-01-16 00:54:31,642 p=4195 u=mford |  ok: [rtr3]
+2019-01-16 00:54:31,649 p=4195 u=mford |  TASK [ansible-network.cisco_ios : remove old checkpoint file (if necessary)] **************************
+2019-01-16 00:54:31,683 p=4195 u=mford |  skipping: [rtr1]
+2019-01-16 00:54:31,700 p=4195 u=mford |  skipping: [rtr2]
+2019-01-16 00:54:31,705 p=4195 u=mford |  skipping: [rtr3]
+2019-01-16 00:54:31,722 p=4195 u=mford |  skipping: [rtr4]
+2019-01-16 00:54:31,731 p=4195 u=mford |  TASK [ansible-network.cisco_ios : create a checkpoint of the current running-config] ******************
+2019-01-16 00:54:35,921 p=4195 u=mford |  ok: [rtr4]
+2019-01-16 00:54:35,949 p=4195 u=mford |  ok: [rtr2]
+2019-01-16 00:54:35,975 p=4195 u=mford |  ok: [rtr1]
+2019-01-16 00:54:36,174 p=4195 u=mford |  ok: [rtr3]
+2019-01-16 00:54:36,184 p=4195 u=mford |  TASK [ansible-network.cisco_ios : display message due to check mode] **********************************
+2019-01-16 00:54:36,217 p=4195 u=mford |  skipping: [rtr1]
+2019-01-16 00:54:36,233 p=4195 u=mford |  skipping: [rtr2]
+2019-01-16 00:54:36,235 p=4195 u=mford |  skipping: [rtr3]
+2019-01-16 00:54:36,245 p=4195 u=mford |  skipping: [rtr4]
+2019-01-16 00:54:36,255 p=4195 u=mford |  TASK [ansible-network.cisco_ios : replace current active configuration] *******************************
+2019-01-16 00:54:36,283 p=4195 u=mford |  skipping: [rtr1]
+2019-01-16 00:54:36,300 p=4195 u=mford |  skipping: [rtr2]
+2019-01-16 00:54:36,302 p=4195 u=mford |  skipping: [rtr3]
+2019-01-16 00:54:36,313 p=4195 u=mford |  skipping: [rtr4]
+2019-01-16 00:54:36,322 p=4195 u=mford |  TASK [ansible-network.cisco_ios : merge with current active configuration] ****************************
+2019-01-16 00:54:36,350 p=4195 u=mford |  skipping: [rtr1]
+2019-01-16 00:54:36,365 p=4195 u=mford |  skipping: [rtr2]
+2019-01-16 00:54:36,368 p=4195 u=mford |  skipping: [rtr3]
+2019-01-16 00:54:36,383 p=4195 u=mford |  skipping: [rtr4]
+2019-01-16 00:54:36,393 p=4195 u=mford |  TASK [ansible-network.cisco_ios : load configuration using configure terminal] ************************
+2019-01-16 00:54:36,498 p=4195 u=mford |  included: /Users/mford/Documents/github-workspace/ansible-ios/roles/ansible-network.cisco_ios/includes/configure/terminal.yaml for rtr1, rtr2, rtr3, rtr4
+2019-01-16 00:54:36,518 p=4195 u=mford |  TASK [ansible-network.cisco_ios : extract banners from configs if present] ****************************
+2019-01-16 00:54:38,394 p=4195 u=mford |  ok: [rtr2]
+2019-01-16 00:54:38,421 p=4195 u=mford |  ok: [rtr3]
+2019-01-16 00:54:38,424 p=4195 u=mford |  ok: [rtr1]
+2019-01-16 00:54:38,431 p=4195 u=mford |  ok: [rtr4]
+2019-01-16 00:54:38,443 p=4195 u=mford |  TASK [ansible-network.cisco_ios : load configuration lines into target device except banner] **********
+2019-01-16 00:54:43,537 p=4195 u=mford |  changed: [rtr2]
+2019-01-16 00:54:43,653 p=4195 u=mford |  changed: [rtr4]
+2019-01-16 00:54:43,748 p=4195 u=mford |  changed: [rtr3]
+2019-01-16 00:54:43,899 p=4195 u=mford |  changed: [rtr1]
+2019-01-16 00:54:43,909 p=4195 u=mford |  TASK [ansible-network.cisco_ios : enter configuration mode] *******************************************
+2019-01-16 00:54:45,953 p=4195 u=mford |  ok: [rtr1]
+2019-01-16 00:54:45,970 p=4195 u=mford |  ok: [rtr3]
+2019-01-16 00:54:45,980 p=4195 u=mford |  ok: [rtr2]
+2019-01-16 00:54:46,104 p=4195 u=mford |  ok: [rtr4]
+2019-01-16 00:54:46,119 p=4195 u=mford |  TASK [ansible-network.cisco_ios : load banner lines into target device] *******************************
+2019-01-16 00:54:46,198 p=4195 u=mford |  TASK [ansible-network.cisco_ios : exit configuration mode] ********************************************
+2019-01-16 00:54:48,186 p=4195 u=mford |  ok: [rtr1]
+2019-01-16 00:54:48,199 p=4195 u=mford |  ok: [rtr2]
+2019-01-16 00:54:48,206 p=4195 u=mford |  ok: [rtr3]
+2019-01-16 00:54:48,224 p=4195 u=mford |  ok: [rtr4]
+2019-01-16 00:54:48,234 p=4195 u=mford |  TASK [ansible-network.cisco_ios : set the ios_active_config fact] *************************************
+2019-01-16 00:54:50,033 p=4195 u=mford |  ok: [rtr1]
+2019-01-16 00:54:50,056 p=4195 u=mford |  ok: [rtr2]
+2019-01-16 00:54:50,058 p=4195 u=mford |  ok: [rtr3]
+2019-01-16 00:54:50,090 p=4195 u=mford |  ok: [rtr4]
+2019-01-16 00:54:50,100 p=4195 u=mford |  TASK [ansible-network.cisco_ios : copy running-config to active config] *******************************
+2019-01-16 00:54:53,552 p=4195 u=mford |  ok: [rtr2]
+2019-01-16 00:54:53,572 p=4195 u=mford |  ok: [rtr1]
+2019-01-16 00:54:53,576 p=4195 u=mford |  ok: [rtr3]
+2019-01-16 00:54:53,648 p=4195 u=mford |  ok: [rtr4]
+2019-01-16 00:54:53,656 p=4195 u=mford |  TASK [ansible-network.cisco_ios : generate ios diff] **************************************************
+2019-01-16 00:54:56,064 p=4195 u=mford |  changed: [rtr2]
+2019-01-16 00:54:56,067 p=4195 u=mford |  changed: [rtr3]
+2019-01-16 00:54:56,084 p=4195 u=mford |  changed: [rtr1]
+2019-01-16 00:54:56,138 p=4195 u=mford |  changed: [rtr4]
+2019-01-16 00:54:56,147 p=4195 u=mford |  TASK [ansible-network.cisco_ios : display config diff] ************************************************
+2019-01-16 00:54:58,300 p=4195 u=mford |  ok: [rtr1] => {
+    "msg": [
+        "!Contextual Config Diffs:", 
+        "-interface Loopback20", 
+        " -description Loopback Interface 20", 
+        " -no ip address", 
+        "-interface Loopback30", 
+        " -description Loopback Interface 30", 
+        " -no ip address", 
+        "-interface Loopback40", 
+        " -description Loopback Interface 40", 
+        " -no ip address", 
+        "-interface Loopback50", 
+        " -description Loopback Interface 50", 
+        " -no ip address", 
+        "-interface Loopback60", 
+        " -description Loopback Interface 60", 
+        " -no ip address", 
+        "-access-list 10 permit 10.10.25.0 0.0.0.255", 
+        "-access-list 20 permit 10.10.23.0 0.0.0.255"
+    ]
+}
+2019-01-16 00:54:58,305 p=4195 u=mford |  ok: [rtr3] => {
+    "msg": [
+        "!Contextual Config Diffs:", 
+        "-interface Loopback20", 
+        " -description Loopback Interface 20", 
+        " -no ip address", 
+        "-interface Loopback30", 
+        " -description Loopback Interface 30", 
+        " -no ip address", 
+        "-interface Loopback40", 
+        " -description Loopback Interface 40", 
+        " -no ip address", 
+        "-interface Loopback50", 
+        " -description Loopback Interface 50", 
+        " -no ip address", 
+        "-interface Loopback60", 
+        " -description Loopback Interface 60", 
+        " -no ip address", 
+        "-access-list 10 permit 10.10.7.0 0.0.0.255", 
+        "-access-list 20 permit 10.10.190.0 0.0.0.255"
+    ]
+}
+2019-01-16 00:54:58,306 p=4195 u=mford |  ok: [rtr2] => {
+    "msg": [
+        "!Contextual Config Diffs:", 
+        "-interface Loopback20", 
+        " -description Loopback Interface 20", 
+        " -no ip address", 
+        "-interface Loopback30", 
+        " -description Loopback Interface 30", 
+        " -no ip address", 
+        "-interface Loopback40", 
+        " -description Loopback Interface 40", 
+        " -no ip address", 
+        "-interface Loopback50", 
+        " -description Loopback Interface 50", 
+        " -no ip address", 
+        "-interface Loopback60", 
+        " -description Loopback Interface 60", 
+        " -no ip address", 
+        "-access-list 10 permit 10.10.51.0 0.0.0.255", 
+        "-access-list 20 permit 10.10.186.0 0.0.0.255"
+    ]
+}
+2019-01-16 00:54:58,309 p=4195 u=mford |  ok: [rtr4] => {
+    "msg": [
+        "!Contextual Config Diffs:", 
+        "-interface Loopback20", 
+        " -description Loopback Interface 20", 
+        " -no ip address", 
+        "-interface Loopback30", 
+        " -description Loopback Interface 30", 
+        " -no ip address", 
+        "-interface Loopback40", 
+        " -description Loopback Interface 40", 
+        " -no ip address", 
+        "-interface Loopback50", 
+        " -description Loopback Interface 50", 
+        " -no ip address", 
+        "-interface Loopback60", 
+        " -description Loopback Interface 60", 
+        " -no ip address", 
+        "-access-list 10 permit 10.10.63.0 0.0.0.255", 
+        "-access-list 20 permit 10.10.127.0 0.0.0.255"
+    ]
+}
+2019-01-16 00:54:58,317 p=4195 u=mford |  TASK [ansible-network.cisco_ios : update local directory listing] *************************************
+2019-01-16 00:55:00,358 p=4195 u=mford |  ok: [rtr1]
+2019-01-16 00:55:00,485 p=4195 u=mford |  ok: [rtr2]
+2019-01-16 00:55:00,492 p=4195 u=mford |  ok: [rtr4]
+2019-01-16 00:55:00,493 p=4195 u=mford |  ok: [rtr3]
+2019-01-16 00:55:00,502 p=4195 u=mford |  TASK [ansible-network.cisco_ios : remove remote temp files from flash] ********************************
+2019-01-16 00:55:02,686 p=4195 u=mford |  ok: [rtr1] => (item=cfg_ansible)
+2019-01-16 00:55:02,692 p=4195 u=mford |  ok: [rtr2] => (item=cfg_ansible)
+2019-01-16 00:55:02,700 p=4195 u=mford |  ok: [rtr3] => (item=cfg_ansible)
+2019-01-16 00:55:02,711 p=4195 u=mford |  ok: [rtr4] => (item=cfg_ansible)
+2019-01-16 00:55:03,028 p=4195 u=mford |  ok: [rtr3] => (item=chk_ansible)
+2019-01-16 00:55:03,032 p=4195 u=mford |  ok: [rtr2] => (item=chk_ansible)
+2019-01-16 00:55:03,035 p=4195 u=mford |  ok: [rtr1] => (item=chk_ansible)
+2019-01-16 00:55:03,036 p=4195 u=mford |  ok: [rtr4] => (item=chk_ansible)
+2019-01-16 00:55:03,044 p=4240 u=mford | paramiko [54.164.19.80] [chan 0] EOF sent (0)
+2019-01-16 00:55:03,124 p=4240 u=mford | paramiko [54.164.19.80] EOF in transport thread
+2019-01-16 00:55:03,162 p=4237 u=mford | paramiko [52.90.153.144] [chan 0] EOF sent (0)
+2019-01-16 00:55:03,212 p=4237 u=mford | paramiko [52.90.153.144] EOF in transport thread
+2019-01-16 00:55:03,230 p=4243 u=mford | paramiko [3.88.167.60] [chan 0] EOF sent (0)
+2019-01-16 00:55:03,263 p=4215 u=mford |  shutdown complete
+2019-01-16 00:55:03,325 p=4243 u=mford | paramiko [3.88.167.60] EOF in transport thread
+2019-01-16 00:55:03,331 p=4214 u=mford |  shutdown complete
+2019-01-16 00:55:03,349 p=4246 u=mford | paramiko [18.212.251.15] [chan 0] EOF sent (0)
+2019-01-16 00:55:03,431 p=4246 u=mford | paramiko [18.212.251.15] EOF in transport thread
+2019-01-16 00:55:03,449 p=4216 u=mford |  shutdown complete
+2019-01-16 00:55:03,468 p=4195 u=mford |  PLAY RECAP ********************************************************************************************
+2019-01-16 00:55:03,468 p=4195 u=mford |  rtr1                       : ok=21   changed=2    unreachable=0    failed=0   
+2019-01-16 00:55:03,469 p=4195 u=mford |  rtr2                       : ok=21   changed=2    unreachable=0    failed=0   
+2019-01-16 00:55:03,469 p=4195 u=mford |  rtr3                       : ok=21   changed=2    unreachable=0    failed=0   
+2019-01-16 00:55:03,469 p=4195 u=mford |  rtr4                       : ok=21   changed=2    unreachable=0    failed=0   
+2019-01-16 00:55:03,568 p=4217 u=mford |  shutdown complete
