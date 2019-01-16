@@ -1,0 +1,6 @@
+name,mtu,description,,,,,,,: ,,: 
+Loopback20,256,Loopback Interface 20,,,,,,,,,
+Loopback30,256,Loopback Interface 30,,,,,,,,,
+Loopback40,256,Loopback Interface 40,,,,,,,,,
+Loopback50,256,Loopback Interface 50,,,,,,,,,
+Loopback60,256,Loopback Interface 60,,,,,,,,,

@@ -1,0 +1,17 @@
+---
+- name: initialize function
+  include_tasks: includes/init.yaml
+
+- name: run command and return configuration
+  cli:
+    command: "{{ ios_config_source[source | default('running')] }}"
+  register: configuration
+
+- name: set the configuration fact
+  set_fact:
+    configuration: "{{ configuration.stdout }}"
+
+- name: parse system configuration
+  command_parser:
+    dir: "{{ role_path }}/parser_templates/config_manager"
+    content: "{{ configuration }}"

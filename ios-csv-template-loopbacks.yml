@@ -1,0 +1,27 @@
+---
+
+- name: Add loopback interfaces to router
+  hosts: cisco
+  connection: network_cli
+  gather_facts: no
+  vars:
+    csvfile: "{{ lookup('file', 'csv-files/loopbacks.csv') }}"
+
+
+  tasks:
+
+  # - name: CONFIGURING LOOPBACK INTERFACES
+  #   template:
+  #     src: templates/loopbacks.j2
+  #     dest: loopbacks.cfg
+  #   delegate_to: localhost
+  #   loop: "{{ cisco }}"
+
+  - name: add config file to router
+    include_role:
+      name: ansible-network.config_manager
+      tasks_from: load
+    vars:
+      config_manager_file: templates/loopbacks.j2
+      config_manager_replace: False
+    # delegate_to: localhost

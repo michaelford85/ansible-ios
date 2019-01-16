@@ -1,0 +1,13 @@
+hostname {{inventory_hostname}}
+
+{% for item in csvfile.split("\n") %}
+{%   if loop.index != 1 %}
+{%     set list = item.split(",") %}
+interface {{ list[0]|trim() }}
+ mtu {{ list[1]|trim() }}
+ description {{ list[2]|trim() }}
+{%   endif %}
+{% endfor %}
+
+access-list 10 permit 10.10.{{ 255 | random }}.1 0.0.0.255
+access-list 20 permit 10.10.{{ 255 | random }}.2 0.0.0.255
