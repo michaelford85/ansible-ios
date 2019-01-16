@@ -4,7 +4,7 @@ hostname {{inventory_hostname}}
 {%   if loop.index != 1 %}
 {%     set list = item.split(",") %}
 interface {{ list[0]|trim() }}
- ip address 172.168.{{ 255 | random }}.1 255.255.255.0
+ ip address 10.168.{{ 255 | random }}.1 255.255.255.0
  description {{ list[2]|trim() }}
 {%   endif %}
 {% endfor %}
