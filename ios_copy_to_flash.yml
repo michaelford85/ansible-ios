@@ -7,12 +7,22 @@
 
   tasks:
 
-  - name: TFTP New System Image to Boot Flash Memory
-    ios_command:
-      commands:
-        - command: 'copy tftp://3.83.254.228/imagefile.txt flash:'
-          prompt: 'Destination filename [imagefile.txt]?'
-          answer: "\r"
-      interval: 10
-      retries: 5
-      wait_for: result[0] contains OK
+  # - name: TFTP New System Image to Boot Flash Memory
+  #   ios_command:
+  #     commands:
+  #       - command: 'copy tftp://3.83.254.228/imagefile.txt flash:'
+  #         prompt: 'Destination filename [imagefile.txt]?'
+  #         answer: "\r"
+  #     interval: 10
+  #     retries: 5
+  #     wait_for: result[0] contains OK
+
+  - name: get image file from tftp server
+    command: tftp 3.83.254.228 -c get imagefile.txt
+    delegate_to: localhost
+    ignore_errors: true
+
+  - name: put file to cisco device
+    net_put:
+      src: imagefile.txt
+      dest: flash:/imagefile.txt
