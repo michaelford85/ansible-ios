@@ -26,3 +26,8 @@
     net_put:
       src: imagefile.txt
       dest: flash:/imagefile.txt
+
+  - name: remove image file from ansible control node
+    file:
+      path: imagefile.txt
+      state: absent
