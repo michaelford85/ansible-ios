@@ -4,30 +4,35 @@
   gather_facts: no
   vars:
     ansible_command_timeout: 600
+    tftp_server_ip: 3.83.254.228
+    new_system_image: imagefile.txt
 
   tasks:
 
   # - name: TFTP New System Image to Boot Flash Memory
   #   ios_command:
   #     commands:
-  #       - command: 'copy tftp://3.83.254.228/imagefile.txt flash:'
-  #         prompt: 'Destination filename [imagefile.txt]?'
+  #       - command: 'copy tftp://{{ tftp_server_ip }}/{{ new_system_image }} flash:'
+  #         prompt: 'Destination filename [{{ new_system_image }}]?'
   #         answer: "\r"
   #     interval: 10
   #     retries: 5
   #     wait_for: result[0] contains OK
 
   - name: get image file from tftp server
-    command: tftp 3.83.254.228 -c get imagefile.txt
+    command: tftp "{{ tftp_server_ip }}" -c get "{{ new_system_image }}"
     delegate_to: localhost
     ignore_errors: true
+    run_once: yes
 
   - name: put file to cisco device
     net_put:
-      src: imagefile.txt
-      dest: flash:/imagefile.txt
+      src: "{{ new_system_image }}"
+      dest: flash:/"{{ new_system_image }}"
 
   - name: remove image file from ansible control node
     file:
-      path: imagefile.txt
+      path: "{{ new_system_image }}"
       state: absent
+    run_once: yes
+    delegate_to: localhost
