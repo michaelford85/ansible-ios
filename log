@@ -2920,3 +2920,593 @@ Should be written as:
 2019-01-26 14:36:34,043 p=65793 u=mford |  rtr3                       : ok=0    changed=0    unreachable=0    failed=1   
 2019-01-26 14:36:34,043 p=65793 u=mford |  rtr4                       : ok=0    changed=0    unreachable=0    failed=1   
 2019-01-26 14:36:34,143 p=65836 u=mford |  shutdown complete
+2019-01-29 12:53:18,485 p=77793 u=mford |  - downloading role 'config_manager', owned by ansible-network
+2019-01-29 12:53:19,430 p=77793 u=mford |  - downloading role from https://github.com/ansible-network/config_manager/archive/v2.6.2.tar.gz
+2019-01-29 12:53:21,675 p=77793 u=mford |  - extracting ansible-network.config_manager to /Users/mford/Documents/github-workspace/ansible-ios/roles/ansible-network.config_manager
+2019-01-29 12:53:21,699 p=77793 u=mford |  - ansible-network.config_manager (v2.6.2) was installed successfully
+2019-01-29 12:53:21,700 p=77793 u=mford |  - adding dependency: ansible-network.network-engine (v2.6.4)
+2019-01-29 12:53:22,493 p=77793 u=mford |  - extracting ansible-network.network-engine to /Users/mford/Documents/github-workspace/ansible-ios/roles/ansible-network.network-engine
+2019-01-29 12:53:22,641 p=77793 u=mford |  - ansible-network.network-engine (v2.6.4) was installed successfully
+2019-01-29 14:38:43,923 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2019-01-29 14:38:43,930 p=78926 u=mford |  PLAY [Upgrade ios Router Firmware] *********************************************************************
+2019-01-29 14:38:43,944 p=78926 u=mford |  TASK [GATHER ROUTER FACTS] *****************************************************************************
+2019-01-29 14:38:45,023 p=78933 u=mford |  network_os is set to ios
+2019-01-29 14:38:45,186 p=78941 u=mford | paramiko [3.87.82.157] starting thread (client mode): 0xa26bf50L
+2019-01-29 14:38:45,187 p=78941 u=mford | paramiko [3.87.82.157] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2019-01-29 14:38:45,224 p=78941 u=mford | paramiko [3.87.82.157] Remote version/idstring: SSH-2.0-Cisco-1.25
+2019-01-29 14:38:45,225 p=78941 u=mford | paramiko [3.87.82.157] Connected (version 2.0, client Cisco-1.25)
+2019-01-29 14:38:45,229 p=78941 u=mford | paramiko [3.87.82.157] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2019-01-29 14:38:45,230 p=78941 u=mford | paramiko [3.87.82.157] Kex agreed: diffie-hellman-group-exchange-sha1
+2019-01-29 14:38:45,230 p=78941 u=mford | paramiko [3.87.82.157] HostKey agreed: ssh-rsa
+2019-01-29 14:38:45,231 p=78941 u=mford | paramiko [3.87.82.157] Cipher agreed: aes128-ctr
+2019-01-29 14:38:45,231 p=78941 u=mford | paramiko [3.87.82.157] MAC agreed: hmac-sha2-256
+2019-01-29 14:38:45,232 p=78941 u=mford | paramiko [3.87.82.157] Compression agreed: none
+2019-01-29 14:38:45,507 p=78941 u=mford | paramiko [3.87.82.157] Got server p (2048 bits)
+2019-01-29 14:38:45,633 p=78941 u=mford | paramiko [3.87.82.157] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2019-01-29 14:38:45,634 p=78941 u=mford | paramiko [3.87.82.157] Switch to new keys ...
+2019-01-29 14:38:45,639 p=78941 u=mford | paramiko [3.87.82.157] Trying discovered key 6f5480be28775d80716b10f37ee54756 in /Users/mford/.ssh/maf-cisco-demo-private.pem
+2019-01-29 14:38:45,964 p=78941 u=mford | paramiko [3.87.82.157] userauth is OK
+2019-01-29 14:38:46,012 p=78941 u=mford | paramiko [3.87.82.157] Authentication (publickey) successful!
+2019-01-29 14:38:46,042 p=78941 u=mford | paramiko [3.87.82.157] [chan 0] Max packet in: 32768 bytes
+2019-01-29 14:38:46,079 p=78941 u=mford | paramiko [3.87.82.157] [chan 0] Max packet out: 4096 bytes
+2019-01-29 14:38:46,079 p=78941 u=mford | paramiko [3.87.82.157] Secsh channel 0 opened.
+2019-01-29 14:38:46,145 p=78941 u=mford | paramiko [3.87.82.157] [chan 0] Sesch channel 0 request ok
+2019-01-29 14:38:46,186 p=78941 u=mford | paramiko [3.87.82.157] [chan 0] Sesch channel 0 request ok
+2019-01-29 14:38:48,579 p=78926 u=mford |  ok: [rtr1]
+2019-01-29 14:38:48,591 p=78926 u=mford |  TASK [COPY OVER IOS IMAGE] *****************************************************************************
+2019-01-29 14:38:50,224 p=78941 u=mford | paramiko [3.87.82.157] starting thread (client mode): 0xa2d6990L
+2019-01-29 14:38:50,225 p=78941 u=mford | paramiko [3.87.82.157] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2019-01-29 14:38:50,269 p=78941 u=mford | paramiko [3.87.82.157] Remote version/idstring: SSH-2.0-Cisco-1.25
+2019-01-29 14:38:50,270 p=78941 u=mford | paramiko [3.87.82.157] Connected (version 2.0, client Cisco-1.25)
+2019-01-29 14:38:50,311 p=78941 u=mford | paramiko [3.87.82.157] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2019-01-29 14:38:50,311 p=78941 u=mford | paramiko [3.87.82.157] Kex agreed: diffie-hellman-group-exchange-sha1
+2019-01-29 14:38:50,312 p=78941 u=mford | paramiko [3.87.82.157] HostKey agreed: ssh-rsa
+2019-01-29 14:38:50,312 p=78941 u=mford | paramiko [3.87.82.157] Cipher agreed: aes128-ctr
+2019-01-29 14:38:50,313 p=78941 u=mford | paramiko [3.87.82.157] MAC agreed: hmac-sha2-256
+2019-01-29 14:38:50,313 p=78941 u=mford | paramiko [3.87.82.157] Compression agreed: none
+2019-01-29 14:38:50,349 p=78941 u=mford | paramiko [3.87.82.157] Got server p (2048 bits)
+2019-01-29 14:38:50,479 p=78941 u=mford | paramiko [3.87.82.157] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2019-01-29 14:38:50,479 p=78941 u=mford | paramiko [3.87.82.157] Switch to new keys ...
+2019-01-29 14:38:50,512 p=78941 u=mford | paramiko [3.87.82.157] Trying discovered key 6f5480be28775d80716b10f37ee54756 in /Users/mford/.ssh/maf-cisco-demo-private.pem
+2019-01-29 14:38:50,749 p=78941 u=mford | paramiko [3.87.82.157] userauth is OK
+2019-01-29 14:38:50,793 p=78941 u=mford | paramiko [3.87.82.157] Authentication (publickey) successful!
+2019-01-29 14:38:50,815 p=78941 u=mford | paramiko [3.87.82.157] [chan 0] Max packet in: 32768 bytes
+2019-01-29 14:38:50,867 p=78941 u=mford | paramiko [3.87.82.157] [chan 0] Max packet out: 4096 bytes
+2019-01-29 14:38:50,868 p=78941 u=mford | paramiko [3.87.82.157] Secsh channel 0 opened.
+2019-01-29 14:38:50,932 p=78941 u=mford | paramiko [3.87.82.157] [chan 0] Sesch channel 0 request ok
+2019-01-29 14:38:51,000 p=78941 u=mford | paramiko [3.87.82.157] [chan 0] EOF sent (0)
+2019-01-29 14:38:51,048 p=78941 u=mford | paramiko [3.87.82.157] starting thread (client mode): 0xa2d69d0L
+2019-01-29 14:38:51,049 p=78941 u=mford | paramiko [3.87.82.157] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2019-01-29 14:38:51,069 p=78941 u=mford | paramiko [3.87.82.157] [chan 0] EOF received (0)
+2019-01-29 14:38:51,071 p=78941 u=mford | paramiko [3.87.82.157] EOF in transport thread
+2019-01-29 14:38:51,084 p=78941 u=mford | paramiko [3.87.82.157] Remote version/idstring: SSH-2.0-Cisco-1.25
+2019-01-29 14:38:51,084 p=78941 u=mford | paramiko [3.87.82.157] Connected (version 2.0, client Cisco-1.25)
+2019-01-29 14:38:51,089 p=78941 u=mford | paramiko [3.87.82.157] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2019-01-29 14:38:51,090 p=78941 u=mford | paramiko [3.87.82.157] Kex agreed: diffie-hellman-group-exchange-sha1
+2019-01-29 14:38:51,090 p=78941 u=mford | paramiko [3.87.82.157] HostKey agreed: ssh-rsa
+2019-01-29 14:38:51,091 p=78941 u=mford | paramiko [3.87.82.157] Cipher agreed: aes128-ctr
+2019-01-29 14:38:51,091 p=78941 u=mford | paramiko [3.87.82.157] MAC agreed: hmac-sha2-256
+2019-01-29 14:38:51,091 p=78941 u=mford | paramiko [3.87.82.157] Compression agreed: none
+2019-01-29 14:38:51,356 p=78941 u=mford | paramiko [3.87.82.157] Got server p (2048 bits)
+2019-01-29 14:38:51,478 p=78941 u=mford | paramiko [3.87.82.157] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2019-01-29 14:38:51,479 p=78941 u=mford | paramiko [3.87.82.157] Switch to new keys ...
+2019-01-29 14:38:51,482 p=78941 u=mford | paramiko [3.87.82.157] Trying discovered key 6f5480be28775d80716b10f37ee54756 in /Users/mford/.ssh/maf-cisco-demo-private.pem
+2019-01-29 14:38:51,745 p=78941 u=mford | paramiko [3.87.82.157] userauth is OK
+2019-01-29 14:38:51,785 p=78941 u=mford | paramiko [3.87.82.157] Authentication (publickey) successful!
+2019-01-29 14:38:51,788 p=78941 u=mford | paramiko [3.87.82.157] [chan 0] Max packet in: 32768 bytes
+2019-01-29 14:38:51,826 p=78941 u=mford | paramiko [3.87.82.157] [chan 0] Max packet out: 4096 bytes
+2019-01-29 14:38:51,827 p=78941 u=mford | paramiko [3.87.82.157] Secsh channel 0 opened.
+2019-01-29 14:38:51,890 p=78941 u=mford | paramiko [3.87.82.157] [chan 0] Sesch channel 0 request ok
+2019-01-29 14:38:52,330 p=78941 u=mford | paramiko [3.87.82.157] [chan 0] EOF sent (0)
+2019-01-29 14:38:52,340 p=78926 u=mford |  changed: [rtr1]
+2019-01-29 14:38:52,343 p=78941 u=mford | paramiko [3.87.82.157] [chan 0] EOF sent (0)
+2019-01-29 14:38:52,430 p=78941 u=mford | paramiko [3.87.82.157] EOF in transport thread
+2019-01-29 14:38:52,463 p=78926 u=mford |  PLAY RECAP *********************************************************************************************
+2019-01-29 14:38:52,463 p=78926 u=mford |  rtr1                       : ok=2    changed=1    unreachable=0    failed=0   
+2019-01-29 14:38:52,476 p=78941 u=mford | paramiko [3.87.82.157] [chan 0] EOF received (0)
+2019-01-29 14:38:52,477 p=78941 u=mford | paramiko [3.87.82.157] EOF in transport thread
+2019-01-29 14:38:52,562 p=78933 u=mford |  shutdown complete
+2019-01-29 14:40:47,114 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2019-01-29 14:40:47,122 p=78975 u=mford |  PLAY [Upgrade ios Router Firmware] *********************************************************************
+2019-01-29 14:40:47,133 p=78975 u=mford |  TASK [GATHER ROUTER FACTS] *****************************************************************************
+2019-01-29 14:40:48,220 p=78982 u=mford |  network_os is set to ios
+2019-01-29 14:40:48,361 p=78990 u=mford | paramiko [3.87.82.157] starting thread (client mode): 0x66fcf50L
+2019-01-29 14:40:48,361 p=78990 u=mford | paramiko [3.87.82.157] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2019-01-29 14:40:48,403 p=78990 u=mford | paramiko [3.87.82.157] Remote version/idstring: SSH-2.0-Cisco-1.25
+2019-01-29 14:40:48,403 p=78990 u=mford | paramiko [3.87.82.157] Connected (version 2.0, client Cisco-1.25)
+2019-01-29 14:40:48,478 p=78990 u=mford | paramiko [3.87.82.157] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2019-01-29 14:40:48,478 p=78990 u=mford | paramiko [3.87.82.157] Kex agreed: diffie-hellman-group-exchange-sha1
+2019-01-29 14:40:48,479 p=78990 u=mford | paramiko [3.87.82.157] HostKey agreed: ssh-rsa
+2019-01-29 14:40:48,480 p=78990 u=mford | paramiko [3.87.82.157] Cipher agreed: aes128-ctr
+2019-01-29 14:40:48,480 p=78990 u=mford | paramiko [3.87.82.157] MAC agreed: hmac-sha2-256
+2019-01-29 14:40:48,480 p=78990 u=mford | paramiko [3.87.82.157] Compression agreed: none
+2019-01-29 14:40:48,518 p=78990 u=mford | paramiko [3.87.82.157] Got server p (2048 bits)
+2019-01-29 14:40:48,646 p=78990 u=mford | paramiko [3.87.82.157] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2019-01-29 14:40:48,648 p=78990 u=mford | paramiko [3.87.82.157] Switch to new keys ...
+2019-01-29 14:40:48,666 p=78990 u=mford | paramiko [3.87.82.157] Trying discovered key 6f5480be28775d80716b10f37ee54756 in /Users/mford/.ssh/maf-cisco-demo-private.pem
+2019-01-29 14:40:48,951 p=78990 u=mford | paramiko [3.87.82.157] userauth is OK
+2019-01-29 14:40:48,997 p=78990 u=mford | paramiko [3.87.82.157] Authentication (publickey) successful!
+2019-01-29 14:40:49,003 p=78990 u=mford | paramiko [3.87.82.157] [chan 0] Max packet in: 32768 bytes
+2019-01-29 14:40:49,039 p=78990 u=mford | paramiko [3.87.82.157] [chan 0] Max packet out: 4096 bytes
+2019-01-29 14:40:49,040 p=78990 u=mford | paramiko [3.87.82.157] Secsh channel 0 opened.
+2019-01-29 14:40:49,105 p=78990 u=mford | paramiko [3.87.82.157] [chan 0] Sesch channel 0 request ok
+2019-01-29 14:40:49,145 p=78990 u=mford | paramiko [3.87.82.157] [chan 0] Sesch channel 0 request ok
+2019-01-29 14:40:51,546 p=78975 u=mford |  ok: [rtr1]
+2019-01-29 14:40:51,557 p=78975 u=mford |  TASK [REBOOT ROUTER] ***********************************************************************************
+2019-01-29 14:41:03,629 p=78982 u=mford |  command timeout triggered, timeout value is 10 secs.
+See the timeout setting options in the Network Debug and Troubleshooting Guide.
+2019-01-29 14:41:03,677 p=78975 u=mford |  fatal: [rtr1]: FAILED! => {"changed": false, "msg": "command timeout triggered, timeout value is 10 secs.\nSee the timeout setting options in the Network Debug and Troubleshooting Guide."}
+2019-01-29 14:41:03,678 p=78990 u=mford | paramiko [3.87.82.157] [chan 0] EOF sent (0)
+2019-01-29 14:41:03,679 p=78990 u=mford | paramiko [3.87.82.157] EOF in transport thread
+2019-01-29 14:41:03,682 p=78975 u=mford |  	to retry, use: --limit @/Users/mford/Documents/github-workspace/ansible-ios/ios_firmware_compliance.retry
+
+2019-01-29 14:41:03,682 p=78975 u=mford |  PLAY RECAP *********************************************************************************************
+2019-01-29 14:41:03,683 p=78975 u=mford |  rtr1                       : ok=1    changed=0    unreachable=0    failed=1   
+2019-01-29 14:41:03,782 p=78982 u=mford |  shutdown complete
+2019-01-29 14:48:35,392 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2019-01-29 14:48:35,399 p=79092 u=mford |  PLAY [Upgrade ios Router Firmware] *********************************************************************
+2019-01-29 14:48:35,410 p=79092 u=mford |  TASK [GATHER ROUTER FACTS] *****************************************************************************
+2019-01-29 14:48:36,458 p=79099 u=mford |  network_os is set to ios
+2019-01-29 14:48:36,633 p=79106 u=mford | paramiko [3.87.82.157] starting thread (client mode): 0x81b8f50L
+2019-01-29 14:48:36,634 p=79106 u=mford | paramiko [3.87.82.157] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2019-01-29 14:48:36,672 p=79106 u=mford | paramiko [3.87.82.157] Remote version/idstring: SSH-2.0-Cisco-1.25
+2019-01-29 14:48:36,673 p=79106 u=mford | paramiko [3.87.82.157] Connected (version 2.0, client Cisco-1.25)
+2019-01-29 14:48:36,677 p=79106 u=mford | paramiko [3.87.82.157] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2019-01-29 14:48:36,677 p=79106 u=mford | paramiko [3.87.82.157] Kex agreed: diffie-hellman-group-exchange-sha1
+2019-01-29 14:48:36,678 p=79106 u=mford | paramiko [3.87.82.157] HostKey agreed: ssh-rsa
+2019-01-29 14:48:36,678 p=79106 u=mford | paramiko [3.87.82.157] Cipher agreed: aes128-ctr
+2019-01-29 14:48:36,679 p=79106 u=mford | paramiko [3.87.82.157] MAC agreed: hmac-sha2-256
+2019-01-29 14:48:36,679 p=79106 u=mford | paramiko [3.87.82.157] Compression agreed: none
+2019-01-29 14:48:36,951 p=79106 u=mford | paramiko [3.87.82.157] Got server p (2048 bits)
+2019-01-29 14:48:37,087 p=79106 u=mford | paramiko [3.87.82.157] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2019-01-29 14:48:37,089 p=79106 u=mford | paramiko [3.87.82.157] Switch to new keys ...
+2019-01-29 14:48:37,106 p=79106 u=mford | paramiko [3.87.82.157] Trying discovered key 6f5480be28775d80716b10f37ee54756 in /Users/mford/.ssh/maf-cisco-demo-private.pem
+2019-01-29 14:48:37,358 p=79106 u=mford | paramiko [3.87.82.157] userauth is OK
+2019-01-29 14:48:37,398 p=79106 u=mford | paramiko [3.87.82.157] Authentication (publickey) successful!
+2019-01-29 14:48:37,409 p=79106 u=mford | paramiko [3.87.82.157] [chan 0] Max packet in: 32768 bytes
+2019-01-29 14:48:37,445 p=79106 u=mford | paramiko [3.87.82.157] [chan 0] Max packet out: 4096 bytes
+2019-01-29 14:48:37,446 p=79106 u=mford | paramiko [3.87.82.157] Secsh channel 0 opened.
+2019-01-29 14:48:37,519 p=79106 u=mford | paramiko [3.87.82.157] [chan 0] Sesch channel 0 request ok
+2019-01-29 14:48:37,562 p=79106 u=mford | paramiko [3.87.82.157] [chan 0] Sesch channel 0 request ok
+2019-01-29 14:48:39,948 p=79092 u=mford |  ok: [rtr1]
+2019-01-29 14:48:39,957 p=79092 u=mford |  TASK [REBOOT ROUTER] ***********************************************************************************
+2019-01-29 14:48:42,163 p=79092 u=mford |  ok: [rtr1]
+2019-01-29 14:48:42,174 p=79092 u=mford |  TASK [WAIT FOR ROUTER TO RETURN] ***********************************************************************
+2019-01-29 14:49:12,128 p=79099 u=mford |  persistent connection idle timeout triggered, timeout value is 30 secs.
+See the timeout setting options in the Network Debug and Troubleshooting Guide.
+2019-01-29 14:49:12,238 p=79106 u=mford | paramiko [3.87.82.157] [chan 0] EOF sent (0)
+2019-01-29 14:49:12,258 p=79106 u=mford | paramiko [3.87.82.157] EOF in transport thread
+2019-01-29 14:49:12,274 p=79099 u=mford |  shutdown complete
+2019-01-29 14:51:49,156 p=79092 u=mford |   [ERROR]: User interrupted execution
+
+2019-01-29 14:51:53,591 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2019-01-29 14:51:53,599 p=79180 u=mford |  PLAY [Upgrade ios Router Firmware] *********************************************************************
+2019-01-29 14:51:53,611 p=79180 u=mford |  TASK [GATHER ROUTER FACTS] *****************************************************************************
+2019-01-29 14:51:54,745 p=79187 u=mford |  network_os is set to ios
+2019-01-29 14:51:54,932 p=79194 u=mford | paramiko [3.87.82.157] starting thread (client mode): 0xb252f50L
+2019-01-29 14:51:54,933 p=79194 u=mford | paramiko [3.87.82.157] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2019-01-29 14:51:54,972 p=79194 u=mford | paramiko [3.87.82.157] Remote version/idstring: SSH-2.0-Cisco-1.25
+2019-01-29 14:51:54,973 p=79194 u=mford | paramiko [3.87.82.157] Connected (version 2.0, client Cisco-1.25)
+2019-01-29 14:51:54,976 p=79194 u=mford | paramiko [3.87.82.157] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2019-01-29 14:51:54,977 p=79194 u=mford | paramiko [3.87.82.157] Kex agreed: diffie-hellman-group-exchange-sha1
+2019-01-29 14:51:54,977 p=79194 u=mford | paramiko [3.87.82.157] HostKey agreed: ssh-rsa
+2019-01-29 14:51:54,978 p=79194 u=mford | paramiko [3.87.82.157] Cipher agreed: aes128-ctr
+2019-01-29 14:51:54,978 p=79194 u=mford | paramiko [3.87.82.157] MAC agreed: hmac-sha2-256
+2019-01-29 14:51:54,978 p=79194 u=mford | paramiko [3.87.82.157] Compression agreed: none
+2019-01-29 14:51:55,252 p=79194 u=mford | paramiko [3.87.82.157] Got server p (2048 bits)
+2019-01-29 14:51:55,376 p=79194 u=mford | paramiko [3.87.82.157] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2019-01-29 14:51:55,377 p=79194 u=mford | paramiko [3.87.82.157] Switch to new keys ...
+2019-01-29 14:51:55,391 p=79194 u=mford | paramiko [3.87.82.157] Trying discovered key 6f5480be28775d80716b10f37ee54756 in /Users/mford/.ssh/maf-cisco-demo-private.pem
+2019-01-29 14:51:55,700 p=79194 u=mford | paramiko [3.87.82.157] userauth is OK
+2019-01-29 14:51:55,743 p=79194 u=mford | paramiko [3.87.82.157] Authentication (publickey) successful!
+2019-01-29 14:51:55,761 p=79194 u=mford | paramiko [3.87.82.157] [chan 0] Max packet in: 32768 bytes
+2019-01-29 14:51:55,801 p=79194 u=mford | paramiko [3.87.82.157] [chan 0] Max packet out: 4096 bytes
+2019-01-29 14:51:55,802 p=79194 u=mford | paramiko [3.87.82.157] Secsh channel 0 opened.
+2019-01-29 14:51:55,866 p=79194 u=mford | paramiko [3.87.82.157] [chan 0] Sesch channel 0 request ok
+2019-01-29 14:51:55,910 p=79194 u=mford | paramiko [3.87.82.157] [chan 0] Sesch channel 0 request ok
+2019-01-29 14:51:58,173 p=79180 u=mford |  ok: [rtr1]
+2019-01-29 14:51:58,180 p=79180 u=mford |  TASK [REBOOT ROUTER] ***********************************************************************************
+2019-01-29 14:52:01,544 p=79180 u=mford |  ok: [rtr1]
+2019-01-29 14:52:01,555 p=79180 u=mford |  TASK [WAIT FOR ROUTER TO RETURN] ***********************************************************************
+2019-01-29 14:52:31,510 p=79187 u=mford |  persistent connection idle timeout triggered, timeout value is 30 secs.
+See the timeout setting options in the Network Debug and Troubleshooting Guide.
+2019-01-29 14:52:31,620 p=79194 u=mford | paramiko [3.87.82.157] [chan 0] EOF sent (0)
+2019-01-29 14:52:31,625 p=79194 u=mford | paramiko [3.87.82.157] EOF in transport thread
+2019-01-29 14:52:31,630 p=79187 u=mford |  shutdown complete
+2019-01-29 14:57:02,156 p=79180 u=mford |  fatal: [rtr1 -> localhost]: FAILED! => {"changed": false, "elapsed": 300, "msg": "Timeout when waiting for rtr1:22"}
+2019-01-29 14:57:02,161 p=79180 u=mford |  	to retry, use: --limit @/Users/mford/Documents/github-workspace/ansible-ios/ios_firmware_compliance.retry
+
+2019-01-29 14:57:02,162 p=79180 u=mford |  PLAY RECAP *********************************************************************************************
+2019-01-29 14:57:02,162 p=79180 u=mford |  rtr1                       : ok=2    changed=0    unreachable=0    failed=1   
+2019-01-29 15:04:18,497 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2019-01-29 15:04:18,504 p=79343 u=mford |  PLAY [Upgrade ios Router Firmware] *********************************************************************
+2019-01-29 15:04:18,516 p=79343 u=mford |  TASK [GATHER ROUTER FACTS] *****************************************************************************
+2019-01-29 15:04:19,646 p=79350 u=mford |  network_os is set to ios
+2019-01-29 15:04:19,800 p=79357 u=mford | paramiko [3.87.82.157] starting thread (client mode): 0x5443f50L
+2019-01-29 15:04:19,801 p=79357 u=mford | paramiko [3.87.82.157] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2019-01-29 15:04:19,838 p=79357 u=mford | paramiko [3.87.82.157] Remote version/idstring: SSH-2.0-Cisco-1.25
+2019-01-29 15:04:19,839 p=79357 u=mford | paramiko [3.87.82.157] Connected (version 2.0, client Cisco-1.25)
+2019-01-29 15:04:19,842 p=79357 u=mford | paramiko [3.87.82.157] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2019-01-29 15:04:19,843 p=79357 u=mford | paramiko [3.87.82.157] Kex agreed: diffie-hellman-group-exchange-sha1
+2019-01-29 15:04:19,843 p=79357 u=mford | paramiko [3.87.82.157] HostKey agreed: ssh-rsa
+2019-01-29 15:04:19,843 p=79357 u=mford | paramiko [3.87.82.157] Cipher agreed: aes128-ctr
+2019-01-29 15:04:19,844 p=79357 u=mford | paramiko [3.87.82.157] MAC agreed: hmac-sha2-256
+2019-01-29 15:04:19,844 p=79357 u=mford | paramiko [3.87.82.157] Compression agreed: none
+2019-01-29 15:04:20,111 p=79357 u=mford | paramiko [3.87.82.157] Got server p (2048 bits)
+2019-01-29 15:04:20,232 p=79357 u=mford | paramiko [3.87.82.157] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2019-01-29 15:04:20,234 p=79357 u=mford | paramiko [3.87.82.157] Switch to new keys ...
+2019-01-29 15:04:20,240 p=79357 u=mford | paramiko [3.87.82.157] Trying discovered key 6f5480be28775d80716b10f37ee54756 in /Users/mford/.ssh/maf-cisco-demo-private.pem
+2019-01-29 15:04:20,558 p=79357 u=mford | paramiko [3.87.82.157] userauth is OK
+2019-01-29 15:04:20,598 p=79357 u=mford | paramiko [3.87.82.157] Authentication (publickey) successful!
+2019-01-29 15:04:20,607 p=79357 u=mford | paramiko [3.87.82.157] [chan 0] Max packet in: 32768 bytes
+2019-01-29 15:04:20,641 p=79357 u=mford | paramiko [3.87.82.157] [chan 0] Max packet out: 4096 bytes
+2019-01-29 15:04:20,642 p=79357 u=mford | paramiko [3.87.82.157] Secsh channel 0 opened.
+2019-01-29 15:04:20,708 p=79357 u=mford | paramiko [3.87.82.157] [chan 0] Sesch channel 0 request ok
+2019-01-29 15:04:20,745 p=79357 u=mford | paramiko [3.87.82.157] [chan 0] Sesch channel 0 request ok
+2019-01-29 15:04:23,040 p=79343 u=mford |  ok: [rtr1]
+2019-01-29 15:04:23,050 p=79343 u=mford |  TASK [REBOOT ROUTER] ***********************************************************************************
+2019-01-29 15:04:27,412 p=79343 u=mford |  ok: [rtr1]
+2019-01-29 15:04:27,423 p=79343 u=mford |  TASK [WAIT FOR ROUTER TO RETURN] ***********************************************************************
+2019-01-29 15:04:57,371 p=79350 u=mford |  persistent connection idle timeout triggered, timeout value is 30 secs.
+See the timeout setting options in the Network Debug and Troubleshooting Guide.
+2019-01-29 15:04:57,480 p=79357 u=mford | paramiko [3.87.82.157] [chan 0] EOF sent (0)
+2019-01-29 15:04:57,487 p=79357 u=mford | paramiko [3.87.82.157] EOF in transport thread
+2019-01-29 15:04:57,490 p=79350 u=mford |  shutdown complete
+2019-01-29 15:09:28,028 p=79343 u=mford |  fatal: [rtr1 -> localhost]: FAILED! => {"changed": false, "elapsed": 300, "msg": "Timeout when waiting for rtr1:22"}
+2019-01-29 15:09:28,032 p=79343 u=mford |  	to retry, use: --limit @/Users/mford/Documents/github-workspace/ansible-ios/ios_firmware_compliance.retry
+
+2019-01-29 15:09:28,033 p=79343 u=mford |  PLAY RECAP *********************************************************************************************
+2019-01-29 15:09:28,033 p=79343 u=mford |  rtr1                       : ok=2    changed=0    unreachable=0    failed=1   
+2019-01-29 15:10:39,207 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2019-01-29 15:10:39,215 p=79456 u=mford |  PLAY [Upgrade ios Router Firmware] *********************************************************************
+2019-01-29 15:10:39,227 p=79456 u=mford |  TASK [GATHER ROUTER FACTS] *****************************************************************************
+2019-01-29 15:10:40,274 p=79463 u=mford |  network_os is set to ios
+2019-01-29 15:10:40,418 p=79470 u=mford | paramiko [3.87.82.157] starting thread (client mode): 0x11669f50L
+2019-01-29 15:10:40,418 p=79470 u=mford | paramiko [3.87.82.157] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2019-01-29 15:10:40,453 p=79470 u=mford | paramiko [3.87.82.157] Remote version/idstring: SSH-2.0-Cisco-1.25
+2019-01-29 15:10:40,453 p=79470 u=mford | paramiko [3.87.82.157] Connected (version 2.0, client Cisco-1.25)
+2019-01-29 15:10:40,457 p=79470 u=mford | paramiko [3.87.82.157] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2019-01-29 15:10:40,457 p=79470 u=mford | paramiko [3.87.82.157] Kex agreed: diffie-hellman-group-exchange-sha1
+2019-01-29 15:10:40,458 p=79470 u=mford | paramiko [3.87.82.157] HostKey agreed: ssh-rsa
+2019-01-29 15:10:40,459 p=79470 u=mford | paramiko [3.87.82.157] Cipher agreed: aes128-ctr
+2019-01-29 15:10:40,459 p=79470 u=mford | paramiko [3.87.82.157] MAC agreed: hmac-sha2-256
+2019-01-29 15:10:40,460 p=79470 u=mford | paramiko [3.87.82.157] Compression agreed: none
+2019-01-29 15:10:40,721 p=79470 u=mford | paramiko [3.87.82.157] Got server p (2048 bits)
+2019-01-29 15:10:40,837 p=79470 u=mford | paramiko [3.87.82.157] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2019-01-29 15:10:40,839 p=79470 u=mford | paramiko [3.87.82.157] Switch to new keys ...
+2019-01-29 15:10:40,844 p=79470 u=mford | paramiko [3.87.82.157] Trying discovered key 6f5480be28775d80716b10f37ee54756 in /Users/mford/.ssh/maf-cisco-demo-private.pem
+2019-01-29 15:10:41,158 p=79470 u=mford | paramiko [3.87.82.157] userauth is OK
+2019-01-29 15:10:41,196 p=79470 u=mford | paramiko [3.87.82.157] Authentication (publickey) successful!
+2019-01-29 15:10:41,213 p=79470 u=mford | paramiko [3.87.82.157] [chan 0] Max packet in: 32768 bytes
+2019-01-29 15:10:41,247 p=79470 u=mford | paramiko [3.87.82.157] [chan 0] Max packet out: 4096 bytes
+2019-01-29 15:10:41,248 p=79470 u=mford | paramiko [3.87.82.157] Secsh channel 0 opened.
+2019-01-29 15:10:41,321 p=79470 u=mford | paramiko [3.87.82.157] [chan 0] Sesch channel 0 request ok
+2019-01-29 15:10:41,355 p=79470 u=mford | paramiko [3.87.82.157] [chan 0] Sesch channel 0 request ok
+2019-01-29 15:10:43,589 p=79456 u=mford |  ok: [rtr1]
+2019-01-29 15:10:43,598 p=79456 u=mford |  TASK [REBOOT ROUTER] ***********************************************************************************
+2019-01-29 15:10:45,725 p=79456 u=mford |  ok: [rtr1]
+2019-01-29 15:10:45,736 p=79456 u=mford |  TASK [WAIT FOR ROUTER TO RETURN] ***********************************************************************
+2019-01-29 15:11:15,687 p=79463 u=mford |  persistent connection idle timeout triggered, timeout value is 30 secs.
+See the timeout setting options in the Network Debug and Troubleshooting Guide.
+2019-01-29 15:11:15,796 p=79470 u=mford | paramiko [3.87.82.157] [chan 0] EOF sent (0)
+2019-01-29 15:11:15,902 p=79470 u=mford | paramiko [3.87.82.157] EOF in transport thread
+2019-01-29 15:11:15,915 p=79463 u=mford |  shutdown complete
+2019-01-29 15:13:15,343 p=79456 u=mford |   [ERROR]: User interrupted execution
+
+2019-01-29 15:13:18,847 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2019-01-29 15:13:18,854 p=79543 u=mford |  PLAY [Upgrade ios Router Firmware] *********************************************************************
+2019-01-29 15:13:18,866 p=79543 u=mford |  TASK [GATHER ROUTER FACTS] *****************************************************************************
+2019-01-29 15:13:19,927 p=79550 u=mford |  network_os is set to ios
+2019-01-29 15:13:20,080 p=79557 u=mford | paramiko [3.87.82.157] starting thread (client mode): 0x5925f50L
+2019-01-29 15:13:20,081 p=79557 u=mford | paramiko [3.87.82.157] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2019-01-29 15:13:20,121 p=79557 u=mford | paramiko [3.87.82.157] Remote version/idstring: SSH-2.0-Cisco-1.25
+2019-01-29 15:13:20,122 p=79557 u=mford | paramiko [3.87.82.157] Connected (version 2.0, client Cisco-1.25)
+2019-01-29 15:13:20,125 p=79557 u=mford | paramiko [3.87.82.157] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2019-01-29 15:13:20,126 p=79557 u=mford | paramiko [3.87.82.157] Kex agreed: diffie-hellman-group-exchange-sha1
+2019-01-29 15:13:20,126 p=79557 u=mford | paramiko [3.87.82.157] HostKey agreed: ssh-rsa
+2019-01-29 15:13:20,127 p=79557 u=mford | paramiko [3.87.82.157] Cipher agreed: aes128-ctr
+2019-01-29 15:13:20,127 p=79557 u=mford | paramiko [3.87.82.157] MAC agreed: hmac-sha2-256
+2019-01-29 15:13:20,128 p=79557 u=mford | paramiko [3.87.82.157] Compression agreed: none
+2019-01-29 15:13:20,402 p=79557 u=mford | paramiko [3.87.82.157] Got server p (2048 bits)
+2019-01-29 15:13:20,525 p=79557 u=mford | paramiko [3.87.82.157] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2019-01-29 15:13:20,527 p=79557 u=mford | paramiko [3.87.82.157] Switch to new keys ...
+2019-01-29 15:13:20,547 p=79557 u=mford | paramiko [3.87.82.157] Trying discovered key 6f5480be28775d80716b10f37ee54756 in /Users/mford/.ssh/maf-cisco-demo-private.pem
+2019-01-29 15:13:20,800 p=79557 u=mford | paramiko [3.87.82.157] userauth is OK
+2019-01-29 15:13:20,845 p=79557 u=mford | paramiko [3.87.82.157] Authentication (publickey) successful!
+2019-01-29 15:13:20,852 p=79557 u=mford | paramiko [3.87.82.157] [chan 0] Max packet in: 32768 bytes
+2019-01-29 15:13:20,890 p=79557 u=mford | paramiko [3.87.82.157] [chan 0] Max packet out: 4096 bytes
+2019-01-29 15:13:20,890 p=79557 u=mford | paramiko [3.87.82.157] Secsh channel 0 opened.
+2019-01-29 15:13:20,956 p=79557 u=mford | paramiko [3.87.82.157] [chan 0] Sesch channel 0 request ok
+2019-01-29 15:13:20,998 p=79557 u=mford | paramiko [3.87.82.157] [chan 0] Sesch channel 0 request ok
+2019-01-29 15:13:23,380 p=79543 u=mford |  ok: [rtr1]
+2019-01-29 15:13:23,390 p=79543 u=mford |  TASK [REBOOT ROUTER] ***********************************************************************************
+2019-01-29 15:13:27,844 p=79543 u=mford |  ok: [rtr1]
+2019-01-29 15:13:27,856 p=79543 u=mford |  TASK [WAIT FOR ROUTER TO RETURN] ***********************************************************************
+2019-01-29 15:13:57,808 p=79550 u=mford |  persistent connection idle timeout triggered, timeout value is 30 secs.
+See the timeout setting options in the Network Debug and Troubleshooting Guide.
+2019-01-29 15:13:57,917 p=79557 u=mford | paramiko [3.87.82.157] [chan 0] EOF sent (0)
+2019-01-29 15:13:57,933 p=79557 u=mford | paramiko [3.87.82.157] EOF in transport thread
+2019-01-29 15:13:57,936 p=79550 u=mford |  shutdown complete
+2019-01-29 15:14:09,534 p=79543 u=mford |   [ERROR]: User interrupted execution
+
+2019-01-29 15:14:13,108 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2019-01-29 15:14:13,115 p=79619 u=mford |  PLAY [Upgrade ios Router Firmware] *********************************************************************
+2019-01-29 15:14:13,127 p=79619 u=mford |  TASK [GATHER ROUTER FACTS] *****************************************************************************
+2019-01-29 15:14:14,177 p=79626 u=mford |  network_os is set to ios
+2019-01-29 15:14:14,323 p=79633 u=mford | paramiko [3.87.82.157] starting thread (client mode): 0xff9af50L
+2019-01-29 15:14:14,324 p=79633 u=mford | paramiko [3.87.82.157] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2019-01-29 15:14:14,360 p=79633 u=mford | paramiko [3.87.82.157] Remote version/idstring: SSH-2.0-Cisco-1.25
+2019-01-29 15:14:14,360 p=79633 u=mford | paramiko [3.87.82.157] Connected (version 2.0, client Cisco-1.25)
+2019-01-29 15:14:14,365 p=79633 u=mford | paramiko [3.87.82.157] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2019-01-29 15:14:14,365 p=79633 u=mford | paramiko [3.87.82.157] Kex agreed: diffie-hellman-group-exchange-sha1
+2019-01-29 15:14:14,366 p=79633 u=mford | paramiko [3.87.82.157] HostKey agreed: ssh-rsa
+2019-01-29 15:14:14,367 p=79633 u=mford | paramiko [3.87.82.157] Cipher agreed: aes128-ctr
+2019-01-29 15:14:14,367 p=79633 u=mford | paramiko [3.87.82.157] MAC agreed: hmac-sha2-256
+2019-01-29 15:14:14,368 p=79633 u=mford | paramiko [3.87.82.157] Compression agreed: none
+2019-01-29 15:14:14,635 p=79633 u=mford | paramiko [3.87.82.157] Got server p (2048 bits)
+2019-01-29 15:14:14,760 p=79633 u=mford | paramiko [3.87.82.157] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2019-01-29 15:14:14,761 p=79633 u=mford | paramiko [3.87.82.157] Switch to new keys ...
+2019-01-29 15:14:14,770 p=79633 u=mford | paramiko [3.87.82.157] Trying discovered key 6f5480be28775d80716b10f37ee54756 in /Users/mford/.ssh/maf-cisco-demo-private.pem
+2019-01-29 15:14:15,131 p=79633 u=mford | paramiko [3.87.82.157] userauth is OK
+2019-01-29 15:14:15,174 p=79633 u=mford | paramiko [3.87.82.157] Authentication (publickey) successful!
+2019-01-29 15:14:15,177 p=79633 u=mford | paramiko [3.87.82.157] [chan 0] Max packet in: 32768 bytes
+2019-01-29 15:14:15,212 p=79633 u=mford | paramiko [3.87.82.157] [chan 0] Max packet out: 4096 bytes
+2019-01-29 15:14:15,213 p=79633 u=mford | paramiko [3.87.82.157] Secsh channel 0 opened.
+2019-01-29 15:14:15,281 p=79633 u=mford | paramiko [3.87.82.157] [chan 0] Sesch channel 0 request ok
+2019-01-29 15:14:15,315 p=79633 u=mford | paramiko [3.87.82.157] [chan 0] Sesch channel 0 request ok
+2019-01-29 15:14:17,581 p=79619 u=mford |  ok: [rtr1]
+2019-01-29 15:14:17,591 p=79619 u=mford |  TASK [REBOOT ROUTER] ***********************************************************************************
+2019-01-29 15:14:20,842 p=79619 u=mford |  fatal: [rtr1]: FAILED! => {"changed": false, "msg": "unexpected end of regular expression"}
+2019-01-29 15:14:20,844 p=79633 u=mford | paramiko [3.87.82.157] [chan 0] EOF sent (0)
+2019-01-29 15:14:20,935 p=79633 u=mford | paramiko [3.87.82.157] EOF in transport thread
+2019-01-29 15:14:20,964 p=79619 u=mford |  	to retry, use: --limit @/Users/mford/Documents/github-workspace/ansible-ios/ios_firmware_compliance.retry
+
+2019-01-29 15:14:20,965 p=79619 u=mford |  PLAY RECAP *********************************************************************************************
+2019-01-29 15:14:20,965 p=79619 u=mford |  rtr1                       : ok=1    changed=0    unreachable=0    failed=1   
+2019-01-29 15:14:21,064 p=79626 u=mford |  shutdown complete
+2019-01-29 15:14:43,705 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2019-01-29 15:14:43,711 p=79677 u=mford |  PLAY [Upgrade ios Router Firmware] *********************************************************************
+2019-01-29 15:14:43,721 p=79677 u=mford |  TASK [GATHER ROUTER FACTS] *****************************************************************************
+2019-01-29 15:14:44,745 p=79684 u=mford |  network_os is set to ios
+2019-01-29 15:14:44,862 p=79692 u=mford | paramiko [3.87.82.157] starting thread (client mode): 0xbbc8f50L
+2019-01-29 15:14:44,862 p=79692 u=mford | paramiko [3.87.82.157] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2019-01-29 15:14:44,898 p=79692 u=mford | paramiko [3.87.82.157] Remote version/idstring: SSH-2.0-Cisco-1.25
+2019-01-29 15:14:44,899 p=79692 u=mford | paramiko [3.87.82.157] Connected (version 2.0, client Cisco-1.25)
+2019-01-29 15:14:44,902 p=79692 u=mford | paramiko [3.87.82.157] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2019-01-29 15:14:44,903 p=79692 u=mford | paramiko [3.87.82.157] Kex agreed: diffie-hellman-group-exchange-sha1
+2019-01-29 15:14:44,904 p=79692 u=mford | paramiko [3.87.82.157] HostKey agreed: ssh-rsa
+2019-01-29 15:14:44,905 p=79692 u=mford | paramiko [3.87.82.157] Cipher agreed: aes128-ctr
+2019-01-29 15:14:44,905 p=79692 u=mford | paramiko [3.87.82.157] MAC agreed: hmac-sha2-256
+2019-01-29 15:14:44,906 p=79692 u=mford | paramiko [3.87.82.157] Compression agreed: none
+2019-01-29 15:14:45,180 p=79692 u=mford | paramiko [3.87.82.157] Got server p (2048 bits)
+2019-01-29 15:14:45,307 p=79692 u=mford | paramiko [3.87.82.157] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2019-01-29 15:14:45,308 p=79692 u=mford | paramiko [3.87.82.157] Switch to new keys ...
+2019-01-29 15:14:45,315 p=79692 u=mford | paramiko [3.87.82.157] Trying discovered key 6f5480be28775d80716b10f37ee54756 in /Users/mford/.ssh/maf-cisco-demo-private.pem
+2019-01-29 15:14:45,656 p=79692 u=mford | paramiko [3.87.82.157] userauth is OK
+2019-01-29 15:14:45,698 p=79692 u=mford | paramiko [3.87.82.157] Authentication (publickey) successful!
+2019-01-29 15:14:45,719 p=79692 u=mford | paramiko [3.87.82.157] [chan 0] Max packet in: 32768 bytes
+2019-01-29 15:14:45,762 p=79692 u=mford | paramiko [3.87.82.157] [chan 0] Max packet out: 4096 bytes
+2019-01-29 15:14:45,762 p=79692 u=mford | paramiko [3.87.82.157] Secsh channel 0 opened.
+2019-01-29 15:14:45,821 p=79692 u=mford | paramiko [3.87.82.157] [chan 0] Sesch channel 0 request ok
+2019-01-29 15:14:45,861 p=79692 u=mford | paramiko [3.87.82.157] [chan 0] Sesch channel 0 request ok
+2019-01-29 15:14:48,110 p=79677 u=mford |  ok: [rtr1]
+2019-01-29 15:14:48,119 p=79677 u=mford |  TASK [REBOOT ROUTER] ***********************************************************************************
+2019-01-29 15:14:52,216 p=79677 u=mford |  ok: [rtr1]
+2019-01-29 15:14:52,229 p=79677 u=mford |  TASK [WAIT FOR ROUTER TO RETURN] ***********************************************************************
+2019-01-29 15:15:22,174 p=79684 u=mford |  persistent connection idle timeout triggered, timeout value is 30 secs.
+See the timeout setting options in the Network Debug and Troubleshooting Guide.
+2019-01-29 15:15:22,283 p=79692 u=mford | paramiko [3.87.82.157] [chan 0] EOF sent (0)
+2019-01-29 15:15:22,335 p=79692 u=mford | paramiko [3.87.82.157] EOF in transport thread
+2019-01-29 15:15:22,351 p=79684 u=mford |  shutdown complete
+2019-01-29 15:16:35,191 p=79677 u=mford |   [ERROR]: User interrupted execution
+
+2019-01-29 15:16:48,146 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2019-01-29 15:16:48,153 p=79758 u=mford |  PLAY [Upgrade ios Router Firmware] *********************************************************************
+2019-01-29 15:16:48,165 p=79758 u=mford |  TASK [GATHER ROUTER FACTS] *****************************************************************************
+2019-01-29 15:16:49,208 p=79766 u=mford |  network_os is set to ios
+2019-01-29 15:16:49,355 p=79773 u=mford | paramiko [3.87.82.157] starting thread (client mode): 0xfc58f50L
+2019-01-29 15:16:49,355 p=79773 u=mford | paramiko [3.87.82.157] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2019-01-29 15:16:49,399 p=79773 u=mford | paramiko [3.87.82.157] Remote version/idstring: SSH-2.0-Cisco-1.25
+2019-01-29 15:16:49,400 p=79773 u=mford | paramiko [3.87.82.157] Connected (version 2.0, client Cisco-1.25)
+2019-01-29 15:16:49,404 p=79773 u=mford | paramiko [3.87.82.157] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2019-01-29 15:16:49,404 p=79773 u=mford | paramiko [3.87.82.157] Kex agreed: diffie-hellman-group-exchange-sha1
+2019-01-29 15:16:49,405 p=79773 u=mford | paramiko [3.87.82.157] HostKey agreed: ssh-rsa
+2019-01-29 15:16:49,405 p=79773 u=mford | paramiko [3.87.82.157] Cipher agreed: aes128-ctr
+2019-01-29 15:16:49,406 p=79773 u=mford | paramiko [3.87.82.157] MAC agreed: hmac-sha2-256
+2019-01-29 15:16:49,407 p=79773 u=mford | paramiko [3.87.82.157] Compression agreed: none
+2019-01-29 15:16:49,672 p=79773 u=mford | paramiko [3.87.82.157] Got server p (2048 bits)
+2019-01-29 15:16:49,793 p=79773 u=mford | paramiko [3.87.82.157] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2019-01-29 15:16:49,795 p=79773 u=mford | paramiko [3.87.82.157] Switch to new keys ...
+2019-01-29 15:16:49,803 p=79773 u=mford | paramiko [3.87.82.157] Trying discovered key 6f5480be28775d80716b10f37ee54756 in /Users/mford/.ssh/maf-cisco-demo-private.pem
+2019-01-29 15:16:50,059 p=79773 u=mford | paramiko [3.87.82.157] userauth is OK
+2019-01-29 15:16:50,113 p=79773 u=mford | paramiko [3.87.82.157] Authentication (publickey) successful!
+2019-01-29 15:16:50,115 p=79773 u=mford | paramiko [3.87.82.157] [chan 0] Max packet in: 32768 bytes
+2019-01-29 15:16:50,151 p=79773 u=mford | paramiko [3.87.82.157] [chan 0] Max packet out: 4096 bytes
+2019-01-29 15:16:50,151 p=79773 u=mford | paramiko [3.87.82.157] Secsh channel 0 opened.
+2019-01-29 15:16:50,215 p=79773 u=mford | paramiko [3.87.82.157] [chan 0] Sesch channel 0 request ok
+2019-01-29 15:16:50,253 p=79773 u=mford | paramiko [3.87.82.157] [chan 0] Sesch channel 0 request ok
+2019-01-29 15:16:52,530 p=79758 u=mford |  ok: [rtr1]
+2019-01-29 15:16:52,539 p=79758 u=mford |  TASK [REBOOT ROUTER] ***********************************************************************************
+2019-01-29 15:16:55,767 p=79758 u=mford |  ok: [rtr1]
+2019-01-29 15:16:55,778 p=79758 u=mford |  TASK [WAIT FOR ROUTER TO RETURN] ***********************************************************************
+2019-01-29 15:17:17,798 p=79758 u=mford |   [ERROR]: User interrupted execution
+
+2019-01-29 15:17:22,149 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2019-01-29 15:17:22,156 p=79828 u=mford |  PLAY [Upgrade ios Router Firmware] *********************************************************************
+2019-01-29 15:17:22,167 p=79828 u=mford |  TASK [GATHER ROUTER FACTS] *****************************************************************************
+2019-01-29 15:17:23,245 p=79835 u=mford |  network_os is set to ios
+2019-01-29 15:17:23,630 p=79842 u=mford | paramiko [3.87.82.157] starting thread (client mode): 0xe2e6f50L
+2019-01-29 15:17:23,630 p=79842 u=mford | paramiko [3.87.82.157] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2019-01-29 15:17:23,666 p=79842 u=mford | paramiko [3.87.82.157] Remote version/idstring: SSH-2.0-Cisco-1.25
+2019-01-29 15:17:23,667 p=79842 u=mford | paramiko [3.87.82.157] Connected (version 2.0, client Cisco-1.25)
+2019-01-29 15:17:23,670 p=79842 u=mford | paramiko [3.87.82.157] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2019-01-29 15:17:23,671 p=79842 u=mford | paramiko [3.87.82.157] Kex agreed: diffie-hellman-group-exchange-sha1
+2019-01-29 15:17:23,672 p=79842 u=mford | paramiko [3.87.82.157] HostKey agreed: ssh-rsa
+2019-01-29 15:17:23,672 p=79842 u=mford | paramiko [3.87.82.157] Cipher agreed: aes128-ctr
+2019-01-29 15:17:23,673 p=79842 u=mford | paramiko [3.87.82.157] MAC agreed: hmac-sha2-256
+2019-01-29 15:17:23,673 p=79842 u=mford | paramiko [3.87.82.157] Compression agreed: none
+2019-01-29 15:17:23,947 p=79842 u=mford | paramiko [3.87.82.157] Got server p (2048 bits)
+2019-01-29 15:17:24,069 p=79842 u=mford | paramiko [3.87.82.157] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2019-01-29 15:17:24,070 p=79842 u=mford | paramiko [3.87.82.157] Switch to new keys ...
+2019-01-29 15:17:24,077 p=79842 u=mford | paramiko [3.87.82.157] Trying discovered key 6f5480be28775d80716b10f37ee54756 in /Users/mford/.ssh/maf-cisco-demo-private.pem
+2019-01-29 15:17:24,372 p=79842 u=mford | paramiko [3.87.82.157] userauth is OK
+2019-01-29 15:17:24,409 p=79842 u=mford | paramiko [3.87.82.157] Authentication (publickey) successful!
+2019-01-29 15:17:24,412 p=79842 u=mford | paramiko [3.87.82.157] [chan 0] Max packet in: 32768 bytes
+2019-01-29 15:17:24,448 p=79842 u=mford | paramiko [3.87.82.157] [chan 0] Max packet out: 4096 bytes
+2019-01-29 15:17:24,449 p=79842 u=mford | paramiko [3.87.82.157] Secsh channel 0 opened.
+2019-01-29 15:17:24,513 p=79842 u=mford | paramiko [3.87.82.157] [chan 0] Sesch channel 0 request ok
+2019-01-29 15:17:24,550 p=79842 u=mford | paramiko [3.87.82.157] [chan 0] Sesch channel 0 request ok
+2019-01-29 15:17:25,732 p=79766 u=mford |  persistent connection idle timeout triggered, timeout value is 30 secs.
+See the timeout setting options in the Network Debug and Troubleshooting Guide.
+2019-01-29 15:17:25,833 p=79773 u=mford | paramiko [3.87.82.157] [chan 0] EOF sent (0)
+2019-01-29 15:17:25,836 p=79773 u=mford | paramiko [3.87.82.157] EOF in transport thread
+2019-01-29 15:17:25,838 p=79766 u=mford |  shutdown complete
+2019-01-29 15:17:26,813 p=79828 u=mford |  ok: [rtr1]
+2019-01-29 15:17:26,821 p=79828 u=mford |  TASK [REBOOT ROUTER] ***********************************************************************************
+2019-01-29 15:17:31,547 p=79828 u=mford |  ok: [rtr1]
+2019-01-29 15:17:31,559 p=79828 u=mford |  TASK [WAIT FOR ROUTER TO RETURN] ***********************************************************************
+2019-01-29 15:18:01,510 p=79835 u=mford |  persistent connection idle timeout triggered, timeout value is 30 secs.
+See the timeout setting options in the Network Debug and Troubleshooting Guide.
+2019-01-29 15:18:01,619 p=79842 u=mford | paramiko [3.87.82.157] [chan 0] EOF sent (0)
+2019-01-29 15:18:01,715 p=79842 u=mford | paramiko [3.87.82.157] EOF in transport thread
+2019-01-29 15:18:01,736 p=79835 u=mford |  shutdown complete
+2019-01-29 15:18:15,891 p=79828 u=mford |   [ERROR]: User interrupted execution
+
+2019-01-29 16:04:37,928 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2019-01-29 16:04:37,939 p=80345 u=mford |  PLAY [Add loopback interfaces] ********************************************************************************************
+2019-01-29 16:04:37,956 p=80345 u=mford |  TASK [Add loopback interfaces using aggregate] ****************************************************************************
+2019-01-29 16:04:40,186 p=80358 u=mford |  network_os is set to ios
+2019-01-29 16:04:40,190 p=80357 u=mford |  network_os is set to ios
+2019-01-29 16:04:40,191 p=80355 u=mford |  network_os is set to ios
+2019-01-29 16:04:40,192 p=80356 u=mford |  network_os is set to ios
+2019-01-29 16:04:40,939 p=80386 u=mford | paramiko [3.87.82.157] starting thread (client mode): 0x7403f50L
+2019-01-29 16:04:40,939 p=80386 u=mford | paramiko [3.87.82.157] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2019-01-29 16:04:40,946 p=80383 u=mford | paramiko [3.80.90.254] starting thread (client mode): 0x4643f50L
+2019-01-29 16:04:40,945 p=80385 u=mford | paramiko [54.175.32.254] starting thread (client mode): 0x2e88f50L
+2019-01-29 16:04:40,946 p=80383 u=mford | paramiko [3.80.90.254] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2019-01-29 16:04:40,947 p=80385 u=mford | paramiko [54.175.32.254] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2019-01-29 16:04:40,947 p=80381 u=mford | paramiko [3.89.99.99] starting thread (client mode): 0xc6a0f50L
+2019-01-29 16:04:40,947 p=80381 u=mford | paramiko [3.89.99.99] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2019-01-29 16:04:40,983 p=80386 u=mford | paramiko [3.87.82.157] Remote version/idstring: SSH-2.0-Cisco-1.25
+2019-01-29 16:04:40,984 p=80386 u=mford | paramiko [3.87.82.157] Connected (version 2.0, client Cisco-1.25)
+2019-01-29 16:04:40,990 p=80385 u=mford | paramiko [54.175.32.254] Remote version/idstring: SSH-2.0-Cisco-1.25
+2019-01-29 16:04:40,991 p=80385 u=mford | paramiko [54.175.32.254] Connected (version 2.0, client Cisco-1.25)
+2019-01-29 16:04:40,992 p=80383 u=mford | paramiko [3.80.90.254] Remote version/idstring: SSH-2.0-Cisco-1.25
+2019-01-29 16:04:40,992 p=80383 u=mford | paramiko [3.80.90.254] Connected (version 2.0, client Cisco-1.25)
+2019-01-29 16:04:40,993 p=80381 u=mford | paramiko [3.89.99.99] Remote version/idstring: SSH-2.0-Cisco-1.25
+2019-01-29 16:04:40,993 p=80381 u=mford | paramiko [3.89.99.99] Connected (version 2.0, client Cisco-1.25)
+2019-01-29 16:04:41,026 p=80386 u=mford | paramiko [3.87.82.157] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2019-01-29 16:04:41,027 p=80386 u=mford | paramiko [3.87.82.157] Kex agreed: diffie-hellman-group-exchange-sha1
+2019-01-29 16:04:41,028 p=80386 u=mford | paramiko [3.87.82.157] HostKey agreed: ssh-rsa
+2019-01-29 16:04:41,028 p=80386 u=mford | paramiko [3.87.82.157] Cipher agreed: aes128-ctr
+2019-01-29 16:04:41,029 p=80386 u=mford | paramiko [3.87.82.157] MAC agreed: hmac-sha2-256
+2019-01-29 16:04:41,030 p=80386 u=mford | paramiko [3.87.82.157] Compression agreed: none
+2019-01-29 16:04:41,036 p=80385 u=mford | paramiko [54.175.32.254] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2019-01-29 16:04:41,036 p=80383 u=mford | paramiko [3.80.90.254] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2019-01-29 16:04:41,037 p=80385 u=mford | paramiko [54.175.32.254] Kex agreed: diffie-hellman-group-exchange-sha1
+2019-01-29 16:04:41,037 p=80383 u=mford | paramiko [3.80.90.254] Kex agreed: diffie-hellman-group-exchange-sha1
+2019-01-29 16:04:41,037 p=80385 u=mford | paramiko [54.175.32.254] HostKey agreed: ssh-rsa
+2019-01-29 16:04:41,037 p=80383 u=mford | paramiko [3.80.90.254] HostKey agreed: ssh-rsa
+2019-01-29 16:04:41,038 p=80385 u=mford | paramiko [54.175.32.254] Cipher agreed: aes128-ctr
+2019-01-29 16:04:41,038 p=80383 u=mford | paramiko [3.80.90.254] Cipher agreed: aes128-ctr
+2019-01-29 16:04:41,038 p=80385 u=mford | paramiko [54.175.32.254] MAC agreed: hmac-sha2-256
+2019-01-29 16:04:41,038 p=80383 u=mford | paramiko [3.80.90.254] MAC agreed: hmac-sha2-256
+2019-01-29 16:04:41,038 p=80385 u=mford | paramiko [54.175.32.254] Compression agreed: none
+2019-01-29 16:04:41,039 p=80383 u=mford | paramiko [3.80.90.254] Compression agreed: none
+2019-01-29 16:04:41,039 p=80381 u=mford | paramiko [3.89.99.99] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2019-01-29 16:04:41,040 p=80381 u=mford | paramiko [3.89.99.99] Kex agreed: diffie-hellman-group-exchange-sha1
+2019-01-29 16:04:41,040 p=80381 u=mford | paramiko [3.89.99.99] HostKey agreed: ssh-rsa
+2019-01-29 16:04:41,040 p=80381 u=mford | paramiko [3.89.99.99] Cipher agreed: aes128-ctr
+2019-01-29 16:04:41,041 p=80381 u=mford | paramiko [3.89.99.99] MAC agreed: hmac-sha2-256
+2019-01-29 16:04:41,041 p=80381 u=mford | paramiko [3.89.99.99] Compression agreed: none
+2019-01-29 16:04:41,067 p=80386 u=mford | paramiko [3.87.82.157] Got server p (2048 bits)
+2019-01-29 16:04:41,079 p=80383 u=mford | paramiko [3.80.90.254] Got server p (2048 bits)
+2019-01-29 16:04:41,079 p=80385 u=mford | paramiko [54.175.32.254] Got server p (2048 bits)
+2019-01-29 16:04:41,086 p=80381 u=mford | paramiko [3.89.99.99] Got server p (2048 bits)
+2019-01-29 16:04:41,191 p=80386 u=mford | paramiko [3.87.82.157] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2019-01-29 16:04:41,193 p=80386 u=mford | paramiko [3.87.82.157] Switch to new keys ...
+2019-01-29 16:04:41,200 p=80385 u=mford | paramiko [54.175.32.254] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2019-01-29 16:04:41,201 p=80383 u=mford | paramiko [3.80.90.254] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2019-01-29 16:04:41,201 p=80385 u=mford | paramiko [54.175.32.254] Switch to new keys ...
+2019-01-29 16:04:41,202 p=80383 u=mford | paramiko [3.80.90.254] Switch to new keys ...
+2019-01-29 16:04:41,206 p=80386 u=mford | paramiko [3.87.82.157] Trying discovered key 6f5480be28775d80716b10f37ee54756 in /Users/mford/.ssh/maf-cisco-demo-private.pem
+2019-01-29 16:04:41,215 p=80381 u=mford | paramiko [3.89.99.99] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2019-01-29 16:04:41,216 p=80381 u=mford | paramiko [3.89.99.99] Switch to new keys ...
+2019-01-29 16:04:41,232 p=80385 u=mford | paramiko [54.175.32.254] Trying discovered key 6f5480be28775d80716b10f37ee54756 in /Users/mford/.ssh/maf-cisco-demo-private.pem
+2019-01-29 16:04:41,233 p=80383 u=mford | paramiko [3.80.90.254] Trying discovered key 6f5480be28775d80716b10f37ee54756 in /Users/mford/.ssh/maf-cisco-demo-private.pem
+2019-01-29 16:04:41,247 p=80381 u=mford | paramiko [3.89.99.99] Trying discovered key 6f5480be28775d80716b10f37ee54756 in /Users/mford/.ssh/maf-cisco-demo-private.pem
+2019-01-29 16:04:41,469 p=80386 u=mford | paramiko [3.87.82.157] userauth is OK
+2019-01-29 16:04:41,474 p=80385 u=mford | paramiko [54.175.32.254] userauth is OK
+2019-01-29 16:04:41,481 p=80383 u=mford | paramiko [3.80.90.254] userauth is OK
+2019-01-29 16:04:41,493 p=80381 u=mford | paramiko [3.89.99.99] userauth is OK
+2019-01-29 16:04:41,521 p=80385 u=mford | paramiko [54.175.32.254] Authentication (publickey) successful!
+2019-01-29 16:04:41,521 p=80386 u=mford | paramiko [3.87.82.157] Authentication (publickey) successful!
+2019-01-29 16:04:41,525 p=80386 u=mford | paramiko [3.87.82.157] [chan 0] Max packet in: 32768 bytes
+2019-01-29 16:04:41,527 p=80383 u=mford | paramiko [3.80.90.254] Authentication (publickey) successful!
+2019-01-29 16:04:41,535 p=80385 u=mford | paramiko [54.175.32.254] [chan 0] Max packet in: 32768 bytes
+2019-01-29 16:04:41,536 p=80383 u=mford | paramiko [3.80.90.254] [chan 0] Max packet in: 32768 bytes
+2019-01-29 16:04:41,540 p=80381 u=mford | paramiko [3.89.99.99] Authentication (publickey) successful!
+2019-01-29 16:04:41,550 p=80381 u=mford | paramiko [3.89.99.99] [chan 0] Max packet in: 32768 bytes
+2019-01-29 16:04:41,566 p=80386 u=mford | paramiko [3.87.82.157] [chan 0] Max packet out: 4096 bytes
+2019-01-29 16:04:41,567 p=80386 u=mford | paramiko [3.87.82.157] Secsh channel 0 opened.
+2019-01-29 16:04:41,578 p=80385 u=mford | paramiko [54.175.32.254] [chan 0] Max packet out: 4096 bytes
+2019-01-29 16:04:41,579 p=80385 u=mford | paramiko [54.175.32.254] Secsh channel 0 opened.
+2019-01-29 16:04:41,587 p=80383 u=mford | paramiko [3.80.90.254] [chan 0] Max packet out: 4096 bytes
+2019-01-29 16:04:41,588 p=80383 u=mford | paramiko [3.80.90.254] Secsh channel 0 opened.
+2019-01-29 16:04:41,590 p=80381 u=mford | paramiko [3.89.99.99] [chan 0] Max packet out: 4096 bytes
+2019-01-29 16:04:41,590 p=80381 u=mford | paramiko [3.89.99.99] Secsh channel 0 opened.
+2019-01-29 16:04:41,627 p=80386 u=mford | paramiko [3.87.82.157] [chan 0] Sesch channel 0 request ok
+2019-01-29 16:04:41,641 p=80383 u=mford | paramiko [3.80.90.254] [chan 0] Sesch channel 0 request ok
+2019-01-29 16:04:41,641 p=80385 u=mford | paramiko [54.175.32.254] [chan 0] Sesch channel 0 request ok
+2019-01-29 16:04:41,655 p=80381 u=mford | paramiko [3.89.99.99] [chan 0] Sesch channel 0 request ok
+2019-01-29 16:04:41,665 p=80386 u=mford | paramiko [3.87.82.157] [chan 0] Sesch channel 0 request ok
+2019-01-29 16:04:41,683 p=80385 u=mford | paramiko [54.175.32.254] [chan 0] Sesch channel 0 request ok
+2019-01-29 16:04:41,685 p=80383 u=mford | paramiko [3.80.90.254] [chan 0] Sesch channel 0 request ok
+2019-01-29 16:04:41,697 p=80381 u=mford | paramiko [3.89.99.99] [chan 0] Sesch channel 0 request ok
+2019-01-29 16:04:45,245 p=80345 u=mford |  changed: [rtr1]
+2019-01-29 16:04:45,293 p=80345 u=mford |  changed: [rtr3]
+2019-01-29 16:04:45,317 p=80345 u=mford |  changed: [rtr4]
+2019-01-29 16:04:45,418 p=80345 u=mford |  changed: [rtr2]
+2019-01-29 16:04:45,425 p=80386 u=mford | paramiko [3.87.82.157] [chan 0] EOF sent (0)
+2019-01-29 16:04:45,507 p=80386 u=mford | paramiko [3.87.82.157] EOF in transport thread
+2019-01-29 16:04:45,544 p=80385 u=mford | paramiko [54.175.32.254] [chan 0] EOF sent (0)
+2019-01-29 16:04:45,585 p=80385 u=mford | paramiko [54.175.32.254] EOF in transport thread
+2019-01-29 16:04:45,611 p=80383 u=mford | paramiko [3.80.90.254] [chan 0] EOF sent (0)
+2019-01-29 16:04:45,644 p=80355 u=mford |  shutdown complete
+2019-01-29 16:04:45,652 p=80383 u=mford | paramiko [3.80.90.254] EOF in transport thread
+2019-01-29 16:04:45,679 p=80381 u=mford | paramiko [3.89.99.99] [chan 0] EOF sent (0)
+2019-01-29 16:04:45,711 p=80356 u=mford |  shutdown complete
+2019-01-29 16:04:45,780 p=80357 u=mford |  shutdown complete
+2019-01-29 16:04:45,780 p=80381 u=mford | paramiko [3.89.99.99] EOF in transport thread
+2019-01-29 16:04:45,799 p=80345 u=mford |  PLAY RECAP ****************************************************************************************************************
+2019-01-29 16:04:45,800 p=80345 u=mford |  rtr1                       : ok=1    changed=1    unreachable=0    failed=0   
+2019-01-29 16:04:45,800 p=80345 u=mford |  rtr2                       : ok=1    changed=1    unreachable=0    failed=0   
+2019-01-29 16:04:45,800 p=80345 u=mford |  rtr3                       : ok=1    changed=1    unreachable=0    failed=0   
+2019-01-29 16:04:45,801 p=80345 u=mford |  rtr4                       : ok=1    changed=1    unreachable=0    failed=0   
+2019-01-29 16:04:45,897 p=80358 u=mford |  shutdown complete
+2019-01-29 16:22:42,434 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2019-01-29 16:22:42,443 p=80564 u=mford |  PLAY [Add loopback interfaces to router] **********************************************************************************
+2019-01-29 16:22:42,464 p=80564 u=mford |  TASK [CONFIGURING LOOPBACK INTERFACES] ************************************************************************************
+2019-01-29 16:22:42,517 p=80564 u=mford |  fatal: [rtr1]: FAILED! => {"msg": "'cisco' is undefined"}
+2019-01-29 16:22:42,542 p=80564 u=mford |  fatal: [rtr2]: FAILED! => {"msg": "'cisco' is undefined"}
+2019-01-29 16:22:42,544 p=80564 u=mford |  fatal: [rtr3]: FAILED! => {"msg": "'cisco' is undefined"}
+2019-01-29 16:22:42,562 p=80564 u=mford |  fatal: [rtr4]: FAILED! => {"msg": "'cisco' is undefined"}
+2019-01-29 16:22:42,568 p=80564 u=mford |  	to retry, use: --limit @/Users/mford/Documents/github-workspace/ansible-ios/ios-csv-template-loopbacks.retry
+
+2019-01-29 16:22:42,569 p=80564 u=mford |  PLAY RECAP ****************************************************************************************************************
+2019-01-29 16:22:42,569 p=80564 u=mford |  rtr1                       : ok=0    changed=0    unreachable=0    failed=1   
+2019-01-29 16:22:42,569 p=80564 u=mford |  rtr2                       : ok=0    changed=0    unreachable=0    failed=1   
+2019-01-29 16:22:42,570 p=80564 u=mford |  rtr3                       : ok=0    changed=0    unreachable=0    failed=1   
+2019-01-29 16:22:42,570 p=80564 u=mford |  rtr4                       : ok=0    changed=0    unreachable=0    failed=1   
+2019-01-29 16:22:56,238 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2019-01-29 16:22:56,247 p=80577 u=mford |  PLAY [Add loopback interfaces to router] **********************************************************************************
+2019-01-29 16:22:56,265 p=80577 u=mford |  TASK [CONFIGURING LOOPBACK INTERFACES] ************************************************************************************
+2019-01-29 16:22:57,398 p=80577 u=mford |  changed: [rtr3 -> localhost]
+2019-01-29 16:22:57,400 p=80577 u=mford |  changed: [rtr1 -> localhost]
+2019-01-29 16:22:57,409 p=80577 u=mford |  changed: [rtr2 -> localhost]
+2019-01-29 16:22:57,421 p=80577 u=mford |  changed: [rtr4 -> localhost]
+2019-01-29 16:22:57,428 p=80577 u=mford |  PLAY RECAP ****************************************************************************************************************
+2019-01-29 16:22:57,428 p=80577 u=mford |  rtr1                       : ok=1    changed=1    unreachable=0    failed=0   
+2019-01-29 16:22:57,428 p=80577 u=mford |  rtr2                       : ok=1    changed=1    unreachable=0    failed=0   
+2019-01-29 16:22:57,428 p=80577 u=mford |  rtr3                       : ok=1    changed=1    unreachable=0    failed=0   
+2019-01-29 16:22:57,429 p=80577 u=mford |  rtr4                       : ok=1    changed=1    unreachable=0    failed=0   

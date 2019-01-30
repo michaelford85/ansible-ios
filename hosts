@@ -4,7 +4,7 @@
 
 [cisco]
 
-rtr1 ansible_host=3.87.82.154
+rtr1 ansible_host=3.87.82.157
 rtr2 ansible_host=54.175.32.254
 rtr3 ansible_host=3.80.90.254
 rtr4 ansible_host=3.89.99.99

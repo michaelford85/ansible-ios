@@ -10,12 +10,12 @@
 
   tasks:
 
-  # - name: CONFIGURING LOOPBACK INTERFACES
-  #   template:
-  #     src: templates/loopbacks.j2
-  #     dest: loopbacks.cfg
-  #   delegate_to: localhost
-  #   loop: "{{ cisco }}"
+  - name: CONFIGURING LOOPBACK INTERFACES
+    template:
+      src: templates/loopbacks.j2
+      dest: loopbacks.cfg
+    delegate_to: localhost
+    # loop: "{{ cisco }}"
 
   - name: add config file to router
     include_role:

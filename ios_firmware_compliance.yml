@@ -1,0 +1,35 @@
+---
+- name: Upgrade ios Router Firmware
+  hosts: cisco
+  connection: network_cli
+  gather_facts: no
+  vars:
+    compliant_ios_version: 16.08.01a
+
+  tasks:
+    - name: GATHER ROUTER FACTS
+      ios_facts:
+
+    - name: COPY OVER IOS IMAGE
+      net_put:
+        src: ./firmware/ios/system-image-filename.bin
+        dest: flash:system-image-filename.bin
+
+    - name: REBOOT ROUTER
+      ios_command:
+        commands:
+          - command: 'write memory'
+          - command: 'reload\n'
+            prompt: 'Proceed with reload\? \[confirm\]'
+            answer: "\r"
+
+    - name: WAIT FOR ROUTER TO RETURN
+      wait_for:
+        host: "{{inventory_hostname}}"
+        port: 22
+        delay: 60
+      delegate_to: localhost
+
+    - name: Indicate that the router is back up
+      debug:
+        msg: "Router is back online"
