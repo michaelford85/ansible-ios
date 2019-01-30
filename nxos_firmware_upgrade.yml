@@ -12,7 +12,11 @@
     - name: GATHER ROUTER FACTS
       nxos_facts:
 
-    # - name: CHECK WHETHER CORRECT OS IS ALREADY INSTALLED
+    - name: CHECK WHETHER CORRECT OS IS ALREADY INSTALLED
+      fail:
+        msg: "Nothing to upgrade"
+      when: compliant_nxos_version == ansible_net_version
+
 
     - name: COPY OVER NXOS IMAGE
       net_put:
@@ -39,7 +43,7 @@
         nxos_install_os:
           system_image_file: n3500-uk9.6.0.2.A8.10a.bin
           kickstart_image_file: n3500-uk9-kickstart.6.0.2.A8.10a.bin
-      when: nxos_command_output.find("FAILED") == -1
+      when: nxos_command_output.results[0].find("FAILED") == -1
 
     - rescue:
 
