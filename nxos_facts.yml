@@ -1,0 +1,9 @@
+---
+- name: Gather Facts
+  hosts: cisco
+  connection: network_cli
+  gather_facts: no
+
+  tasks:
+  - name: Gather IOS Facts
+    nxos_facts:
