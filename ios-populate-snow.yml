@@ -1,6 +1,6 @@
 ---
 - name: Populate Service Now CMDB with Network elements
-  hosts: cisco
+  hosts: ios
   gather_facts: no
   connection: network_cli
   vars:

@@ -1,7 +1,7 @@
 #NO NOT DELETE - Used in Workflow Template
 ---
 - name: Back Up Configs
-  hosts: cisco
+  hosts: ios
   connection: network_cli
   gather_facts: False
 

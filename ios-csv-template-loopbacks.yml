@@ -1,7 +1,7 @@
 ---
 
 - name: Add loopback interfaces to router
-  hosts: cisco
+  hosts: ios
   connection: network_cli
   gather_facts: no
   vars:

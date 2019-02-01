@@ -1,6 +1,6 @@
 ---
 - name: Backup Switch Configuration
-  hosts: cisco
+  hosts: ios
   gather_facts: false
   connection: network_cli
 

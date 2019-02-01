@@ -1,6 +1,6 @@
 ---
 - name: Store running_config to control node
-  hosts: cisco
+  hosts: ios
   connection: network_cli
   gather_facts: no
 

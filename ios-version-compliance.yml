@@ -1,6 +1,6 @@
 ---
 - name: UPGRADE ROUTER FIRMWARE
-  hosts: cisco
+  hosts: ios
   connection: network_cli
   gather_facts: no
 

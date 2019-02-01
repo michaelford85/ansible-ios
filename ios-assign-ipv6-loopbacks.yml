@@ -1,6 +1,6 @@
 ---
 - name: Add IPv6 addresses to loopback interfaces
-  hosts: cisco
+  hosts: ios
   connection: network_cli
   gather_facts: no
 
