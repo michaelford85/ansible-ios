@@ -3510,3 +3510,4 @@ See the timeout setting options in the Network Debug and Troubleshooting Guide.
 2019-01-29 16:22:57,428 p=80577 u=mford |  rtr2                       : ok=1    changed=1    unreachable=0    failed=0   
 2019-01-29 16:22:57,428 p=80577 u=mford |  rtr3                       : ok=1    changed=1    unreachable=0    failed=0   
 2019-01-29 16:22:57,429 p=80577 u=mford |  rtr4                       : ok=1    changed=1    unreachable=0    failed=0   
+2019-02-01 14:28:04,656 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
