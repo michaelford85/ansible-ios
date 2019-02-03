@@ -6,7 +6,6 @@
   gather_facts: no
   vars:
     csvfile: "{{ lookup('file', '{{ playbook_dir }}/csv-files/loopbacks.csv') }}"
-    erase: true
 
 
   tasks:
