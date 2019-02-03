@@ -1,14 +1,11 @@
 ---
-- name: Gather facts with Network Engine
+- name: Gather IOS facts with Network Engine
   hosts: ios
   connection: network_cli
   gather_facts: no
 
   tasks:
-    - name: collect facts from cisco ios devices
+    - name: Collect facts from Cisco IOS elements
       import_role:
         name: ansible-network.cisco_ios
         tasks_from: get_facts
-      # vars:
-      #   subset:
-      #     - interfaces

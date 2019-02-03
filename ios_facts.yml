@@ -1,11 +1,11 @@
 ---
-- name: Gather Facts
+- name: Gather IOS facts
   hosts: ios
   connection: network_cli
   gather_facts: no
 
   tasks:
-  - name: Gather IOS Facts
+  - name: Collect facts from Cisco IOS elements
     ios_facts:
     register: facts_output
     retries: 5
