@@ -1,0 +1,36 @@
+---
+
+- name: Apply or remove standard router template with config_manager
+  hosts: ios
+  connection: network_cli
+  gather_facts: no
+  vars:
+    csvfile: "{{ lookup('file', '{{ playbook_dir }}/csv-files/loopbacks.csv') }}"
+    erase: false
+
+
+  tasks:
+
+  # - name: CONFIGURING LOOPBACK INTERFACES
+  #   template:
+  #     src: templates/loopbacks.j2
+  #     dest: loopbacks.cfg
+  #   delegate_to: localhost
+
+  - name: Apply standard router template
+    include_role:
+      name: ansible-network.config_manager
+      tasks_from: load
+    vars:
+      config_manager_file: "{{ playbook_dir }}/templates/ios/greenfield_template.j2"
+      config_manager_replace: False
+    when: not erase
+
+  - name: Remove standard router template
+    include_role:
+      name: ansible-network.config_manager
+      tasks_from: load
+    vars:
+      config_manager_file: "{{ playbook_dir }}/templates/ios/greenfield_template.j2"
+      config_manager_replace: False
+    when: erase

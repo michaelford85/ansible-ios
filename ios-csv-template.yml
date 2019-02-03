@@ -1,0 +1,22 @@
+---
+
+- name: Apply or remove standard router template
+  hosts: ios
+  connection: network_cli
+  gather_facts: no
+  vars:
+    csvfile: "{{ lookup('file', '{{ playbook_dir }}/csv-files/loopbacks.csv') }}"
+    erase: true
+
+
+  tasks:
+
+  - name: Apply standard router template
+    ios_config:
+      src: "{{ playbook_dir }}/templates/ios/greenfield_template.j2"
+    when: not erase
+
+  - name: Remove standard router template
+    ios_config:
+      src: "{{ playbook_dir }}/templates/ios/remove_greenfield_template.j2"
+    when: erase
