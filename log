@@ -1,0 +1,111 @@
+2019-02-04 12:36:40,529 p=16482 u=mford |  Using /Users/mford/Documents/github-workspace/ansible-ios/ansible.cfg as config file
+2019-02-04 12:36:40,529 p=16482 u=mford |  ERROR! the playbook: ios-facts.yml could not be found
+2019-02-04 12:37:00,107 p=16491 u=mford |  Using /Users/mford/Documents/github-workspace/ansible-ios/ansible.cfg as config file
+2019-02-04 12:37:00,997 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2019-02-04 12:37:01,005 p=16491 u=mford |  PLAY [Gather IOS facts] *******************************************************************************************************
+2019-02-04 12:37:01,019 p=16491 u=mford |  TASK [Collect facts from Cisco IOS elements] **********************************************************************************
+2019-02-04 12:37:02,111 p=16498 u=mford |  network_os is set to ios
+2019-02-04 12:37:02,341 p=16498 u=mford |  shutdown complete
+2019-02-04 12:37:02,885 p=16491 u=mford |  fatal: [rtr1]: FAILED! => {"msg": "[Errno None] Unable to connect to port 22 on 54.226.165.154"}
+2019-02-04 12:37:02,887 p=16491 u=mford |  	to retry, use: --limit @/Users/mford/Documents/github-workspace/ansible-ios/ios_facts.retry
+
+2019-02-04 12:37:02,888 p=16491 u=mford |  PLAY RECAP ********************************************************************************************************************
+2019-02-04 12:37:02,888 p=16491 u=mford |  rtr1                       : ok=0    changed=0    unreachable=0    failed=1   
+2019-02-04 12:37:41,321 p=16512 u=mford |  Using /Users/mford/Documents/github-workspace/ansible-ios/ansible.cfg as config file
+2019-02-04 12:37:42,065 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2019-02-04 12:37:42,073 p=16512 u=mford |  PLAY [Gather IOS facts] *******************************************************************************************************
+2019-02-04 12:37:42,083 p=16512 u=mford |  TASK [Collect facts from Cisco IOS elements] **********************************************************************************
+2019-02-04 12:37:43,240 p=16521 u=mford |  network_os is set to ios
+2019-02-04 12:37:43,408 p=16528 u=mford | paramiko [54.226.165.154] starting thread (client mode): 0xa1472d0L
+2019-02-04 12:37:43,409 p=16528 u=mford | paramiko [54.226.165.154] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2019-02-04 12:37:43,771 p=16528 u=mford | paramiko [54.226.165.154] Remote version/idstring: SSH-2.0-Cisco-1.25
+2019-02-04 12:37:43,772 p=16528 u=mford | paramiko [54.226.165.154] Connected (version 2.0, client Cisco-1.25)
+2019-02-04 12:37:43,773 p=16528 u=mford | paramiko [54.226.165.154] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2019-02-04 12:37:43,774 p=16528 u=mford | paramiko [54.226.165.154] Kex agreed: diffie-hellman-group-exchange-sha1
+2019-02-04 12:37:43,774 p=16528 u=mford | paramiko [54.226.165.154] HostKey agreed: ssh-rsa
+2019-02-04 12:37:43,775 p=16528 u=mford | paramiko [54.226.165.154] Cipher agreed: aes128-ctr
+2019-02-04 12:37:43,776 p=16528 u=mford | paramiko [54.226.165.154] MAC agreed: hmac-sha2-256
+2019-02-04 12:37:43,777 p=16528 u=mford | paramiko [54.226.165.154] Compression agreed: none
+2019-02-04 12:37:44,303 p=16528 u=mford | paramiko [54.226.165.154] Got server p (2048 bits)
+2019-02-04 12:37:44,457 p=16528 u=mford | paramiko [54.226.165.154] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2019-02-04 12:37:44,459 p=16528 u=mford | paramiko [54.226.165.154] Switch to new keys ...
+2019-02-04 12:37:44,465 p=16528 u=mford | paramiko [54.226.165.154] Trying discovered key f85cade9e5a721085b422bda763609d4 in /Users/mford/.ssh/maf-ios-demo-private.pem
+2019-02-04 12:37:45,179 p=16528 u=mford | paramiko [54.226.165.154] userauth is OK
+2019-02-04 12:37:45,339 p=16528 u=mford | paramiko [54.226.165.154] Authentication (publickey) successful!
+2019-02-04 12:37:45,371 p=16528 u=mford | paramiko [54.226.165.154] [chan 0] Max packet in: 32768 bytes
+2019-02-04 12:37:45,506 p=16528 u=mford | paramiko [54.226.165.154] [chan 0] Max packet out: 4096 bytes
+2019-02-04 12:37:45,507 p=16528 u=mford | paramiko [54.226.165.154] Secsh channel 0 opened.
+2019-02-04 12:37:45,676 p=16528 u=mford | paramiko [54.226.165.154] [chan 0] Sesch channel 0 request ok
+2019-02-04 12:37:45,847 p=16528 u=mford | paramiko [54.226.165.154] [chan 0] Sesch channel 0 request ok
+2019-02-04 12:37:49,452 p=16512 u=mford |  ok: [rtr1] => {"ansible_facts": {"ansible_net_all_ipv4_addresses": ["192.168.35.101", "172.16.153.183", "192.168.1.101", "10.1.1.101", "10.200.200.1", "10.100.100.1", "10.255.0.254"], "ansible_net_all_ipv6_addresses": [], "ansible_net_filesystems": ["bootflash:"], "ansible_net_filesystems_info": {"bootflash:": {"spacefree_kb": 6881172, "spacetotal_kb": 7712284}}, "ansible_net_gather_subset": ["hardware", "default", "interfaces"], "ansible_net_hostname": "rtr1", "ansible_net_image": "boot:packages.conf", "ansible_net_interfaces": {"GigabitEthernet1": {"bandwidth": 1000000, "description": null, "duplex": "Full", "ipv4": [{"address": "172.16.153.183", "subnet": "16"}], "lineprotocol": "up ", "macaddress": "0a01.614e.a60e", "mediatype": "Virtual", "mtu": 1500, "operstatus": "up", "type": "CSR vNIC"}, "Loopback0": {"bandwidth": 8000000, "description": null, "duplex": null, "ipv4": [{"address": "192.168.1.101", "subnet": "24"}], "lineprotocol": "up ", "macaddress": null, "mediatype": null, "mtu": 1514, "operstatus": "up", "type": null}, "Loopback1": {"bandwidth": 8000000, "description": null, "duplex": null, "ipv4": [{"address": "10.1.1.101", "subnet": "24"}], "lineprotocol": "up ", "macaddress": null, "mediatype": null, "mtu": 1514, "operstatus": "up", "type": null}, "Tunnel0": {"bandwidth": 100, "description": null, "duplex": null, "ipv4": [{"address": "10.100.100.1", "subnet": "24"}], "lineprotocol": "up ", "macaddress": null, "mediatype": null, "mtu": 9976, "operstatus": "up", "type": null}, "Tunnel1": {"bandwidth": 100, "description": null, "duplex": null, "ipv4": [{"address": "10.200.200.1", "subnet": "24"}], "lineprotocol": "up ", "macaddress": null, "mediatype": null, "mtu": 9976, "operstatus": "up", "type": null}, "Tunnel2": {"bandwidth": 100, "description": null, "duplex": null, "ipv4": [{"address": "10.255.0.254", "subnet": "24"}], "lineprotocol": "up ", "macaddress": null, "mediatype": null, "mtu": 9972, "operstatus": "up", "type": null}, "VirtualPortGroup0": {"bandwidth": 750000, "description": null, "duplex": null, "ipv4": [{"address": "192.168.35.101", "subnet": "24"}], "lineprotocol": "up ", "macaddress": "001e.7a74.31bd", "mediatype": null, "mtu": 1500, "operstatus": "up", "type": "Virtual Port Group"}}, "ansible_net_memfree_mb": 1873258, "ansible_net_memtotal_mb": 2169857, "ansible_net_model": "CSR1000V", "ansible_net_serialnum": "9QJ3N3B1IQZ", "ansible_net_version": "16.10.01"}, "changed": false}
+2019-02-04 12:37:49,454 p=16528 u=mford | paramiko [54.226.165.154] [chan 0] EOF sent (0)
+2019-02-04 12:37:49,487 p=16528 u=mford | paramiko [54.226.165.154] EOF in transport thread
+2019-02-04 12:37:49,491 p=16512 u=mford |  PLAY RECAP ********************************************************************************************************************
+2019-02-04 12:37:49,491 p=16512 u=mford |  rtr1                       : ok=1    changed=0    unreachable=0    failed=0   
+2019-02-04 12:37:49,590 p=16521 u=mford |  shutdown complete
+2019-02-04 17:27:12,337 p=17572 u=mford |  ERROR! 'var' is not a valid attribute for a Play
+
+The error appears to have been in '/Users/mford/Documents/github-workspace/ansible-ios/ansible_block_example.yml': line 2, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+---
+- name: Gather IOS facts
+  ^ here
+
+2019-02-04 17:27:31,944 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2019-02-04 17:27:31,953 p=17601 u=mford |  PLAY [Gather IOS facts] ********************************************************
+2019-02-04 17:27:31,966 p=17601 u=mford |  TASK [Gathering Facts] *********************************************************
+2019-02-04 17:27:32,946 p=17601 u=mford |  ok: [localhost]
+2019-02-04 17:27:32,966 p=17601 u=mford |  TASK [Tell the operator the playbook is about to enter the block] **************
+2019-02-04 17:27:33,014 p=17601 u=mford |  ok: [localhost] => {
+    "msg": "This task takes place right before the block"
+}
+2019-02-04 17:27:33,031 p=17601 u=mford |  TASK [1st block task] **********************************************************
+2019-02-04 17:27:33,077 p=17601 u=mford |  ok: [localhost] => {
+    "msg": "This is the first task in the block"
+}
+2019-02-04 17:27:33,094 p=17601 u=mford |  TASK [2nd block task] **********************************************************
+2019-02-04 17:27:33,141 p=17601 u=mford |  ok: [localhost] => {
+    "msg": "This is the second task in the block"
+}
+2019-02-04 17:27:33,158 p=17601 u=mford |  TASK [3rd block task] **********************************************************
+2019-02-04 17:27:33,217 p=17601 u=mford |  ok: [localhost] => {
+    "msg": "This is the third task in the block"
+}
+2019-02-04 17:27:33,219 p=17601 u=mford |  PLAY RECAP *********************************************************************
+2019-02-04 17:27:33,220 p=17601 u=mford |  localhost                  : ok=5    changed=0    unreachable=0    failed=0   
+2019-02-04 17:29:02,218 p=17658 u=mford |  ERROR! 'rescue' keyword cannot be used without 'block'
+
+The error appears to have been in '/Users/mford/Documents/github-workspace/ansible-ios/ansible_block_example.yml': line 29, column 5, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+  - rescue:
+    ^ here
+
+2019-02-04 17:29:42,645 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2019-02-04 17:29:42,653 p=17671 u=mford |  PLAY [Gather IOS facts] ********************************************************
+2019-02-04 17:29:42,663 p=17671 u=mford |  TASK [Gathering Facts] *********************************************************
+2019-02-04 17:29:43,533 p=17671 u=mford |  ok: [localhost]
+2019-02-04 17:29:43,553 p=17671 u=mford |  TASK [Tell the operator the playbook is about to enter the block] **************
+2019-02-04 17:29:43,597 p=17671 u=mford |  ok: [localhost] => {
+    "msg": "This task takes place right before the block"
+}
+2019-02-04 17:29:43,613 p=17671 u=mford |  TASK [1st block task] **********************************************************
+2019-02-04 17:29:43,659 p=17671 u=mford |  ok: [localhost] => {
+    "msg": "This is the first task in the block"
+}
+2019-02-04 17:29:43,675 p=17671 u=mford |  TASK [2nd block task] **********************************************************
+2019-02-04 17:29:43,723 p=17671 u=mford |  ok: [localhost] => {
+    "msg": "This is the second task in the block"
+}
+2019-02-04 17:29:43,739 p=17671 u=mford |  TASK [3rd block task] **********************************************************
+2019-02-04 17:29:43,785 p=17671 u=mford |  ok: [localhost] => {
+    "msg": "This is the third task in the block"
+}
+2019-02-04 17:29:43,788 p=17671 u=mford |  PLAY RECAP *********************************************************************
+2019-02-04 17:29:43,788 p=17671 u=mford |  localhost                  : ok=5    changed=0    unreachable=0    failed=0   

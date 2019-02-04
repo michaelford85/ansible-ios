@@ -1,0 +1,32 @@
+---
+- name: Playbook to show proper block and rescue usage
+  hosts: localhost
+  connection: local
+  gather_facts: yes
+  vars:
+    proceed_with_block: true
+
+  tasks:
+
+  - name: Tell the operator the playbook is about to enter the block
+    debug:
+      msg: "This task takes place right before the block"
+
+  - block:
+    - name: 1st block task
+      debug:
+        msg: "This is the first task in the block"
+
+    - name: 2nd block task
+      debug:
+        msg: "This is the second task in the block"
+
+    - name: 3rd block task
+      debug:
+        msg: "This is the third task in the block"
+    when: proceed_with_block
+
+    rescue:
+    - name: 1st rescue task
+      debug:
+        msg: "This is the first task in the rescue"
