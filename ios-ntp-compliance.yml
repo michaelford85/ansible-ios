@@ -1,0 +1,11 @@
+---
+- name: NTP compliance for IOS network elements
+  hosts: ios
+  connection: network_cli
+  gather_facts: no
+
+  tasks:
+
+    - name: Execute the ntp_compliance role
+      include_role:
+        name: ntp_compliance
