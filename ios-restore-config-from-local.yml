@@ -13,6 +13,7 @@
   - name: Copy locally backed up config to router and config replace
     net_put:
       src: "./backup/{{ inventory_hostname }}.config"
+      dest: "flash:{{ inventory_hostname }}.config"
 
   - name: Apply configuration file
     ios_config:
