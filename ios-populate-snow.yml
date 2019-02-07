@@ -16,7 +16,7 @@
       - name: Gather facts
         ios_facts:
           gather_subset: all
-    when: ansible_network_os == ios
+    when: ansible_network_os == "ios"
 
 
   - name: Create a network host record for "{{ inventory_hostname }}"
