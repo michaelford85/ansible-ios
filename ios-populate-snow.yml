@@ -26,6 +26,7 @@
         manufacturer: cisco
         firmware_manufacturer: cisco
         device_type: router
+        managed_by: Ansible
         model_id: "{{ ansible_facts.net_model }}"
         assigned_to: "Michael Hoefer"
         firmware_version: "{{ ansible_facts.net_version }}"
