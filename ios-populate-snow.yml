@@ -11,6 +11,9 @@
 
   tasks:
 
+  - name: Gather IOS facts
+    ios_facts:
+
   - name: Create a network host record for each network element
     snow_record:
       state: present
