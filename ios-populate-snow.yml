@@ -3,8 +3,10 @@
   hosts: ios
   gather_facts: no
   connection: network_cli
-  vars:
-    populate_cmdb: true
+  # vars:
+  #   populate_cmdb: true
+  vars_files:
+    default_vars.yml
 
   tasks:
 
