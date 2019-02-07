@@ -6,7 +6,7 @@
   # vars:
   #   populate_cmdb: true
   vars_files:
-    default_vars.yml
+    - default_vars.yml
 
   tasks:
 
