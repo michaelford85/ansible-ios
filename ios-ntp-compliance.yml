@@ -16,6 +16,7 @@
     - name: Print current ntp servers
       debug:
         var: output.stdout_lines
+
     #adds ntp server entries in the ntp_servers variable if the variable erase is false
     - block:
       - name: Compare ntp servers and remove erroroneous entries
@@ -30,18 +31,9 @@
         ios_config:
           lines: "{{ item }}"
         loop: "{{ ntp_servers }}"
-    # - name: Execute the ntp_compliance role
-    #   include_role:
-    #     name: ntp_compliance
       when: not erase
 
     #erases all ntp server entries if the variable erase is true
-    # - block:
-
-      # - name: Print current ntp servers
-      #   debug:
-      #     var: output.stdout_lines
-
     - name: Remove all existing ntp server entries
       ios_config:
         lines: no {{ item }}
