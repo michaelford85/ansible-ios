@@ -4,3 +4,9 @@ git_password: "{{ vaulted_git_password }}"
 git_name: "{{ vaulted_git_name }}"
 git_repo_path: "https://github.com/michaelford85/ios-config-archives.git"
 state: present
+severity: 2
+priority: 2
+category: network
+SN_USERNAME: "{{ vaulted_servicenow_username }}"
+SN_PASSWORD: "{{ vaulted_servicenow_password }}"
+SN_INSTANCE: dev71868
