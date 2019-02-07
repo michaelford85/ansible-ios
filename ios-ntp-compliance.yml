@@ -8,26 +8,44 @@
 
   tasks:
 
+    - name: Get current ntp servers on device
+      ios_command:
+        commands: show run | i ntp
+      register: output
+
+    - name: Print current ntp servers
+      debug:
+        var: output.stdout_lines
     #adds ntp server entries in the ntp_servers variable if the variable erase is false
-    - name: Execute the ntp_compliance role
-      include_role:
-        name: ntp_compliance
+    - block:
+      - name: Compare ntp servers and remove erroroneous entries
+        ios_config:
+          lines: no {{ item }}
+        loop: "{{ output.stdout_lines[0] }}"
+        when:
+          - item not in ntp_servers
+          - output.stdout[0].find('ntp') != -1
+
+      - name: Ensure intended ntp servers are present
+        ios_config:
+          lines: "{{ item }}"
+        loop: "{{ ntp_servers }}"
+    # - name: Execute the ntp_compliance role
+    #   include_role:
+    #     name: ntp_compliance
       when: not erase
 
     #erases all ntp server entries if the variable erase is true
-    - block:
-      - name: Get current ntp servers on device
-        ios_command:
-          commands: show run | i ntp
-        register: output
+    # - block:
 
       # - name: Print current ntp servers
       #   debug:
       #     var: output.stdout_lines
 
-      - name: Remove all existing ntp server entries
-        ios_config:
-          lines: no {{ item }}
-        loop: "{{ output.stdout_lines[0] }}"
-        when: output.stdout[0].find('ntp') != -1
-      when: erase
+    - name: Remove all existing ntp server entries
+      ios_config:
+        lines: no {{ item }}
+      loop: "{{ output.stdout_lines[0] }}"
+      when:
+        - output.stdout[0].find('ntp') != -1
+        - erase
