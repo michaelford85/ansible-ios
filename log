@@ -3384,3 +3384,5 @@ ansible-network.cisco-ios was not found on https://galaxy.ansible.com.
 2019-02-06 15:52:29,880 p=33254 u=mford |  - downloading role from https://github.com/ansible-network/network-engine/archive/v2.7.3.tar.gz
 2019-02-06 15:52:31,065 p=33254 u=mford |  - extracting ansible-network.network-engine to /Users/mford/Documents/github-workspace/ansible-ios/roles/ansible-network.network-engine
 2019-02-06 15:52:31,222 p=33254 u=mford |  - ansible-network.network-engine (v2.7.3) was installed successfully
+2019-02-06 20:57:51,206 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2019-02-06 20:57:51,217 p=34349 u=mford |  ERROR! Attempting to decrypt but no vault secrets found

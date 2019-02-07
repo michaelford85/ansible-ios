@@ -11,18 +11,7 @@
 
   tasks:
 
-  - name: set vendor fact by network platform
-    block:
-      - name: Set vendor fact to cisco
-        set_fact: vendor="cisco"
-
-      - name: Gather facts
-        ios_facts:
-          gather_subset: all
-    when: ansible_network_os == "ios"
-
-
-  - name: Create a network host record for "{{ inventory_hostname }}"
+  - name: Create a network host record for each network element
     snow_record:
       state: present
       table: cmdb_ci_netgear
@@ -31,8 +20,8 @@
       instance: "{{ SN_INSTANCE }}"
       data:
         name: "{{ inventory_hostname }}"
-        manufacturer: "{{ vendor }}"
-        firmware_manufacturer: "{{ vendor }}"
+        manufacturer: cisco
+        firmware_manufacturer: cisco
         device_type: router
         model_number: "{{ ansible_facts.net_model }}"
         assigned_to: "Michael Hoefer"
