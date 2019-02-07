@@ -7,6 +7,7 @@
   #   populate_cmdb: true
   vars_files:
     - default_vars.yml
+    - {{ playbook_dir }}/credentials/servicenow-credentials.yml
 
   tasks:
 
