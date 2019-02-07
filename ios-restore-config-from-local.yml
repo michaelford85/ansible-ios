@@ -17,4 +17,4 @@
 
   - name: Apply configuration file
     ios_config:
-      commands: "configure replace flash:{{ inventory_hostname }}.config"
+      commands: "config replace flash:{{ inventory_hostname }}.config"
