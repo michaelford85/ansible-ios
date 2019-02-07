@@ -3,9 +3,29 @@
   hosts: ios
   connection: network_cli
   gather_facts: no
+  vars:
+    erase: false
 
   tasks:
 
     - name: Execute the ntp_compliance role
       include_role:
         name: ntp_compliance
+      when: not erase
+
+    - block:
+      - name: Get current ntp servers on device
+        ios_command:
+          commands: show run | i ntp
+        register: output
+
+      # - name: Print current ntp servers
+      #   debug:
+      #     var: output.stdout_lines
+
+      - name: Remove all existing ntp server entries
+        ios_config:
+          lines: no {{ item }}
+        loop: "{{ output.stdout_lines[0] }}"
+        when: output.stdout[0].find('ntp') != -1
+      when: erase

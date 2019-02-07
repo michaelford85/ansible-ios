@@ -3370,3 +3370,17 @@ Should be written as:
 2019-02-05 19:12:34,225 p=31196 u=mford |  PLAY RECAP ********************************************************************************************************************************
 2019-02-05 19:12:34,226 p=31196 u=mford |  rtr1                       : ok=1    changed=0    unreachable=0    failed=0   
 2019-02-05 19:12:34,326 p=31203 u=mford |  shutdown complete
+2019-02-06 15:52:02,794 p=33245 u=mford |  - downloading role 'cisco-ios', owned by ansible-network
+2019-02-06 15:52:03,597 p=33245 u=mford |   [WARNING]: - ansible-network.cisco-ios was NOT installed successfully: - sorry,
+ansible-network.cisco-ios was not found on https://galaxy.ansible.com.
+
+2019-02-06 15:52:03,605 p=33245 u=mford |  ERROR! - you can use --ignore-errors to skip failed roles and finish processing the list.
+2019-02-06 15:52:19,731 p=33254 u=mford |  - downloading role 'cisco_ios', owned by ansible-network
+2019-02-06 15:52:21,736 p=33254 u=mford |  - downloading role from https://github.com/ansible-network/cisco_ios/archive/v2.7.1.tar.gz
+2019-02-06 15:52:23,033 p=33254 u=mford |  - extracting ansible-network.cisco_ios to /Users/mford/Documents/github-workspace/ansible-ios/roles/ansible-network.cisco_ios
+2019-02-06 15:52:23,122 p=33254 u=mford |  - ansible-network.cisco_ios (v2.7.1) was installed successfully
+2019-02-06 15:52:23,123 p=33254 u=mford |  - adding dependency: ansible-network.network-engine (v2.7.3)
+2019-02-06 15:52:24,041 p=33254 u=mford |  - downloading role 'network-engine', owned by ansible-network
+2019-02-06 15:52:29,880 p=33254 u=mford |  - downloading role from https://github.com/ansible-network/network-engine/archive/v2.7.3.tar.gz
+2019-02-06 15:52:31,065 p=33254 u=mford |  - extracting ansible-network.network-engine to /Users/mford/Documents/github-workspace/ansible-ios/roles/ansible-network.network-engine
+2019-02-06 15:52:31,222 p=33254 u=mford |  - ansible-network.network-engine (v2.7.3) was installed successfully
