@@ -1,0 +1,87 @@
+---
+- name: Upgrade IOS Router Firmware
+  hosts: ios
+  connection: network_cli
+  gather_facts: no
+  vars:
+    connect_timeout: 600
+    command_timeout: 600
+    compliant_ios_version: 16.08.01
+
+  tasks:
+    - name: GATHER ROUTER FACTS
+      ios_facts:
+
+    - name: SHOW CURRENT IOS VERSION
+      debug:
+        var: ansible_net_version
+
+    - name: CHECK WHETHER CORRECT OS IS ALREADY INSTALLED
+      fail:
+        msg: "Nothing to upgrade"
+      when: compliant_ios_version == ansible_net_version
+    #
+    # # The scp server has to be enabled to transfer the configuration file to
+    # # the remote device in order to load it onto the device
+    # - name: enable the nxos scp server
+    #   cli_config:
+    #     config: "feature scp-server"
+    #
+    # NXOS-specific command to enable scp server
+    # - name: enable the nxos scp server
+    #   nxos_config:
+    #     lines: feature scp-server
+    #
+    # - name: COPY OVER NXOS IMAGE
+    #   net_put:
+    #     src: ./firmware/ios/system-image-filename.bin
+    #     dest: bootflash:system-image-filename.bin
+    #
+    # # - name: WAIT FOR FILE TO BE COPIED OVER
+    #
+    # - name: COPY OVER NXOS KICKSTART IMAGE
+    #   net_put:
+    #     src: ./firmware/ios/system-image-filename.bin
+    #     dest: bootflash:system-image-filename.bin
+    #
+    # # - name: WAIT FOR FILE TO BE COPIED OVER
+    #
+    # - name: disable the nxos scp server
+    #   cli_config:
+    #     config: "no feature scp-server"
+    #
+    # #NXOS-specific command to disable scp server
+    # # - name: disable the nxos scp server
+    # #   nxos_config:
+    # #     lines: no feature scp-server
+    #
+    # - name: run multiple commands and evaluate the output
+    #   nxos_command:
+    #     commands:
+    #       - show install all impact kickstart n3500-uk9-kickstart.6.0.2.A8.10a.bin system n3500-uk9.6.0.2.A8.10a.bin
+    #   register: nxos_command_output
+    #
+    # - block:
+    #   - name: INSTALL NXOS OS
+    #     nxos_install_os:
+    #       system_image_file: n3500-uk9.6.0.2.A8.10a.bin
+    #       kickstart_image_file: n3500-uk9-kickstart.6.0.2.A8.10a.bin
+    #   when: nxos_command_output.results[0].find("FAILED") == -1
+    #
+    # - rescue:
+    #
+    #   - name: WAITING FOR DEVICE TO PERFORM ALL UPGRADE CHECKS AND STARTS REBOOT
+    #     wait_for:
+    #       port: 22
+    #       state: stopped
+    #       timeout: 300
+    #       delay: 60
+    #       host: "{{ inventory_hostname }}"
+    #
+    #   - name: REBOOT IN PROGRESS - WAITING FOR DEVICE TO COME BACK ONLINE
+    #     wait_for:
+    #       port: 22
+    #       state: started
+    #       timeout: 300
+    #       delay: 60
+    #       host: "{{ inventory_hostname }}"
