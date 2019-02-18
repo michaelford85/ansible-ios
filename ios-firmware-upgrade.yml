@@ -4,9 +4,13 @@
   connection: network_cli
   gather_facts: no
   vars:
-    connect_timeout: 600
-    command_timeout: 600
+    connect_timeout: 10
+    command_timeout: 10
     compliant_ios_version: 16.08.01
+    imagefile: "imagefile.txt"
+  vars_files:
+    - default_vars.yml
+    - ./credentials/scp_credentials.yml
 
   tasks:
     - name: GATHER ROUTER FACTS
@@ -20,6 +24,35 @@
       fail:
         msg: "Nothing to upgrade"
       when: compliant_ios_version == ansible_net_version
+
+    - name: Check contents of bootflash
+      cli_command:
+        command: "dir flash:"
+      register: flash_output
+
+    - name: Delete image file from bootflash
+      cli_command:
+        command: "delete flash:{{imagefile}}"
+        prompt:
+          - "Delete filename"
+          - "Delete bootflash:"
+        answer:
+          - "\r"
+          - "\r"
+      when: flash_output.stdout.find("{{imagefile }}") != -1
+      register: flash_output
+
+    - name: Copy image file over to router
+      cli_command:
+        check_all: True
+        command: "copy scp://{{ scp_user }}@{{ scp_server }}/{{imagefile}} flash:"
+        prompt:
+          - "Destination"
+          - "Password:"
+        answer:
+          - "{{ imagefile }}"
+          - "{{scp_password}}"
+
     #
     # # The scp server has to be enabled to transfer the configuration file to
     # # the remote device in order to load it onto the device
