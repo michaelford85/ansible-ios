@@ -82,7 +82,12 @@ control-plane
 !
 !
 !
-!
+banner exec ^C
+Device Name: {{ inventory_hostname }}
+IP Address: {{ ansible_host }}
+
+This device is managed by Ansible
+^C
 !
 line con 0
  stopbits 1
