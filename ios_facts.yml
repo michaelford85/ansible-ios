@@ -8,6 +8,7 @@
   - name: Collect facts from Cisco IOS elements
     ios_facts:
     register: facts_output
-    retries: 5
-    delay: 10
-    until: facts_output is not failed
+    
+  - name: Print out facts
+    debug:
+      var: facts_output
