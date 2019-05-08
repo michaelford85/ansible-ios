@@ -1,0 +1,15 @@
+---
+- name: Gather IOS facts
+  hosts: ios
+  connection: network_cli
+  gather_facts: no
+
+  tasks:
+  - name: Gather IOS Interface stats
+    ios_command:
+      commands: show interfaces stats
+    register: stats_output
+
+  - name: Print out facts
+    debug:
+      var: stats_output

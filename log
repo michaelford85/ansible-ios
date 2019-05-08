@@ -3963,3 +3963,904 @@ already installed version (v2.7.4), skipping
 2019-02-21 19:56:25,724 p=27742 u=mford |  shutdown complete
 2019-02-21 19:56:25,725 p=27743 u=mford |  shutdown complete
 2019-02-21 19:56:25,725 p=27744 u=mford |  shutdown complete
+2019-04-03 15:02:56,508 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2019-04-03 15:02:56,520 p=23211 u=mford |  PLAY [Gather IOS facts] ***************************************************************
+2019-04-03 15:02:56,530 p=23211 u=mford |  TASK [Collect facts from Cisco IOS elements] ******************************************
+2019-04-03 15:03:04,214 p=23211 u=mford |   [ERROR]: User interrupted execution
+
+2019-04-03 15:04:14,498 p=23222 u=mford |  shutdown complete
+2019-04-03 15:04:14,498 p=23224 u=mford |  shutdown complete
+2019-04-03 15:04:14,499 p=23223 u=mford |  shutdown complete
+2019-04-03 15:04:14,499 p=23221 u=mford |  shutdown complete
+2019-04-03 15:04:23,221 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2019-04-03 15:04:23,231 p=23264 u=mford |  PLAY [Gather IOS facts] ***************************************************************
+2019-04-03 15:04:23,240 p=23264 u=mford |  TASK [Collect facts from Cisco IOS elements] ******************************************
+2019-04-03 15:04:24,367 p=23278 u=mford | paramiko [54.86.150.65] starting thread (client mode): 0x836c090L
+2019-04-03 15:04:24,369 p=23278 u=mford | paramiko [54.86.150.65] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2019-04-03 15:04:24,422 p=23278 u=mford | paramiko [54.86.150.65] Remote version/idstring: SSH-2.0-Cisco-1.25
+2019-04-03 15:04:24,422 p=23278 u=mford | paramiko [54.86.150.65] Connected (version 2.0, client Cisco-1.25)
+2019-04-03 15:04:24,424 p=23278 u=mford | paramiko [54.86.150.65] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2019-04-03 15:04:24,424 p=23278 u=mford | paramiko [54.86.150.65] Kex agreed: diffie-hellman-group-exchange-sha1
+2019-04-03 15:04:24,424 p=23278 u=mford | paramiko [54.86.150.65] HostKey agreed: ssh-rsa
+2019-04-03 15:04:24,425 p=23278 u=mford | paramiko [54.86.150.65] Cipher agreed: aes128-ctr
+2019-04-03 15:04:24,425 p=23278 u=mford | paramiko [54.86.150.65] MAC agreed: hmac-sha2-256
+2019-04-03 15:04:24,426 p=23278 u=mford | paramiko [54.86.150.65] Compression agreed: none
+2019-04-03 15:04:24,716 p=23278 u=mford | paramiko [54.86.150.65] Got server p (2048 bits)
+2019-04-03 15:04:24,852 p=23278 u=mford | paramiko [54.86.150.65] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2019-04-03 15:04:24,854 p=23278 u=mford | paramiko [54.86.150.65] Switch to new keys ...
+2019-04-03 15:04:24,874 p=23278 u=mford | paramiko [54.86.150.65] Trying discovered key f85cade9e5a721085b422bda763609d4 in /Users/mford/.ssh/maf-ios-demo-private.pem
+2019-04-03 15:04:25,172 p=23278 u=mford | paramiko [54.86.150.65] userauth is OK
+2019-04-03 15:04:25,231 p=23278 u=mford | paramiko [54.86.150.65] Authentication (publickey) successful!
+2019-04-03 15:04:25,243 p=23278 u=mford | paramiko [54.86.150.65] [chan 0] Max packet in: 32768 bytes
+2019-04-03 15:04:25,286 p=23278 u=mford | paramiko [54.86.150.65] [chan 0] Max packet out: 4096 bytes
+2019-04-03 15:04:25,287 p=23278 u=mford | paramiko [54.86.150.65] Secsh channel 0 opened.
+2019-04-03 15:04:25,360 p=23278 u=mford | paramiko [54.86.150.65] [chan 0] Sesch channel 0 request ok
+2019-04-03 15:04:25,403 p=23278 u=mford | paramiko [54.86.150.65] [chan 0] Sesch channel 0 request ok
+2019-04-03 15:04:26,610 p=23264 u=mford |  network_os is set to ios
+2019-04-03 15:04:29,519 p=23264 u=mford |   [WARNING]: Platform darwin on host rtr1 is using the discovered Python interpreter at
+/usr/bin/python, but future installation of another Python interpreter could change
+this. See
+https://docs.ansible.com/ansible/devel/reference_appendices/interpreter_discovery.html
+for more information.
+
+2019-04-03 15:04:29,520 p=23264 u=mford |  ok: [rtr1]
+2019-04-03 15:04:29,532 p=23264 u=mford |  TASK [Print out facts] ****************************************************************
+2019-04-03 15:04:31,126 p=23264 u=mford |  ok: [rtr1] => {
+    "facts_output": {
+        "ansible_facts": {
+            "ansible_net_all_ipv4_addresses": [
+                "192.168.35.101", 
+                "172.16.153.183", 
+                "10.255.1.1", 
+                "192.168.1.101", 
+                "10.1.1.101", 
+                "10.200.200.1", 
+                "10.100.100.1", 
+                "10.255.0.254"
+            ], 
+            "ansible_net_all_ipv6_addresses": [], 
+            "ansible_net_filesystems": [
+                "bootflash:"
+            ], 
+            "ansible_net_filesystems_info": {
+                "bootflash:": {
+                    "spacefree_kb": 6880448, 
+                    "spacetotal_kb": 7712284
+                }
+            }, 
+            "ansible_net_gather_subset": [
+                "hardware", 
+                "default", 
+                "interfaces"
+            ], 
+            "ansible_net_hostname": "rtr1", 
+            "ansible_net_image": "bootflash:packages.conf", 
+            "ansible_net_interfaces": {
+                "GigabitEthernet1": {
+                    "bandwidth": 1000000, 
+                    "description": null, 
+                    "duplex": "Full", 
+                    "ipv4": [
+                        {
+                            "address": "172.16.153.183", 
+                            "subnet": "16"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": "0a01.614e.a60e", 
+                    "mediatype": "Virtual", 
+                    "mtu": 1500, 
+                    "operstatus": "up", 
+                    "type": "CSR vNIC"
+                }, 
+                "Loopback0": {
+                    "bandwidth": 8000000, 
+                    "description": null, 
+                    "duplex": null, 
+                    "ipv4": [
+                        {
+                            "address": "192.168.1.101", 
+                            "subnet": "24"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": null, 
+                    "mediatype": null, 
+                    "mtu": 1514, 
+                    "operstatus": "up", 
+                    "type": null
+                }, 
+                "Loopback1": {
+                    "bandwidth": 8000000, 
+                    "description": null, 
+                    "duplex": null, 
+                    "ipv4": [
+                        {
+                            "address": "10.1.1.101", 
+                            "subnet": "24"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": null, 
+                    "mediatype": null, 
+                    "mtu": 1514, 
+                    "operstatus": "up", 
+                    "type": null
+                }, 
+                "Loopback10": {
+                    "bandwidth": 8000000, 
+                    "description": null, 
+                    "duplex": null, 
+                    "ipv4": [
+                        {
+                            "address": "10.255.1.1", 
+                            "subnet": "24"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": null, 
+                    "mediatype": null, 
+                    "mtu": 1514, 
+                    "operstatus": "up", 
+                    "type": null
+                }, 
+                "Loopback20": {
+                    "bandwidth": 8000000, 
+                    "description": "Loopback Interface 20", 
+                    "duplex": null, 
+                    "ipv4": [], 
+                    "lineprotocol": "up", 
+                    "macaddress": null, 
+                    "mediatype": null, 
+                    "mtu": 1514, 
+                    "operstatus": "up", 
+                    "type": null
+                }, 
+                "Loopback30": {
+                    "bandwidth": 8000000, 
+                    "description": "Loopback Interface 30", 
+                    "duplex": null, 
+                    "ipv4": [], 
+                    "lineprotocol": "up", 
+                    "macaddress": null, 
+                    "mediatype": null, 
+                    "mtu": 1514, 
+                    "operstatus": "up", 
+                    "type": null
+                }, 
+                "Loopback40": {
+                    "bandwidth": 8000000, 
+                    "description": "Loopback Interface 40", 
+                    "duplex": null, 
+                    "ipv4": [], 
+                    "lineprotocol": "up", 
+                    "macaddress": null, 
+                    "mediatype": null, 
+                    "mtu": 1514, 
+                    "operstatus": "up", 
+                    "type": null
+                }, 
+                "Loopback50": {
+                    "bandwidth": 8000000, 
+                    "description": "Loopback Interface 50", 
+                    "duplex": null, 
+                    "ipv4": [], 
+                    "lineprotocol": "up", 
+                    "macaddress": null, 
+                    "mediatype": null, 
+                    "mtu": 1514, 
+                    "operstatus": "up", 
+                    "type": null
+                }, 
+                "Loopback60": {
+                    "bandwidth": 8000000, 
+                    "description": "Loopback Interface 60", 
+                    "duplex": null, 
+                    "ipv4": [], 
+                    "lineprotocol": "up", 
+                    "macaddress": null, 
+                    "mediatype": null, 
+                    "mtu": 1514, 
+                    "operstatus": "up", 
+                    "type": null
+                }, 
+                "Tunnel0": {
+                    "bandwidth": 100, 
+                    "description": null, 
+                    "duplex": null, 
+                    "ipv4": [
+                        {
+                            "address": "10.100.100.1", 
+                            "subnet": "24"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": null, 
+                    "mediatype": null, 
+                    "mtu": 9976, 
+                    "operstatus": "up", 
+                    "type": null
+                }, 
+                "Tunnel1": {
+                    "bandwidth": 100, 
+                    "description": null, 
+                    "duplex": null, 
+                    "ipv4": [
+                        {
+                            "address": "10.200.200.1", 
+                            "subnet": "24"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": null, 
+                    "mediatype": null, 
+                    "mtu": 9976, 
+                    "operstatus": "up", 
+                    "type": null
+                }, 
+                "Tunnel2": {
+                    "bandwidth": 100, 
+                    "description": null, 
+                    "duplex": null, 
+                    "ipv4": [
+                        {
+                            "address": "10.255.0.254", 
+                            "subnet": "24"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": null, 
+                    "mediatype": null, 
+                    "mtu": 9972, 
+                    "operstatus": "up", 
+                    "type": null
+                }, 
+                "VirtualPortGroup0": {
+                    "bandwidth": 750000, 
+                    "description": null, 
+                    "duplex": null, 
+                    "ipv4": [
+                        {
+                            "address": "192.168.35.101", 
+                            "subnet": "24"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": "001e.7a74.31bd", 
+                    "mediatype": null, 
+                    "mtu": 1500, 
+                    "operstatus": "up", 
+                    "type": "Virtual Port Group"
+                }
+            }, 
+            "ansible_net_iostype": "IOS-XE", 
+            "ansible_net_memfree_mb": 1873123, 
+            "ansible_net_memtotal_mb": 2169857, 
+            "ansible_net_model": "CSR1000V", 
+            "ansible_net_neighbors": {}, 
+            "ansible_net_serialnum": "9QJ3N3B1IQZ", 
+            "ansible_net_version": "16.10.01", 
+            "discovered_interpreter_python": "/usr/bin/python"
+        }, 
+        "changed": false, 
+        "failed": false, 
+        "warnings": [
+            "Platform darwin on host rtr1 is using the discovered Python interpreter at /usr/bin/python, but future installation of another Python interpreter could change this. See https://docs.ansible.com/ansible/devel/reference_appendices/interpreter_discovery.html for more information."
+        ]
+    }
+}
+2019-04-03 15:04:31,129 p=23278 u=mford | paramiko [54.86.150.65] [chan 0] EOF sent (0)
+2019-04-03 15:04:31,215 p=23278 u=mford | paramiko [54.86.150.65] EOF in transport thread
+2019-04-03 15:04:31,248 p=23264 u=mford |  PLAY RECAP ****************************************************************************
+2019-04-03 15:04:31,248 p=23264 u=mford |  rtr1                       : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2019-04-03 15:04:31,348 p=23271 u=mford |  shutdown complete
+2019-04-03 15:08:53,384 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2019-04-03 15:08:53,396 p=23315 u=mford |  PLAY [Gather IOS facts] ***************************************************************
+2019-04-03 15:08:53,409 p=23315 u=mford |  TASK [Collect facts from Cisco IOS elements] ******************************************
+2019-04-03 15:08:55,180 p=23350 u=mford | paramiko [52.90.54.253] starting thread (client mode): 0x504b090L
+2019-04-03 15:08:55,180 p=23349 u=mford | paramiko [54.86.150.65] starting thread (client mode): 0x101d7090L
+2019-04-03 15:08:55,181 p=23350 u=mford | paramiko [52.90.54.253] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2019-04-03 15:08:55,181 p=23349 u=mford | paramiko [54.86.150.65] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2019-04-03 15:08:55,192 p=23353 u=mford | paramiko [54.162.185.172] starting thread (client mode): 0x41f6090L
+2019-04-03 15:08:55,193 p=23353 u=mford | paramiko [54.162.185.172] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2019-04-03 15:08:55,197 p=23356 u=mford | paramiko [54.221.114.156] starting thread (client mode): 0x4b47090L
+2019-04-03 15:08:55,198 p=23356 u=mford | paramiko [54.221.114.156] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2019-04-03 15:08:55,249 p=23349 u=mford | paramiko [54.86.150.65] Remote version/idstring: SSH-2.0-Cisco-1.25
+2019-04-03 15:08:55,249 p=23349 u=mford | paramiko [54.86.150.65] Connected (version 2.0, client Cisco-1.25)
+2019-04-03 15:08:55,258 p=23350 u=mford | paramiko [52.90.54.253] Remote version/idstring: SSH-2.0-Cisco-1.25
+2019-04-03 15:08:55,259 p=23350 u=mford | paramiko [52.90.54.253] Connected (version 2.0, client Cisco-1.25)
+2019-04-03 15:08:55,301 p=23350 u=mford | paramiko [52.90.54.253] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2019-04-03 15:08:55,301 p=23350 u=mford | paramiko [52.90.54.253] Kex agreed: diffie-hellman-group-exchange-sha1
+2019-04-03 15:08:55,302 p=23350 u=mford | paramiko [52.90.54.253] HostKey agreed: ssh-rsa
+2019-04-03 15:08:55,302 p=23350 u=mford | paramiko [52.90.54.253] Cipher agreed: aes128-ctr
+2019-04-03 15:08:55,303 p=23350 u=mford | paramiko [52.90.54.253] MAC agreed: hmac-sha2-256
+2019-04-03 15:08:55,303 p=23350 u=mford | paramiko [52.90.54.253] Compression agreed: none
+2019-04-03 15:08:55,344 p=23350 u=mford | paramiko [52.90.54.253] Got server p (2048 bits)
+2019-04-03 15:08:55,471 p=23350 u=mford | paramiko [52.90.54.253] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2019-04-03 15:08:55,473 p=23350 u=mford | paramiko [52.90.54.253] Switch to new keys ...
+2019-04-03 15:08:55,484 p=23350 u=mford | paramiko [52.90.54.253] Trying discovered key f85cade9e5a721085b422bda763609d4 in /Users/mford/.ssh/maf-ios-demo-private.pem
+2019-04-03 15:08:55,752 p=23350 u=mford | paramiko [52.90.54.253] userauth is OK
+2019-04-03 15:08:55,801 p=23350 u=mford | paramiko [52.90.54.253] Authentication (publickey) successful!
+2019-04-03 15:08:55,804 p=23350 u=mford | paramiko [52.90.54.253] [chan 0] Max packet in: 32768 bytes
+2019-04-03 15:08:55,846 p=23350 u=mford | paramiko [52.90.54.253] [chan 0] Max packet out: 4096 bytes
+2019-04-03 15:08:55,847 p=23350 u=mford | paramiko [52.90.54.253] Secsh channel 0 opened.
+2019-04-03 15:08:55,908 p=23350 u=mford | paramiko [52.90.54.253] [chan 0] Sesch channel 0 request ok
+2019-04-03 15:08:55,949 p=23350 u=mford | paramiko [52.90.54.253] [chan 0] Sesch channel 0 request ok
+2019-04-03 15:08:57,117 p=23315 u=mford |  network_os is set to ios
+2019-04-03 15:08:57,877 p=23353 u=mford | paramiko [54.162.185.172] Remote version/idstring: SSH-2.0-Cisco-1.25
+2019-04-03 15:08:57,877 p=23356 u=mford | paramiko [54.221.114.156] Remote version/idstring: SSH-2.0-Cisco-1.25
+2019-04-03 15:08:57,878 p=23353 u=mford | paramiko [54.162.185.172] Connected (version 2.0, client Cisco-1.25)
+2019-04-03 15:08:57,878 p=23356 u=mford | paramiko [54.221.114.156] Connected (version 2.0, client Cisco-1.25)
+2019-04-03 15:08:57,923 p=23353 u=mford | paramiko [54.162.185.172] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2019-04-03 15:08:57,924 p=23353 u=mford | paramiko [54.162.185.172] Kex agreed: diffie-hellman-group-exchange-sha1
+2019-04-03 15:08:57,924 p=23356 u=mford | paramiko [54.221.114.156] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2019-04-03 15:08:57,924 p=23353 u=mford | paramiko [54.162.185.172] HostKey agreed: ssh-rsa
+2019-04-03 15:08:57,925 p=23356 u=mford | paramiko [54.221.114.156] Kex agreed: diffie-hellman-group-exchange-sha1
+2019-04-03 15:08:57,925 p=23353 u=mford | paramiko [54.162.185.172] Cipher agreed: aes128-ctr
+2019-04-03 15:08:57,925 p=23356 u=mford | paramiko [54.221.114.156] HostKey agreed: ssh-rsa
+2019-04-03 15:08:57,925 p=23353 u=mford | paramiko [54.162.185.172] MAC agreed: hmac-sha2-256
+2019-04-03 15:08:57,926 p=23356 u=mford | paramiko [54.221.114.156] Cipher agreed: aes128-ctr
+2019-04-03 15:08:57,926 p=23353 u=mford | paramiko [54.162.185.172] Compression agreed: none
+2019-04-03 15:08:57,926 p=23356 u=mford | paramiko [54.221.114.156] MAC agreed: hmac-sha2-256
+2019-04-03 15:08:57,927 p=23356 u=mford | paramiko [54.221.114.156] Compression agreed: none
+2019-04-03 15:08:58,222 p=23353 u=mford | paramiko [54.162.185.172] Got server p (2048 bits)
+2019-04-03 15:08:58,222 p=23356 u=mford | paramiko [54.221.114.156] Got server p (2048 bits)
+2019-04-03 15:08:58,234 p=23349 u=mford | paramiko [54.86.150.65] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2019-04-03 15:08:58,235 p=23349 u=mford | paramiko [54.86.150.65] Kex agreed: diffie-hellman-group-exchange-sha1
+2019-04-03 15:08:58,236 p=23349 u=mford | paramiko [54.86.150.65] HostKey agreed: ssh-rsa
+2019-04-03 15:08:58,236 p=23349 u=mford | paramiko [54.86.150.65] Cipher agreed: aes128-ctr
+2019-04-03 15:08:58,237 p=23349 u=mford | paramiko [54.86.150.65] MAC agreed: hmac-sha2-256
+2019-04-03 15:08:58,237 p=23349 u=mford | paramiko [54.86.150.65] Compression agreed: none
+2019-04-03 15:08:58,277 p=23349 u=mford | paramiko [54.86.150.65] Got server p (2048 bits)
+2019-04-03 15:08:58,345 p=23353 u=mford | paramiko [54.162.185.172] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2019-04-03 15:08:58,347 p=23353 u=mford | paramiko [54.162.185.172] Switch to new keys ...
+2019-04-03 15:08:58,349 p=23356 u=mford | paramiko [54.221.114.156] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2019-04-03 15:08:58,349 p=23353 u=mford | paramiko [54.162.185.172] Trying discovered key f85cade9e5a721085b422bda763609d4 in /Users/mford/.ssh/maf-ios-demo-private.pem
+2019-04-03 15:08:58,350 p=23356 u=mford | paramiko [54.221.114.156] Switch to new keys ...
+2019-04-03 15:08:58,355 p=23356 u=mford | paramiko [54.221.114.156] Trying discovered key f85cade9e5a721085b422bda763609d4 in /Users/mford/.ssh/maf-ios-demo-private.pem
+2019-04-03 15:08:58,398 p=23349 u=mford | paramiko [54.86.150.65] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2019-04-03 15:08:58,399 p=23349 u=mford | paramiko [54.86.150.65] Switch to new keys ...
+2019-04-03 15:08:58,404 p=23349 u=mford | paramiko [54.86.150.65] Trying discovered key f85cade9e5a721085b422bda763609d4 in /Users/mford/.ssh/maf-ios-demo-private.pem
+2019-04-03 15:08:58,650 p=23353 u=mford | paramiko [54.162.185.172] userauth is OK
+2019-04-03 15:08:58,650 p=23356 u=mford | paramiko [54.221.114.156] userauth is OK
+2019-04-03 15:08:58,680 p=23349 u=mford | paramiko [54.86.150.65] userauth is OK
+2019-04-03 15:08:58,691 p=23353 u=mford | paramiko [54.162.185.172] Authentication (publickey) successful!
+2019-04-03 15:08:58,692 p=23356 u=mford | paramiko [54.221.114.156] Authentication (publickey) successful!
+2019-04-03 15:08:58,717 p=23353 u=mford | paramiko [54.162.185.172] [chan 0] Max packet in: 32768 bytes
+2019-04-03 15:08:58,724 p=23356 u=mford | paramiko [54.221.114.156] [chan 0] Max packet in: 32768 bytes
+2019-04-03 15:08:58,724 p=23349 u=mford | paramiko [54.86.150.65] Authentication (publickey) successful!
+2019-04-03 15:08:58,741 p=23349 u=mford | paramiko [54.86.150.65] [chan 0] Max packet in: 32768 bytes
+2019-04-03 15:08:58,755 p=23353 u=mford | paramiko [54.162.185.172] [chan 0] Max packet out: 4096 bytes
+2019-04-03 15:08:58,755 p=23353 u=mford | paramiko [54.162.185.172] Secsh channel 0 opened.
+2019-04-03 15:08:58,761 p=23356 u=mford | paramiko [54.221.114.156] [chan 0] Max packet out: 4096 bytes
+2019-04-03 15:08:58,761 p=23356 u=mford | paramiko [54.221.114.156] Secsh channel 0 opened.
+2019-04-03 15:08:58,780 p=23349 u=mford | paramiko [54.86.150.65] [chan 0] Max packet out: 4096 bytes
+2019-04-03 15:08:58,781 p=23349 u=mford | paramiko [54.86.150.65] Secsh channel 0 opened.
+2019-04-03 15:08:58,825 p=23353 u=mford | paramiko [54.162.185.172] [chan 0] Sesch channel 0 request ok
+2019-04-03 15:08:58,828 p=23356 u=mford | paramiko [54.221.114.156] [chan 0] Sesch channel 0 request ok
+2019-04-03 15:08:58,860 p=23349 u=mford | paramiko [54.86.150.65] [chan 0] Sesch channel 0 request ok
+2019-04-03 15:08:58,866 p=23353 u=mford | paramiko [54.162.185.172] [chan 0] Sesch channel 0 request ok
+2019-04-03 15:08:58,870 p=23356 u=mford | paramiko [54.221.114.156] [chan 0] Sesch channel 0 request ok
+2019-04-03 15:08:58,899 p=23349 u=mford | paramiko [54.86.150.65] [chan 0] Sesch channel 0 request ok
+2019-04-03 15:08:59,865 p=23315 u=mford |   [WARNING]: Platform darwin on host rtr4 is using the discovered Python interpreter at
+/usr/bin/python, but future installation of another Python interpreter could change
+this. See
+https://docs.ansible.com/ansible/devel/reference_appendices/interpreter_discovery.html
+for more information.
+
+2019-04-03 15:08:59,867 p=23315 u=mford |  ok: [rtr4]
+2019-04-03 15:09:00,079 p=23315 u=mford |  network_os is set to ios
+2019-04-03 15:09:00,089 p=23315 u=mford |  network_os is set to ios
+2019-04-03 15:09:00,092 p=23315 u=mford |  network_os is set to ios
+2019-04-03 15:09:02,531 p=23315 u=mford |   [WARNING]: Platform darwin on host rtr2 is using the discovered Python interpreter at
+/usr/bin/python, but future installation of another Python interpreter could change
+this. See
+https://docs.ansible.com/ansible/devel/reference_appendices/interpreter_discovery.html
+for more information.
+
+2019-04-03 15:09:02,531 p=23315 u=mford |  ok: [rtr2]
+2019-04-03 15:09:02,532 p=23315 u=mford |   [WARNING]: Platform darwin on host rtr3 is using the discovered Python interpreter at
+/usr/bin/python, but future installation of another Python interpreter could change
+this. See
+https://docs.ansible.com/ansible/devel/reference_appendices/interpreter_discovery.html
+for more information.
+
+2019-04-03 15:09:02,532 p=23315 u=mford |  ok: [rtr3]
+2019-04-03 15:09:02,701 p=23315 u=mford |   [WARNING]: Platform darwin on host rtr1 is using the discovered Python interpreter at
+/usr/bin/python, but future installation of another Python interpreter could change
+this. See
+https://docs.ansible.com/ansible/devel/reference_appendices/interpreter_discovery.html
+for more information.
+
+2019-04-03 15:09:02,701 p=23315 u=mford |  ok: [rtr1]
+2019-04-03 15:09:02,717 p=23315 u=mford |  TASK [Print out facts] ****************************************************************
+2019-04-03 15:09:04,804 p=23315 u=mford |  ok: [rtr2] => {
+    "facts_output": {
+        "ansible_facts": {
+            "ansible_net_all_ipv4_addresses": [
+                "172.17.165.192", 
+                "192.168.35.101"
+            ], 
+            "ansible_net_all_ipv6_addresses": [], 
+            "ansible_net_filesystems": [
+                "bootflash:"
+            ], 
+            "ansible_net_filesystems_info": {
+                "bootflash:": {
+                    "spacefree_kb": 6880412, 
+                    "spacetotal_kb": 7712284
+                }
+            }, 
+            "ansible_net_gather_subset": [
+                "hardware", 
+                "default", 
+                "interfaces"
+            ], 
+            "ansible_net_hostname": "ip-172-17-165-192", 
+            "ansible_net_image": "bootflash:packages.conf", 
+            "ansible_net_interfaces": {
+                "GigabitEthernet1": {
+                    "bandwidth": 1000000, 
+                    "description": null, 
+                    "duplex": "Full", 
+                    "ipv4": [
+                        {
+                            "address": "172.17.165.192", 
+                            "subnet": "16"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": "0ad5.014c.ed6c", 
+                    "mediatype": "Virtual", 
+                    "mtu": 1500, 
+                    "operstatus": "up", 
+                    "type": "CSR vNIC"
+                }, 
+                "VirtualPortGroup0": {
+                    "bandwidth": 750000, 
+                    "description": null, 
+                    "duplex": null, 
+                    "ipv4": [
+                        {
+                            "address": "192.168.35.101", 
+                            "subnet": "24"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": "001e.bd3a.a2bd", 
+                    "mediatype": null, 
+                    "mtu": 1500, 
+                    "operstatus": "up", 
+                    "type": "Virtual Port Group"
+                }
+            }, 
+            "ansible_net_iostype": "IOS-XE", 
+            "ansible_net_memfree_mb": 1901823, 
+            "ansible_net_memtotal_mb": 2169857, 
+            "ansible_net_model": "CSR1000V", 
+            "ansible_net_neighbors": {}, 
+            "ansible_net_serialnum": "9NJXUKUD3M8", 
+            "ansible_net_version": "16.10.01", 
+            "discovered_interpreter_python": "/usr/bin/python"
+        }, 
+        "changed": false, 
+        "failed": false, 
+        "warnings": [
+            "Platform darwin on host rtr2 is using the discovered Python interpreter at /usr/bin/python, but future installation of another Python interpreter could change this. See https://docs.ansible.com/ansible/devel/reference_appendices/interpreter_discovery.html for more information."
+        ]
+    }
+}
+2019-04-03 15:09:04,809 p=23315 u=mford |  ok: [rtr3] => {
+    "facts_output": {
+        "ansible_facts": {
+            "ansible_net_all_ipv4_addresses": [
+                "172.16.180.224", 
+                "192.168.35.101"
+            ], 
+            "ansible_net_all_ipv6_addresses": [], 
+            "ansible_net_filesystems": [
+                "bootflash:"
+            ], 
+            "ansible_net_filesystems_info": {
+                "bootflash:": {
+                    "spacefree_kb": 6880300, 
+                    "spacetotal_kb": 7712284
+                }
+            }, 
+            "ansible_net_gather_subset": [
+                "hardware", 
+                "default", 
+                "interfaces"
+            ], 
+            "ansible_net_hostname": "ip-172-16-180-224", 
+            "ansible_net_image": "bootflash:packages.conf", 
+            "ansible_net_interfaces": {
+                "GigabitEthernet1": {
+                    "bandwidth": 1000000, 
+                    "description": null, 
+                    "duplex": "Full", 
+                    "ipv4": [
+                        {
+                            "address": "172.16.180.224", 
+                            "subnet": "16"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": "0a1b.63b4.b232", 
+                    "mediatype": "Virtual", 
+                    "mtu": 1500, 
+                    "operstatus": "up", 
+                    "type": "CSR vNIC"
+                }, 
+                "VirtualPortGroup0": {
+                    "bandwidth": 750000, 
+                    "description": null, 
+                    "duplex": null, 
+                    "ipv4": [
+                        {
+                            "address": "192.168.35.101", 
+                            "subnet": "24"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": "001e.e689.15bd", 
+                    "mediatype": null, 
+                    "mtu": 1500, 
+                    "operstatus": "up", 
+                    "type": "Virtual Port Group"
+                }
+            }, 
+            "ansible_net_iostype": "IOS-XE", 
+            "ansible_net_memfree_mb": 1880569, 
+            "ansible_net_memtotal_mb": 2169857, 
+            "ansible_net_model": "CSR1000V", 
+            "ansible_net_neighbors": {}, 
+            "ansible_net_serialnum": "9AQIMJ231DI", 
+            "ansible_net_version": "16.10.01", 
+            "discovered_interpreter_python": "/usr/bin/python"
+        }, 
+        "changed": false, 
+        "failed": false, 
+        "warnings": [
+            "Platform darwin on host rtr3 is using the discovered Python interpreter at /usr/bin/python, but future installation of another Python interpreter could change this. See https://docs.ansible.com/ansible/devel/reference_appendices/interpreter_discovery.html for more information."
+        ]
+    }
+}
+2019-04-03 15:09:04,811 p=23315 u=mford |  ok: [rtr4] => {
+    "facts_output": {
+        "ansible_facts": {
+            "ansible_net_all_ipv4_addresses": [
+                "172.17.200.46", 
+                "192.168.35.101"
+            ], 
+            "ansible_net_all_ipv6_addresses": [], 
+            "ansible_net_filesystems": [
+                "bootflash:"
+            ], 
+            "ansible_net_filesystems_info": {
+                "bootflash:": {
+                    "spacefree_kb": 6880200, 
+                    "spacetotal_kb": 7712284
+                }
+            }, 
+            "ansible_net_gather_subset": [
+                "hardware", 
+                "default", 
+                "interfaces"
+            ], 
+            "ansible_net_hostname": "ip-172-17-200-46", 
+            "ansible_net_image": "bootflash:packages.conf", 
+            "ansible_net_interfaces": {
+                "GigabitEthernet1": {
+                    "bandwidth": 1000000, 
+                    "description": null, 
+                    "duplex": "Full", 
+                    "ipv4": [
+                        {
+                            "address": "172.17.200.46", 
+                            "subnet": "16"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": "0a2c.cc73.eb04", 
+                    "mediatype": "Virtual", 
+                    "mtu": 1500, 
+                    "operstatus": "up", 
+                    "type": "CSR vNIC"
+                }, 
+                "VirtualPortGroup0": {
+                    "bandwidth": 750000, 
+                    "description": null, 
+                    "duplex": null, 
+                    "ipv4": [
+                        {
+                            "address": "192.168.35.101", 
+                            "subnet": "24"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": "001e.bd18.0abd", 
+                    "mediatype": null, 
+                    "mtu": 1500, 
+                    "operstatus": "up", 
+                    "type": "Virtual Port Group"
+                }
+            }, 
+            "ansible_net_iostype": "IOS-XE", 
+            "ansible_net_memfree_mb": 1880584, 
+            "ansible_net_memtotal_mb": 2169857, 
+            "ansible_net_model": "CSR1000V", 
+            "ansible_net_neighbors": {}, 
+            "ansible_net_serialnum": "97R651HNS7C", 
+            "ansible_net_version": "16.10.01", 
+            "discovered_interpreter_python": "/usr/bin/python"
+        }, 
+        "changed": false, 
+        "failed": false, 
+        "warnings": [
+            "Platform darwin on host rtr4 is using the discovered Python interpreter at /usr/bin/python, but future installation of another Python interpreter could change this. See https://docs.ansible.com/ansible/devel/reference_appendices/interpreter_discovery.html for more information."
+        ]
+    }
+}
+2019-04-03 15:09:04,818 p=23315 u=mford |  ok: [rtr1] => {
+    "facts_output": {
+        "ansible_facts": {
+            "ansible_net_all_ipv4_addresses": [
+                "192.168.35.101", 
+                "172.16.153.183", 
+                "10.255.1.1", 
+                "192.168.1.101", 
+                "10.1.1.101", 
+                "10.200.200.1", 
+                "10.100.100.1", 
+                "10.255.0.254"
+            ], 
+            "ansible_net_all_ipv6_addresses": [], 
+            "ansible_net_filesystems": [
+                "bootflash:"
+            ], 
+            "ansible_net_filesystems_info": {
+                "bootflash:": {
+                    "spacefree_kb": 6880472, 
+                    "spacetotal_kb": 7712284
+                }
+            }, 
+            "ansible_net_gather_subset": [
+                "hardware", 
+                "default", 
+                "interfaces"
+            ], 
+            "ansible_net_hostname": "rtr1", 
+            "ansible_net_image": "bootflash:packages.conf", 
+            "ansible_net_interfaces": {
+                "GigabitEthernet1": {
+                    "bandwidth": 1000000, 
+                    "description": null, 
+                    "duplex": "Full", 
+                    "ipv4": [
+                        {
+                            "address": "172.16.153.183", 
+                            "subnet": "16"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": "0a01.614e.a60e", 
+                    "mediatype": "Virtual", 
+                    "mtu": 1500, 
+                    "operstatus": "up", 
+                    "type": "CSR vNIC"
+                }, 
+                "Loopback0": {
+                    "bandwidth": 8000000, 
+                    "description": null, 
+                    "duplex": null, 
+                    "ipv4": [
+                        {
+                            "address": "192.168.1.101", 
+                            "subnet": "24"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": null, 
+                    "mediatype": null, 
+                    "mtu": 1514, 
+                    "operstatus": "up", 
+                    "type": null
+                }, 
+                "Loopback1": {
+                    "bandwidth": 8000000, 
+                    "description": null, 
+                    "duplex": null, 
+                    "ipv4": [
+                        {
+                            "address": "10.1.1.101", 
+                            "subnet": "24"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": null, 
+                    "mediatype": null, 
+                    "mtu": 1514, 
+                    "operstatus": "up", 
+                    "type": null
+                }, 
+                "Loopback10": {
+                    "bandwidth": 8000000, 
+                    "description": null, 
+                    "duplex": null, 
+                    "ipv4": [
+                        {
+                            "address": "10.255.1.1", 
+                            "subnet": "24"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": null, 
+                    "mediatype": null, 
+                    "mtu": 1514, 
+                    "operstatus": "up", 
+                    "type": null
+                }, 
+                "Loopback20": {
+                    "bandwidth": 8000000, 
+                    "description": "Loopback Interface 20", 
+                    "duplex": null, 
+                    "ipv4": [], 
+                    "lineprotocol": "up", 
+                    "macaddress": null, 
+                    "mediatype": null, 
+                    "mtu": 1514, 
+                    "operstatus": "up", 
+                    "type": null
+                }, 
+                "Loopback30": {
+                    "bandwidth": 8000000, 
+                    "description": "Loopback Interface 30", 
+                    "duplex": null, 
+                    "ipv4": [], 
+                    "lineprotocol": "up", 
+                    "macaddress": null, 
+                    "mediatype": null, 
+                    "mtu": 1514, 
+                    "operstatus": "up", 
+                    "type": null
+                }, 
+                "Loopback40": {
+                    "bandwidth": 8000000, 
+                    "description": "Loopback Interface 40", 
+                    "duplex": null, 
+                    "ipv4": [], 
+                    "lineprotocol": "up", 
+                    "macaddress": null, 
+                    "mediatype": null, 
+                    "mtu": 1514, 
+                    "operstatus": "up", 
+                    "type": null
+                }, 
+                "Loopback50": {
+                    "bandwidth": 8000000, 
+                    "description": "Loopback Interface 50", 
+                    "duplex": null, 
+                    "ipv4": [], 
+                    "lineprotocol": "up", 
+                    "macaddress": null, 
+                    "mediatype": null, 
+                    "mtu": 1514, 
+                    "operstatus": "up", 
+                    "type": null
+                }, 
+                "Loopback60": {
+                    "bandwidth": 8000000, 
+                    "description": "Loopback Interface 60", 
+                    "duplex": null, 
+                    "ipv4": [], 
+                    "lineprotocol": "up", 
+                    "macaddress": null, 
+                    "mediatype": null, 
+                    "mtu": 1514, 
+                    "operstatus": "up", 
+                    "type": null
+                }, 
+                "Tunnel0": {
+                    "bandwidth": 100, 
+                    "description": null, 
+                    "duplex": null, 
+                    "ipv4": [
+                        {
+                            "address": "10.100.100.1", 
+                            "subnet": "24"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": null, 
+                    "mediatype": null, 
+                    "mtu": 9976, 
+                    "operstatus": "up", 
+                    "type": null
+                }, 
+                "Tunnel1": {
+                    "bandwidth": 100, 
+                    "description": null, 
+                    "duplex": null, 
+                    "ipv4": [
+                        {
+                            "address": "10.200.200.1", 
+                            "subnet": "24"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": null, 
+                    "mediatype": null, 
+                    "mtu": 9976, 
+                    "operstatus": "up", 
+                    "type": null
+                }, 
+                "Tunnel2": {
+                    "bandwidth": 100, 
+                    "description": null, 
+                    "duplex": null, 
+                    "ipv4": [
+                        {
+                            "address": "10.255.0.254", 
+                            "subnet": "24"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": null, 
+                    "mediatype": null, 
+                    "mtu": 9972, 
+                    "operstatus": "up", 
+                    "type": null
+                }, 
+                "VirtualPortGroup0": {
+                    "bandwidth": 750000, 
+                    "description": null, 
+                    "duplex": null, 
+                    "ipv4": [
+                        {
+                            "address": "192.168.35.101", 
+                            "subnet": "24"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": "001e.7a74.31bd", 
+                    "mediatype": null, 
+                    "mtu": 1500, 
+                    "operstatus": "up", 
+                    "type": "Virtual Port Group"
+                }
+            }, 
+            "ansible_net_iostype": "IOS-XE", 
+            "ansible_net_memfree_mb": 1873123, 
+            "ansible_net_memtotal_mb": 2169857, 
+            "ansible_net_model": "CSR1000V", 
+            "ansible_net_neighbors": {}, 
+            "ansible_net_serialnum": "9QJ3N3B1IQZ", 
+            "ansible_net_version": "16.10.01", 
+            "discovered_interpreter_python": "/usr/bin/python"
+        }, 
+        "changed": false, 
+        "failed": false, 
+        "warnings": [
+            "Platform darwin on host rtr1 is using the discovered Python interpreter at /usr/bin/python, but future installation of another Python interpreter could change this. See https://docs.ansible.com/ansible/devel/reference_appendices/interpreter_discovery.html for more information."
+        ]
+    }
+}
+2019-04-03 15:09:04,824 p=23349 u=mford | paramiko [54.86.150.65] [chan 0] EOF sent (0)
+2019-04-03 15:09:04,829 p=23349 u=mford | paramiko [54.86.150.65] EOF in transport thread
+2019-04-03 15:09:04,834 p=23353 u=mford | paramiko [54.162.185.172] [chan 0] EOF sent (0)
+2019-04-03 15:09:04,883 p=23353 u=mford | paramiko [54.162.185.172] EOF in transport thread
+2019-04-03 15:09:04,902 p=23356 u=mford | paramiko [54.221.114.156] [chan 0] EOF sent (0)
+2019-04-03 15:09:04,934 p=23325 u=mford |  shutdown complete
+2019-04-03 15:09:04,987 p=23356 u=mford | paramiko [54.221.114.156] EOF in transport thread
+2019-04-03 15:09:05,003 p=23326 u=mford |  shutdown complete
+2019-04-03 15:09:05,020 p=23350 u=mford | paramiko [52.90.54.253] [chan 0] EOF sent (0)
+2019-04-03 15:09:05,038 p=23350 u=mford | paramiko [52.90.54.253] EOF in transport thread
+2019-04-03 15:09:05,043 p=23315 u=mford |  PLAY RECAP ****************************************************************************
+2019-04-03 15:09:05,043 p=23315 u=mford |  rtr1                       : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2019-04-03 15:09:05,044 p=23315 u=mford |  rtr2                       : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2019-04-03 15:09:05,044 p=23315 u=mford |  rtr3                       : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2019-04-03 15:09:05,044 p=23315 u=mford |  rtr4                       : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2019-04-03 15:09:05,120 p=23327 u=mford |  shutdown complete
+2019-04-03 15:09:05,141 p=23328 u=mford |  shutdown complete
+2019-04-10 13:02:15,323 p=53652 u=mford |  ERROR! Expected a github_username and github_repository. Use --help.

@@ -1,6 +1,6 @@
 ---
 - name: Gather IOS facts
-  hosts: ios
+  hosts: "{{ group }}"
   connection: network_cli
   gather_facts: no
 
@@ -8,7 +8,7 @@
   - name: Collect facts from Cisco IOS elements
     ios_facts:
     register: facts_output
-    
+
   - name: Print out facts
     debug:
       var: facts_output
