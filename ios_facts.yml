@@ -1,6 +1,6 @@
 ---
 - name: Gather IOS facts
-  hosts: "{{ group }}"
+  hosts: ios
   connection: network_cli
   gather_facts: no
 
