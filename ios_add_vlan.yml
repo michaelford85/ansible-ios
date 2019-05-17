@@ -1,0 +1,19 @@
+---
+- name: Add VLAN to ios Routers
+  hosts: ios
+  connection: network_cli
+  gather_facts: no
+
+  tasks:
+
+  - name: add VLAN to routers
+    ios_vlan:
+      vlan_id: "{{ vlan_number }}"
+      name: "{{ vlan_name }}"
+      state: present
+
+  # - name: configure the “management” vrf
+  #   ios_config:
+  #   lines:
+  #     description oob mgmt vrf
+  #   parents: vrf definition management
