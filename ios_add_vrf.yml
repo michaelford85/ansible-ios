@@ -8,7 +8,7 @@
 
   - name: configure the “management” vrf
     ios_vrf:
-      name: management
+      name: "{{ vrf_name }}"
       description: oob mgmt vrf
       state: present
 
