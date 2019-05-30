@@ -31,7 +31,7 @@
         ios_config:
           lines: "{{ item }}"
         loop: "{{ ntp_servers }}"
-      when: not erase
+      when: not erase|bool
 
     #erases all ntp server entries if the variable erase is true
     - name: Remove all existing ntp server entries
@@ -40,4 +40,4 @@
       loop: "{{ output.stdout_lines[0] }}"
       when:
         - output.stdout[0].find('ntp') != -1
-        - erase
+        - erase|bool
