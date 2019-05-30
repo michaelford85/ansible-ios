@@ -23,7 +23,7 @@
     vars:
       config_manager_file: "{{ playbook_dir }}/templates/ios/greenfield_template.j2"
       config_manager_replace: False
-    when: not erase
+    when: not erase|bool
 
   - name: Remove standard router template
     include_role:
@@ -32,4 +32,4 @@
     vars:
       config_manager_file: "{{ playbook_dir }}/templates/ios/remove_greenfield_template.j2"
       config_manager_replace: False
-    when: erase
+    when: erase|bool
