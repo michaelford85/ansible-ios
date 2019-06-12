@@ -1,0 +1,17 @@
+#NO NOT DELETE - Used in Workflow Template
+---
+- name: Show Running Configs
+  hosts: ios
+  connection: network_cli
+  gather_facts: False
+
+  tasks:
+
+  - name: Backup the config
+    ios_command:
+      commands:
+        - show running-config
+    register: config_output
+
+  - debug:
+      var: config_output
