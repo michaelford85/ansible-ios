@@ -1,0 +1,132 @@
+- name: IOS Git Backup
+  hosts: ios
+  connection: network_cli
+  gather_facts: no
+
+  vars:
+    backup_repo: https://github.com/michaelford85/network-configs.git
+    backup_branch: "snapshot"
+
+  handlers:
+    - name: "Configure local git repository"
+      listen: git_sync
+      shell: "git config {{ item.key | quote }} {{ item.value | quote }}"
+      run_once: yes
+      changed_when: false
+      args:
+        chdir: "{{ r_tempfile.path }}"
+      loop_control:
+        label: "{{ item.key }}: {{ item.value }}"
+      loop:
+        - { key: user.name, value: "michaelford85" }
+        - { key: user.email, value: "michaelford85@gmail.com" }
+        - { key: branch.autosetupmerge, value: "always" }
+        - { key: push.default, value: "current" }
+
+    - name: "git add --all"
+      listen: git_sync
+      run_once: true
+      shell: "git add --all"
+      args:
+        chdir: "{{ r_tempfile.path }}"
+
+    - name: "git commit"
+      listen: git_sync
+      run_once: true
+      failed_when: false
+      changed_when: git_commit.stdout.find("nothing") == -1
+      register: git_commit
+      shell: git commit -am "Network Backup"
+      args:
+        chdir: "{{ r_tempfile.path }}"
+
+    - name: "git push"
+      listen: git_sync
+      run_once: true
+      failed_when: git_push.stderr.find("error:") != -1
+      changed_when: git_push.stderr.find("up-to-date") == -1
+      register: git_push
+      shell: git push
+      args:
+        chdir: "{{ r_tempfile.path }}"
+
+    - name: "Cleanup generated files/directories"
+      listen: git_sync
+      run_once: true
+      file:
+        path: "{{ cleanup }}"
+        state: absent
+      with_items:
+        - "{{ r_ios_config.backup_path | dirname }}"
+        - "{{ r_tempfile.path }}"
+      loop_control:
+        loop_var: cleanup
+        label: "cleanup {{ cleanup }}"
+
+  tasks:
+    - name: "create temporary directory to store configuration"
+      run_once: true
+      changed_when: false
+      tempfile:
+        state: directory
+        suffix: ios_config
+      register: r_tempfile
+
+    - name: "git clone"
+      run_once: true
+      changed_when: false
+      git:
+        accept_hostkey: true
+        repo: "{{ backup_repo }}"
+        dest: "{{ r_tempfile.path }}"
+        clone: yes
+
+    - name: "git branch list"
+      run_once: true
+      changed_when: false
+      register: git_branch_list
+      shell: "git branch -a --list origin/{{ backup_branch | quote}}"
+      args:
+        chdir: "{{ r_tempfile.path }}"
+
+    - name: "git checkout new branch"
+      when: git_branch_list.stdout_lines|length < 1
+      run_once: true
+      register: git_checkout
+      shell: "git checkout -B {{ backup_branch | quote }} origin/HEAD"
+      args:
+        chdir: "{{ r_tempfile.path }}"
+      notify: git_sync
+
+    - name: "git checkout existing branch"
+      when: git_branch_list.stdout_lines|length > 0
+      changed_when: false
+      run_once: true
+      register: git_checkout
+      shell: "git checkout -B {{ backup_branch | quote }} origin/{{ backup_branch | quote }}"
+      args:
+        chdir: "{{ r_tempfile.path }}"
+
+    - name: "fetch network configuration"
+      ios_config:
+        backup: yes
+      register: r_ios_config
+
+    - name: "remove non configuration lines"
+      changed_when: false
+      lineinfile:
+        path: "{{ r_ios_config.backup_path }}"
+        regexp: '^(Current|Building) configuration.*'
+        state: absent
+
+    - name: "create folder structure"
+      file:
+        path: "{{ r_tempfile.path }}/{{ inventory_hostname }}/config"
+        state: directory
+
+    - name: "copy network configuration to repo folder"
+      copy:
+        src: "{{ r_ios_config.backup_path }}"
+        dest: "{{ r_tempfile.path }}/{{ inventory_hostname }}/config/running.cfg"
+        force: "yes"
+      notify: git_sync
