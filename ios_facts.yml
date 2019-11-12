@@ -7,7 +7,7 @@
   tasks:
   - name: Collect facts from Cisco IOS elements
     ios_facts:
-      gather_subset: min
+      # gather_subset: min
       gather_network_resources: "{{ resource }}"
     register: facts_output
 
