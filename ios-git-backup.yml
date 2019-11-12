@@ -2,8 +2,6 @@
   hosts: ios
   connection: network_cli
   gather_facts: no
-  vars_files:
-    - ./default_vars.yml
   vars:
     backup_repo: https://github.com/michaelford85/network-configs.git
     backup_branch: "snapshot"
@@ -20,9 +18,8 @@
         # label: "{{ item.key }}: {{ item.value }}"
         label: "{{ item.key }} is set"
       loop:
-        - { key: user.name, value: "{{git_username}}" }
-        - { key: user.email, value: "{{git_email}}" }
-        - { key: user.password, value: "{{git_password}}" }
+        - { key: user.name, value: michaelford85 }
+        - { key: user.email, value: michaelford85@gmail.com }
         - { key: branch.autosetupmerge, value: "always" }
         - { key: push.default, value: "current" }
 

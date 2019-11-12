@@ -5937,3 +5937,1579 @@ for more information.
 2019-08-22 11:47:25,425 p=20034 u=mford |  rtr3                       : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 2019-08-22 11:47:25,425 p=20034 u=mford |  rtr4                       : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 2019-08-22 11:47:25,524 p=20155 u=mford |  shutdown complete
+2019-08-22 12:34:35,851 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2019-08-22 12:34:35,861 p=21715 u=mford |  PLAY [IOS Git Backup] *******************************************************************************************************************
+2019-08-22 12:34:35,871 p=21715 u=mford |  TASK [create temporary directory to store configuration] ********************************************************************************
+2019-08-22 12:34:37,029 p=21735 u=mford | paramiko [3.84.151.167] starting thread (client mode): 0xba710d0L
+2019-08-22 12:34:37,031 p=21735 u=mford | paramiko [3.84.151.167] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2019-08-22 12:34:37,070 p=21735 u=mford | paramiko [3.84.151.167] Remote version/idstring: SSH-2.0-Cisco-1.25
+2019-08-22 12:34:37,071 p=21735 u=mford | paramiko [3.84.151.167] Connected (version 2.0, client Cisco-1.25)
+2019-08-22 12:34:37,113 p=21735 u=mford | paramiko [3.84.151.167] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2019-08-22 12:34:37,113 p=21735 u=mford | paramiko [3.84.151.167] Kex agreed: diffie-hellman-group-exchange-sha1
+2019-08-22 12:34:37,114 p=21735 u=mford | paramiko [3.84.151.167] HostKey agreed: ssh-rsa
+2019-08-22 12:34:37,114 p=21735 u=mford | paramiko [3.84.151.167] Cipher agreed: aes128-ctr
+2019-08-22 12:34:37,114 p=21735 u=mford | paramiko [3.84.151.167] MAC agreed: hmac-sha2-256
+2019-08-22 12:34:37,115 p=21735 u=mford | paramiko [3.84.151.167] Compression agreed: none
+2019-08-22 12:34:37,152 p=21735 u=mford | paramiko [3.84.151.167] Got server p (2048 bits)
+2019-08-22 12:34:37,275 p=21735 u=mford | paramiko [3.84.151.167] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2019-08-22 12:34:37,277 p=21735 u=mford | paramiko [3.84.151.167] Switch to new keys ...
+2019-08-22 12:34:37,298 p=21735 u=mford | paramiko [3.84.151.167] Trying discovered key f85cade9e5a721085b422bda763609d4 in /Users/mford/.ssh/maf-ios-demo-private.pem
+2019-08-22 12:34:37,545 p=21735 u=mford | paramiko [3.84.151.167] userauth is OK
+2019-08-22 12:34:37,585 p=21735 u=mford | paramiko [3.84.151.167] Authentication (publickey) successful!
+2019-08-22 12:34:37,601 p=21735 u=mford | paramiko [3.84.151.167] [chan 0] Max packet in: 32768 bytes
+2019-08-22 12:34:37,640 p=21735 u=mford | paramiko [3.84.151.167] [chan 0] Max packet out: 4096 bytes
+2019-08-22 12:34:37,641 p=21735 u=mford | paramiko [3.84.151.167] Secsh channel 0 opened.
+2019-08-22 12:34:37,703 p=21735 u=mford | paramiko [3.84.151.167] [chan 0] Sesch channel 0 request ok
+2019-08-22 12:34:37,740 p=21735 u=mford | paramiko [3.84.151.167] [chan 0] Sesch channel 0 request ok
+2019-08-22 12:34:39,144 p=21715 u=mford |  network_os is set to ios
+2019-08-22 12:34:39,610 p=21715 u=mford |   [WARNING]: Platform darwin on host rtr1 is using the discovered Python interpreter at /usr/bin/python, but future installation of
+another Python interpreter could change this. See https://docs.ansible.com/ansible/2.8/reference_appendices/interpreter_discovery.html
+for more information.
+
+2019-08-22 12:34:39,610 p=21715 u=mford |  ok: [rtr1]
+2019-08-22 12:34:39,616 p=21715 u=mford |  TASK [git clone] ************************************************************************************************************************
+2019-08-22 12:34:42,070 p=21715 u=mford |  ok: [rtr1]
+2019-08-22 12:34:42,076 p=21715 u=mford |  TASK [git branch list] ******************************************************************************************************************
+2019-08-22 12:34:44,834 p=21715 u=mford |  ok: [rtr1]
+2019-08-22 12:34:44,839 p=21715 u=mford |  TASK [git checkout new branch] **********************************************************************************************************
+2019-08-22 12:34:44,861 p=21715 u=mford |  skipping: [rtr1]
+2019-08-22 12:34:44,866 p=21715 u=mford |  TASK [git checkout existing branch] *****************************************************************************************************
+2019-08-22 12:34:46,670 p=21715 u=mford |  ok: [rtr1]
+2019-08-22 12:34:46,675 p=21715 u=mford |  TASK [fetch network configuration] ******************************************************************************************************
+2019-08-22 12:34:48,567 p=21864 u=mford | paramiko [54.164.14.49] starting thread (client mode): 0x104720d0L
+2019-08-22 12:34:48,568 p=21864 u=mford | paramiko [54.164.14.49] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2019-08-22 12:34:48,572 p=21858 u=mford | paramiko [34.235.136.17] starting thread (client mode): 0x21550d0L
+2019-08-22 12:34:48,573 p=21858 u=mford | paramiko [34.235.136.17] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2019-08-22 12:34:48,577 p=21859 u=mford | paramiko [54.221.20.212] starting thread (client mode): 0x37210d0L
+2019-08-22 12:34:48,578 p=21859 u=mford | paramiko [54.221.20.212] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2019-08-22 12:34:48,603 p=21864 u=mford | paramiko [54.164.14.49] Remote version/idstring: SSH-2.0-Cisco-1.25
+2019-08-22 12:34:48,603 p=21864 u=mford | paramiko [54.164.14.49] Connected (version 2.0, client Cisco-1.25)
+2019-08-22 12:34:48,607 p=21864 u=mford | paramiko [54.164.14.49] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2019-08-22 12:34:48,608 p=21864 u=mford | paramiko [54.164.14.49] Kex agreed: diffie-hellman-group-exchange-sha1
+2019-08-22 12:34:48,608 p=21864 u=mford | paramiko [54.164.14.49] HostKey agreed: ssh-rsa
+2019-08-22 12:34:48,609 p=21864 u=mford | paramiko [54.164.14.49] Cipher agreed: aes128-ctr
+2019-08-22 12:34:48,609 p=21864 u=mford | paramiko [54.164.14.49] MAC agreed: hmac-sha2-256
+2019-08-22 12:34:48,610 p=21864 u=mford | paramiko [54.164.14.49] Compression agreed: none
+2019-08-22 12:34:48,612 p=21858 u=mford | paramiko [34.235.136.17] Remote version/idstring: SSH-2.0-Cisco-1.25
+2019-08-22 12:34:48,612 p=21858 u=mford | paramiko [34.235.136.17] Connected (version 2.0, client Cisco-1.25)
+2019-08-22 12:34:48,616 p=21858 u=mford | paramiko [34.235.136.17] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2019-08-22 12:34:48,617 p=21858 u=mford | paramiko [34.235.136.17] Kex agreed: diffie-hellman-group-exchange-sha1
+2019-08-22 12:34:48,617 p=21858 u=mford | paramiko [34.235.136.17] HostKey agreed: ssh-rsa
+2019-08-22 12:34:48,618 p=21858 u=mford | paramiko [34.235.136.17] Cipher agreed: aes128-ctr
+2019-08-22 12:34:48,618 p=21858 u=mford | paramiko [34.235.136.17] MAC agreed: hmac-sha2-256
+2019-08-22 12:34:48,619 p=21858 u=mford | paramiko [34.235.136.17] Compression agreed: none
+2019-08-22 12:34:48,621 p=21859 u=mford | paramiko [54.221.20.212] Remote version/idstring: SSH-2.0-Cisco-1.25
+2019-08-22 12:34:48,621 p=21859 u=mford | paramiko [54.221.20.212] Connected (version 2.0, client Cisco-1.25)
+2019-08-22 12:34:48,625 p=21859 u=mford | paramiko [54.221.20.212] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2019-08-22 12:34:48,625 p=21859 u=mford | paramiko [54.221.20.212] Kex agreed: diffie-hellman-group-exchange-sha1
+2019-08-22 12:34:48,626 p=21859 u=mford | paramiko [54.221.20.212] HostKey agreed: ssh-rsa
+2019-08-22 12:34:48,626 p=21859 u=mford | paramiko [54.221.20.212] Cipher agreed: aes128-ctr
+2019-08-22 12:34:48,626 p=21859 u=mford | paramiko [54.221.20.212] MAC agreed: hmac-sha2-256
+2019-08-22 12:34:48,627 p=21859 u=mford | paramiko [54.221.20.212] Compression agreed: none
+2019-08-22 12:34:48,878 p=21864 u=mford | paramiko [54.164.14.49] Got server p (2048 bits)
+2019-08-22 12:34:48,905 p=21858 u=mford | paramiko [34.235.136.17] Got server p (2048 bits)
+2019-08-22 12:34:48,907 p=21859 u=mford | paramiko [54.221.20.212] Got server p (2048 bits)
+2019-08-22 12:34:49,010 p=21864 u=mford | paramiko [54.164.14.49] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2019-08-22 12:34:49,011 p=21864 u=mford | paramiko [54.164.14.49] Switch to new keys ...
+2019-08-22 12:34:49,016 p=21864 u=mford | paramiko [54.164.14.49] Trying discovered key f85cade9e5a721085b422bda763609d4 in /Users/mford/.ssh/maf-ios-demo-private.pem
+2019-08-22 12:34:49,033 p=21859 u=mford | paramiko [54.221.20.212] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2019-08-22 12:34:49,035 p=21859 u=mford | paramiko [54.221.20.212] Switch to new keys ...
+2019-08-22 12:34:49,044 p=21858 u=mford | paramiko [34.235.136.17] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2019-08-22 12:34:49,046 p=21858 u=mford | paramiko [34.235.136.17] Switch to new keys ...
+2019-08-22 12:34:49,065 p=21859 u=mford | paramiko [54.221.20.212] Trying discovered key f85cade9e5a721085b422bda763609d4 in /Users/mford/.ssh/maf-ios-demo-private.pem
+2019-08-22 12:34:49,078 p=21858 u=mford | paramiko [34.235.136.17] Trying discovered key f85cade9e5a721085b422bda763609d4 in /Users/mford/.ssh/maf-ios-demo-private.pem
+2019-08-22 12:34:49,280 p=21864 u=mford | paramiko [54.164.14.49] userauth is OK
+2019-08-22 12:34:49,319 p=21859 u=mford | paramiko [54.221.20.212] userauth is OK
+2019-08-22 12:34:49,323 p=21864 u=mford | paramiko [54.164.14.49] Authentication (publickey) successful!
+2019-08-22 12:34:49,326 p=21864 u=mford | paramiko [54.164.14.49] [chan 0] Max packet in: 32768 bytes
+2019-08-22 12:34:49,347 p=21858 u=mford | paramiko [34.235.136.17] userauth is OK
+2019-08-22 12:34:49,363 p=21864 u=mford | paramiko [54.164.14.49] [chan 0] Max packet out: 4096 bytes
+2019-08-22 12:34:49,364 p=21864 u=mford | paramiko [54.164.14.49] Secsh channel 0 opened.
+2019-08-22 12:34:49,366 p=21859 u=mford | paramiko [54.221.20.212] Authentication (publickey) successful!
+2019-08-22 12:34:49,368 p=21859 u=mford | paramiko [54.221.20.212] [chan 0] Max packet in: 32768 bytes
+2019-08-22 12:34:49,403 p=21858 u=mford | paramiko [34.235.136.17] Authentication (publickey) successful!
+2019-08-22 12:34:49,413 p=21858 u=mford | paramiko [34.235.136.17] [chan 0] Max packet in: 32768 bytes
+2019-08-22 12:34:49,414 p=21859 u=mford | paramiko [54.221.20.212] [chan 0] Max packet out: 4096 bytes
+2019-08-22 12:34:49,414 p=21859 u=mford | paramiko [54.221.20.212] Secsh channel 0 opened.
+2019-08-22 12:34:49,425 p=21864 u=mford | paramiko [54.164.14.49] [chan 0] Sesch channel 0 request ok
+2019-08-22 12:34:49,464 p=21864 u=mford | paramiko [54.164.14.49] [chan 0] Sesch channel 0 request ok
+2019-08-22 12:34:49,467 p=21858 u=mford | paramiko [34.235.136.17] [chan 0] Max packet out: 4096 bytes
+2019-08-22 12:34:49,467 p=21858 u=mford | paramiko [34.235.136.17] Secsh channel 0 opened.
+2019-08-22 12:34:49,475 p=21859 u=mford | paramiko [54.221.20.212] [chan 0] Sesch channel 0 request ok
+2019-08-22 12:34:49,527 p=21859 u=mford | paramiko [54.221.20.212] [chan 0] Sesch channel 0 request ok
+2019-08-22 12:34:49,537 p=21858 u=mford | paramiko [34.235.136.17] [chan 0] Sesch channel 0 request ok
+2019-08-22 12:34:49,590 p=21858 u=mford | paramiko [34.235.136.17] [chan 0] Sesch channel 0 request ok
+2019-08-22 12:34:50,877 p=21715 u=mford |  network_os is set to ios
+2019-08-22 12:34:50,956 p=21715 u=mford |  network_os is set to ios
+2019-08-22 12:34:51,053 p=21715 u=mford |  network_os is set to ios
+2019-08-22 12:34:51,714 p=21715 u=mford |  changed: [rtr1]
+2019-08-22 12:34:53,680 p=21715 u=mford |  changed: [rtr4]
+2019-08-22 12:34:53,748 p=21715 u=mford |  changed: [rtr3]
+2019-08-22 12:34:53,783 p=21715 u=mford |  changed: [rtr2]
+2019-08-22 12:34:53,794 p=21715 u=mford |  TASK [remove non configuration lines] ***************************************************************************************************
+2019-08-22 12:34:57,071 p=21715 u=mford |  ok: [rtr3]
+2019-08-22 12:34:57,080 p=21715 u=mford |  ok: [rtr4]
+2019-08-22 12:34:57,090 p=21715 u=mford |  ok: [rtr1]
+2019-08-22 12:34:57,092 p=21715 u=mford |  ok: [rtr2]
+2019-08-22 12:34:57,104 p=21715 u=mford |  TASK [create folder structure] **********************************************************************************************************
+2019-08-22 12:35:00,143 p=21715 u=mford |  changed: [rtr3]
+2019-08-22 12:35:00,149 p=21715 u=mford |  changed: [rtr1]
+2019-08-22 12:35:00,152 p=21715 u=mford |  changed: [rtr4]
+2019-08-22 12:35:00,162 p=21715 u=mford |  changed: [rtr2]
+2019-08-22 12:35:00,169 p=21715 u=mford |  TASK [copy network configuration to repo folder] ****************************************************************************************
+2019-08-22 12:35:03,669 p=21715 u=mford |  changed: [rtr1]
+2019-08-22 12:35:03,671 p=21715 u=mford |  changed: [rtr2]
+2019-08-22 12:35:04,607 p=21715 u=mford |  changed: [rtr4]
+2019-08-22 12:35:04,613 p=21715 u=mford |  changed: [rtr3]
+2019-08-22 12:35:04,616 p=21715 u=mford |  RUNNING HANDLER [Configure local git repository] ****************************************************************************************
+2019-08-22 12:35:04,646 p=21715 u=mford |  fatal: [rtr1]: FAILED! => {"msg": "'vaulted_git_username' is undefined"}
+2019-08-22 12:35:04,646 p=21715 u=mford |  RUNNING HANDLER [git add --all] *********************************************************************************************************
+2019-08-22 12:35:04,647 p=21715 u=mford |  RUNNING HANDLER [git commit] ************************************************************************************************************
+2019-08-22 12:35:04,647 p=21715 u=mford |  RUNNING HANDLER [git push] **************************************************************************************************************
+2019-08-22 12:35:04,647 p=21715 u=mford |  RUNNING HANDLER [Cleanup generated files/directories] ***********************************************************************************
+2019-08-22 12:35:04,647 p=21715 u=mford |  NO MORE HOSTS LEFT **********************************************************************************************************************
+2019-08-22 12:35:04,648 p=21735 u=mford | paramiko [3.84.151.167] [chan 0] EOF sent (0)
+2019-08-22 12:35:04,749 p=21735 u=mford | paramiko [3.84.151.167] EOF in transport thread
+2019-08-22 12:35:04,767 p=21858 u=mford | paramiko [34.235.136.17] [chan 0] EOF sent (0)
+2019-08-22 12:35:04,771 p=21858 u=mford | paramiko [34.235.136.17] EOF in transport thread
+2019-08-22 12:35:04,778 p=21864 u=mford | paramiko [54.164.14.49] [chan 0] EOF sent (0)
+2019-08-22 12:35:04,799 p=21864 u=mford | paramiko [54.164.14.49] EOF in transport thread
+2019-08-22 12:35:04,814 p=21859 u=mford | paramiko [54.221.20.212] [chan 0] EOF sent (0)
+2019-08-22 12:35:04,849 p=21859 u=mford | paramiko [54.221.20.212] EOF in transport thread
+2019-08-22 12:35:04,868 p=21728 u=mford |  shutdown complete
+2019-08-22 12:35:04,878 p=21837 u=mford |  shutdown complete
+2019-08-22 12:35:04,883 p=21715 u=mford |  PLAY RECAP ******************************************************************************************************************************
+2019-08-22 12:35:04,883 p=21715 u=mford |  rtr1                       : ok=8    changed=3    unreachable=0    failed=1    skipped=1    rescued=0    ignored=0   
+2019-08-22 12:35:04,884 p=21715 u=mford |  rtr2                       : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2019-08-22 12:35:04,884 p=21715 u=mford |  rtr3                       : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2019-08-22 12:35:04,884 p=21715 u=mford |  rtr4                       : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2019-08-22 12:35:04,916 p=21838 u=mford |  shutdown complete
+2019-08-22 12:35:04,983 p=21839 u=mford |  shutdown complete
+2019-08-22 12:36:40,761 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2019-08-22 12:36:40,770 p=22347 u=mford |  PLAY [IOS Git Backup] *******************************************************************************************************************
+2019-08-22 12:36:40,779 p=22347 u=mford |  TASK [create temporary directory to store configuration] ********************************************************************************
+2019-08-22 12:36:41,787 p=22361 u=mford | paramiko [3.84.151.167] starting thread (client mode): 0x92e50d0L
+2019-08-22 12:36:41,788 p=22361 u=mford | paramiko [3.84.151.167] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2019-08-22 12:36:41,822 p=22361 u=mford | paramiko [3.84.151.167] Remote version/idstring: SSH-2.0-Cisco-1.25
+2019-08-22 12:36:41,823 p=22361 u=mford | paramiko [3.84.151.167] Connected (version 2.0, client Cisco-1.25)
+2019-08-22 12:36:41,826 p=22361 u=mford | paramiko [3.84.151.167] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2019-08-22 12:36:41,826 p=22361 u=mford | paramiko [3.84.151.167] Kex agreed: diffie-hellman-group-exchange-sha1
+2019-08-22 12:36:41,827 p=22361 u=mford | paramiko [3.84.151.167] HostKey agreed: ssh-rsa
+2019-08-22 12:36:41,827 p=22361 u=mford | paramiko [3.84.151.167] Cipher agreed: aes128-ctr
+2019-08-22 12:36:41,828 p=22361 u=mford | paramiko [3.84.151.167] MAC agreed: hmac-sha2-256
+2019-08-22 12:36:41,828 p=22361 u=mford | paramiko [3.84.151.167] Compression agreed: none
+2019-08-22 12:36:42,094 p=22361 u=mford | paramiko [3.84.151.167] Got server p (2048 bits)
+2019-08-22 12:36:42,221 p=22361 u=mford | paramiko [3.84.151.167] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2019-08-22 12:36:42,223 p=22361 u=mford | paramiko [3.84.151.167] Switch to new keys ...
+2019-08-22 12:36:42,231 p=22361 u=mford | paramiko [3.84.151.167] Trying discovered key f85cade9e5a721085b422bda763609d4 in /Users/mford/.ssh/maf-ios-demo-private.pem
+2019-08-22 12:36:42,487 p=22361 u=mford | paramiko [3.84.151.167] userauth is OK
+2019-08-22 12:36:42,533 p=22361 u=mford | paramiko [3.84.151.167] Authentication (publickey) successful!
+2019-08-22 12:36:42,536 p=22361 u=mford | paramiko [3.84.151.167] [chan 0] Max packet in: 32768 bytes
+2019-08-22 12:36:42,570 p=22361 u=mford | paramiko [3.84.151.167] [chan 0] Max packet out: 4096 bytes
+2019-08-22 12:36:42,571 p=22361 u=mford | paramiko [3.84.151.167] Secsh channel 0 opened.
+2019-08-22 12:36:42,636 p=22361 u=mford | paramiko [3.84.151.167] [chan 0] Sesch channel 0 request ok
+2019-08-22 12:36:42,671 p=22361 u=mford | paramiko [3.84.151.167] [chan 0] Sesch channel 0 request ok
+2019-08-22 12:36:44,073 p=22347 u=mford |  network_os is set to ios
+2019-08-22 12:36:44,498 p=22347 u=mford |   [WARNING]: Platform darwin on host rtr1 is using the discovered Python interpreter at /usr/bin/python, but future installation of
+another Python interpreter could change this. See https://docs.ansible.com/ansible/2.8/reference_appendices/interpreter_discovery.html
+for more information.
+
+2019-08-22 12:36:44,499 p=22347 u=mford |  ok: [rtr1]
+2019-08-22 12:36:44,503 p=22347 u=mford |  TASK [git clone] ************************************************************************************************************************
+2019-08-22 12:36:46,912 p=22347 u=mford |  ok: [rtr1]
+2019-08-22 12:36:46,921 p=22347 u=mford |  TASK [git branch list] ******************************************************************************************************************
+2019-08-22 12:36:48,834 p=22347 u=mford |  ok: [rtr1]
+2019-08-22 12:36:48,839 p=22347 u=mford |  TASK [git checkout new branch] **********************************************************************************************************
+2019-08-22 12:36:48,861 p=22347 u=mford |  skipping: [rtr1]
+2019-08-22 12:36:48,866 p=22347 u=mford |  TASK [git checkout existing branch] *****************************************************************************************************
+2019-08-22 12:36:50,655 p=22347 u=mford |  ok: [rtr1]
+2019-08-22 12:36:50,660 p=22347 u=mford |  TASK [fetch network configuration] ******************************************************************************************************
+2019-08-22 12:36:52,545 p=22484 u=mford | paramiko [34.235.136.17] starting thread (client mode): 0x922c0d0L
+2019-08-22 12:36:52,546 p=22484 u=mford | paramiko [34.235.136.17] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2019-08-22 12:36:52,549 p=22487 u=mford | paramiko [54.221.20.212] starting thread (client mode): 0x117af0d0L
+2019-08-22 12:36:52,550 p=22487 u=mford | paramiko [54.221.20.212] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2019-08-22 12:36:52,566 p=22490 u=mford | paramiko [54.164.14.49] starting thread (client mode): 0x9a590d0L
+2019-08-22 12:36:52,567 p=22490 u=mford | paramiko [54.164.14.49] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2019-08-22 12:36:52,580 p=22484 u=mford | paramiko [34.235.136.17] Remote version/idstring: SSH-2.0-Cisco-1.25
+2019-08-22 12:36:52,581 p=22484 u=mford | paramiko [34.235.136.17] Connected (version 2.0, client Cisco-1.25)
+2019-08-22 12:36:52,584 p=22484 u=mford | paramiko [34.235.136.17] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2019-08-22 12:36:52,585 p=22484 u=mford | paramiko [34.235.136.17] Kex agreed: diffie-hellman-group-exchange-sha1
+2019-08-22 12:36:52,585 p=22484 u=mford | paramiko [34.235.136.17] HostKey agreed: ssh-rsa
+2019-08-22 12:36:52,586 p=22484 u=mford | paramiko [34.235.136.17] Cipher agreed: aes128-ctr
+2019-08-22 12:36:52,586 p=22484 u=mford | paramiko [34.235.136.17] MAC agreed: hmac-sha2-256
+2019-08-22 12:36:52,587 p=22484 u=mford | paramiko [34.235.136.17] Compression agreed: none
+2019-08-22 12:36:52,591 p=22487 u=mford | paramiko [54.221.20.212] Remote version/idstring: SSH-2.0-Cisco-1.25
+2019-08-22 12:36:52,592 p=22487 u=mford | paramiko [54.221.20.212] Connected (version 2.0, client Cisco-1.25)
+2019-08-22 12:36:52,622 p=22490 u=mford | paramiko [54.164.14.49] Remote version/idstring: SSH-2.0-Cisco-1.25
+2019-08-22 12:36:52,623 p=22490 u=mford | paramiko [54.164.14.49] Connected (version 2.0, client Cisco-1.25)
+2019-08-22 12:36:52,624 p=22490 u=mford | paramiko [54.164.14.49] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2019-08-22 12:36:52,625 p=22490 u=mford | paramiko [54.164.14.49] Kex agreed: diffie-hellman-group-exchange-sha1
+2019-08-22 12:36:52,625 p=22490 u=mford | paramiko [54.164.14.49] HostKey agreed: ssh-rsa
+2019-08-22 12:36:52,626 p=22490 u=mford | paramiko [54.164.14.49] Cipher agreed: aes128-ctr
+2019-08-22 12:36:52,626 p=22490 u=mford | paramiko [54.164.14.49] MAC agreed: hmac-sha2-256
+2019-08-22 12:36:52,627 p=22490 u=mford | paramiko [54.164.14.49] Compression agreed: none
+2019-08-22 12:36:52,630 p=22487 u=mford | paramiko [54.221.20.212] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2019-08-22 12:36:52,631 p=22487 u=mford | paramiko [54.221.20.212] Kex agreed: diffie-hellman-group-exchange-sha1
+2019-08-22 12:36:52,631 p=22487 u=mford | paramiko [54.221.20.212] HostKey agreed: ssh-rsa
+2019-08-22 12:36:52,632 p=22487 u=mford | paramiko [54.221.20.212] Cipher agreed: aes128-ctr
+2019-08-22 12:36:52,632 p=22487 u=mford | paramiko [54.221.20.212] MAC agreed: hmac-sha2-256
+2019-08-22 12:36:52,632 p=22487 u=mford | paramiko [54.221.20.212] Compression agreed: none
+2019-08-22 12:36:52,671 p=22487 u=mford | paramiko [54.221.20.212] Got server p (2048 bits)
+2019-08-22 12:36:52,790 p=22487 u=mford | paramiko [54.221.20.212] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2019-08-22 12:36:52,791 p=22487 u=mford | paramiko [54.221.20.212] Switch to new keys ...
+2019-08-22 12:36:52,806 p=22487 u=mford | paramiko [54.221.20.212] Trying discovered key f85cade9e5a721085b422bda763609d4 in /Users/mford/.ssh/maf-ios-demo-private.pem
+2019-08-22 12:36:52,854 p=22484 u=mford | paramiko [34.235.136.17] Got server p (2048 bits)
+2019-08-22 12:36:52,931 p=22490 u=mford | paramiko [54.164.14.49] Got server p (2048 bits)
+2019-08-22 12:36:52,978 p=22484 u=mford | paramiko [34.235.136.17] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2019-08-22 12:36:52,980 p=22484 u=mford | paramiko [34.235.136.17] Switch to new keys ...
+2019-08-22 12:36:52,981 p=22484 u=mford | paramiko [34.235.136.17] Trying discovered key f85cade9e5a721085b422bda763609d4 in /Users/mford/.ssh/maf-ios-demo-private.pem
+2019-08-22 12:36:53,058 p=22487 u=mford | paramiko [54.221.20.212] userauth is OK
+2019-08-22 12:36:53,070 p=22490 u=mford | paramiko [54.164.14.49] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2019-08-22 12:36:53,072 p=22490 u=mford | paramiko [54.164.14.49] Switch to new keys ...
+2019-08-22 12:36:53,075 p=22490 u=mford | paramiko [54.164.14.49] Trying discovered key f85cade9e5a721085b422bda763609d4 in /Users/mford/.ssh/maf-ios-demo-private.pem
+2019-08-22 12:36:53,097 p=22487 u=mford | paramiko [54.221.20.212] Authentication (publickey) successful!
+2019-08-22 12:36:53,107 p=22487 u=mford | paramiko [54.221.20.212] [chan 0] Max packet in: 32768 bytes
+2019-08-22 12:36:53,145 p=22487 u=mford | paramiko [54.221.20.212] [chan 0] Max packet out: 4096 bytes
+2019-08-22 12:36:53,146 p=22487 u=mford | paramiko [54.221.20.212] Secsh channel 0 opened.
+2019-08-22 12:36:53,210 p=22487 u=mford | paramiko [54.221.20.212] [chan 0] Sesch channel 0 request ok
+2019-08-22 12:36:53,246 p=22487 u=mford | paramiko [54.221.20.212] [chan 0] Sesch channel 0 request ok
+2019-08-22 12:36:53,250 p=22484 u=mford | paramiko [34.235.136.17] userauth is OK
+2019-08-22 12:36:53,290 p=22484 u=mford | paramiko [34.235.136.17] Authentication (publickey) successful!
+2019-08-22 12:36:53,294 p=22484 u=mford | paramiko [34.235.136.17] [chan 0] Max packet in: 32768 bytes
+2019-08-22 12:36:53,332 p=22484 u=mford | paramiko [34.235.136.17] [chan 0] Max packet out: 4096 bytes
+2019-08-22 12:36:53,333 p=22484 u=mford | paramiko [34.235.136.17] Secsh channel 0 opened.
+2019-08-22 12:36:53,373 p=22490 u=mford | paramiko [54.164.14.49] userauth is OK
+2019-08-22 12:36:53,394 p=22484 u=mford | paramiko [34.235.136.17] [chan 0] Sesch channel 0 request ok
+2019-08-22 12:36:53,432 p=22490 u=mford | paramiko [54.164.14.49] Authentication (publickey) successful!
+2019-08-22 12:36:53,433 p=22484 u=mford | paramiko [34.235.136.17] [chan 0] Sesch channel 0 request ok
+2019-08-22 12:36:53,444 p=22490 u=mford | paramiko [54.164.14.49] [chan 0] Max packet in: 32768 bytes
+2019-08-22 12:36:53,499 p=22490 u=mford | paramiko [54.164.14.49] [chan 0] Max packet out: 4096 bytes
+2019-08-22 12:36:53,500 p=22490 u=mford | paramiko [54.164.14.49] Secsh channel 0 opened.
+2019-08-22 12:36:53,562 p=22490 u=mford | paramiko [54.164.14.49] [chan 0] Sesch channel 0 request ok
+2019-08-22 12:36:53,618 p=22490 u=mford | paramiko [54.164.14.49] [chan 0] Sesch channel 0 request ok
+2019-08-22 12:36:54,532 p=22347 u=mford |  changed: [rtr1]
+2019-08-22 12:36:54,604 p=22347 u=mford |  network_os is set to ios
+2019-08-22 12:36:54,832 p=22347 u=mford |  network_os is set to ios
+2019-08-22 12:36:55,061 p=22347 u=mford |  network_os is set to ios
+2019-08-22 12:36:56,051 p=22347 u=mford |  changed: [rtr4]
+2019-08-22 12:36:56,742 p=22347 u=mford |  changed: [rtr2]
+2019-08-22 12:36:56,948 p=22347 u=mford |  changed: [rtr3]
+2019-08-22 12:36:56,959 p=22347 u=mford |  TASK [remove non configuration lines] ***************************************************************************************************
+2019-08-22 12:36:59,955 p=22347 u=mford |  ok: [rtr4]
+2019-08-22 12:37:00,022 p=22347 u=mford |  ok: [rtr3]
+2019-08-22 12:37:00,035 p=22347 u=mford |  ok: [rtr1]
+2019-08-22 12:37:00,039 p=22347 u=mford |  ok: [rtr2]
+2019-08-22 12:37:00,050 p=22347 u=mford |  TASK [create folder structure] **********************************************************************************************************
+2019-08-22 12:37:03,141 p=22347 u=mford |  changed: [rtr1]
+2019-08-22 12:37:03,142 p=22347 u=mford |  changed: [rtr3]
+2019-08-22 12:37:03,146 p=22347 u=mford |  changed: [rtr2]
+2019-08-22 12:37:03,799 p=22347 u=mford |  changed: [rtr4]
+2019-08-22 12:37:03,806 p=22347 u=mford |  TASK [copy network configuration to repo folder] ****************************************************************************************
+2019-08-22 12:37:06,121 p=22347 u=mford |  changed: [rtr1]
+2019-08-22 12:37:07,675 p=22347 u=mford |  changed: [rtr4]
+2019-08-22 12:37:07,684 p=22347 u=mford |  changed: [rtr2]
+2019-08-22 12:37:07,715 p=22347 u=mford |  changed: [rtr3]
+2019-08-22 12:37:07,718 p=22347 u=mford |  RUNNING HANDLER [Configure local git repository] ****************************************************************************************
+2019-08-22 12:37:07,756 p=22347 u=mford |  fatal: [rtr1]: FAILED! => {"msg": "'vaulted_git_username' is undefined"}
+2019-08-22 12:37:07,757 p=22347 u=mford |  RUNNING HANDLER [git add --all] *********************************************************************************************************
+2019-08-22 12:37:07,758 p=22347 u=mford |  RUNNING HANDLER [git commit] ************************************************************************************************************
+2019-08-22 12:37:07,758 p=22347 u=mford |  RUNNING HANDLER [git push] **************************************************************************************************************
+2019-08-22 12:37:07,759 p=22347 u=mford |  RUNNING HANDLER [Cleanup generated files/directories] ***********************************************************************************
+2019-08-22 12:37:07,759 p=22347 u=mford |  NO MORE HOSTS LEFT **********************************************************************************************************************
+2019-08-22 12:37:07,760 p=22361 u=mford | paramiko [3.84.151.167] [chan 0] EOF sent (0)
+2019-08-22 12:37:07,798 p=22361 u=mford | paramiko [3.84.151.167] EOF in transport thread
+2019-08-22 12:37:07,829 p=22484 u=mford | paramiko [34.235.136.17] [chan 0] EOF sent (0)
+2019-08-22 12:37:07,832 p=22484 u=mford | paramiko [34.235.136.17] EOF in transport thread
+2019-08-22 12:37:07,835 p=22490 u=mford | paramiko [54.164.14.49] [chan 0] EOF sent (0)
+2019-08-22 12:37:07,868 p=22490 u=mford | paramiko [54.164.14.49] EOF in transport thread
+2019-08-22 12:37:07,870 p=22487 u=mford | paramiko [54.221.20.212] [chan 0] EOF sent (0)
+2019-08-22 12:37:07,877 p=22487 u=mford | paramiko [54.221.20.212] EOF in transport thread
+2019-08-22 12:37:07,889 p=22347 u=mford |  PLAY RECAP ******************************************************************************************************************************
+2019-08-22 12:37:07,890 p=22347 u=mford |  rtr1                       : ok=8    changed=3    unreachable=0    failed=1    skipped=1    rescued=0    ignored=0   
+2019-08-22 12:37:07,890 p=22347 u=mford |  rtr2                       : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2019-08-22 12:37:07,890 p=22347 u=mford |  rtr3                       : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2019-08-22 12:37:07,890 p=22347 u=mford |  rtr4                       : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2019-08-22 12:37:07,929 p=22354 u=mford |  shutdown complete
+2019-08-22 12:37:07,936 p=22463 u=mford |  shutdown complete
+2019-08-22 12:37:07,970 p=22464 u=mford |  shutdown complete
+2019-08-22 12:37:07,990 p=22465 u=mford |  shutdown complete
+2019-08-22 12:37:41,666 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2019-08-22 12:37:41,674 p=22959 u=mford |  PLAY [IOS Git Backup] *******************************************************************************************************************
+2019-08-22 12:37:41,687 p=22959 u=mford |  TASK [create temporary directory to store configuration] ********************************************************************************
+2019-08-22 12:37:42,908 p=22973 u=mford | paramiko [3.84.151.167] starting thread (client mode): 0x4be10d0L
+2019-08-22 12:37:42,909 p=22973 u=mford | paramiko [3.84.151.167] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2019-08-22 12:37:42,945 p=22973 u=mford | paramiko [3.84.151.167] Remote version/idstring: SSH-2.0-Cisco-1.25
+2019-08-22 12:37:42,946 p=22973 u=mford | paramiko [3.84.151.167] Connected (version 2.0, client Cisco-1.25)
+2019-08-22 12:37:42,950 p=22973 u=mford | paramiko [3.84.151.167] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2019-08-22 12:37:42,951 p=22973 u=mford | paramiko [3.84.151.167] Kex agreed: diffie-hellman-group-exchange-sha1
+2019-08-22 12:37:42,951 p=22973 u=mford | paramiko [3.84.151.167] HostKey agreed: ssh-rsa
+2019-08-22 12:37:42,952 p=22973 u=mford | paramiko [3.84.151.167] Cipher agreed: aes128-ctr
+2019-08-22 12:37:42,952 p=22973 u=mford | paramiko [3.84.151.167] MAC agreed: hmac-sha2-256
+2019-08-22 12:37:42,953 p=22973 u=mford | paramiko [3.84.151.167] Compression agreed: none
+2019-08-22 12:37:43,219 p=22973 u=mford | paramiko [3.84.151.167] Got server p (2048 bits)
+2019-08-22 12:37:43,340 p=22973 u=mford | paramiko [3.84.151.167] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2019-08-22 12:37:43,341 p=22973 u=mford | paramiko [3.84.151.167] Switch to new keys ...
+2019-08-22 12:37:43,343 p=22973 u=mford | paramiko [3.84.151.167] Trying discovered key f85cade9e5a721085b422bda763609d4 in /Users/mford/.ssh/maf-ios-demo-private.pem
+2019-08-22 12:37:43,661 p=22973 u=mford | paramiko [3.84.151.167] userauth is OK
+2019-08-22 12:37:43,702 p=22973 u=mford | paramiko [3.84.151.167] Authentication (publickey) successful!
+2019-08-22 12:37:43,711 p=22973 u=mford | paramiko [3.84.151.167] [chan 0] Max packet in: 32768 bytes
+2019-08-22 12:37:43,748 p=22973 u=mford | paramiko [3.84.151.167] [chan 0] Max packet out: 4096 bytes
+2019-08-22 12:37:43,749 p=22973 u=mford | paramiko [3.84.151.167] Secsh channel 0 opened.
+2019-08-22 12:37:43,812 p=22973 u=mford | paramiko [3.84.151.167] [chan 0] Sesch channel 0 request ok
+2019-08-22 12:37:43,847 p=22973 u=mford | paramiko [3.84.151.167] [chan 0] Sesch channel 0 request ok
+2019-08-22 12:37:45,209 p=22959 u=mford |  network_os is set to ios
+2019-08-22 12:37:45,680 p=22959 u=mford |   [WARNING]: Platform darwin on host rtr1 is using the discovered Python interpreter at /usr/bin/python, but future installation of
+another Python interpreter could change this. See https://docs.ansible.com/ansible/2.8/reference_appendices/interpreter_discovery.html
+for more information.
+
+2019-08-22 12:37:45,680 p=22959 u=mford |  ok: [rtr1]
+2019-08-22 12:37:45,686 p=22959 u=mford |  TASK [git clone] ************************************************************************************************************************
+2019-08-22 12:37:48,114 p=22959 u=mford |  ok: [rtr1]
+2019-08-22 12:37:48,121 p=22959 u=mford |  TASK [git branch list] ******************************************************************************************************************
+2019-08-22 12:37:50,603 p=22959 u=mford |  ok: [rtr1]
+2019-08-22 12:37:50,608 p=22959 u=mford |  TASK [git checkout new branch] **********************************************************************************************************
+2019-08-22 12:37:50,628 p=22959 u=mford |  skipping: [rtr1]
+2019-08-22 12:37:50,633 p=22959 u=mford |  TASK [git checkout existing branch] *****************************************************************************************************
+2019-08-22 12:37:52,655 p=22959 u=mford |  ok: [rtr1]
+2019-08-22 12:37:52,659 p=22959 u=mford |  TASK [fetch network configuration] ******************************************************************************************************
+2019-08-22 12:37:55,720 p=23098 u=mford | paramiko [34.235.136.17] starting thread (client mode): 0x70570d0L
+2019-08-22 12:37:55,720 p=23104 u=mford | paramiko [54.164.14.49] starting thread (client mode): 0xf1c10d0L
+2019-08-22 12:37:55,721 p=23098 u=mford | paramiko [34.235.136.17] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2019-08-22 12:37:55,721 p=23104 u=mford | paramiko [54.164.14.49] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2019-08-22 12:37:55,760 p=23104 u=mford | paramiko [54.164.14.49] Remote version/idstring: SSH-2.0-Cisco-1.25
+2019-08-22 12:37:55,760 p=23104 u=mford | paramiko [54.164.14.49] Connected (version 2.0, client Cisco-1.25)
+2019-08-22 12:37:55,773 p=23098 u=mford | paramiko [34.235.136.17] Remote version/idstring: SSH-2.0-Cisco-1.25
+2019-08-22 12:37:55,773 p=23098 u=mford | paramiko [34.235.136.17] Connected (version 2.0, client Cisco-1.25)
+2019-08-22 12:37:55,777 p=23098 u=mford | paramiko [34.235.136.17] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2019-08-22 12:37:55,778 p=23098 u=mford | paramiko [34.235.136.17] Kex agreed: diffie-hellman-group-exchange-sha1
+2019-08-22 12:37:55,778 p=23098 u=mford | paramiko [34.235.136.17] HostKey agreed: ssh-rsa
+2019-08-22 12:37:55,779 p=23098 u=mford | paramiko [34.235.136.17] Cipher agreed: aes128-ctr
+2019-08-22 12:37:55,779 p=23098 u=mford | paramiko [34.235.136.17] MAC agreed: hmac-sha2-256
+2019-08-22 12:37:55,779 p=23098 u=mford | paramiko [34.235.136.17] Compression agreed: none
+2019-08-22 12:37:55,801 p=23104 u=mford | paramiko [54.164.14.49] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2019-08-22 12:37:55,801 p=23104 u=mford | paramiko [54.164.14.49] Kex agreed: diffie-hellman-group-exchange-sha1
+2019-08-22 12:37:55,802 p=23104 u=mford | paramiko [54.164.14.49] HostKey agreed: ssh-rsa
+2019-08-22 12:37:55,802 p=23104 u=mford | paramiko [54.164.14.49] Cipher agreed: aes128-ctr
+2019-08-22 12:37:55,803 p=23104 u=mford | paramiko [54.164.14.49] MAC agreed: hmac-sha2-256
+2019-08-22 12:37:55,803 p=23104 u=mford | paramiko [54.164.14.49] Compression agreed: none
+2019-08-22 12:37:55,839 p=23104 u=mford | paramiko [54.164.14.49] Got server p (2048 bits)
+2019-08-22 12:37:55,960 p=23104 u=mford | paramiko [54.164.14.49] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2019-08-22 12:37:55,961 p=23104 u=mford | paramiko [54.164.14.49] Switch to new keys ...
+2019-08-22 12:37:55,969 p=23104 u=mford | paramiko [54.164.14.49] Trying discovered key f85cade9e5a721085b422bda763609d4 in /Users/mford/.ssh/maf-ios-demo-private.pem
+2019-08-22 12:37:56,082 p=23098 u=mford | paramiko [34.235.136.17] Got server p (2048 bits)
+2019-08-22 12:37:56,217 p=23098 u=mford | paramiko [34.235.136.17] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2019-08-22 12:37:56,218 p=23098 u=mford | paramiko [34.235.136.17] Switch to new keys ...
+2019-08-22 12:37:56,225 p=23098 u=mford | paramiko [34.235.136.17] Trying discovered key f85cade9e5a721085b422bda763609d4 in /Users/mford/.ssh/maf-ios-demo-private.pem
+2019-08-22 12:37:56,228 p=23104 u=mford | paramiko [54.164.14.49] userauth is OK
+2019-08-22 12:37:56,267 p=23104 u=mford | paramiko [54.164.14.49] Authentication (publickey) successful!
+2019-08-22 12:37:56,273 p=23104 u=mford | paramiko [54.164.14.49] [chan 0] Max packet in: 32768 bytes
+2019-08-22 12:37:56,306 p=23104 u=mford | paramiko [54.164.14.49] [chan 0] Max packet out: 4096 bytes
+2019-08-22 12:37:56,306 p=23104 u=mford | paramiko [54.164.14.49] Secsh channel 0 opened.
+2019-08-22 12:37:56,374 p=23104 u=mford | paramiko [54.164.14.49] [chan 0] Sesch channel 0 request ok
+2019-08-22 12:37:56,422 p=23104 u=mford | paramiko [54.164.14.49] [chan 0] Sesch channel 0 request ok
+2019-08-22 12:37:56,456 p=23103 u=mford | paramiko [54.221.20.212] starting thread (client mode): 0xb3c70d0L
+2019-08-22 12:37:56,457 p=23103 u=mford | paramiko [54.221.20.212] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2019-08-22 12:37:56,495 p=23103 u=mford | paramiko [54.221.20.212] Remote version/idstring: SSH-2.0-Cisco-1.25
+2019-08-22 12:37:56,496 p=23103 u=mford | paramiko [54.221.20.212] Connected (version 2.0, client Cisco-1.25)
+2019-08-22 12:37:56,502 p=23103 u=mford | paramiko [54.221.20.212] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2019-08-22 12:37:56,502 p=23103 u=mford | paramiko [54.221.20.212] Kex agreed: diffie-hellman-group-exchange-sha1
+2019-08-22 12:37:56,503 p=23103 u=mford | paramiko [54.221.20.212] HostKey agreed: ssh-rsa
+2019-08-22 12:37:56,503 p=23103 u=mford | paramiko [54.221.20.212] Cipher agreed: aes128-ctr
+2019-08-22 12:37:56,504 p=23103 u=mford | paramiko [54.221.20.212] MAC agreed: hmac-sha2-256
+2019-08-22 12:37:56,504 p=23103 u=mford | paramiko [54.221.20.212] Compression agreed: none
+2019-08-22 12:37:56,520 p=23098 u=mford | paramiko [34.235.136.17] userauth is OK
+2019-08-22 12:37:56,577 p=23098 u=mford | paramiko [34.235.136.17] Authentication (publickey) successful!
+2019-08-22 12:37:56,592 p=23098 u=mford | paramiko [34.235.136.17] [chan 0] Max packet in: 32768 bytes
+2019-08-22 12:37:56,644 p=23098 u=mford | paramiko [34.235.136.17] [chan 0] Max packet out: 4096 bytes
+2019-08-22 12:37:56,645 p=23098 u=mford | paramiko [34.235.136.17] Secsh channel 0 opened.
+2019-08-22 12:37:56,711 p=23098 u=mford | paramiko [34.235.136.17] [chan 0] Sesch channel 0 request ok
+2019-08-22 12:37:56,764 p=23098 u=mford | paramiko [34.235.136.17] [chan 0] Sesch channel 0 request ok
+2019-08-22 12:37:56,780 p=23103 u=mford | paramiko [54.221.20.212] Got server p (2048 bits)
+2019-08-22 12:37:56,902 p=23103 u=mford | paramiko [54.221.20.212] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2019-08-22 12:37:56,904 p=23103 u=mford | paramiko [54.221.20.212] Switch to new keys ...
+2019-08-22 12:37:56,918 p=23103 u=mford | paramiko [54.221.20.212] Trying discovered key f85cade9e5a721085b422bda763609d4 in /Users/mford/.ssh/maf-ios-demo-private.pem
+2019-08-22 12:37:57,179 p=23103 u=mford | paramiko [54.221.20.212] userauth is OK
+2019-08-22 12:37:57,225 p=23103 u=mford | paramiko [54.221.20.212] Authentication (publickey) successful!
+2019-08-22 12:37:57,229 p=23103 u=mford | paramiko [54.221.20.212] [chan 0] Max packet in: 32768 bytes
+2019-08-22 12:37:57,269 p=23103 u=mford | paramiko [54.221.20.212] [chan 0] Max packet out: 4096 bytes
+2019-08-22 12:37:57,270 p=23103 u=mford | paramiko [54.221.20.212] Secsh channel 0 opened.
+2019-08-22 12:37:57,334 p=23103 u=mford | paramiko [54.221.20.212] [chan 0] Sesch channel 0 request ok
+2019-08-22 12:37:57,379 p=23103 u=mford | paramiko [54.221.20.212] [chan 0] Sesch channel 0 request ok
+2019-08-22 12:37:57,882 p=22959 u=mford |  network_os is set to ios
+2019-08-22 12:37:58,254 p=22959 u=mford |  network_os is set to ios
+2019-08-22 12:37:58,748 p=22959 u=mford |  changed: [rtr1]
+2019-08-22 12:37:58,801 p=22959 u=mford |  network_os is set to ios
+2019-08-22 12:38:01,756 p=22959 u=mford |  changed: [rtr2]
+2019-08-22 12:38:01,758 p=22959 u=mford |  changed: [rtr3]
+2019-08-22 12:38:02,470 p=22959 u=mford |  changed: [rtr4]
+2019-08-22 12:38:02,483 p=22959 u=mford |  TASK [remove non configuration lines] ***************************************************************************************************
+2019-08-22 12:38:07,526 p=22959 u=mford |  ok: [rtr1]
+2019-08-22 12:38:07,529 p=22959 u=mford |  ok: [rtr3]
+2019-08-22 12:38:07,536 p=22959 u=mford |  ok: [rtr2]
+2019-08-22 12:38:07,537 p=22959 u=mford |  ok: [rtr4]
+2019-08-22 12:38:07,550 p=22959 u=mford |  TASK [create folder structure] **********************************************************************************************************
+2019-08-22 12:38:12,475 p=22959 u=mford |  changed: [rtr4]
+2019-08-22 12:38:12,518 p=22959 u=mford |  changed: [rtr1]
+2019-08-22 12:38:12,519 p=22959 u=mford |  changed: [rtr3]
+2019-08-22 12:38:12,549 p=22959 u=mford |  changed: [rtr2]
+2019-08-22 12:38:12,562 p=22959 u=mford |  TASK [copy network configuration to repo folder] ****************************************************************************************
+2019-08-22 12:38:17,757 p=22959 u=mford |  changed: [rtr1]
+2019-08-22 12:38:18,545 p=22959 u=mford |  changed: [rtr4]
+2019-08-22 12:38:18,576 p=22959 u=mford |  changed: [rtr2]
+2019-08-22 12:38:18,589 p=22959 u=mford |  changed: [rtr3]
+2019-08-22 12:38:18,593 p=22959 u=mford |  RUNNING HANDLER [Configure local git repository] ****************************************************************************************
+2019-08-22 12:38:21,570 p=22959 u=mford |  ok: [rtr1] => (item=user.name is set)
+2019-08-22 12:38:21,848 p=22959 u=mford |  ok: [rtr1] => (item=user.email is set)
+2019-08-22 12:38:22,621 p=22959 u=mford |  ok: [rtr1] => (item=user.password is set)
+2019-08-22 12:38:22,904 p=22959 u=mford |  ok: [rtr1] => (item=branch.autosetupmerge is set)
+2019-08-22 12:38:23,639 p=22959 u=mford |  ok: [rtr1] => (item=push.default is set)
+2019-08-22 12:38:23,641 p=22959 u=mford |  RUNNING HANDLER [git add --all] *********************************************************************************************************
+2019-08-22 12:38:25,563 p=22959 u=mford |  changed: [rtr1]
+2019-08-22 12:38:25,564 p=22959 u=mford |  RUNNING HANDLER [git commit] ************************************************************************************************************
+2019-08-22 12:38:27,354 p=22959 u=mford |  changed: [rtr1]
+2019-08-22 12:38:27,355 p=22959 u=mford |  RUNNING HANDLER [git push] **************************************************************************************************************
+2019-08-22 12:38:29,188 p=22959 u=mford |  changed: [rtr1]
+2019-08-22 12:38:29,189 p=22959 u=mford |  RUNNING HANDLER [Cleanup generated files/directories] ***********************************************************************************
+2019-08-22 12:38:31,010 p=22959 u=mford |  changed: [rtr1] => (item=cleanup /Users/mford/Documents/github-workspace/ansible-ios/backup)
+2019-08-22 12:38:31,356 p=22959 u=mford |  changed: [rtr1] => (item=cleanup /var/folders/w4/pr8wrncd0jsf7x_0181fq0sh0000gn/T/ansible.aIdse8ios_config)
+2019-08-22 12:38:31,362 p=22973 u=mford | paramiko [3.84.151.167] [chan 0] EOF sent (0)
+2019-08-22 12:38:31,465 p=22973 u=mford | paramiko [3.84.151.167] EOF in transport thread
+2019-08-22 12:38:31,481 p=23098 u=mford | paramiko [34.235.136.17] [chan 0] EOF sent (0)
+2019-08-22 12:38:31,564 p=23098 u=mford | paramiko [34.235.136.17] EOF in transport thread
+2019-08-22 12:38:31,581 p=22966 u=mford |  shutdown complete
+2019-08-22 12:38:31,597 p=23104 u=mford | paramiko [54.164.14.49] [chan 0] EOF sent (0)
+2019-08-22 12:38:31,634 p=23104 u=mford | paramiko [54.164.14.49] EOF in transport thread
+2019-08-22 12:38:31,665 p=23103 u=mford | paramiko [54.221.20.212] [chan 0] EOF sent (0)
+2019-08-22 12:38:31,698 p=23075 u=mford |  shutdown complete
+2019-08-22 12:38:31,710 p=23103 u=mford | paramiko [54.221.20.212] EOF in transport thread
+2019-08-22 12:38:31,733 p=22959 u=mford |  PLAY RECAP ******************************************************************************************************************************
+2019-08-22 12:38:31,734 p=22959 u=mford |  rtr1                       : ok=13   changed=7    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2019-08-22 12:38:31,734 p=22959 u=mford |  rtr2                       : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2019-08-22 12:38:31,734 p=22959 u=mford |  rtr3                       : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2019-08-22 12:38:31,734 p=22959 u=mford |  rtr4                       : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2019-08-22 12:38:31,766 p=23076 u=mford |  shutdown complete
+2019-08-22 12:38:31,833 p=23077 u=mford |  shutdown complete
+2019-08-22 12:43:55,811 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2019-08-22 12:43:55,816 p=23838 u=mford |  ERROR! vars file -./default_vars.yml was not found on the Ansible Controller.
+If you are using a module and expect the file to exist on the remote, see the remote_src option
+2019-08-22 12:45:12,341 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2019-08-22 12:45:12,346 p=23866 u=mford |  ERROR! vars file -./default_vars.yml was not found on the Ansible Controller.
+If you are using a module and expect the file to exist on the remote, see the remote_src option
+2019-08-22 12:45:20,040 p=23875 u=mford |  ERROR! Unable to retrieve file contents
+Could not find or access '/Users/mford/Documents/github-workspace/ansible-ios/.../default_vars.yml' on the Ansible Controller.
+If you are using a module and expect the file to exist on the remote, see the remote_src option
+2019-08-22 12:45:31,438 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2019-08-22 12:45:31,443 p=23881 u=mford |  ERROR! vars file -./default_vars.yml was not found on the Ansible Controller.
+If you are using a module and expect the file to exist on the remote, see the remote_src option
+2019-08-22 12:45:48,874 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2019-08-22 12:45:48,881 p=23895 u=mford |  PLAY [IOS Git Backup] *******************************************************************************************************************
+2019-08-22 12:45:48,890 p=23895 u=mford |  TASK [create temporary directory to store configuration] ********************************************************************************
+2019-08-22 12:45:49,896 p=23909 u=mford | paramiko [3.84.151.167] starting thread (client mode): 0x22990d0L
+2019-08-22 12:45:49,896 p=23909 u=mford | paramiko [3.84.151.167] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2019-08-22 12:45:49,937 p=23909 u=mford | paramiko [3.84.151.167] Remote version/idstring: SSH-2.0-Cisco-1.25
+2019-08-22 12:45:49,938 p=23909 u=mford | paramiko [3.84.151.167] Connected (version 2.0, client Cisco-1.25)
+2019-08-22 12:45:49,977 p=23909 u=mford | paramiko [3.84.151.167] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2019-08-22 12:45:49,978 p=23909 u=mford | paramiko [3.84.151.167] Kex agreed: diffie-hellman-group-exchange-sha1
+2019-08-22 12:45:49,978 p=23909 u=mford | paramiko [3.84.151.167] HostKey agreed: ssh-rsa
+2019-08-22 12:45:49,979 p=23909 u=mford | paramiko [3.84.151.167] Cipher agreed: aes128-ctr
+2019-08-22 12:45:49,979 p=23909 u=mford | paramiko [3.84.151.167] MAC agreed: hmac-sha2-256
+2019-08-22 12:45:49,980 p=23909 u=mford | paramiko [3.84.151.167] Compression agreed: none
+2019-08-22 12:45:50,016 p=23909 u=mford | paramiko [3.84.151.167] Got server p (2048 bits)
+2019-08-22 12:45:50,149 p=23909 u=mford | paramiko [3.84.151.167] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2019-08-22 12:45:50,150 p=23909 u=mford | paramiko [3.84.151.167] Switch to new keys ...
+2019-08-22 12:45:50,165 p=23909 u=mford | paramiko [3.84.151.167] Trying discovered key f85cade9e5a721085b422bda763609d4 in /Users/mford/.ssh/maf-ios-demo-private.pem
+2019-08-22 12:45:50,418 p=23909 u=mford | paramiko [3.84.151.167] userauth is OK
+2019-08-22 12:45:50,461 p=23909 u=mford | paramiko [3.84.151.167] Authentication (publickey) successful!
+2019-08-22 12:45:50,468 p=23909 u=mford | paramiko [3.84.151.167] [chan 0] Max packet in: 32768 bytes
+2019-08-22 12:45:50,503 p=23909 u=mford | paramiko [3.84.151.167] [chan 0] Max packet out: 4096 bytes
+2019-08-22 12:45:50,504 p=23909 u=mford | paramiko [3.84.151.167] Secsh channel 0 opened.
+2019-08-22 12:45:50,572 p=23909 u=mford | paramiko [3.84.151.167] [chan 0] Sesch channel 0 request ok
+2019-08-22 12:45:50,610 p=23909 u=mford | paramiko [3.84.151.167] [chan 0] Sesch channel 0 request ok
+2019-08-22 12:45:51,983 p=23895 u=mford |  network_os is set to ios
+2019-08-22 12:45:52,421 p=23895 u=mford |   [WARNING]: Platform darwin on host rtr1 is using the discovered Python interpreter at /usr/bin/python, but future installation of
+another Python interpreter could change this. See https://docs.ansible.com/ansible/2.8/reference_appendices/interpreter_discovery.html
+for more information.
+
+2019-08-22 12:45:52,421 p=23895 u=mford |  ok: [rtr1]
+2019-08-22 12:45:52,426 p=23895 u=mford |  TASK [git clone] ************************************************************************************************************************
+2019-08-22 12:45:54,830 p=23895 u=mford |  ok: [rtr1]
+2019-08-22 12:45:54,836 p=23895 u=mford |  TASK [git branch list] ******************************************************************************************************************
+2019-08-22 12:45:56,758 p=23895 u=mford |  ok: [rtr1]
+2019-08-22 12:45:56,762 p=23895 u=mford |  TASK [git checkout new branch] **********************************************************************************************************
+2019-08-22 12:45:56,783 p=23895 u=mford |  skipping: [rtr1]
+2019-08-22 12:45:56,787 p=23895 u=mford |  TASK [git checkout existing branch] *****************************************************************************************************
+2019-08-22 12:45:58,567 p=23895 u=mford |  ok: [rtr1]
+2019-08-22 12:45:58,572 p=23895 u=mford |  TASK [fetch network configuration] ******************************************************************************************************
+2019-08-22 12:46:00,316 p=24033 u=mford | paramiko [54.164.14.49] starting thread (client mode): 0xb1bd0d0L
+2019-08-22 12:46:00,317 p=24033 u=mford | paramiko [54.164.14.49] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2019-08-22 12:46:00,326 p=24030 u=mford | paramiko [34.235.136.17] starting thread (client mode): 0xbf7c0d0L
+2019-08-22 12:46:00,327 p=24030 u=mford | paramiko [34.235.136.17] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2019-08-22 12:46:00,351 p=24033 u=mford | paramiko [54.164.14.49] Remote version/idstring: SSH-2.0-Cisco-1.25
+2019-08-22 12:46:00,352 p=24033 u=mford | paramiko [54.164.14.49] Connected (version 2.0, client Cisco-1.25)
+2019-08-22 12:46:00,361 p=24033 u=mford | paramiko [54.164.14.49] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2019-08-22 12:46:00,362 p=24033 u=mford | paramiko [54.164.14.49] Kex agreed: diffie-hellman-group-exchange-sha1
+2019-08-22 12:46:00,363 p=24033 u=mford | paramiko [54.164.14.49] HostKey agreed: ssh-rsa
+2019-08-22 12:46:00,363 p=24033 u=mford | paramiko [54.164.14.49] Cipher agreed: aes128-ctr
+2019-08-22 12:46:00,364 p=24033 u=mford | paramiko [54.164.14.49] MAC agreed: hmac-sha2-256
+2019-08-22 12:46:00,365 p=24033 u=mford | paramiko [54.164.14.49] Compression agreed: none
+2019-08-22 12:46:00,369 p=24030 u=mford | paramiko [34.235.136.17] Remote version/idstring: SSH-2.0-Cisco-1.25
+2019-08-22 12:46:00,370 p=24030 u=mford | paramiko [34.235.136.17] Connected (version 2.0, client Cisco-1.25)
+2019-08-22 12:46:00,408 p=24030 u=mford | paramiko [34.235.136.17] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2019-08-22 12:46:00,409 p=24030 u=mford | paramiko [34.235.136.17] Kex agreed: diffie-hellman-group-exchange-sha1
+2019-08-22 12:46:00,410 p=24030 u=mford | paramiko [34.235.136.17] HostKey agreed: ssh-rsa
+2019-08-22 12:46:00,410 p=24030 u=mford | paramiko [34.235.136.17] Cipher agreed: aes128-ctr
+2019-08-22 12:46:00,410 p=24038 u=mford | paramiko [54.221.20.212] starting thread (client mode): 0xe1fb0d0L
+2019-08-22 12:46:00,410 p=24030 u=mford | paramiko [34.235.136.17] MAC agreed: hmac-sha2-256
+2019-08-22 12:46:00,411 p=24038 u=mford | paramiko [54.221.20.212] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2019-08-22 12:46:00,411 p=24030 u=mford | paramiko [34.235.136.17] Compression agreed: none
+2019-08-22 12:46:00,448 p=24030 u=mford | paramiko [34.235.136.17] Got server p (2048 bits)
+2019-08-22 12:46:00,449 p=24038 u=mford | paramiko [54.221.20.212] Remote version/idstring: SSH-2.0-Cisco-1.25
+2019-08-22 12:46:00,450 p=24038 u=mford | paramiko [54.221.20.212] Connected (version 2.0, client Cisco-1.25)
+2019-08-22 12:46:00,488 p=24038 u=mford | paramiko [54.221.20.212] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2019-08-22 12:46:00,489 p=24038 u=mford | paramiko [54.221.20.212] Kex agreed: diffie-hellman-group-exchange-sha1
+2019-08-22 12:46:00,490 p=24038 u=mford | paramiko [54.221.20.212] HostKey agreed: ssh-rsa
+2019-08-22 12:46:00,490 p=24038 u=mford | paramiko [54.221.20.212] Cipher agreed: aes128-ctr
+2019-08-22 12:46:00,491 p=24038 u=mford | paramiko [54.221.20.212] MAC agreed: hmac-sha2-256
+2019-08-22 12:46:00,491 p=24038 u=mford | paramiko [54.221.20.212] Compression agreed: none
+2019-08-22 12:46:00,574 p=24030 u=mford | paramiko [34.235.136.17] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2019-08-22 12:46:00,575 p=24030 u=mford | paramiko [34.235.136.17] Switch to new keys ...
+2019-08-22 12:46:00,591 p=24030 u=mford | paramiko [34.235.136.17] Trying discovered key f85cade9e5a721085b422bda763609d4 in /Users/mford/.ssh/maf-ios-demo-private.pem
+2019-08-22 12:46:00,629 p=24033 u=mford | paramiko [54.164.14.49] Got server p (2048 bits)
+2019-08-22 12:46:00,726 p=24038 u=mford | paramiko [54.221.20.212] Got server p (2048 bits)
+2019-08-22 12:46:00,753 p=24033 u=mford | paramiko [54.164.14.49] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2019-08-22 12:46:00,754 p=24033 u=mford | paramiko [54.164.14.49] Switch to new keys ...
+2019-08-22 12:46:00,757 p=24033 u=mford | paramiko [54.164.14.49] Trying discovered key f85cade9e5a721085b422bda763609d4 in /Users/mford/.ssh/maf-ios-demo-private.pem
+2019-08-22 12:46:00,845 p=24030 u=mford | paramiko [34.235.136.17] userauth is OK
+2019-08-22 12:46:00,848 p=24038 u=mford | paramiko [54.221.20.212] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2019-08-22 12:46:00,849 p=24038 u=mford | paramiko [54.221.20.212] Switch to new keys ...
+2019-08-22 12:46:00,851 p=24038 u=mford | paramiko [54.221.20.212] Trying discovered key f85cade9e5a721085b422bda763609d4 in /Users/mford/.ssh/maf-ios-demo-private.pem
+2019-08-22 12:46:00,885 p=24030 u=mford | paramiko [34.235.136.17] Authentication (publickey) successful!
+2019-08-22 12:46:00,893 p=24030 u=mford | paramiko [34.235.136.17] [chan 0] Max packet in: 32768 bytes
+2019-08-22 12:46:00,929 p=24030 u=mford | paramiko [34.235.136.17] [chan 0] Max packet out: 4096 bytes
+2019-08-22 12:46:00,929 p=24030 u=mford | paramiko [34.235.136.17] Secsh channel 0 opened.
+2019-08-22 12:46:00,993 p=24030 u=mford | paramiko [34.235.136.17] [chan 0] Sesch channel 0 request ok
+2019-08-22 12:46:01,024 p=24033 u=mford | paramiko [54.164.14.49] userauth is OK
+2019-08-22 12:46:01,030 p=24030 u=mford | paramiko [34.235.136.17] [chan 0] Sesch channel 0 request ok
+2019-08-22 12:46:01,061 p=24033 u=mford | paramiko [54.164.14.49] Authentication (publickey) successful!
+2019-08-22 12:46:01,063 p=24033 u=mford | paramiko [54.164.14.49] [chan 0] Max packet in: 32768 bytes
+2019-08-22 12:46:01,099 p=24033 u=mford | paramiko [54.164.14.49] [chan 0] Max packet out: 4096 bytes
+2019-08-22 12:46:01,100 p=24033 u=mford | paramiko [54.164.14.49] Secsh channel 0 opened.
+2019-08-22 12:46:01,117 p=24038 u=mford | paramiko [54.221.20.212] userauth is OK
+2019-08-22 12:46:01,159 p=24038 u=mford | paramiko [54.221.20.212] Authentication (publickey) successful!
+2019-08-22 12:46:01,162 p=24038 u=mford | paramiko [54.221.20.212] [chan 0] Max packet in: 32768 bytes
+2019-08-22 12:46:01,163 p=24033 u=mford | paramiko [54.164.14.49] [chan 0] Sesch channel 0 request ok
+2019-08-22 12:46:01,198 p=24033 u=mford | paramiko [54.164.14.49] [chan 0] Sesch channel 0 request ok
+2019-08-22 12:46:01,198 p=24038 u=mford | paramiko [54.221.20.212] [chan 0] Max packet out: 4096 bytes
+2019-08-22 12:46:01,198 p=24038 u=mford | paramiko [54.221.20.212] Secsh channel 0 opened.
+2019-08-22 12:46:01,263 p=24038 u=mford | paramiko [54.221.20.212] [chan 0] Sesch channel 0 request ok
+2019-08-22 12:46:01,300 p=24038 u=mford | paramiko [54.221.20.212] [chan 0] Sesch channel 0 request ok
+2019-08-22 12:46:02,423 p=23895 u=mford |  network_os is set to ios
+2019-08-22 12:46:02,589 p=23895 u=mford |  network_os is set to ios
+2019-08-22 12:46:02,686 p=23895 u=mford |  network_os is set to ios
+2019-08-22 12:46:03,401 p=23895 u=mford |  changed: [rtr1]
+2019-08-22 12:46:04,447 p=23895 u=mford |  changed: [rtr2]
+2019-08-22 12:46:04,815 p=23895 u=mford |  changed: [rtr3]
+2019-08-22 12:46:05,364 p=23895 u=mford |  changed: [rtr4]
+2019-08-22 12:46:05,373 p=23895 u=mford |  TASK [remove non configuration lines] ***************************************************************************************************
+2019-08-22 12:46:07,700 p=23895 u=mford |  ok: [rtr1]
+2019-08-22 12:46:08,069 p=23895 u=mford |  ok: [rtr2]
+2019-08-22 12:46:08,486 p=23895 u=mford |  ok: [rtr3]
+2019-08-22 12:46:08,493 p=23895 u=mford |  ok: [rtr4]
+2019-08-22 12:46:08,505 p=23895 u=mford |  TASK [create folder structure] **********************************************************************************************************
+2019-08-22 12:46:11,687 p=23895 u=mford |  changed: [rtr3]
+2019-08-22 12:46:11,689 p=23895 u=mford |  changed: [rtr1]
+2019-08-22 12:46:11,694 p=23895 u=mford |  changed: [rtr4]
+2019-08-22 12:46:11,725 p=23895 u=mford |  changed: [rtr2]
+2019-08-22 12:46:11,736 p=23895 u=mford |  TASK [copy network configuration to repo folder] ****************************************************************************************
+2019-08-22 12:46:15,382 p=23895 u=mford |  changed: [rtr1]
+2019-08-22 12:46:15,422 p=23895 u=mford |  changed: [rtr3]
+2019-08-22 12:46:15,493 p=23895 u=mford |  changed: [rtr2]
+2019-08-22 12:46:15,495 p=23895 u=mford |  changed: [rtr4]
+2019-08-22 12:46:15,498 p=23895 u=mford |  RUNNING HANDLER [Configure local git repository] ****************************************************************************************
+2019-08-22 12:46:17,320 p=23895 u=mford |  ok: [rtr1] => (item=user.name is set)
+2019-08-22 12:46:17,589 p=23895 u=mford |  ok: [rtr1] => (item=user.email is set)
+2019-08-22 12:46:17,852 p=23895 u=mford |  ok: [rtr1] => (item=branch.autosetupmerge is set)
+2019-08-22 12:46:18,120 p=23895 u=mford |  ok: [rtr1] => (item=push.default is set)
+2019-08-22 12:46:18,123 p=23895 u=mford |  RUNNING HANDLER [git add --all] *********************************************************************************************************
+2019-08-22 12:46:20,397 p=23895 u=mford |  changed: [rtr1]
+2019-08-22 12:46:20,398 p=23895 u=mford |  RUNNING HANDLER [git commit] ************************************************************************************************************
+2019-08-22 12:46:22,533 p=23895 u=mford |  changed: [rtr1]
+2019-08-22 12:46:22,533 p=23895 u=mford |  RUNNING HANDLER [git push] **************************************************************************************************************
+2019-08-22 12:46:28,088 p=23895 u=mford |  changed: [rtr1]
+2019-08-22 12:46:28,089 p=23895 u=mford |  RUNNING HANDLER [Cleanup generated files/directories] ***********************************************************************************
+2019-08-22 12:46:30,029 p=23895 u=mford |  changed: [rtr1] => (item=cleanup /Users/mford/Documents/github-workspace/ansible-ios/backup)
+2019-08-22 12:46:30,906 p=23895 u=mford |  changed: [rtr1] => (item=cleanup /var/folders/w4/pr8wrncd0jsf7x_0181fq0sh0000gn/T/ansible.NjOuPJios_config)
+2019-08-22 12:46:30,914 p=23909 u=mford | paramiko [3.84.151.167] [chan 0] EOF sent (0)
+2019-08-22 12:46:30,929 p=23909 u=mford | paramiko [3.84.151.167] EOF in transport thread
+2019-08-22 12:46:30,932 p=24030 u=mford | paramiko [34.235.136.17] [chan 0] EOF sent (0)
+2019-08-22 12:46:31,032 p=24030 u=mford | paramiko [34.235.136.17] EOF in transport thread
+2019-08-22 12:46:31,033 p=23902 u=mford |  shutdown complete
+2019-08-22 12:46:31,050 p=24033 u=mford | paramiko [54.164.14.49] [chan 0] EOF sent (0)
+2019-08-22 12:46:31,085 p=24033 u=mford | paramiko [54.164.14.49] EOF in transport thread
+2019-08-22 12:46:31,117 p=24038 u=mford | paramiko [54.221.20.212] [chan 0] EOF sent (0)
+2019-08-22 12:46:31,135 p=24038 u=mford | paramiko [54.221.20.212] EOF in transport thread
+2019-08-22 12:46:31,151 p=24011 u=mford |  shutdown complete
+2019-08-22 12:46:31,153 p=23895 u=mford |  PLAY RECAP ******************************************************************************************************************************
+2019-08-22 12:46:31,154 p=23895 u=mford |  rtr1                       : ok=13   changed=7    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2019-08-22 12:46:31,154 p=23895 u=mford |  rtr2                       : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2019-08-22 12:46:31,154 p=23895 u=mford |  rtr3                       : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2019-08-22 12:46:31,154 p=23895 u=mford |  rtr4                       : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2019-08-22 12:46:31,218 p=24012 u=mford |  shutdown complete
+2019-08-22 12:46:31,254 p=24013 u=mford |  shutdown complete
+2019-10-08 11:00:07,612 p=23499 u=mford |  - downloading role 'parse_genie', owned by clay584
+2019-10-08 11:00:11,509 p=23499 u=mford |  - downloading role from https://github.com/clay584/parse_genie/archive/1.4.0.tar.gz
+2019-10-08 11:00:13,486 p=23499 u=mford |  - extracting clay584.parse_genie to /Users/mford/Documents/github-workspace/ansible-ios/roles/clay584.parse_genie
+2019-10-08 11:00:13,499 p=23499 u=mford |  - clay584.parse_genie (1.4.0) was installed successfully
+2019-11-12 08:39:37,383 p=mford u=49364 | PLAY [Gather IOS facts] ***************************************************************************************************************************************
+2019-11-12 08:39:37,399 p=mford u=49364 | TASK [Gathering Facts] ****************************************************************************************************************************************
+2019-11-12 08:39:39,441 p=mford u=49385 | network_os is set to ios
+2019-11-12 08:39:39,444 p=mford u=49388 | network_os is set to ios
+2019-11-12 08:39:39,447 p=mford u=49385 | [WARNING]: Ignoring timeout(10) for ios_facts
+
+2019-11-12 08:39:39,448 p=mford u=49386 | network_os is set to ios
+2019-11-12 08:39:39,450 p=mford u=49388 | [WARNING]: Ignoring timeout(10) for ios_facts
+
+2019-11-12 08:39:39,450 p=mford u=49387 | network_os is set to ios
+2019-11-12 08:39:39,453 p=mford u=49386 | [WARNING]: Ignoring timeout(10) for ios_facts
+
+2019-11-12 08:39:39,456 p=mford u=49387 | [WARNING]: Ignoring timeout(10) for ios_facts
+
+2019-11-12 08:39:44,525 p=mford u=49364 | ok: [rtr4]
+2019-11-12 08:39:44,561 p=mford u=49364 | ok: [rtr3]
+2019-11-12 08:39:44,614 p=mford u=49364 | ok: [rtr2]
+2019-11-12 08:39:44,714 p=mford u=49364 | ok: [rtr1]
+2019-11-12 08:39:44,725 p=mford u=49364 | TASK [Collect facts from Cisco IOS elements] ******************************************************************************************************************
+2019-11-12 08:39:49,352 p=mford u=49364 | [WARNING]: default value for `gather_subset` will be changed to `min` from `!config` v2.11 onwards
+
+2019-11-12 08:39:49,352 p=mford u=49364 | ok: [rtr3]
+2019-11-12 08:39:49,376 p=mford u=49364 | ok: [rtr1]
+2019-11-12 08:39:49,412 p=mford u=49364 | ok: [rtr4]
+2019-11-12 08:39:49,655 p=mford u=49364 | ok: [rtr2]
+2019-11-12 08:39:49,664 p=mford u=49364 | TASK [Print out facts] ****************************************************************************************************************************************
+2019-11-12 08:39:51,676 p=mford u=49364 | ok: [rtr4] => {
+    "facts_output": {
+        "ansible_facts": {
+            "ansible_net_all_ipv4_addresses": [
+                "172.17.200.46", 
+                "192.168.35.101"
+            ], 
+            "ansible_net_all_ipv6_addresses": [], 
+            "ansible_net_api": "cliconf", 
+            "ansible_net_filesystems": [
+                "bootflash:"
+            ], 
+            "ansible_net_filesystems_info": {
+                "bootflash:": {
+                    "spacefree_kb": 6804940.0, 
+                    "spacetotal_kb": 7712284.0
+                }
+            }, 
+            "ansible_net_gather_network_resources": [], 
+            "ansible_net_gather_subset": [
+                "hardware", 
+                "default", 
+                "interfaces"
+            ], 
+            "ansible_net_hostname": "rtr4", 
+            "ansible_net_image": "bootflash:packages.conf", 
+            "ansible_net_interfaces": {
+                "GigabitEthernet1": {
+                    "bandwidth": 1000000, 
+                    "description": null, 
+                    "duplex": "Full", 
+                    "ipv4": [
+                        {
+                            "address": "172.17.200.46", 
+                            "subnet": "16"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": "0a2c.cc73.eb04", 
+                    "mediatype": "Virtual", 
+                    "mtu": 1500, 
+                    "operstatus": "up", 
+                    "type": "CSR vNIC"
+                }, 
+                "VirtualPortGroup0": {
+                    "bandwidth": 750000, 
+                    "description": null, 
+                    "duplex": null, 
+                    "ipv4": [
+                        {
+                            "address": "192.168.35.101", 
+                            "subnet": "24"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": "001e.bd18.0abd", 
+                    "mediatype": null, 
+                    "mtu": 1500, 
+                    "operstatus": "up", 
+                    "type": "Virtual Port Group"
+                }
+            }, 
+            "ansible_net_iostype": "IOS-XE", 
+            "ansible_net_memfree_mb": 1879440.6484375, 
+            "ansible_net_memtotal_mb": 2169857.0859375, 
+            "ansible_net_model": "CSR1000V", 
+            "ansible_net_neighbors": {}, 
+            "ansible_net_python_version": "2.7.16", 
+            "ansible_net_serialnum": "97R651HNS7C", 
+            "ansible_net_system": "ios", 
+            "ansible_net_version": "16.10.01", 
+            "ansible_network_resources": {}
+        }, 
+        "changed": false, 
+        "failed": false, 
+        "warnings": [
+            "default value for `gather_subset` will be changed to `min` from `!config` v2.11 onwards"
+        ]
+    }
+}
+2019-11-12 08:39:51,678 p=mford u=49364 | ok: [rtr2] => {
+    "facts_output": {
+        "ansible_facts": {
+            "ansible_net_all_ipv4_addresses": [
+                "172.17.165.192", 
+                "192.168.35.101"
+            ], 
+            "ansible_net_all_ipv6_addresses": [], 
+            "ansible_net_api": "cliconf", 
+            "ansible_net_filesystems": [
+                "bootflash:"
+            ], 
+            "ansible_net_filesystems_info": {
+                "bootflash:": {
+                    "spacefree_kb": 6805500.0, 
+                    "spacetotal_kb": 7712284.0
+                }
+            }, 
+            "ansible_net_gather_network_resources": [], 
+            "ansible_net_gather_subset": [
+                "hardware", 
+                "default", 
+                "interfaces"
+            ], 
+            "ansible_net_hostname": "rtr2", 
+            "ansible_net_image": "bootflash:packages.conf", 
+            "ansible_net_interfaces": {
+                "GigabitEthernet1": {
+                    "bandwidth": 1000000, 
+                    "description": null, 
+                    "duplex": "Full", 
+                    "ipv4": [
+                        {
+                            "address": "172.17.165.192", 
+                            "subnet": "16"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": "0ad5.014c.ed6c", 
+                    "mediatype": "Virtual", 
+                    "mtu": 1500, 
+                    "operstatus": "up", 
+                    "type": "CSR vNIC"
+                }, 
+                "VirtualPortGroup0": {
+                    "bandwidth": 750000, 
+                    "description": null, 
+                    "duplex": null, 
+                    "ipv4": [
+                        {
+                            "address": "192.168.35.101", 
+                            "subnet": "24"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": "001e.bd3a.a2bd", 
+                    "mediatype": null, 
+                    "mtu": 1500, 
+                    "operstatus": "up", 
+                    "type": "Virtual Port Group"
+                }
+            }, 
+            "ansible_net_iostype": "IOS-XE", 
+            "ansible_net_memfree_mb": 1879518.4296875, 
+            "ansible_net_memtotal_mb": 2169857.0859375, 
+            "ansible_net_model": "CSR1000V", 
+            "ansible_net_neighbors": {}, 
+            "ansible_net_python_version": "2.7.16", 
+            "ansible_net_serialnum": "9NJXUKUD3M8", 
+            "ansible_net_system": "ios", 
+            "ansible_net_version": "16.10.01", 
+            "ansible_network_resources": {}
+        }, 
+        "changed": false, 
+        "failed": false, 
+        "warnings": [
+            "default value for `gather_subset` will be changed to `min` from `!config` v2.11 onwards"
+        ]
+    }
+}
+2019-11-12 08:39:51,679 p=mford u=49364 | ok: [rtr3] => {
+    "facts_output": {
+        "ansible_facts": {
+            "ansible_net_all_ipv4_addresses": [
+                "172.16.180.224", 
+                "192.168.35.101"
+            ], 
+            "ansible_net_all_ipv6_addresses": [], 
+            "ansible_net_api": "cliconf", 
+            "ansible_net_filesystems": [
+                "bootflash:"
+            ], 
+            "ansible_net_filesystems_info": {
+                "bootflash:": {
+                    "spacefree_kb": 6805192.0, 
+                    "spacetotal_kb": 7712284.0
+                }
+            }, 
+            "ansible_net_gather_network_resources": [], 
+            "ansible_net_gather_subset": [
+                "hardware", 
+                "default", 
+                "interfaces"
+            ], 
+            "ansible_net_hostname": "rtr3", 
+            "ansible_net_image": "bootflash:packages.conf", 
+            "ansible_net_interfaces": {
+                "GigabitEthernet1": {
+                    "bandwidth": 1000000, 
+                    "description": null, 
+                    "duplex": "Full", 
+                    "ipv4": [
+                        {
+                            "address": "172.16.180.224", 
+                            "subnet": "16"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": "0a1b.63b4.b232", 
+                    "mediatype": "Virtual", 
+                    "mtu": 1500, 
+                    "operstatus": "up", 
+                    "type": "CSR vNIC"
+                }, 
+                "VirtualPortGroup0": {
+                    "bandwidth": 750000, 
+                    "description": null, 
+                    "duplex": null, 
+                    "ipv4": [
+                        {
+                            "address": "192.168.35.101", 
+                            "subnet": "24"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": "001e.e689.15bd", 
+                    "mediatype": null, 
+                    "mtu": 1500, 
+                    "operstatus": "up", 
+                    "type": "Virtual Port Group"
+                }
+            }, 
+            "ansible_net_iostype": "IOS-XE", 
+            "ansible_net_memfree_mb": 1879602.8125, 
+            "ansible_net_memtotal_mb": 2169857.0859375, 
+            "ansible_net_model": "CSR1000V", 
+            "ansible_net_neighbors": {}, 
+            "ansible_net_python_version": "2.7.16", 
+            "ansible_net_serialnum": "9AQIMJ231DI", 
+            "ansible_net_system": "ios", 
+            "ansible_net_version": "16.10.01", 
+            "ansible_network_resources": {}
+        }, 
+        "changed": false, 
+        "failed": false, 
+        "warnings": [
+            "default value for `gather_subset` will be changed to `min` from `!config` v2.11 onwards"
+        ]
+    }
+}
+2019-11-12 08:39:51,682 p=mford u=49364 | ok: [rtr1] => {
+    "facts_output": {
+        "ansible_facts": {
+            "ansible_net_all_ipv4_addresses": [
+                "192.168.35.101", 
+                "172.16.153.183", 
+                "192.168.1.101", 
+                "10.1.1.101", 
+                "10.200.200.1", 
+                "10.100.100.1", 
+                "10.255.0.254"
+            ], 
+            "ansible_net_all_ipv6_addresses": [], 
+            "ansible_net_api": "cliconf", 
+            "ansible_net_filesystems": [
+                "bootflash:"
+            ], 
+            "ansible_net_filesystems_info": {
+                "bootflash:": {
+                    "spacefree_kb": 6804916.0, 
+                    "spacetotal_kb": 7712284.0
+                }
+            }, 
+            "ansible_net_gather_network_resources": [], 
+            "ansible_net_gather_subset": [
+                "hardware", 
+                "default", 
+                "interfaces"
+            ], 
+            "ansible_net_hostname": "mford_router", 
+            "ansible_net_image": "bootflash:packages.conf", 
+            "ansible_net_interfaces": {
+                "GigabitEthernet1": {
+                    "bandwidth": 1000000, 
+                    "description": null, 
+                    "duplex": "Full", 
+                    "ipv4": [
+                        {
+                            "address": "172.16.153.183", 
+                            "subnet": "16"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": "0a01.614e.a60e", 
+                    "mediatype": "Virtual", 
+                    "mtu": 1500, 
+                    "operstatus": "up", 
+                    "type": "CSR vNIC"
+                }, 
+                "Loopback0": {
+                    "bandwidth": 8000000, 
+                    "description": null, 
+                    "duplex": null, 
+                    "ipv4": [
+                        {
+                            "address": "192.168.1.101", 
+                            "subnet": "24"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": null, 
+                    "mediatype": null, 
+                    "mtu": 1514, 
+                    "operstatus": "up", 
+                    "type": null
+                }, 
+                "Loopback1": {
+                    "bandwidth": 8000000, 
+                    "description": null, 
+                    "duplex": null, 
+                    "ipv4": [
+                        {
+                            "address": "10.1.1.101", 
+                            "subnet": "24"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": null, 
+                    "mediatype": null, 
+                    "mtu": 1514, 
+                    "operstatus": "up", 
+                    "type": null
+                }, 
+                "Tunnel0": {
+                    "bandwidth": 100, 
+                    "description": null, 
+                    "duplex": null, 
+                    "ipv4": [
+                        {
+                            "address": "10.100.100.1", 
+                            "subnet": "24"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": null, 
+                    "mediatype": null, 
+                    "mtu": 9976, 
+                    "operstatus": "up", 
+                    "type": null
+                }, 
+                "Tunnel1": {
+                    "bandwidth": 100, 
+                    "description": null, 
+                    "duplex": null, 
+                    "ipv4": [
+                        {
+                            "address": "10.200.200.1", 
+                            "subnet": "24"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": null, 
+                    "mediatype": null, 
+                    "mtu": 9976, 
+                    "operstatus": "up", 
+                    "type": null
+                }, 
+                "Tunnel2": {
+                    "bandwidth": 100, 
+                    "description": null, 
+                    "duplex": null, 
+                    "ipv4": [
+                        {
+                            "address": "10.255.0.254", 
+                            "subnet": "24"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": null, 
+                    "mediatype": null, 
+                    "mtu": 9972, 
+                    "operstatus": "up", 
+                    "type": null
+                }, 
+                "VirtualPortGroup0": {
+                    "bandwidth": 750000, 
+                    "description": null, 
+                    "duplex": null, 
+                    "ipv4": [
+                        {
+                            "address": "192.168.35.101", 
+                            "subnet": "24"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": "001e.7a74.31bd", 
+                    "mediatype": null, 
+                    "mtu": 1500, 
+                    "operstatus": "up", 
+                    "type": "Virtual Port Group"
+                }
+            }, 
+            "ansible_net_iostype": "IOS-XE", 
+            "ansible_net_memfree_mb": 1872398.859375, 
+            "ansible_net_memtotal_mb": 2169857.0859375, 
+            "ansible_net_model": "CSR1000V", 
+            "ansible_net_neighbors": {}, 
+            "ansible_net_python_version": "2.7.16", 
+            "ansible_net_serialnum": "9QJ3N3B1IQZ", 
+            "ansible_net_system": "ios", 
+            "ansible_net_version": "16.10.01", 
+            "ansible_network_resources": {}
+        }, 
+        "changed": false, 
+        "failed": false, 
+        "warnings": [
+            "default value for `gather_subset` will be changed to `min` from `!config` v2.11 onwards"
+        ]
+    }
+}
+2019-11-12 08:39:51,804 p=mford u=49416 | shutdown complete
+2019-11-12 08:39:51,921 p=mford u=49420 | shutdown complete
+2019-11-12 08:39:51,954 p=mford u=49364 | PLAY RECAP ****************************************************************************************************************************************************
+2019-11-12 08:39:51,955 p=mford u=49364 | rtr1                       : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2019-11-12 08:39:51,955 p=mford u=49364 | rtr2                       : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2019-11-12 08:39:51,955 p=mford u=49364 | rtr3                       : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2019-11-12 08:39:51,956 p=mford u=49364 | rtr4                       : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2019-11-12 08:39:52,037 p=mford u=49419 | shutdown complete
+2019-11-12 08:39:52,054 p=mford u=49414 | shutdown complete
+2019-11-12 08:40:46,999 p=mford u=49684 | PLAY [Gather IOS facts] ***************************************************************************************************************************************
+2019-11-12 08:40:47,013 p=mford u=49684 | TASK [Collect facts from Cisco IOS elements] ******************************************************************************************************************
+2019-11-12 08:40:48,932 p=mford u=49693 | network_os is set to ios
+2019-11-12 08:40:48,932 p=mford u=49692 | network_os is set to ios
+2019-11-12 08:40:48,933 p=mford u=49690 | network_os is set to ios
+2019-11-12 08:40:48,934 p=mford u=49691 | network_os is set to ios
+2019-11-12 08:40:52,407 p=mford u=49684 | [WARNING]: default value for `gather_subset` will be changed to `min` from `!config` v2.11 onwards
+
+2019-11-12 08:40:52,407 p=mford u=49684 | [WARNING]: Platform darwin on host rtr3 is using the discovered Python interpreter at /usr/bin/python, but future installation of another Python interpreter
+could change this. See https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+
+2019-11-12 08:40:52,408 p=mford u=49684 | ok: [rtr3]
+2019-11-12 08:40:52,409 p=mford u=49684 | [WARNING]: Platform darwin on host rtr2 is using the discovered Python interpreter at /usr/bin/python, but future installation of another Python interpreter
+could change this. See https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+
+2019-11-12 08:40:52,409 p=mford u=49684 | ok: [rtr2]
+2019-11-12 08:40:52,483 p=mford u=49684 | [WARNING]: Platform darwin on host rtr4 is using the discovered Python interpreter at /usr/bin/python, but future installation of another Python interpreter
+could change this. See https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+
+2019-11-12 08:40:52,483 p=mford u=49684 | ok: [rtr4]
+2019-11-12 08:40:52,486 p=mford u=49684 | [WARNING]: Platform darwin on host rtr1 is using the discovered Python interpreter at /usr/bin/python, but future installation of another Python interpreter
+could change this. See https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+
+2019-11-12 08:40:52,486 p=mford u=49684 | ok: [rtr1]
+2019-11-12 08:40:52,495 p=mford u=49684 | TASK [Print out facts] ****************************************************************************************************************************************
+2019-11-12 08:40:55,608 p=mford u=49684 | ok: [rtr1] => {
+    "facts_output": {
+        "ansible_facts": {
+            "ansible_net_api": "cliconf", 
+            "ansible_net_gather_network_resources": [
+                "interfaces"
+            ], 
+            "ansible_net_gather_subset": [
+                "default"
+            ], 
+            "ansible_net_hostname": "mford_router", 
+            "ansible_net_image": "bootflash:packages.conf", 
+            "ansible_net_iostype": "IOS-XE", 
+            "ansible_net_model": "CSR1000V", 
+            "ansible_net_python_version": "2.7.16", 
+            "ansible_net_serialnum": "9QJ3N3B1IQZ", 
+            "ansible_net_system": "ios", 
+            "ansible_net_version": "16.10.01", 
+            "ansible_network_resources": {
+                "interfaces": [
+                    {
+                        "enabled": true, 
+                        "name": "loopback0"
+                    }, 
+                    {
+                        "enabled": true, 
+                        "name": "loopback1"
+                    }, 
+                    {
+                        "enabled": true, 
+                        "name": "GigabitEthernet1"
+                    }
+                ]
+            }, 
+            "discovered_interpreter_python": "/usr/bin/python"
+        }, 
+        "changed": false, 
+        "failed": false, 
+        "warnings": [
+            "default value for `gather_subset` will be changed to `min` from `!config` v2.11 onwards", 
+            "Platform darwin on host rtr1 is using the discovered Python interpreter at /usr/bin/python, but future installation of another Python interpreter could change this. See https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information."
+        ]
+    }
+}
+2019-11-12 08:40:55,709 p=mford u=49684 | ok: [rtr4] => {
+    "facts_output": {
+        "ansible_facts": {
+            "ansible_net_api": "cliconf", 
+            "ansible_net_gather_network_resources": [
+                "interfaces"
+            ], 
+            "ansible_net_gather_subset": [
+                "default"
+            ], 
+            "ansible_net_hostname": "rtr4", 
+            "ansible_net_image": "bootflash:packages.conf", 
+            "ansible_net_iostype": "IOS-XE", 
+            "ansible_net_model": "CSR1000V", 
+            "ansible_net_python_version": "2.7.16", 
+            "ansible_net_serialnum": "97R651HNS7C", 
+            "ansible_net_system": "ios", 
+            "ansible_net_version": "16.10.01", 
+            "ansible_network_resources": {
+                "interfaces": [
+                    {
+                        "enabled": true, 
+                        "name": "GigabitEthernet1"
+                    }
+                ]
+            }, 
+            "discovered_interpreter_python": "/usr/bin/python"
+        }, 
+        "changed": false, 
+        "failed": false, 
+        "warnings": [
+            "default value for `gather_subset` will be changed to `min` from `!config` v2.11 onwards", 
+            "Platform darwin on host rtr4 is using the discovered Python interpreter at /usr/bin/python, but future installation of another Python interpreter could change this. See https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information."
+        ]
+    }
+}
+2019-11-12 08:40:55,711 p=mford u=49684 | ok: [rtr3] => {
+    "facts_output": {
+        "ansible_facts": {
+            "ansible_net_api": "cliconf", 
+            "ansible_net_gather_network_resources": [
+                "interfaces"
+            ], 
+            "ansible_net_gather_subset": [
+                "default"
+            ], 
+            "ansible_net_hostname": "rtr3", 
+            "ansible_net_image": "bootflash:packages.conf", 
+            "ansible_net_iostype": "IOS-XE", 
+            "ansible_net_model": "CSR1000V", 
+            "ansible_net_python_version": "2.7.16", 
+            "ansible_net_serialnum": "9AQIMJ231DI", 
+            "ansible_net_system": "ios", 
+            "ansible_net_version": "16.10.01", 
+            "ansible_network_resources": {
+                "interfaces": [
+                    {
+                        "enabled": true, 
+                        "name": "GigabitEthernet1"
+                    }
+                ]
+            }, 
+            "discovered_interpreter_python": "/usr/bin/python"
+        }, 
+        "changed": false, 
+        "failed": false, 
+        "warnings": [
+            "default value for `gather_subset` will be changed to `min` from `!config` v2.11 onwards", 
+            "Platform darwin on host rtr3 is using the discovered Python interpreter at /usr/bin/python, but future installation of another Python interpreter could change this. See https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information."
+        ]
+    }
+}
+2019-11-12 08:40:55,712 p=mford u=49684 | ok: [rtr2] => {
+    "facts_output": {
+        "ansible_facts": {
+            "ansible_net_api": "cliconf", 
+            "ansible_net_gather_network_resources": [
+                "interfaces"
+            ], 
+            "ansible_net_gather_subset": [
+                "default"
+            ], 
+            "ansible_net_hostname": "rtr2", 
+            "ansible_net_image": "bootflash:packages.conf", 
+            "ansible_net_iostype": "IOS-XE", 
+            "ansible_net_model": "CSR1000V", 
+            "ansible_net_python_version": "2.7.16", 
+            "ansible_net_serialnum": "9NJXUKUD3M8", 
+            "ansible_net_system": "ios", 
+            "ansible_net_version": "16.10.01", 
+            "ansible_network_resources": {
+                "interfaces": [
+                    {
+                        "enabled": true, 
+                        "name": "GigabitEthernet1"
+                    }
+                ]
+            }, 
+            "discovered_interpreter_python": "/usr/bin/python"
+        }, 
+        "changed": false, 
+        "failed": false, 
+        "warnings": [
+            "default value for `gather_subset` will be changed to `min` from `!config` v2.11 onwards", 
+            "Platform darwin on host rtr2 is using the discovered Python interpreter at /usr/bin/python, but future installation of another Python interpreter could change this. See https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information."
+        ]
+    }
+}
+2019-11-12 08:40:55,836 p=mford u=49724 | shutdown complete
+2019-11-12 08:40:55,853 p=mford u=49723 | shutdown complete
+2019-11-12 08:40:55,940 p=mford u=49684 | PLAY RECAP ****************************************************************************************************************************************************
+2019-11-12 08:40:55,940 p=mford u=49684 | rtr1                       : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2019-11-12 08:40:55,940 p=mford u=49684 | rtr2                       : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2019-11-12 08:40:55,940 p=mford u=49684 | rtr3                       : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2019-11-12 08:40:55,940 p=mford u=49684 | rtr4                       : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2019-11-12 08:40:55,971 p=mford u=49721 | shutdown complete
+2019-11-12 08:40:56,039 p=mford u=49725 | shutdown complete
+2019-11-12 08:52:48,404 p=mford u=50705 | PLAY [Gather IOS facts] ***************************************************************************************************************************************
+2019-11-12 08:52:48,420 p=mford u=50705 | TASK [Collect facts from Cisco IOS elements] ******************************************************************************************************************
+2019-11-12 08:52:50,488 p=mford u=50713 | network_os is set to ios
+2019-11-12 08:52:50,489 p=mford u=50711 | network_os is set to ios
+2019-11-12 08:52:50,490 p=mford u=50712 | network_os is set to ios
+2019-11-12 08:52:50,490 p=mford u=50714 | network_os is set to ios
+2019-11-12 08:52:53,839 p=mford u=50705 | [WARNING]: default value for `gather_subset` will be changed to `min` from `!config` v2.11 onwards
+
+2019-11-12 08:52:53,840 p=mford u=50705 | [WARNING]: Platform darwin on host rtr3 is using the discovered Python interpreter at /usr/bin/python, but future installation of another Python interpreter
+could change this. See https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+
+2019-11-12 08:52:53,840 p=mford u=50705 | ok: [rtr3]
+2019-11-12 08:52:53,882 p=mford u=50705 | [WARNING]: Platform darwin on host rtr1 is using the discovered Python interpreter at /usr/bin/python, but future installation of another Python interpreter
+could change this. See https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+
+2019-11-12 08:52:53,883 p=mford u=50705 | ok: [rtr1]
+2019-11-12 08:52:53,885 p=mford u=50705 | [WARNING]: Platform darwin on host rtr2 is using the discovered Python interpreter at /usr/bin/python, but future installation of another Python interpreter
+could change this. See https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+
+2019-11-12 08:52:53,885 p=mford u=50705 | ok: [rtr2]
+2019-11-12 08:52:53,953 p=mford u=50705 | [WARNING]: Platform darwin on host rtr4 is using the discovered Python interpreter at /usr/bin/python, but future installation of another Python interpreter
+could change this. See https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+
+2019-11-12 08:52:53,953 p=mford u=50705 | ok: [rtr4]
+2019-11-12 08:52:53,961 p=mford u=50705 | TASK [Print out facts] ****************************************************************************************************************************************
+2019-11-12 08:52:55,924 p=mford u=50705 | ok: [rtr3] => {
+    "facts_output": {
+        "ansible_facts": {
+            "ansible_net_api": "cliconf", 
+            "ansible_net_gather_network_resources": [
+                "interfaces"
+            ], 
+            "ansible_net_gather_subset": [
+                "default"
+            ], 
+            "ansible_net_hostname": "rtr3", 
+            "ansible_net_image": "bootflash:packages.conf", 
+            "ansible_net_iostype": "IOS-XE", 
+            "ansible_net_model": "CSR1000V", 
+            "ansible_net_python_version": "2.7.16", 
+            "ansible_net_serialnum": "9AQIMJ231DI", 
+            "ansible_net_system": "ios", 
+            "ansible_net_version": "16.10.01", 
+            "ansible_network_resources": {
+                "interfaces": [
+                    {
+                        "enabled": true, 
+                        "name": "loopback10"
+                    }, 
+                    {
+                        "description": "Loopback Interface 20", 
+                        "enabled": true, 
+                        "name": "loopback20"
+                    }, 
+                    {
+                        "description": "Loopback Interface 30", 
+                        "enabled": true, 
+                        "name": "loopback30"
+                    }, 
+                    {
+                        "description": "Loopback Interface 40", 
+                        "enabled": true, 
+                        "name": "loopback40"
+                    }, 
+                    {
+                        "description": "Loopback Interface 50", 
+                        "enabled": true, 
+                        "name": "loopback50"
+                    }, 
+                    {
+                        "description": "Loopback Interface 60", 
+                        "enabled": true, 
+                        "name": "loopback60"
+                    }, 
+                    {
+                        "description": "Loopback Interface 70", 
+                        "enabled": true, 
+                        "name": "loopback70"
+                    }, 
+                    {
+                        "enabled": true, 
+                        "name": "GigabitEthernet1"
+                    }
+                ]
+            }, 
+            "discovered_interpreter_python": "/usr/bin/python"
+        }, 
+        "changed": false, 
+        "failed": false, 
+        "warnings": [
+            "default value for `gather_subset` will be changed to `min` from `!config` v2.11 onwards", 
+            "Platform darwin on host rtr3 is using the discovered Python interpreter at /usr/bin/python, but future installation of another Python interpreter could change this. See https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information."
+        ]
+    }
+}
+2019-11-12 08:52:55,926 p=mford u=50705 | ok: [rtr1] => {
+    "facts_output": {
+        "ansible_facts": {
+            "ansible_net_api": "cliconf", 
+            "ansible_net_gather_network_resources": [
+                "interfaces"
+            ], 
+            "ansible_net_gather_subset": [
+                "default"
+            ], 
+            "ansible_net_hostname": "rtr1", 
+            "ansible_net_image": "bootflash:packages.conf", 
+            "ansible_net_iostype": "IOS-XE", 
+            "ansible_net_model": "CSR1000V", 
+            "ansible_net_python_version": "2.7.16", 
+            "ansible_net_serialnum": "9QJ3N3B1IQZ", 
+            "ansible_net_system": "ios", 
+            "ansible_net_version": "16.10.01", 
+            "ansible_network_resources": {
+                "interfaces": [
+                    {
+                        "enabled": true, 
+                        "name": "loopback0"
+                    }, 
+                    {
+                        "enabled": true, 
+                        "name": "loopback1"
+                    }, 
+                    {
+                        "enabled": true, 
+                        "name": "loopback10"
+                    }, 
+                    {
+                        "description": "Loopback Interface 20", 
+                        "enabled": true, 
+                        "name": "loopback20"
+                    }, 
+                    {
+                        "description": "Loopback Interface 30", 
+                        "enabled": true, 
+                        "name": "loopback30"
+                    }, 
+                    {
+                        "description": "Loopback Interface 40", 
+                        "enabled": true, 
+                        "name": "loopback40"
+                    }, 
+                    {
+                        "description": "Loopback Interface 50", 
+                        "enabled": true, 
+                        "name": "loopback50"
+                    }, 
+                    {
+                        "description": "Loopback Interface 60", 
+                        "enabled": true, 
+                        "name": "loopback60"
+                    }, 
+                    {
+                        "description": "Loopback Interface 70", 
+                        "enabled": true, 
+                        "name": "loopback70"
+                    }, 
+                    {
+                        "enabled": true, 
+                        "name": "GigabitEthernet1"
+                    }
+                ]
+            }, 
+            "discovered_interpreter_python": "/usr/bin/python"
+        }, 
+        "changed": false, 
+        "failed": false, 
+        "warnings": [
+            "default value for `gather_subset` will be changed to `min` from `!config` v2.11 onwards", 
+            "Platform darwin on host rtr1 is using the discovered Python interpreter at /usr/bin/python, but future installation of another Python interpreter could change this. See https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information."
+        ]
+    }
+}
+2019-11-12 08:52:55,927 p=mford u=50705 | ok: [rtr4] => {
+    "facts_output": {
+        "ansible_facts": {
+            "ansible_net_api": "cliconf", 
+            "ansible_net_gather_network_resources": [
+                "interfaces"
+            ], 
+            "ansible_net_gather_subset": [
+                "default"
+            ], 
+            "ansible_net_hostname": "rtr4", 
+            "ansible_net_image": "bootflash:packages.conf", 
+            "ansible_net_iostype": "IOS-XE", 
+            "ansible_net_model": "CSR1000V", 
+            "ansible_net_python_version": "2.7.16", 
+            "ansible_net_serialnum": "97R651HNS7C", 
+            "ansible_net_system": "ios", 
+            "ansible_net_version": "16.10.01", 
+            "ansible_network_resources": {
+                "interfaces": [
+                    {
+                        "enabled": true, 
+                        "name": "loopback10"
+                    }, 
+                    {
+                        "description": "Loopback Interface 20", 
+                        "enabled": true, 
+                        "name": "loopback20"
+                    }, 
+                    {
+                        "description": "Loopback Interface 30", 
+                        "enabled": true, 
+                        "name": "loopback30"
+                    }, 
+                    {
+                        "description": "Loopback Interface 40", 
+                        "enabled": true, 
+                        "name": "loopback40"
+                    }, 
+                    {
+                        "description": "Loopback Interface 50", 
+                        "enabled": true, 
+                        "name": "loopback50"
+                    }, 
+                    {
+                        "description": "Loopback Interface 60", 
+                        "enabled": true, 
+                        "name": "loopback60"
+                    }, 
+                    {
+                        "description": "Loopback Interface 70", 
+                        "enabled": true, 
+                        "name": "loopback70"
+                    }, 
+                    {
+                        "enabled": true, 
+                        "name": "GigabitEthernet1"
+                    }
+                ]
+            }, 
+            "discovered_interpreter_python": "/usr/bin/python"
+        }, 
+        "changed": false, 
+        "failed": false, 
+        "warnings": [
+            "default value for `gather_subset` will be changed to `min` from `!config` v2.11 onwards", 
+            "Platform darwin on host rtr4 is using the discovered Python interpreter at /usr/bin/python, but future installation of another Python interpreter could change this. See https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information."
+        ]
+    }
+}
+2019-11-12 08:52:55,928 p=mford u=50705 | ok: [rtr2] => {
+    "facts_output": {
+        "ansible_facts": {
+            "ansible_net_api": "cliconf", 
+            "ansible_net_gather_network_resources": [
+                "interfaces"
+            ], 
+            "ansible_net_gather_subset": [
+                "default"
+            ], 
+            "ansible_net_hostname": "rtr2", 
+            "ansible_net_image": "bootflash:packages.conf", 
+            "ansible_net_iostype": "IOS-XE", 
+            "ansible_net_model": "CSR1000V", 
+            "ansible_net_python_version": "2.7.16", 
+            "ansible_net_serialnum": "9NJXUKUD3M8", 
+            "ansible_net_system": "ios", 
+            "ansible_net_version": "16.10.01", 
+            "ansible_network_resources": {
+                "interfaces": [
+                    {
+                        "enabled": true, 
+                        "name": "loopback10"
+                    }, 
+                    {
+                        "description": "Loopback Interface 20", 
+                        "enabled": true, 
+                        "name": "loopback20"
+                    }, 
+                    {
+                        "description": "Loopback Interface 30", 
+                        "enabled": true, 
+                        "name": "loopback30"
+                    }, 
+                    {
+                        "description": "Loopback Interface 40", 
+                        "enabled": true, 
+                        "name": "loopback40"
+                    }, 
+                    {
+                        "description": "Loopback Interface 50", 
+                        "enabled": true, 
+                        "name": "loopback50"
+                    }, 
+                    {
+                        "description": "Loopback Interface 60", 
+                        "enabled": true, 
+                        "name": "loopback60"
+                    }, 
+                    {
+                        "description": "Loopback Interface 70", 
+                        "enabled": true, 
+                        "name": "loopback70"
+                    }, 
+                    {
+                        "enabled": true, 
+                        "name": "GigabitEthernet1"
+                    }
+                ]
+            }, 
+            "discovered_interpreter_python": "/usr/bin/python"
+        }, 
+        "changed": false, 
+        "failed": false, 
+        "warnings": [
+            "default value for `gather_subset` will be changed to `min` from `!config` v2.11 onwards", 
+            "Platform darwin on host rtr2 is using the discovered Python interpreter at /usr/bin/python, but future installation of another Python interpreter could change this. See https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information."
+        ]
+    }
+}
+2019-11-12 08:52:56,151 p=mford u=50742 | shutdown complete
+2019-11-12 08:52:56,219 p=mford u=50746 | shutdown complete
+2019-11-12 08:52:56,286 p=mford u=50743 | shutdown complete
+2019-11-12 08:52:56,304 p=mford u=50705 | PLAY RECAP ****************************************************************************************************************************************************
+2019-11-12 08:52:56,304 p=mford u=50705 | rtr1                       : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2019-11-12 08:52:56,304 p=mford u=50705 | rtr2                       : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2019-11-12 08:52:56,304 p=mford u=50705 | rtr3                       : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2019-11-12 08:52:56,304 p=mford u=50705 | rtr4                       : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2019-11-12 08:52:56,404 p=mford u=50745 | shutdown complete
