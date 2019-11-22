@@ -1,13 +1,9 @@
-[webserver]
-
-18.234.61.158 ansible_user=ec2-user ansible_ssh_private_key_file=~/.ssh/MAF-ios-demo-private.pem
-
 [ios]
 
-rtr1 ansible_host=3.84.151.167 site=1
-rtr2 ansible_host=34.235.136.17 site=2
-rtr3 ansible_host=54.164.14.49 site=3
-rtr4 ansible_host=54.221.20.212 site=4
+rtr1 ansible_host=3.90.0.68 site=1
+rtr2 ansible_host=18.209.43.176 site=2
+rtr3 ansible_host=54.227.62.51 site=3
+rtr4 ansible_host=54.236.221.63 site=4
 
 [ios:vars]
 ansible_network_os=ios
