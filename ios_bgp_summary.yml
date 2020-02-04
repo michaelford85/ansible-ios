@@ -13,6 +13,9 @@
     register: facts_output
 
   - name: show ip bgp summary
+    ios_command:
+      commands:
+        - show ip bgp summary
     register: bgp_sum_output
 
   - name: Filter BGP Summary output through Genie
@@ -20,6 +23,9 @@
       pyats_bgp_sum: "{{ version['stdout'][0] | parse_genie(command='show bgp summary', os='ios') }}"
 
   - name: show logging
+    ios_command:
+      commands:
+        - show logging
     register: show_log_output
 
   - name: Filter Show Logging output through Genie
