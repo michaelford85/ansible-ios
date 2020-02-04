@@ -16,17 +16,17 @@
     ios_command:
       commands:
         - show ip bgp summary
-    register: bgp_sum_output
-
-  - name: Filter BGP Summary output through Genie
-    set_fact:
-      pyats_bgp_sum: "{{ bgp_sum_output['stdout'][0] | parse_genie(command='show bgp summary', os='ios') }}"
+    register: bgp_sum_output  
 
   - name: show logging
     ios_command:
       commands:
         - show logging
     register: show_log_output
+
+  - name: Filter BGP Summary output through Genie
+    set_fact:
+      pyats_bgp_sum: "{{ bgp_sum_output['stdout'][0] | parse_genie(command='show bgp summary', os='ios') }}"
 
   - name: Filter Show Logging output through Genie
     set_fact:
