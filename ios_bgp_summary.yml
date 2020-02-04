@@ -10,7 +10,7 @@
 
   - name: show cdp neighbors
     ios_facts:
-      gather_subset: all
+      gather_subset: interfaces
     register: facts_output
 
   - name: show ip bgp summary
@@ -35,7 +35,7 @@
 
   - name: Debug CDP Neighbors
     debug:
-      var: facts_output
+      var: facts_output.ansible_facts.ansible_net_neighbors
 
   - name: Debug BGP Summary
     debug:
