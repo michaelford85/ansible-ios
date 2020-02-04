@@ -46,7 +46,7 @@
       var: pyats_show_log
 
 
-  - name: Print all Active BGP Neighbors 
-    debug:
-      msg: "Neighbor: {{ pyats_bgp_sum.vrf.default.neighbor }}"
-    loop: "{{ pyats_bgp_sum.vrf.default }}"
+  # - name: Print all Active BGP Neighbors 
+  #   debug:
+  #     msg: "Neighbor: {{ pyats_bgp_sum.vrf.default.neighbor }}"
+  #   loop: "{{ pyats_bgp_sum.vrf.default }}"
