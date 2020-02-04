@@ -15,7 +15,7 @@
   - name: show ip bgp summary
     ios_command:
       commands:
-        - show ip bgp summary
+        - show bgp summary
     register: bgp_sum_output
 
   - name: show logging
