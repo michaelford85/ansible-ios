@@ -3,3 +3,7 @@
 - src: ansible-network.config_manager
 - src: ansible-network.cisco_ios
 - src: michaelford85.ansible_servicenow_cmdb
+- name: parse_genie
+  src: https://github.com/clay584/parse_genie
+  scm: git
+  version: master

@@ -1,0 +1,39 @@
+---
+- name: Check BGP Summary and Log
+  hosts: ios
+  connection: network_cli
+  gather_facts: no
+  roles:
+    - parse_genie
+
+  tasks:
+
+  - name: show cdp neighbors
+    ios_facts:
+    register: facts_output
+
+  - name: show ip bgp summary
+    register: bgp_sum_output
+
+  - name: Filter BGP Summary output through Genie
+    set_fact:
+      pyats_bgp_sum: "{{ version['stdout'][0] | parse_genie(command='show bgp summary', os='ios') }}"
+
+  - name: show logging
+    register: show_log_output
+
+  - name: Filter Show Logging output through Genie
+    set_fact:
+      pyats_show_log: "{{ version['stdout'][0] | parse_genie(command='show logging', os='iosxe') }}"
+
+  - name: Debug CDP Neighbors
+    debug:
+      var: facts_output.ansible_net_neighbors
+
+  - name: Debug BGP Summary
+    debug:
+      var: pyats_bgp_sum
+
+  - name: Debug Show Logging
+    debug:
+      var: pyats_show_log
