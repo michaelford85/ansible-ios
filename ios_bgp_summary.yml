@@ -10,7 +10,7 @@
 
   - name: show cdp neighbors
     ios_facts:
-      gather_subset: interfaces
+      gather_subset: all
     register: facts_output
 
   - name: show ip bgp summary
