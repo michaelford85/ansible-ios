@@ -58,7 +58,7 @@
   #     var: pyats_show_log
 
 
-
+ 
   - name: CHECK show cdp neighbor
     debug:
       msg: "Router {{ inventory_hostname }} has no CDP neighbors"
