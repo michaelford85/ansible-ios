@@ -32,8 +32,8 @@
       pyats_bgp_sum: "{{ bgp_sum_output['stdout'][0] | parse_genie(command='show bgp {address_family} neighbors', os='iosxe') }}"
 
   - name: Print out BGP Session state
-      debug:
-        msg: "BGP Neighbor is {{ item }}"
+    debug:
+      msg: "BGP Neighbor is {{ item }}"
     loop: "{{ pyats_bgp_sum.list_of_neighbors }}"
 
   - name: Filter Show Logging output through Genie
