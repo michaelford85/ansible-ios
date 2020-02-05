@@ -41,7 +41,7 @@
     loop: "{{ pyats_bgp_sum.list_of_neighbors }}"
 
   - set_fact:
-      ip_address_list: "{{ pyats_bpg_sum.neighbors | map('extract', pyats_bgp_sum.vrf.default.neighbor) }}"
+      ip_address_list: "{{ pyats_bgp_sum.vrf.default.neighbor | dict2items }}"
 
   - debug:
       var: ip_address_list
