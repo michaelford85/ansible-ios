@@ -40,8 +40,11 @@
       msg: "BGP Neighbor is {{ item }}"
     loop: "{{ pyats_bgp_sum.list_of_neighbors }}"
 
-  # - set_fact:
-  #     ip_address_list: "{{ pyats_bgp_sum.list_of_neighbors | map('quote') | join(',') }}"
+  - set_fact:
+      ip_address_list: "{{ pyats_bpg_sum.neighbors | map('extract', pyats_bgp_sum.vrf.default.neighbor) }}"
+
+  - debug:
+      var: ip_address_list
 
 
   - name: Print out BGP Session State
@@ -79,14 +82,12 @@
     debug:
       var: pyats_show_log
 
-
-
   - name: CHECK show cdp neighbor
     debug:
       msg: "Router {{ inventory_hostname }} has no CDP neighbors. Open a ticket."
     when: facts_output.ansible_facts.ansible_net_neighbors|length == 0
 
-  - name: CHECK show Logging
+  - name: CHECK show logging
     debug:
       msg: "Match found in the logs. Open a ticket."
     loop: "{{ pyats_show_log.logs }}"
