@@ -36,6 +36,7 @@
   - name: Filter Show Logging output through Genie
     set_fact:
       pyats_show_log: "{{ show_log_output['stdout'][0] | parse_genie(command='show logging', os='iosxe') }}"
+    register: set_fact_output
 
   # - name: Debug CDP Neighbors
   #   debug:
@@ -51,7 +52,7 @@
 
   - name: "Debug BGP Neighbors for vrf {{ bgp_vrf }}"
     debug:
-      var: bgp_neighbors
+      var: set_fact_output
 
   # - name: Print out BGP status for each neighbor
   #   debug:
