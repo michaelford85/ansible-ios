@@ -56,7 +56,8 @@
     when: facts_output.ansible_facts.ansible_net_neighbors|length == 0
 
 
-  - debug:
+  - name: Debug BGP Neighbors
+    debug:
       var: item
     loop: "{{ pyats_bgp_sum | json_query('vrf.default[*].neighbor') }}"
 
