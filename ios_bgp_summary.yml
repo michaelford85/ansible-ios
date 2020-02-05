@@ -56,10 +56,10 @@
     when: facts_output.ansible_facts.ansible_net_neighbors|length == 0
 
 
-  # - name: "Display all neighbors"
-  #   debug:
-  #     var: item
-  #   loop: "{{ pyats_bgp_sum | json_query('vrf.default[*].neighbor') }}"
+  - name: "Display all neighbors"
+    debug:
+      var: item
+    with_items: "{{ bgp_sum_yaml.vrf.default }}"
 
 
   # - name: Print all Active BGP Neighbors
