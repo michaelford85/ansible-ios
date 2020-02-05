@@ -41,16 +41,16 @@
     loop: "{{ pyats_bgp_sum.list_of_neighbors }}"
 
   - set_fact:
-      ip_address: 10.200.200.2
+      ip_address_list: "{{ pyats_bgp_sum.list_of_neighbors | join('", "') }}"
 
-  - debug:
-      msg: "{{ ip_address | quote }}"
+  # - debug:
+  #     msg: "{{ ip_address | quote }}"
 
   - name: Print out BGP Session State
     debug:
       # msg:  "{{ pyats_bgp_sum | json_query('vrf.default.neighbor.\"10.200.200.2\".session_state') }}"
-      msg:  "BGP Session State for {{ item }} is: {{ pyats_bgp_sum | json_query(\"'vrf.default.neighbor.\" +  ip_address | quote + \".session_state'\") }}"
-    loop: "{{ pyats_bgp_sum.list_of_neighbors }}"
+      msg:  "BGP Session State for {{ item }} is: {{ pyats_bgp_sum | json_query(\"'vrf.default.neighbor.\" +  item + \".session_state'\") }}"
+    loop: "{{ ip_address_list }}"
 
   - name: Filter Show Logging output through Genie
     set_fact:
