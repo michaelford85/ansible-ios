@@ -47,7 +47,7 @@
 
   - name: "Set BGP VRF fact for {{ bgp_vrf }}"
     set_fact:
-      bgp_neighbors: "{{ pyats_bgp_sum | from_json }}"
+      bgp_neighbors: "{{ pyats_bgp_sum | dict2items }}"
 
   - name: "Debug BGP Neighbors for vrf {{ bgp_vrf }}"
     debug:
