@@ -35,9 +35,14 @@
     debug:
       var: pyats_bgp_sum
 
-  - name: Print out BGP Session state
+  - name: Print out BGP Neighbors
     debug:
       msg: "BGP Neighbor is {{ item }}"
+    loop: "{{ pyats_bgp_sum.list_of_neighbors }}"
+
+  - name: Print out BGP Session State
+    debug:
+      msg: "The session state for BGP neighbor {{ item }} is {{ pyats_bgp_sum.vrf.default.neighbor."10.200.200.2".session_state }}"
     loop: "{{ pyats_bgp_sum.list_of_neighbors }}"
 
   - name: Filter Show Logging output through Genie
