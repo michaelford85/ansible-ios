@@ -83,13 +83,14 @@
 
   - name: CHECK show cdp neighbor
     debug:
-      msg: "Router {{ inventory_hostname }} has no CDP neighbors"
+      msg: "Router {{ inventory_hostname }} has no CDP neighbors. Open a ticket."
     when: facts_output.ansible_facts.ansible_net_neighbors|length == 0
 
   - name: CHECK show Logging
     debug:
-      msg: "String is: {{ item }}"
+      msg: "Match found in the logs. Open a ticket."
     loop: "{{ pyats_show_log.logs }}"
+    when: item is match ("Terminating the connection")
 
 
   # - name: Print all Active BGP Neighbors
