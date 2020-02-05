@@ -44,11 +44,11 @@
   #     ip_address_list: "{{ pyats_bgp_sum.list_of_neighbors | map('quote') | join(',') }}"
 
 
-  # - name: Print out BGP Session State
-  #   debug:
-  #     # msg:  "{{ pyats_bgp_sum | json_query('vrf.default.neighbor.\"10.200.200.2\".session_state') }}"
-  #     msg:  "BGP Session State for {{ item }} is: {{ pyats_bgp_sum | json_query(\"'vrf.default.neighbor.\" +  item + \".session_state'\") }}"
-  #   loop: "{{ ip_address_list }}"
+  - name: Print out BGP Session State
+    debug:
+      msg:  "{{ pyats_bgp_sum | json_query('vrf.default.neighbor.\"10.200.200.2\".session_state') }}"
+      msg:  "BGP Session State for {{ item }} is: {{ pyats_bgp_sum | json_query(\"'vrf.default.neighbor.\" +  item + \".session_state'\") }}"
+    loop: "{{ pyats_bgp_sum.list_of_neighbors }}"
 
   - name: Filter Show Logging output through Genie
     set_fact:
@@ -88,7 +88,8 @@
 
   - name: CHECK show Logging
     debug:
-      msg: "{{ (pyats_show_log|selectattr('logs', 'contains', 'Terminating')|first).master }}"
+      msg: "String is: {{ item }}"
+    loop: "{{ pyats_show_log.logs }}"
 
 
   # - name: Print all Active BGP Neighbors
