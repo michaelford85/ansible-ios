@@ -47,15 +47,15 @@
 
   - name: "Set BGP VRF fact for {{ bgp_vrf }}"
     set_fact:
-      bgp_neighbors: "{{ pyats_bgp_sum.vrf.default }}"
+      bgp_neighbors: "{{ pyats_bgp_sum | flatten }}"
 
   - name: "Debug BGP Neighbors for vrf {{ bgp_vrf }}"
     debug:
       var: bgp_neighbors
 
-  - name: Print out BGP status for each neighbor
-    debug:
-      msg: "{{ bgp_neighbors | json_query('neighbor[*].address_family.ipv4_unicast.state_pfxrcd') }}"
+  # - name: Print out BGP status for each neighbor
+  #   debug:
+  #     msg: "{{ bgp_neighbors | json_query('neighbor[*].address_family.ipv4_unicast.state_pfxrcd') }}"
 
   # - name: Debug Show Logging
   #   debug:
