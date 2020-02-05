@@ -53,11 +53,7 @@
   #     msg:  "BGP Session State for {{ item }} is: {{ pyats_bgp_sum | json_query(\"'vrf.default.neighbor.\" +  item + \".session_state'\") }}"
   #   loop: "{{ pyats_bgp_sum.list_of_neighbors }}"
 
-  - name: Print out BGP Session State
-    debug:
-      msg:  "Session State for {{ item.key }} is: {{ item.value.session_state }}"
-    loop: "{{ ip_address_list }}"
-    loop_control: "{{ item.key }}"
+
 
   - name: Filter Show Logging output through Genie
     set_fact:
@@ -92,6 +88,14 @@
     debug:
       msg: "Router {{ inventory_hostname }} has no CDP neighbors. Open a ticket."
     when: facts_output.ansible_facts.ansible_net_neighbors|length == 0
+
+  - name: CHECK BGP Session State
+    debug:
+      msg:  "Session State for {{ item.key }} is: {{ item.value.session_state }}. Open a ticket."
+    loop: "{{ ip_address_list }}"
+    loop_control:
+      label: "{{ item.key }}"
+    when: (item.value.session_state == "Active") or (item.value.session_state == "Idle")
 
   - name: CHECK show logging
     debug:
