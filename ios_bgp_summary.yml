@@ -47,7 +47,7 @@
 
   - name: "Set BGP VRF fact for {{ bgp_vrf }}"
     set_fact:
-      bgp_neighbors: "{{ pyats_bgp_sum.[bgp_vrf] }}"
+      bgp_neighbors: "{{ pyats_bgp_sum.default }}"
 
   - name: "Debug BGP Neighbors for vrf {{ bgp_vrf }}"
     debug:
@@ -58,7 +58,7 @@
   #     var: pyats_show_log
 
 
- 
+
   - name: CHECK show cdp neighbor
     debug:
       msg: "Router {{ inventory_hostname }} has no CDP neighbors"
