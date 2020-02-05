@@ -28,7 +28,6 @@
 
   - name: Filter BGP Summary output through Genie
     set_fact:
-      # pyats_bgp_sum: "{{ bgp_sum_output['stdout'][0] | parse_genie(command='show bgp all summary', os='iosxe') }}"
       pyats_bgp_sum: "{{ bgp_sum_output['stdout'][0] | parse_genie(command='show bgp {address_family} neighbors', os='iosxe') }}"
 
   - name: Debug BGP Summary
@@ -46,39 +45,18 @@
   - debug:
       var: ip_address_list
 
-
-  # - name: Print out BGP Session State
-  #   debug:
-  #     msg:  "{{ pyats_bgp_sum | json_query('vrf.default.neighbor.\"10.200.200.2\".session_state') }}"
-  #     msg:  "BGP Session State for {{ item }} is: {{ pyats_bgp_sum | json_query(\"'vrf.default.neighbor.\" +  item + \".session_state'\") }}"
-  #   loop: "{{ pyats_bgp_sum.list_of_neighbors }}"
-
-
-
   - name: Filter Show Logging output through Genie
     set_fact:
       pyats_show_log: "{{ show_log_output['stdout'][0] | parse_genie(command='show logging', os='iosxe') }}"
 
 
-  # - name: Debug CDP Neighbors
-  #   debug:
-  #     var: facts_output.ansible_facts.ansible_net_neighbors
-  #
+  - name: Debug CDP Neighbors
+    debug:
+      var: facts_output.ansible_facts.ansible_net_neighbors
+
   - name: Debug BGP Summary
     debug:
       var: pyats_bgp_sum
-
-  # - name: "Set BGP VRF fact for {{ bgp_vrf }}"
-  #   set_fact:
-  #     bgp_neighbors: "{{ pyats_bgp_sum | dict2items }}"
-  #
-  # - name: "Debug BGP Neighbors for vrf {{ bgp_vrf }}"
-  #   debug:
-  #     var: bgp_neighbors
-
-  # - name: Print out BGP status for each neighbor
-  #   debug:
-  #     msg: "{{ bgp_neighbors | json_query('neighbor[*].address_family.ipv4_unicast.state_pfxrcd') }}"
 
   - name: Debug Show Logging
     debug:
