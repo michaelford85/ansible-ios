@@ -40,11 +40,9 @@
       msg: "BGP Neighbor is {{ item }}"
     loop: "{{ pyats_bgp_sum.list_of_neighbors }}"
 
-  - set_fact:
-      ip_address_list: "{{ pyats_bgp_sum.list_of_neighbors | map('quote') | join(',') }}"
+  # - set_fact:
+  #     ip_address_list: "{{ pyats_bgp_sum.list_of_neighbors | map('quote') | join(',') }}"
 
-  # - debug:
-  #     msg: "{{ ip_address | quote }}"
 
   - name: Print out BGP Session State
     debug:
@@ -77,9 +75,9 @@
   #   debug:
   #     msg: "{{ bgp_neighbors | json_query('neighbor[*].address_family.ipv4_unicast.state_pfxrcd') }}"
 
-  # - name: Debug Show Logging
-  #   debug:
-  #     var: pyats_show_log
+  - name: Debug Show Logging
+    debug:
+      var: pyats_show_log
 
 
 
