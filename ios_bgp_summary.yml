@@ -57,10 +57,7 @@
     debug:
       msg:  "Session State for {{ item.key }} is: {{ item.value.session_state }}"
     loop: "{{ ip_address_list }}"
-
-  # - name: Print out BGP Session State
-  #   include_tasks: ios_bgp_neighbors.yml
-  #   loop: "{{ pyats_bgp_sum.list_of_neighbors }}"
+    loop_control: "{{ item.key }}"
 
   - name: Filter Show Logging output through Genie
     set_fact:
