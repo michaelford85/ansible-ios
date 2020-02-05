@@ -33,23 +33,29 @@
     set_fact:
       pyats_show_log: "{{ show_log_output['stdout'][0] | parse_genie(command='show logging', os='iosxe') }}"
 
-  - name: Debug CDP Neighbors
-    debug:
-      var: facts_output.ansible_facts.ansible_net_neighbors
-
-  - name: Debug BGP Summary
-    debug:
-      var: pyats_bgp_sum
-
-  - name: Debug Show Logging
-    debug:
-      var: pyats_show_log
+  # - name: Debug CDP Neighbors
+  #   debug:
+  #     var: facts_output.ansible_facts.ansible_net_neighbors
+  #
+  # - name: Debug BGP Summary
+  #   debug:
+  #     var: pyats_bgp_sum
+  #
+  # - name: Debug Show Logging
+  #   debug:
+  #     var: pyats_show_log
 
 
   - name: CHECK show cdp neighbor
     debug:
       msg: "Router {{ inventory_hostname }} has no CDP neighbors"
     when: facts_output.ansible_facts.ansible_net_neighbors|length == 0
+
+
+  - name: "Display all neighbors"
+  debug:
+    var: item
+  loop: "{{ pyats_bgp_sum | json_query('vrf.default[*].neighbor') }}"
 
 
   # - name: Print all Active BGP Neighbors
