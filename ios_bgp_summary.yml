@@ -90,7 +90,7 @@
     debug:
       msg: "Match found in the logs. Open a ticket."
     loop: "{{ pyats_show_log.logs }}"
-    when: item is match ("Terminating the connection")
+    when: item is search("Terminating the connection")
 
 
   # - name: Print all Active BGP Neighbors
