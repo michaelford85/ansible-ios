@@ -53,9 +53,9 @@
 
 
   - name: "Display all neighbors"
-  debug:
-    var: item
-  loop: "{{ pyats_bgp_sum | json_query('vrf.default[*].neighbor') }}"
+    debug:
+      var: item
+    loop: "{{ pyats_bgp_sum | json_query('vrf.default[*].neighbor') }}"
 
 
   # - name: Print all Active BGP Neighbors
