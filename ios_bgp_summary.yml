@@ -46,7 +46,7 @@
       var: pyats_show_log
 
 
-  - name: CHECK: show cdp neighbor
+  - name: CHECK show cdp neighbor
     debug:
       msg: "Router {{ inventory_hostname }} has no CDP neighbors"
     when: false in facts_output.ansible_facts.ansible_net_neighbors.values()
