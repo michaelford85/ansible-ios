@@ -55,8 +55,8 @@
 
   - name: Print out BGP Session State
     debug:
-      msg:  "Session State for {{ item }} is: {{ ip_address_list[0].value.session_state }}"
-    loop: "{{ pyats_bgp_sum.list_of_neighbors }}"
+      msg:  "BGP Session state for {{ item }} is: {{item.value.session_state}}"
+    loop: "{{ pyats_bgp_sum | json_query('vrf.default.neighbor')|dict2items }}"
 
   - name: Filter Show Logging output through Genie
     set_fact:
