@@ -37,9 +37,9 @@
   #   debug:
   #     var: facts_output.ansible_facts.ansible_net_neighbors
   #
-  # - name: Debug BGP Summary
-  #   debug:
-  #     var: pyats_bgp_sum
+  - name: Debug BGP Summary
+    debug:
+      var: pyats_bgp_sum
   #
   # - name: Debug Show Logging
   #   debug:
