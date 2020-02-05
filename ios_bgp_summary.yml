@@ -31,7 +31,7 @@
 
   - name: BGP Summary output to YAML
     set_fact:
-      bgp_sum_yaml: "{{ pyats_bgp_sum | to_yaml }}"
+      bgp_sum_yaml: "{{ pyats_bgp_sum | to_nice_yaml }}"
 
   - name: Filter Show Logging output through Genie
     set_fact:
