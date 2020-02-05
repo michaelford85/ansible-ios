@@ -41,7 +41,7 @@
     loop: "{{ pyats_bgp_sum.list_of_neighbors }}"
 
   - set_fact:
-      ip_address_list: "{{ pyats_bgp_sum.list_of_neighbors | join('", "') }}"
+      ip_address_list: "{{ pyats_bgp_sum.list_of_neighbors | map('quote') | join(',') }}"
 
   # - debug:
   #     msg: "{{ ip_address | quote }}"
