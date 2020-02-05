@@ -16,7 +16,8 @@
   - name: show ip bgp summary
     ios_command:
       commands:
-        - show bgp all summary
+        # - show bgp all summary
+        - show bgp ipv4 unicast neighbors
     register: bgp_sum_output
 
   - name: show logging
@@ -27,8 +28,8 @@
 
   - name: Filter BGP Summary output through Genie
     set_fact:
-      pyats_bgp_sum: "{{ bgp_sum_output['stdout'][0] | parse_genie(command='show bgp all summary', os='iosxe') }}"
-    register: set_fact_output
+      # pyats_bgp_sum: "{{ bgp_sum_output['stdout'][0] | parse_genie(command='show bgp all summary', os='iosxe') }}"
+      pyats_bgp_sum: "{{ bgp_sum_output['stdout'][0] | parse_genie(command='show bgp {address_family} neighbors', os='iosxe') }}"
 
   # - name: BGP Summary output to YAML
   #   set_fact:
@@ -47,13 +48,13 @@
     debug:
       var: pyats_bgp_sum
 
-  - name: "Set BGP VRF fact for {{ bgp_vrf }}"
-    set_fact:
-      bgp_neighbors: "{{ pyats_bgp_sum | dict2items }}"
-
-  - name: "Debug BGP Neighbors for vrf {{ bgp_vrf }}"
-    debug:
-      var: set_fact_output.stdout
+  # - name: "Set BGP VRF fact for {{ bgp_vrf }}"
+  #   set_fact:
+  #     bgp_neighbors: "{{ pyats_bgp_sum | dict2items }}"
+  #
+  # - name: "Debug BGP Neighbors for vrf {{ bgp_vrf }}"
+  #   debug:
+  #     var: bgp_neighbors
 
   # - name: Print out BGP status for each neighbor
   #   debug:
