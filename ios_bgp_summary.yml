@@ -55,7 +55,7 @@
 
   - name: Print out BGP status for each neighbor
     debug:
-      msg: "{{ bgp_neighbors | json_query(neighbor[*].address_family.ipv4 unicast.state_pfxrcd) }}"
+      msg: "{{ bgp_neighbors | json_query('neighbor[*].address_family.ipv4 unicast.state_pfxrcd') }}"
 
   # - name: Debug Show Logging
   #   debug:
