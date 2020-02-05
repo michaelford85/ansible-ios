@@ -41,7 +41,10 @@
     loop: "{{ pyats_bgp_sum.list_of_neighbors }}"
 
   - set_fact:
-      ip_address: "\"10.200.200.2\""
+      ip_address: 10.200.200.2
+
+  - debug:
+      msg: "{{ ip_address | quote }}"
 
   - name: Print out BGP Session State
     debug:
