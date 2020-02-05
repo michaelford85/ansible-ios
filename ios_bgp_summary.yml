@@ -37,6 +37,10 @@
     debug:
       var: facts_output.ansible_facts.ansible_net_neighbors
 
+  - name: Specify the number of CDP Neighbors
+    set_fact:
+      cdp_neighbors: "{{ facts_output.ansible_facts.ansible_net_neighbors | length }}"
+
   - name: Debug BGP Summary
     debug:
       var: pyats_bgp_sum
@@ -49,7 +53,7 @@
   - name: CHECK show cdp neighbor
     debug:
       msg: "Router {{ inventory_hostname }} has no CDP neighbors"
-    when: "{{ facts_output.ansible_facts.ansible_net_neighbors | length }} == 0"
+    when: cdp_neighbors == 0
 
 
   # - name: Print all Active BGP Neighbors
