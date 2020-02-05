@@ -29,6 +29,10 @@
     set_fact:
       pyats_bgp_sum: "{{ bgp_sum_output['stdout'][0] | parse_genie(command='show bgp all summary', os='iosxe') }}"
 
+  - name: BGP Summary output to YAML
+    set_fact:
+      bgp_sum_yaml: "{{ pyats_bgp_sum | to_yaml }}"
+
   - name: Filter Show Logging output through Genie
     set_fact:
       pyats_show_log: "{{ show_log_output['stdout'][0] | parse_genie(command='show logging', os='iosxe') }}"
@@ -39,7 +43,7 @@
   #
   - name: Debug BGP Summary
     debug:
-      var: pyats_bgp_sum
+      var: bgp_sum_yaml
   #
   # - name: Debug Show Logging
   #   debug:
@@ -52,10 +56,10 @@
     when: facts_output.ansible_facts.ansible_net_neighbors|length == 0
 
 
-  - name: "Display all neighbors"
-    debug:
-      var: item
-    loop: "{{ pyats_bgp_sum | json_query('vrf.default[*].neighbor') }}"
+  # - name: "Display all neighbors"
+  #   debug:
+  #     var: item
+  #   loop: "{{ pyats_bgp_sum | json_query('vrf.default[*].neighbor') }}"
 
 
   # - name: Print all Active BGP Neighbors
