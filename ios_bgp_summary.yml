@@ -42,7 +42,7 @@
 
   - name: Print out BGP Session State
     debug:
-      var:  pyats_bgp_sum.vrf.default.neighbor.{{ item }}.session_state
+      var:  pyats_bgp_sum.vrf.default.neighbor
     loop: "{{ pyats_bgp_sum.list_of_neighbors }}"
 
   - name: Filter Show Logging output through Genie
