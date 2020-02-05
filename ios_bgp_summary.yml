@@ -53,7 +53,7 @@
 
   - name: "Debug BGP Neighbors for vrf {{ bgp_vrf }}"
     debug:
-      var: set_fact_output
+      var: set_fact_output.stdout
 
   # - name: Print out BGP status for each neighbor
   #   debug:
