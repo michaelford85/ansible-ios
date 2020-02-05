@@ -28,6 +28,7 @@
   - name: Filter BGP Summary output through Genie
     set_fact:
       pyats_bgp_sum: "{{ bgp_sum_output['stdout'][0] | parse_genie(command='show bgp all summary', os='iosxe') }}"
+    register: set_fact_output
 
   # - name: BGP Summary output to YAML
   #   set_fact:
@@ -36,7 +37,7 @@
   - name: Filter Show Logging output through Genie
     set_fact:
       pyats_show_log: "{{ show_log_output['stdout'][0] | parse_genie(command='show logging', os='iosxe') }}"
-    register: set_fact_output
+
 
   # - name: Debug CDP Neighbors
   #   debug:
