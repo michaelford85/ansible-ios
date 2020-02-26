@@ -7,6 +7,6 @@ rtr4 ansible_host=52.54.127.146 site=4
 
 [ios:vars]
 ansible_network_os=ios
-;ansible_user=ec2-user
-;ansible_ssh_private_key_file=~/.ssh/maf-ios-demo-private.pem
+ansible_user=ec2-user
+ansible_ssh_private_key_file=~/.ssh/maf-ios-demo-private.pem
 ansible_network_provider=ansible-network.cisco_ios

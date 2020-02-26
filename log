@@ -7513,3 +7513,814 @@ could change this. See https://docs.ansible.com/ansible/2.9/reference_appendices
 2019-11-12 08:52:56,304 p=mford u=50705 | rtr3                       : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 2019-11-12 08:52:56,304 p=mford u=50705 | rtr4                       : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 2019-11-12 08:52:56,404 p=mford u=50745 | shutdown complete
+2020-02-16 16:21:02,640 p=90605 u=mford n=ansible | PLAY [Gather IOS facts] ********************************************************************************************************
+2020-02-16 16:21:02,679 p=90605 u=mford n=ansible | TASK [Collect facts from Cisco IOS elements] ***********************************************************************************
+2020-02-16 16:21:04,732 p=90614 u=mford n=ansible | network_os is set to ios
+2020-02-16 16:21:04,732 p=90613 u=mford n=ansible | network_os is set to ios
+2020-02-16 16:21:04,841 p=90640 u=mford n=p=90640 u=mford | paramiko [52.207.224.201] | starting thread (client mode): 0x1119d210L
+2020-02-16 16:21:04,842 p=90640 u=mford n=p=90640 u=mford | paramiko [52.207.224.201] | Local version/idstring: SSH-2.0-paramiko_2.4.1
+2020-02-16 16:21:04,847 p=90641 u=mford n=p=90641 u=mford | paramiko [100.25.213.180] | starting thread (client mode): 0xb528210L
+2020-02-16 16:21:04,848 p=90641 u=mford n=p=90641 u=mford | paramiko [100.25.213.180] | Local version/idstring: SSH-2.0-paramiko_2.4.1
+2020-02-16 16:21:04,878 p=90640 u=mford n=p=90640 u=mford | paramiko [52.207.224.201] | Remote version/idstring: SSH-2.0-Cisco-1.25
+2020-02-16 16:21:04,879 p=90640 u=mford n=p=90640 u=mford | paramiko [52.207.224.201] | Connected (version 2.0, client Cisco-1.25)
+2020-02-16 16:21:04,882 p=90640 u=mford n=p=90640 u=mford | paramiko [52.207.224.201] | kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2020-02-16 16:21:04,883 p=90640 u=mford n=p=90640 u=mford | paramiko [52.207.224.201] | Kex agreed: diffie-hellman-group-exchange-sha1
+2020-02-16 16:21:04,884 p=90640 u=mford n=p=90640 u=mford | paramiko [52.207.224.201] | HostKey agreed: ssh-rsa
+2020-02-16 16:21:04,884 p=90640 u=mford n=p=90640 u=mford | paramiko [52.207.224.201] | Cipher agreed: aes128-ctr
+2020-02-16 16:21:04,885 p=90640 u=mford n=p=90640 u=mford | paramiko [52.207.224.201] | MAC agreed: hmac-sha2-256
+2020-02-16 16:21:04,885 p=90640 u=mford n=p=90640 u=mford | paramiko [52.207.224.201] | Compression agreed: none
+2020-02-16 16:21:04,976 p=90641 u=mford n=p=90641 u=mford | paramiko [100.25.213.180] | Remote version/idstring: SSH-2.0-Cisco-1.25
+2020-02-16 16:21:04,976 p=90641 u=mford n=p=90641 u=mford | paramiko [100.25.213.180] | Connected (version 2.0, client Cisco-1.25)
+2020-02-16 16:21:05,019 p=90641 u=mford n=p=90641 u=mford | paramiko [100.25.213.180] | kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2020-02-16 16:21:05,020 p=90641 u=mford n=p=90641 u=mford | paramiko [100.25.213.180] | Kex agreed: diffie-hellman-group-exchange-sha1
+2020-02-16 16:21:05,021 p=90641 u=mford n=p=90641 u=mford | paramiko [100.25.213.180] | HostKey agreed: ssh-rsa
+2020-02-16 16:21:05,021 p=90641 u=mford n=p=90641 u=mford | paramiko [100.25.213.180] | Cipher agreed: aes128-ctr
+2020-02-16 16:21:05,022 p=90641 u=mford n=p=90641 u=mford | paramiko [100.25.213.180] | MAC agreed: hmac-sha2-256
+2020-02-16 16:21:05,022 p=90641 u=mford n=p=90641 u=mford | paramiko [100.25.213.180] | Compression agreed: none
+2020-02-16 16:21:05,059 p=90641 u=mford n=p=90641 u=mford | paramiko [100.25.213.180] | Got server p (2048 bits)
+2020-02-16 16:21:05,175 p=90640 u=mford n=p=90640 u=mford | paramiko [52.207.224.201] | Got server p (2048 bits)
+2020-02-16 16:21:05,178 p=90641 u=mford n=p=90641 u=mford | paramiko [100.25.213.180] | kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2020-02-16 16:21:05,179 p=90641 u=mford n=p=90641 u=mford | paramiko [100.25.213.180] | Switch to new keys ...
+2020-02-16 16:21:05,188 p=90641 u=mford n=p=90641 u=mford | paramiko [100.25.213.180] | Trying discovered key f85cade9e5a721085b422bda763609d4 in /Users/mford/.ssh/maf-ios-demo-private.pem
+2020-02-16 16:21:05,218 p=90615 u=mford n=ansible | network_os is set to ios
+2020-02-16 16:21:05,278 p=90616 u=mford n=ansible | network_os is set to ios
+2020-02-16 16:21:05,293 p=90640 u=mford n=p=90640 u=mford | paramiko [52.207.224.201] | kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2020-02-16 16:21:05,294 p=90640 u=mford n=p=90640 u=mford | paramiko [52.207.224.201] | Switch to new keys ...
+2020-02-16 16:21:05,295 p=90643 u=mford n=p=90643 u=mford | paramiko [3.94.166.65] | starting thread (client mode): 0x23a4210L
+2020-02-16 16:21:05,296 p=90643 u=mford n=p=90643 u=mford | paramiko [3.94.166.65] | Local version/idstring: SSH-2.0-paramiko_2.4.1
+2020-02-16 16:21:05,325 p=90640 u=mford n=p=90640 u=mford | paramiko [52.207.224.201] | Trying discovered key f85cade9e5a721085b422bda763609d4 in /Users/mford/.ssh/maf-ios-demo-private.pem
+2020-02-16 16:21:05,333 p=90643 u=mford n=p=90643 u=mford | paramiko [3.94.166.65] | Remote version/idstring: SSH-2.0-Cisco-1.25
+2020-02-16 16:21:05,334 p=90643 u=mford n=p=90643 u=mford | paramiko [3.94.166.65] | Connected (version 2.0, client Cisco-1.25)
+2020-02-16 16:21:05,364 p=90648 u=mford n=p=90648 u=mford | paramiko [52.54.127.146] | starting thread (client mode): 0xece6210L
+2020-02-16 16:21:05,365 p=90648 u=mford n=p=90648 u=mford | paramiko [52.54.127.146] | Local version/idstring: SSH-2.0-paramiko_2.4.1
+2020-02-16 16:21:05,371 p=90643 u=mford n=p=90643 u=mford | paramiko [3.94.166.65] | kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2020-02-16 16:21:05,371 p=90643 u=mford n=p=90643 u=mford | paramiko [3.94.166.65] | Kex agreed: diffie-hellman-group-exchange-sha1
+2020-02-16 16:21:05,372 p=90643 u=mford n=p=90643 u=mford | paramiko [3.94.166.65] | HostKey agreed: ssh-rsa
+2020-02-16 16:21:05,372 p=90643 u=mford n=p=90643 u=mford | paramiko [3.94.166.65] | Cipher agreed: aes128-ctr
+2020-02-16 16:21:05,373 p=90643 u=mford n=p=90643 u=mford | paramiko [3.94.166.65] | MAC agreed: hmac-sha2-256
+2020-02-16 16:21:05,373 p=90643 u=mford n=p=90643 u=mford | paramiko [3.94.166.65] | Compression agreed: none
+2020-02-16 16:21:05,401 p=90648 u=mford n=p=90648 u=mford | paramiko [52.54.127.146] | Remote version/idstring: SSH-2.0-Cisco-1.25
+2020-02-16 16:21:05,402 p=90648 u=mford n=p=90648 u=mford | paramiko [52.54.127.146] | Connected (version 2.0, client Cisco-1.25)
+2020-02-16 16:21:05,404 p=90648 u=mford n=p=90648 u=mford | paramiko [52.54.127.146] | kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2020-02-16 16:21:05,405 p=90648 u=mford n=p=90648 u=mford | paramiko [52.54.127.146] | Kex agreed: diffie-hellman-group-exchange-sha1
+2020-02-16 16:21:05,405 p=90648 u=mford n=p=90648 u=mford | paramiko [52.54.127.146] | HostKey agreed: ssh-rsa
+2020-02-16 16:21:05,406 p=90648 u=mford n=p=90648 u=mford | paramiko [52.54.127.146] | Cipher agreed: aes128-ctr
+2020-02-16 16:21:05,406 p=90648 u=mford n=p=90648 u=mford | paramiko [52.54.127.146] | MAC agreed: hmac-sha2-256
+2020-02-16 16:21:05,407 p=90648 u=mford n=p=90648 u=mford | paramiko [52.54.127.146] | Compression agreed: none
+2020-02-16 16:21:05,631 p=90643 u=mford n=p=90643 u=mford | paramiko [3.94.166.65] | Got server p (2048 bits)
+2020-02-16 16:21:05,674 p=90640 u=mford n=p=90640 u=mford | paramiko [52.207.224.201] | userauth is OK
+2020-02-16 16:21:05,674 p=90641 u=mford n=p=90641 u=mford | paramiko [100.25.213.180] | userauth is OK
+2020-02-16 16:21:05,679 p=90648 u=mford n=p=90648 u=mford | paramiko [52.54.127.146] | Got server p (2048 bits)
+2020-02-16 16:21:05,715 p=90640 u=mford n=p=90640 u=mford | paramiko [52.207.224.201] | Authentication (publickey) successful!
+2020-02-16 16:21:05,728 p=90640 u=mford n=p=90640 u=mford | paramiko [52.207.224.201] | [chan 0] Max packet in: 32768 bytes
+2020-02-16 16:21:05,750 p=90641 u=mford n=p=90641 u=mford | paramiko [100.25.213.180] | Authentication (publickey) successful!
+2020-02-16 16:21:05,752 p=90643 u=mford n=p=90643 u=mford | paramiko [3.94.166.65] | kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2020-02-16 16:21:05,753 p=90643 u=mford n=p=90643 u=mford | paramiko [3.94.166.65] | Switch to new keys ...
+2020-02-16 16:21:05,758 p=90641 u=mford n=p=90641 u=mford | paramiko [100.25.213.180] | [chan 0] Max packet in: 32768 bytes
+2020-02-16 16:21:05,763 p=90640 u=mford n=p=90640 u=mford | paramiko [52.207.224.201] | [chan 0] Max packet out: 4096 bytes
+2020-02-16 16:21:05,764 p=90640 u=mford n=p=90640 u=mford | paramiko [52.207.224.201] | Secsh channel 0 opened.
+2020-02-16 16:21:05,785 p=90643 u=mford n=p=90643 u=mford | paramiko [3.94.166.65] | Trying discovered key f85cade9e5a721085b422bda763609d4 in /Users/mford/.ssh/maf-ios-demo-private.pem
+2020-02-16 16:21:05,796 p=90648 u=mford n=p=90648 u=mford | paramiko [52.54.127.146] | kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2020-02-16 16:21:05,797 p=90641 u=mford n=p=90641 u=mford | paramiko [100.25.213.180] | [chan 0] Max packet out: 4096 bytes
+2020-02-16 16:21:05,798 p=90648 u=mford n=p=90648 u=mford | paramiko [52.54.127.146] | Switch to new keys ...
+2020-02-16 16:21:05,798 p=90641 u=mford n=p=90641 u=mford | paramiko [100.25.213.180] | Secsh channel 0 opened.
+2020-02-16 16:21:05,800 p=90648 u=mford n=p=90648 u=mford | paramiko [52.54.127.146] | Trying discovered key f85cade9e5a721085b422bda763609d4 in /Users/mford/.ssh/maf-ios-demo-private.pem
+2020-02-16 16:21:05,831 p=90640 u=mford n=p=90640 u=mford | paramiko [52.207.224.201] | [chan 0] Sesch channel 0 request ok
+2020-02-16 16:21:05,859 p=90641 u=mford n=p=90641 u=mford | paramiko [100.25.213.180] | [chan 0] Sesch channel 0 request ok
+2020-02-16 16:21:05,869 p=90640 u=mford n=p=90640 u=mford | paramiko [52.207.224.201] | [chan 0] Sesch channel 0 request ok
+2020-02-16 16:21:05,928 p=90641 u=mford n=p=90641 u=mford | paramiko [100.25.213.180] | [chan 0] Sesch channel 0 request ok
+2020-02-16 16:21:06,065 p=90643 u=mford n=p=90643 u=mford | paramiko [3.94.166.65] | userauth is OK
+2020-02-16 16:21:06,065 p=90648 u=mford n=p=90648 u=mford | paramiko [52.54.127.146] | userauth is OK
+2020-02-16 16:21:06,112 p=90643 u=mford n=p=90643 u=mford | paramiko [3.94.166.65] | Authentication (publickey) successful!
+2020-02-16 16:21:06,112 p=90648 u=mford n=p=90648 u=mford | paramiko [52.54.127.146] | Authentication (publickey) successful!
+2020-02-16 16:21:06,121 p=90648 u=mford n=p=90648 u=mford | paramiko [52.54.127.146] | [chan 0] Max packet in: 32768 bytes
+2020-02-16 16:21:06,121 p=90643 u=mford n=p=90643 u=mford | paramiko [3.94.166.65] | [chan 0] Max packet in: 32768 bytes
+2020-02-16 16:21:06,158 p=90648 u=mford n=p=90648 u=mford | paramiko [52.54.127.146] | [chan 0] Max packet out: 4096 bytes
+2020-02-16 16:21:06,158 p=90643 u=mford n=p=90643 u=mford | paramiko [3.94.166.65] | [chan 0] Max packet out: 4096 bytes
+2020-02-16 16:21:06,159 p=90643 u=mford n=p=90643 u=mford | paramiko [3.94.166.65] | Secsh channel 0 opened.
+2020-02-16 16:21:06,159 p=90648 u=mford n=p=90648 u=mford | paramiko [52.54.127.146] | Secsh channel 0 opened.
+2020-02-16 16:21:06,221 p=90648 u=mford n=p=90648 u=mford | paramiko [52.54.127.146] | [chan 0] Sesch channel 0 request ok
+2020-02-16 16:21:06,226 p=90643 u=mford n=p=90643 u=mford | paramiko [3.94.166.65] | [chan 0] Sesch channel 0 request ok
+2020-02-16 16:21:06,268 p=90648 u=mford n=p=90648 u=mford | paramiko [52.54.127.146] | [chan 0] Sesch channel 0 request ok
+2020-02-16 16:21:06,268 p=90643 u=mford n=p=90643 u=mford | paramiko [3.94.166.65] | [chan 0] Sesch channel 0 request ok
+2020-02-16 16:21:10,824 p=90605 u=mford n=ansible | [WARNING]: default value for `gather_subset` will be changed to `min` from `!config` v2.11 onwards
+
+2020-02-16 16:21:10,824 p=90605 u=mford n=ansible | [WARNING]: Platform darwin on host rtr4 is using the discovered Python interpreter at /usr/bin/python, but future installation
+of another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+
+2020-02-16 16:21:10,825 p=90605 u=mford n=ansible | ok: [rtr4]
+2020-02-16 16:21:10,831 p=90605 u=mford n=ansible | [WARNING]: Platform darwin on host rtr3 is using the discovered Python interpreter at /usr/bin/python, but future installation
+of another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+
+2020-02-16 16:21:10,831 p=90605 u=mford n=ansible | ok: [rtr3]
+2020-02-16 16:21:11,069 p=90605 u=mford n=ansible | [WARNING]: Platform darwin on host rtr1 is using the discovered Python interpreter at /usr/bin/python, but future installation
+of another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+
+2020-02-16 16:21:11,069 p=90605 u=mford n=ansible | ok: [rtr1]
+2020-02-16 16:21:11,449 p=90605 u=mford n=ansible | [WARNING]: Platform darwin on host rtr2 is using the discovered Python interpreter at /usr/bin/python, but future installation
+of another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+
+2020-02-16 16:21:11,450 p=90605 u=mford n=ansible | ok: [rtr2]
+2020-02-16 16:21:11,459 p=90605 u=mford n=ansible | TASK [Print out facts] *********************************************************************************************************
+2020-02-16 16:21:13,559 p=90605 u=mford n=ansible | ok: [rtr1] => {
+    "facts_output": {
+        "ansible_facts": {
+            "ansible_net_all_ipv4_addresses": [
+                "192.168.35.101", 
+                "172.16.153.183", 
+                "192.168.1.101", 
+                "10.1.1.101", 
+                "10.200.200.1", 
+                "10.100.100.1", 
+                "10.255.0.254"
+            ], 
+            "ansible_net_all_ipv6_addresses": [], 
+            "ansible_net_api": "cliconf", 
+            "ansible_net_config": "!\n! Last configuration change at 20:49:45 UTC Sat Feb 15 2020\n!\nversion 16.10\nservice timestamps debug datetime msec\nservice timestamps log datetime msec\nservice call-home\nplatform qfp utilization monitor load 80\nno platform punt-keepalive disable-kernel-core\nplatform console virtual\n!\nhostname mford_router\n!\nboot-start-marker\nboot-end-marker\n!\n!\nvrf definition GS\n rd 100:100\n !\n address-family ipv4\n exit-address-family\n!\nvrf definition bpx_vrf\n description oob mgmt vrf\n !\n address-family ipv4\n exit-address-family\n !\n address-family ipv6\n exit-address-family\n!\nvrf definition mford_vrf\n description oob mgmt vrf\n !\n address-family ipv4\n exit-address-family\n !\n address-family ipv6\n exit-address-family\n!\nvrf definition test_vrf\n description oob mgmt vrf\n !\n address-family ipv4\n exit-address-family\n !\n address-family ipv6\n exit-address-family\n!\nvrf definition united\n description oob mgmt vrf\n !\n address-family ipv4\n exit-address-family\n !\n address-family ipv6\n exit-address-family\n!\nvrf definition wageworks\n description oob mgmt vrf\n !\n address-family ipv4\n exit-address-family\n !\n address-family ipv6\n exit-address-family\n!\nlogging persistent size 1000000 filesize 8192 immediate\n!\nno aaa new-model\ncall-home\n ! If contact email address in call-home is configured as sch-smart-licensing@cisco.com\n ! the email address configured in Cisco Smart License Portal will be used as contact email address to send SCH notifications.\n contact-email-addr sch-smart-licensing@cisco.com\n profile \"CiscoTAC-1\"\n  active\n  destination transport-method http\n  no destination transport-method email\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\nlogin on-success log\n!\n!\n!\n!\n!\n!\n!\nsubscriber templating\n! \n! \n! \n! \n!\nmultilink bundle-name authenticated\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\ncrypto pki trustpoint TP-self-signed-824464578\n enrollment selfsigned\n subject-name cn=IOS-Self-Signed-Certificate-824464578\n revocation-check none\n rsakeypair TP-self-signed-824464578\n!\ncrypto pki trustpoint SLA-TrustPoint\n enrollment pkcs12\n revocation-check crl\n!\n!\ncrypto pki certificate chain TP-self-signed-824464578\n certificate self-signed 01\n  3082032E 30820216 A0030201 02020101 300D0609 2A864886 F70D0101 05050030 \n  30312E30 2C060355 04031325 494F532D 53656C66 2D536967 6E65642D 43657274 \n  69666963 6174652D 38323434 36343537 38301E17 0D313930 32303131 37343831 \n  335A170D 33303031 30313030 30303030 5A303031 2E302C06 03550403 1325494F \n  532D5365 6C662D53 69676E65 642D4365 72746966 69636174 652D3832 34343634 \n  35373830 82012230 0D06092A 864886F7 0D010101 05000382 010F0030 82010A02 \n  82010100 B619FE6E 2F6C6DA2 83E17237 94670FA6 CF2C3034 162B085D 8A40C90C \n  FE9605E5 A816CE38 708C01A3 075D09A9 6553F482 4B91AAB1 A4A0C683 7AF1591D \n  204EE15D D1A32D7F 463F0EB0 D2BCF63E 9CF2F842 3873C258 5E6E0682 8D01AE23 \n  9D1CB719 FC9CA732 3758D160 A3A9D560 DC023730 D737DBF6 B4A309D5 D8A4E037 \n  0CB17AF0 3EEE3170 0E3FBA89 F53346F8 E101AB66 C90ACE0C C2939960 6E472087 \n  F90D87DE 05E356A2 FDB8C238 E24EC362 5F23E612 E1FD65AB A5FB7423 C7D98298 \n  475905FF 5A8CC423 990E19E9 38BD35A0 96449D5B F0B76D97 7B336CF0 072DB670 \n  5C655638 AABC6732 8B01C01C A70E721F 07C33CDD 53B28B2F D0314E10 EC4BD9CD \n  3FF1EE81 02030100 01A35330 51300F06 03551D13 0101FF04 05300301 01FF301F \n  0603551D 23041830 168014D2 AC21C0C9 7E5D4DDB 869A3431 9AA27E55 F7314E30 \n  1D060355 1D0E0416 0414D2AC 21C0C97E 5D4DDB86 9A34319A A27E55F7 314E300D \n  06092A86 4886F70D 01010505 00038201 010004A2 F33DBB7A 881CB8B9 A146D722 \n  7FFAD7A0 3303140D C45A8F3D 023E4C49 DE544423 AE89990C 124B2761 BDD22715 \n  B0196E76 96DFB9C8 E02BC729 3B88CC55 E3D8AF0E 52177212 98C592FE 5940B4C5 \n  E99E85B9 C6C8C1AB D76D7F72 3E076B6C E39126B0 1B891E53 12028544 BDD86FAA \n  F0275559 3F9D8C36 36CCFF80 8BFCDEBF CC00D09B 5FBC2589 1BC266EF 8160F6EC \n  746A5B6D 3AC09707 4A1D2D7A 358DDCB3 F2A808B8 2F53D071 B6550516 986E7BD9 \n  8D460F21 59F3338A 324FDF59 5FC52730 EB9FEC98 147A367A 3BAB9E74 96595B2F \n  F70CC17C 58A84927 FD90049E 5CCB4B02 5EC6A91B 378202A4 FFE1CFDC 1D2BB31D \n  851FD17F CE3553F0 9A7D31A0 916A4864 0D42\n  \tquit\ncrypto pki certificate chain SLA-TrustPoint\n certificate ca 01\n  30820321 30820209 A0030201 02020101 300D0609 2A864886 F70D0101 0B050030 \n  32310E30 0C060355 040A1305 43697363 6F312030 1E060355 04031317 43697363 \n  6F204C69 63656E73 696E6720 526F6F74 20434130 1E170D31 33303533 30313934 \n  3834375A 170D3338 30353330 31393438 34375A30 32310E30 0C060355 040A1305 \n  43697363 6F312030 1E060355 04031317 43697363 6F204C69 63656E73 696E6720 \n  526F6F74 20434130 82012230 0D06092A 864886F7 0D010101 05000382 010F0030 \n  82010A02 82010100 A6BCBD96 131E05F7 145EA72C 2CD686E6 17222EA1 F1EFF64D \n  CBB4C798 212AA147 C655D8D7 9471380D 8711441E 1AAF071A 9CAE6388 8A38E520 \n  1C394D78 462EF239 C659F715 B98C0A59 5BBB5CBD 0CFEBEA3 700A8BF7 D8F256EE \n  4AA4E80D DB6FD1C9 60B1FD18 FFC69C96 6FA68957 A2617DE7 104FDC5F EA2956AC \n  7390A3EB 2B5436AD C847A2C5 DAB553EB 69A9A535 58E9F3E3 C0BD23CF 58BD7188 \n  68E69491 20F320E7 948E71D7 AE3BCC84 F10684C7 4BC8E00F 539BA42B 42C68BB7 \n  C7479096 B4CB2D62 EA2F505D C7B062A4 6811D95B E8250FC4 5D5D5FB8 8F27D191 \n  C55F0D76 61F9A4CD 3D992327 A8BB03BD 4E6D7069 7CBADF8B DF5F4368 95135E44 \n  DFC7C6CF 04DD7FD1 02030100 01A34230 40300E06 03551D0F 0101FF04 04030201 \n  06300F06 03551D13 0101FF04 05300301 01FF301D 0603551D 0E041604 1449DC85 \n  4B3D31E5 1B3E6A17 606AF333 3D3B4C73 E8300D06 092A8648 86F70D01 010B0500 \n  03820101 00507F24 D3932A66 86025D9F E838AE5C 6D4DF6B0 49631C78 240DA905 \n  604EDCDE FF4FED2B 77FC460E CD636FDB DD44681E 3A5673AB 9093D3B1 6C9E3D8B \n  D98987BF E40CBD9E 1AECA0C2 2189BB5C 8FA85686 CD98B646 5575B146 8DFC66A8 \n  467A3DF4 4D565700 6ADF0F0D CF835015 3C04FF7C 21E878AC 11BA9CD2 55A9232C \n  7CA7B7E6 C1AF74F6 152E99B7 B1FCF9BB E973DE7F 5BDDEB86 C71E3B49 1765308B \n  5FB0DA06 B92AFE7F 494E8A9E 07B85737 F3A58BE1 1A48A229 C37C1E69 39F08678 \n  80DDCD16 D6BACECA EEBC7CF9 8428787B 35202CDC 60E4616A B623CDBD 230E3AFB \n  418616A9 4093E049 4D10AB75 27E86F73 932E35B5 8862FDAE 0275156F 719BB2F0 \n  D697DF7F 28\n  \tquit\n!\nlicense udi pid CSR1000V sn 9QJ3N3B1IQZ\ndiagnostic bootup level minimal\n!\nspanning-tree extend system-id\n!\n!\n!\nusername ec2-user privilege 15 secret 9 $9$Glbw1Es4OUPhLU$TGoOiR6NEZH2BNlmcLU8hcEU9CeWuyqQk.X1VaLDdRY\n!\nredundancy\n!\n!\n!\n!\n!\n!\n! \n!\n!\n!\n!\n!\n!\ncrypto isakmp policy 10\n encr aes 256\n hash sha256\n authentication pre-share\n group 2\ncrypto isakmp key 640c8a5376aa12fa15cf02130ce239a6 address 0.0.0.0        \n!\n!\ncrypto ipsec transform-set xform esp-aes 256 esp-sha256-hmac \n mode transport\n!\n!\ncrypto ipsec profile ipsec-prof\n set transform-set xform \n!\n!\n!\n!\n!\n! \n! \n!\n!\ninterface Loopback0\n ip address 192.168.1.101 255.255.255.0\n!\ninterface Loopback1\n ip address 10.1.1.101 255.255.255.0\n!\ninterface Tunnel0\n ip address 10.100.100.1 255.255.255.0\n ip mtu 1476\n ip tcp adjust-mss 1360\n tunnel source GigabitEthernet1\n tunnel destination 34.229.215.199\n!\ninterface Tunnel1\n ip address 10.200.200.1 255.255.255.0\n tunnel source GigabitEthernet1\n tunnel destination 3.94.146.20\n!\ninterface Tunnel2\n ip address 10.255.0.254 255.255.255.0\n no ip redirects\n ip mtu 1400\n ip nhrp authentication xform\n ip nhrp network-id 1\n ip nhrp redirect\n ip tcp adjust-mss 1360\n ip ospf network broadcast\n ip ospf hello-interval 30\n ip ospf priority 255\n tunnel source GigabitEthernet1\n tunnel mode gre multipoint\n tunnel key 1\n tunnel protection ipsec profile ipsec-prof\n!\ninterface VirtualPortGroup0\n vrf forwarding GS\n ip address 192.168.35.101 255.255.255.0\n ip nat inside\n no mop enabled\n no mop sysid\n!\ninterface GigabitEthernet1\n ip address dhcp\n ip nat outside\n negotiation auto\n no mop enabled\n no mop sysid\n!\nrouter ospf 1\n redistribute bgp 65000\n network 10.1.1.0 0.0.0.255 area 0\n network 10.100.100.0 0.0.0.255 area 0\n network 10.255.0.0 0.0.0.255 area 1\n network 172.16.0.0 0.0.255.255 area 0\n network 192.168.1.0 0.0.0.255 area 0\n!\nrouter bgp 65000\n bgp router-id 1.1.1.1\n bgp log-neighbor-changes\n neighbor 10.200.200.2 remote-as 65001\n !\n address-family ipv4\n  network 10.1.1.0 mask 255.255.255.0\n  network 10.3.3.103 mask 255.255.255.255\n  network 10.100.100.0 mask 255.255.255.0\n  network 10.200.200.0 mask 255.255.255.0\n  network 172.16.0.0\n  network 192.168.1.0\n  neighbor 10.200.200.2 activate\n exit-address-family\n!\niox\nip forward-protocol nd\nip tcp window-size 8192\nip http server\nip http authentication local\nip http secure-server\nip nat inside source list GS_NAT_ACL interface GigabitEthernet1 vrf GS overload\nip route 0.0.0.0 0.0.0.0 GigabitEthernet1 172.16.0.1\nip route vrf GS 0.0.0.0 0.0.0.0 GigabitEthernet1 172.16.0.1 global\n!\nip ssh rsa keypair-name ssh-key\nip ssh version 2\nip ssh pubkey-chain\n  username ec2-user\n   key-hash ssh-rsa F85CADE9E5A721085B422BDA763609D4 ec2-user\nip scp server enable\n!\n!\nip access-list standard GS_NAT_ACL\n permit 192.168.35.0 0.0.0.255\n!\n!\n!\n!\ncontrol-plane\n!\n!\n!\n!\n!\n!\nline con 0\n stopbits 1\nline vty 0 4\n login local\n transport input ssh\n!\n!\n!\n!\n!\n!\napp-hosting appid guestshell\n app-vnic gateway1 virtualportgroup 0 guest-interface 0\n  guest-ipaddress 192.168.35.102 netmask 255.255.255.0\n app-default-gateway 192.168.35.101 guest-interface 0\n name-server0 8.8.8.8\nend", 
+            "ansible_net_filesystems": [
+                "bootflash:"
+            ], 
+            "ansible_net_filesystems_info": {
+                "bootflash:": {
+                    "spacefree_kb": 6765332.0, 
+                    "spacetotal_kb": 7712284.0
+                }
+            }, 
+            "ansible_net_gather_network_resources": [], 
+            "ansible_net_gather_subset": [
+                "hardware", 
+                "default", 
+                "interfaces", 
+                "config"
+            ], 
+            "ansible_net_hostname": "mford_router", 
+            "ansible_net_image": "bootflash:packages.conf", 
+            "ansible_net_interfaces": {
+                "GigabitEthernet1": {
+                    "bandwidth": 1000000, 
+                    "description": null, 
+                    "duplex": "Full", 
+                    "ipv4": [
+                        {
+                            "address": "172.16.153.183", 
+                            "subnet": "16"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": "0a01.614e.a60e", 
+                    "mediatype": "Virtual", 
+                    "mtu": 1500, 
+                    "operstatus": "up", 
+                    "type": "CSR vNIC"
+                }, 
+                "Loopback0": {
+                    "bandwidth": 8000000, 
+                    "description": null, 
+                    "duplex": null, 
+                    "ipv4": [
+                        {
+                            "address": "192.168.1.101", 
+                            "subnet": "24"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": null, 
+                    "mediatype": null, 
+                    "mtu": 1514, 
+                    "operstatus": "up", 
+                    "type": null
+                }, 
+                "Loopback1": {
+                    "bandwidth": 8000000, 
+                    "description": null, 
+                    "duplex": null, 
+                    "ipv4": [
+                        {
+                            "address": "10.1.1.101", 
+                            "subnet": "24"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": null, 
+                    "mediatype": null, 
+                    "mtu": 1514, 
+                    "operstatus": "up", 
+                    "type": null
+                }, 
+                "Tunnel0": {
+                    "bandwidth": 100, 
+                    "description": null, 
+                    "duplex": null, 
+                    "ipv4": [
+                        {
+                            "address": "10.100.100.1", 
+                            "subnet": "24"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": null, 
+                    "mediatype": null, 
+                    "mtu": 9976, 
+                    "operstatus": "up", 
+                    "type": null
+                }, 
+                "Tunnel1": {
+                    "bandwidth": 100, 
+                    "description": null, 
+                    "duplex": null, 
+                    "ipv4": [
+                        {
+                            "address": "10.200.200.1", 
+                            "subnet": "24"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": null, 
+                    "mediatype": null, 
+                    "mtu": 9976, 
+                    "operstatus": "up", 
+                    "type": null
+                }, 
+                "Tunnel2": {
+                    "bandwidth": 100, 
+                    "description": null, 
+                    "duplex": null, 
+                    "ipv4": [
+                        {
+                            "address": "10.255.0.254", 
+                            "subnet": "24"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": null, 
+                    "mediatype": null, 
+                    "mtu": 9972, 
+                    "operstatus": "up", 
+                    "type": null
+                }, 
+                "VirtualPortGroup0": {
+                    "bandwidth": 750000, 
+                    "description": null, 
+                    "duplex": null, 
+                    "ipv4": [
+                        {
+                            "address": "192.168.35.101", 
+                            "subnet": "24"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": "001e.7a74.31bd", 
+                    "mediatype": null, 
+                    "mtu": 1500, 
+                    "operstatus": "up", 
+                    "type": "Virtual Port Group"
+                }
+            }, 
+            "ansible_net_iostype": "IOS-XE", 
+            "ansible_net_memfree_mb": 1894377.984375, 
+            "ansible_net_memtotal_mb": 2169857.0859375, 
+            "ansible_net_model": "CSR1000V", 
+            "ansible_net_neighbors": {}, 
+            "ansible_net_python_version": "2.7.16", 
+            "ansible_net_serialnum": "9QJ3N3B1IQZ", 
+            "ansible_net_system": "ios", 
+            "ansible_net_version": "16.10.01", 
+            "ansible_network_resources": {}, 
+            "discovered_interpreter_python": "/usr/bin/python"
+        }, 
+        "changed": false, 
+        "failed": false, 
+        "warnings": [
+            "default value for `gather_subset` will be changed to `min` from `!config` v2.11 onwards", 
+            "Platform darwin on host rtr1 is using the discovered Python interpreter at /usr/bin/python, but future installation of another Python interpreter could change this. See https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information."
+        ]
+    }
+}
+2020-02-16 16:21:14,116 p=90605 u=mford n=ansible | ok: [rtr2] => {
+    "facts_output": {
+        "ansible_facts": {
+            "ansible_net_all_ipv4_addresses": [
+                "172.17.165.192", 
+                "192.168.35.101"
+            ], 
+            "ansible_net_all_ipv6_addresses": [], 
+            "ansible_net_api": "cliconf", 
+            "ansible_net_config": "!\n! Last configuration change at 19:52:39 UTC Sat Feb 15 2020\n!\nversion 16.10\nservice timestamps debug datetime msec\nservice timestamps log datetime msec\nservice call-home\nplatform qfp utilization monitor load 80\nno platform punt-keepalive disable-kernel-core\nplatform console virtual\n!\nhostname router2\n!\nboot-start-marker\nboot-end-marker\n!\n!\nvrf definition GS\n rd 100:100\n !\n address-family ipv4\n exit-address-family\n!\nlogging persistent size 1000000 filesize 8192 immediate\n!\nno aaa new-model\ncall-home\n ! If contact email address in call-home is configured as sch-smart-licensing@cisco.com\n ! the email address configured in Cisco Smart License Portal will be used as contact email address to send SCH notifications.\n contact-email-addr sch-smart-licensing@cisco.com\n profile \"CiscoTAC-1\"\n  active\n  destination transport-method http\n  no destination transport-method email\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\nlogin on-success log\n!\n!\n!\n!\n!\n!\n!\nsubscriber templating\n! \n! \n! \n! \n!\nmultilink bundle-name authenticated\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\ncrypto pki trustpoint TP-self-signed-1479620323\n enrollment selfsigned\n subject-name cn=IOS-Self-Signed-Certificate-1479620323\n revocation-check none\n rsakeypair TP-self-signed-1479620323\n!\ncrypto pki trustpoint SLA-TrustPoint\n enrollment pkcs12\n revocation-check crl\n!\n!\ncrypto pki certificate chain TP-self-signed-1479620323\n certificate self-signed 01\n  30820330 30820218 A0030201 02020101 300D0609 2A864886 F70D0101 05050030 \n  31312F30 2D060355 04031326 494F532D 53656C66 2D536967 6E65642D 43657274 \n  69666963 6174652D 31343739 36323033 3233301E 170D3139 30323031 31373439 \n  34335A17 0D333030 31303130 30303030 305A3031 312F302D 06035504 03132649 \n  4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D31 34373936 \n  32303332 33308201 22300D06 092A8648 86F70D01 01010500 0382010F 00308201 \n  0A028201 0100B1C9 ACC41F99 89B775B5 B8A6AD7A FC84027D 95A80B92 5128CC1A \n  20607A2D F670C56C CCE65162 52BCB11F 2C3BFAC3 42EC8515 75D3B345 B0E5ADB8 \n  50009245 5EA0E90F 762E151B 07DD5166 385C23A3 F2030862 D103BAE5 27364C3E \n  A25D8A3F CC95744D 07A0C404 08D53932 5AD2F067 F8630838 485432BB 7831F030 \n  B9E067F2 61A03FAE E1EDF3A2 3174751A 3FB03F84 1FE5E330 300FAAEF 38E38F1B \n  EE8D8566 0E298F8D 30772A9C 64133B05 3E4B78CD F51FA617 473B567D A1790EBF \n  77B7CDC1 B5184885 A6EFC9E3 67BCFAC7 0B619777 A251390A EACF135D 033DC433 \n  F8744286 4D5325F7 99498D7A A1571B3A 4ECA24ED 6CE78912 93F83C19 4D48D31D \n  BE2EE2F4 A09D0203 010001A3 53305130 0F060355 1D130101 FF040530 030101FF \n  301F0603 551D2304 18301680 140D6EF0 1D76658B CFB37CBD BFB23552 49C0F572 \n  F8301D06 03551D0E 04160414 0D6EF01D 76658BCF B37CBDBF B2355249 C0F572F8 \n  300D0609 2A864886 F70D0101 05050003 82010100 308B8A1E 079DC1F1 8CCF62D9 \n  F5625D02 BB05EC07 7746574F 1AFEA92D 79484B1F 7511E0E7 896434FE 9C0554C9 \n  1AAFA59A 2BFEF375 4D0A285F FCFCA026 CC57EF6A E3486301 C40690DB 7A370DD4 \n  B550B4AA 115A053C E66FAAD8 DF4F91FB A5C604B8 0BE0DDEA 51E1CC5C F3AB192B \n  40477251 D2902C02 3B5E2D61 22914710 B8E28EE2 A694427B 6B1EE3A1 1E21CE1B \n  25C6C727 EE8D078D F532D5F2 E2A31C00 D406D39C E6906259 219B4676 1AF4B0DB \n  150EE870 2E863B3F 55D630BD DF34227C 9E5134AC FCB04D60 8C49836D F9FB3E47 \n  1B3DFF36 48F233B1 AD7062D5 6BDB57D2 36F3C854 F48EA4C5 4E34C73B 50EF86F2 \n  949098D2 2668CF42 5B22C2F0 C89032D0 3EC0C6BE\n  \tquit\ncrypto pki certificate chain SLA-TrustPoint\n certificate ca 01\n  30820321 30820209 A0030201 02020101 300D0609 2A864886 F70D0101 0B050030 \n  32310E30 0C060355 040A1305 43697363 6F312030 1E060355 04031317 43697363 \n  6F204C69 63656E73 696E6720 526F6F74 20434130 1E170D31 33303533 30313934 \n  3834375A 170D3338 30353330 31393438 34375A30 32310E30 0C060355 040A1305 \n  43697363 6F312030 1E060355 04031317 43697363 6F204C69 63656E73 696E6720 \n  526F6F74 20434130 82012230 0D06092A 864886F7 0D010101 05000382 010F0030 \n  82010A02 82010100 A6BCBD96 131E05F7 145EA72C 2CD686E6 17222EA1 F1EFF64D \n  CBB4C798 212AA147 C655D8D7 9471380D 8711441E 1AAF071A 9CAE6388 8A38E520 \n  1C394D78 462EF239 C659F715 B98C0A59 5BBB5CBD 0CFEBEA3 700A8BF7 D8F256EE \n  4AA4E80D DB6FD1C9 60B1FD18 FFC69C96 6FA68957 A2617DE7 104FDC5F EA2956AC \n  7390A3EB 2B5436AD C847A2C5 DAB553EB 69A9A535 58E9F3E3 C0BD23CF 58BD7188 \n  68E69491 20F320E7 948E71D7 AE3BCC84 F10684C7 4BC8E00F 539BA42B 42C68BB7 \n  C7479096 B4CB2D62 EA2F505D C7B062A4 6811D95B E8250FC4 5D5D5FB8 8F27D191 \n  C55F0D76 61F9A4CD 3D992327 A8BB03BD 4E6D7069 7CBADF8B DF5F4368 95135E44 \n  DFC7C6CF 04DD7FD1 02030100 01A34230 40300E06 03551D0F 0101FF04 04030201 \n  06300F06 03551D13 0101FF04 05300301 01FF301D 0603551D 0E041604 1449DC85 \n  4B3D31E5 1B3E6A17 606AF333 3D3B4C73 E8300D06 092A8648 86F70D01 010B0500 \n  03820101 00507F24 D3932A66 86025D9F E838AE5C 6D4DF6B0 49631C78 240DA905 \n  604EDCDE FF4FED2B 77FC460E CD636FDB DD44681E 3A5673AB 9093D3B1 6C9E3D8B \n  D98987BF E40CBD9E 1AECA0C2 2189BB5C 8FA85686 CD98B646 5575B146 8DFC66A8 \n  467A3DF4 4D565700 6ADF0F0D CF835015 3C04FF7C 21E878AC 11BA9CD2 55A9232C \n  7CA7B7E6 C1AF74F6 152E99B7 B1FCF9BB E973DE7F 5BDDEB86 C71E3B49 1765308B \n  5FB0DA06 B92AFE7F 494E8A9E 07B85737 F3A58BE1 1A48A229 C37C1E69 39F08678 \n  80DDCD16 D6BACECA EEBC7CF9 8428787B 35202CDC 60E4616A B623CDBD 230E3AFB \n  418616A9 4093E049 4D10AB75 27E86F73 932E35B5 8862FDAE 0275156F 719BB2F0 \n  D697DF7F 28\n  \tquit\n!\nlicense udi pid CSR1000V sn 9NJXUKUD3M8\ndiagnostic bootup level minimal\n!\nspanning-tree extend system-id\n!\n!\n!\nusername ec2-user privilege 15 secret 9 $9$GJ3KN3dPmV9A7E$WjFZK8tzbFcuaBLbaea2b0fisSIFHTvV6Hu58PVoNb6\n!\nredundancy\n!\n!\n!\n!\n!\n!\ncdp run\n! \n!\n!\n!\n!\n!\n!\n!\ncrypto ipsec transform-set xform esp-aes 256 esp-sha256-hmac \n mode transport\n!\n!\ncrypto ipsec profile ipsec-prof\n set transform-set xform \n!\n!\n!\n!\n! \n! \n!\n!\ninterface VirtualPortGroup0\n vrf forwarding GS\n ip address 192.168.35.101 255.255.255.0\n ip nat inside\n no mop enabled\n no mop sysid\n!\ninterface GigabitEthernet1\n ip address dhcp\n ip nat outside\n negotiation auto\n no mop enabled\n no mop sysid\n!\niox\nip forward-protocol nd\nip tcp window-size 8192\nip http server\nip http authentication local\nip http secure-server\nip nat inside source list GS_NAT_ACL interface GigabitEthernet1 vrf GS overload\nip route 0.0.0.0 0.0.0.0 GigabitEthernet1 172.17.0.1\nip route vrf GS 0.0.0.0 0.0.0.0 GigabitEthernet1 172.17.0.1 global\n!\nip ssh rsa keypair-name ssh-key\nip ssh version 2\nip ssh pubkey-chain\n  username ec2-user\n   key-hash ssh-rsa F85CADE9E5A721085B422BDA763609D4 ec2-user\nip scp server enable\n!\n!\nip access-list standard GS_NAT_ACL\n permit 192.168.35.0 0.0.0.255\n!\n!\n!\n!\ncontrol-plane\n!\n!\n!\n!\n!\n!\nline con 0\n stopbits 1\nline vty 0 4\n login local\n transport input ssh\n!\nntp server 10.116.1.1\nntp server 10.117.1.1\nntp server 10.118.1.1\nntp server 10.119.1.1\nntp server 10.200.1.1\n!\n!\n!\n!\n!\napp-hosting appid guestshell\n app-vnic gateway1 virtualportgroup 0 guest-interface 0\n  guest-ipaddress 192.168.35.102 netmask 255.255.255.0\n app-default-gateway 192.168.35.101 guest-interface 0\n name-server0 8.8.8.8\nend", 
+            "ansible_net_filesystems": [
+                "bootflash:"
+            ], 
+            "ansible_net_filesystems_info": {
+                "bootflash:": {
+                    "spacefree_kb": 6766424.0, 
+                    "spacetotal_kb": 7712284.0
+                }
+            }, 
+            "ansible_net_gather_network_resources": [], 
+            "ansible_net_gather_subset": [
+                "hardware", 
+                "default", 
+                "interfaces", 
+                "config"
+            ], 
+            "ansible_net_hostname": "router2", 
+            "ansible_net_image": "bootflash:packages.conf", 
+            "ansible_net_interfaces": {
+                "GigabitEthernet1": {
+                    "bandwidth": 1000000, 
+                    "description": null, 
+                    "duplex": "Full", 
+                    "ipv4": [
+                        {
+                            "address": "172.17.165.192", 
+                            "subnet": "16"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": "0ad5.014c.ed6c", 
+                    "mediatype": "Virtual", 
+                    "mtu": 1500, 
+                    "operstatus": "up", 
+                    "type": "CSR vNIC"
+                }, 
+                "VirtualPortGroup0": {
+                    "bandwidth": 750000, 
+                    "description": null, 
+                    "duplex": null, 
+                    "ipv4": [
+                        {
+                            "address": "192.168.35.101", 
+                            "subnet": "24"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": "001e.bd3a.a2bd", 
+                    "mediatype": null, 
+                    "mtu": 1500, 
+                    "operstatus": "up", 
+                    "type": "Virtual Port Group"
+                }
+            }, 
+            "ansible_net_iostype": "IOS-XE", 
+            "ansible_net_memfree_mb": 1903098.5, 
+            "ansible_net_memtotal_mb": 2169857.0859375, 
+            "ansible_net_model": "CSR1000V", 
+            "ansible_net_neighbors": {}, 
+            "ansible_net_python_version": "2.7.16", 
+            "ansible_net_serialnum": "9NJXUKUD3M8", 
+            "ansible_net_system": "ios", 
+            "ansible_net_version": "16.10.01", 
+            "ansible_network_resources": {}, 
+            "discovered_interpreter_python": "/usr/bin/python"
+        }, 
+        "changed": false, 
+        "failed": false, 
+        "warnings": [
+            "default value for `gather_subset` will be changed to `min` from `!config` v2.11 onwards", 
+            "Platform darwin on host rtr2 is using the discovered Python interpreter at /usr/bin/python, but future installation of another Python interpreter could change this. See https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information."
+        ]
+    }
+}
+2020-02-16 16:21:14,120 p=90605 u=mford n=ansible | ok: [rtr3] => {
+    "facts_output": {
+        "ansible_facts": {
+            "ansible_net_all_ipv4_addresses": [
+                "172.16.180.224", 
+                "192.168.35.101"
+            ], 
+            "ansible_net_all_ipv6_addresses": [], 
+            "ansible_net_api": "cliconf", 
+            "ansible_net_config": "!\n! Last configuration change at 20:36:37 UTC Sat Feb 15 2020\n!\nversion 16.10\nservice timestamps debug datetime msec\nservice timestamps log datetime msec\n! Call-home is enabled by Smart-Licensing.\nservice call-home\nplatform qfp utilization monitor load 80\nno platform punt-keepalive disable-kernel-core\nplatform console virtual\n!\nhostname ip-172-16-180-224\n!\nboot-start-marker\nboot-end-marker\n!\n!\nvrf definition GS\n rd 100:100\n !\n address-family ipv4\n exit-address-family\n!\nlogging persistent size 1000000 filesize 8192 immediate\n!\nno aaa new-model\ncall-home\n ! If contact email address in call-home is configured as sch-smart-licensing@cisco.com\n ! the email address configured in Cisco Smart License Portal will be used as contact email address to send SCH notifications.\n contact-email-addr sch-smart-licensing@cisco.com\n profile \"CiscoTAC-1\"\n  active\n  destination transport-method http\n  no destination transport-method email\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\nlogin on-success log\n!\n!\n!\n!\n!\n!\n!\nsubscriber templating\n! \n! \n! \n! \n!\nmultilink bundle-name authenticated\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\ncrypto pki trustpoint TP-self-signed-2900267423\n enrollment selfsigned\n subject-name cn=IOS-Self-Signed-Certificate-2900267423\n revocation-check none\n rsakeypair TP-self-signed-2900267423\n!\ncrypto pki trustpoint SLA-TrustPoint\n enrollment pkcs12\n revocation-check crl\n!\n!\ncrypto pki certificate chain TP-self-signed-2900267423\n certificate self-signed 01\n  30820330 30820218 A0030201 02020101 300D0609 2A864886 F70D0101 05050030 \n  31312F30 2D060355 04031326 494F532D 53656C66 2D536967 6E65642D 43657274 \n  69666963 6174652D 32393030 32363734 3233301E 170D3139 30323031 31373530 \n  30385A17 0D333030 31303130 30303030 305A3031 312F302D 06035504 03132649 \n  4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D32 39303032 \n  36373432 33308201 22300D06 092A8648 86F70D01 01010500 0382010F 00308201 \n  0A028201 0100D724 41858965 56423B16 0132AC47 5AB80F15 45DB2106 60B8CA29 \n  F68C5A01 2F5764E9 6779F54B BF1467D6 6415C0EA BACF5FCD 27E75FBA A6150AD2 \n  4F073CDE D720ED0D D8EEE377 BEC30295 738CEB62 4402ABE5 B8475984 F5704587 \n  B0DF9F7E DB364B9A 77BC0EF8 74ABC218 8285469C 5289465A 73447A22 23F5DD5D \n  CB32B8EB AFC70954 37C20CBF 47A1250E 98309FA6 6B82064C 19FC67EB AE050958 \n  EE404EC4 924025A8 E74FCD6A 2A379679 7B6747A3 B40949CD E399EEF9 2DA75178 \n  8E63742E 7109CDAC 24C213C4 F3704088 87DB7279 C0BFDCCE 82534BEC 146A1A57 \n  28C90115 A6EBEF32 DB002256 97F91F87 705B849E 65FC83D8 5FD9C85F F5B69C75 \n  0537C586 6C0F0203 010001A3 53305130 0F060355 1D130101 FF040530 030101FF \n  301F0603 551D2304 18301680 14E37AC8 61C9BC93 A7A4E46B 3244CD2F 81B784B9 \n  DE301D06 03551D0E 04160414 E37AC861 C9BC93A7 A4E46B32 44CD2F81 B784B9DE \n  300D0609 2A864886 F70D0101 05050003 82010100 B2E98D9E 4184B6E4 D93397B2 \n  DF12C25D F24E1311 77EADE76 8013542B 5A265948 23ACD8EB C75165DC 1D94C3ED \n  BF8D34AA EDD2B6EF 59548ACC 6F4BF7FF BB94FDAF 550EEF77 E41DA361 8976ED0A \n  393053E7 4B234542 30C4A4E2 C5D03E5C 5B2E8661 672C11B5 81447274 80C715C0 \n  856008F2 0307DCA4 06AB7424 808F4751 8FACF62E 4E65727D 646329DE A57DF26C \n  249AD4B3 EAEE0303 00C0CA3C 4835AD65 A2406018 635FA6E9 D44544CF 6EDED705 \n  9275ED8D 3BC7E2CA 39E805AB 1B740774 87E757BA C7CBF880 D790C78C 4A1C6272 \n  376AF4FC 1AC05AA3 D5D82DF2 F67B79F0 C5BC84C9 D0895024 D313E932 0B15965E \n  0A90158A 25B87B09 69629B21 2A2FA939 171347AF\n  \tquit\ncrypto pki certificate chain SLA-TrustPoint\n certificate ca 01\n  30820321 30820209 A0030201 02020101 300D0609 2A864886 F70D0101 0B050030 \n  32310E30 0C060355 040A1305 43697363 6F312030 1E060355 04031317 43697363 \n  6F204C69 63656E73 696E6720 526F6F74 20434130 1E170D31 33303533 30313934 \n  3834375A 170D3338 30353330 31393438 34375A30 32310E30 0C060355 040A1305 \n  43697363 6F312030 1E060355 04031317 43697363 6F204C69 63656E73 696E6720 \n  526F6F74 20434130 82012230 0D06092A 864886F7 0D010101 05000382 010F0030 \n  82010A02 82010100 A6BCBD96 131E05F7 145EA72C 2CD686E6 17222EA1 F1EFF64D \n  CBB4C798 212AA147 C655D8D7 9471380D 8711441E 1AAF071A 9CAE6388 8A38E520 \n  1C394D78 462EF239 C659F715 B98C0A59 5BBB5CBD 0CFEBEA3 700A8BF7 D8F256EE \n  4AA4E80D DB6FD1C9 60B1FD18 FFC69C96 6FA68957 A2617DE7 104FDC5F EA2956AC \n  7390A3EB 2B5436AD C847A2C5 DAB553EB 69A9A535 58E9F3E3 C0BD23CF 58BD7188 \n  68E69491 20F320E7 948E71D7 AE3BCC84 F10684C7 4BC8E00F 539BA42B 42C68BB7 \n  C7479096 B4CB2D62 EA2F505D C7B062A4 6811D95B E8250FC4 5D5D5FB8 8F27D191 \n  C55F0D76 61F9A4CD 3D992327 A8BB03BD 4E6D7069 7CBADF8B DF5F4368 95135E44 \n  DFC7C6CF 04DD7FD1 02030100 01A34230 40300E06 03551D0F 0101FF04 04030201 \n  06300F06 03551D13 0101FF04 05300301 01FF301D 0603551D 0E041604 1449DC85 \n  4B3D31E5 1B3E6A17 606AF333 3D3B4C73 E8300D06 092A8648 86F70D01 010B0500 \n  03820101 00507F24 D3932A66 86025D9F E838AE5C 6D4DF6B0 49631C78 240DA905 \n  604EDCDE FF4FED2B 77FC460E CD636FDB DD44681E 3A5673AB 9093D3B1 6C9E3D8B \n  D98987BF E40CBD9E 1AECA0C2 2189BB5C 8FA85686 CD98B646 5575B146 8DFC66A8 \n  467A3DF4 4D565700 6ADF0F0D CF835015 3C04FF7C 21E878AC 11BA9CD2 55A9232C \n  7CA7B7E6 C1AF74F6 152E99B7 B1FCF9BB E973DE7F 5BDDEB86 C71E3B49 1765308B \n  5FB0DA06 B92AFE7F 494E8A9E 07B85737 F3A58BE1 1A48A229 C37C1E69 39F08678 \n  80DDCD16 D6BACECA EEBC7CF9 8428787B 35202CDC 60E4616A B623CDBD 230E3AFB \n  418616A9 4093E049 4D10AB75 27E86F73 932E35B5 8862FDAE 0275156F 719BB2F0 \n  D697DF7F 28\n  \tquit\n!\nlicense udi pid CSR1000V sn 9AQIMJ231DI\ndiagnostic bootup level minimal\n!\nspanning-tree extend system-id\n!\n!\n!\nusername ec2-user privilege 15 secret 9 $9$irC6hF08jcsozE$vnQI7usA8DQXnIx8/GT4psEcCa6O6ydntmejGHpmzOU\n!\nredundancy\n!\n!\n!\n!\n!\n!\n! \n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n! \n! \n!\n!\ninterface VirtualPortGroup0\n vrf forwarding GS\n ip address 192.168.35.101 255.255.255.0\n ip nat inside\n no mop enabled\n no mop sysid\n!\ninterface GigabitEthernet1\n ip address dhcp\n ip nat outside\n negotiation auto\n no mop enabled\n no mop sysid\n!\niox\nip forward-protocol nd\nip tcp window-size 8192\nip http server\nip http authentication local\nip http secure-server\nip nat inside source list GS_NAT_ACL interface GigabitEthernet1 vrf GS overload\nip route 0.0.0.0 0.0.0.0 GigabitEthernet1 172.16.0.1\nip route vrf GS 0.0.0.0 0.0.0.0 GigabitEthernet1 172.16.0.1 global\n!\nip ssh rsa keypair-name ssh-key\nip ssh version 2\nip ssh pubkey-chain\n  username ec2-user\n   key-hash ssh-rsa F85CADE9E5A721085B422BDA763609D4 ec2-user\nip scp server enable\n!\n!\nip access-list standard GS_NAT_ACL\n permit 192.168.35.0 0.0.0.255\n!\n!\n!\n!\ncontrol-plane\n!\n!\n!\n!\n!\n!\nline con 0\n stopbits 1\nline vty 0 4\n login local\n transport input ssh\n!\n!\n!\n!\n!\n!\napp-hosting appid guestshell\n app-vnic gateway1 virtualportgroup 0 guest-interface 0\n  guest-ipaddress 192.168.35.102 netmask 255.255.255.0\n app-default-gateway 192.168.35.101 guest-interface 0\n name-server0 8.8.8.8\nend", 
+            "ansible_net_filesystems": [
+                "bootflash:"
+            ], 
+            "ansible_net_filesystems_info": {
+                "bootflash:": {
+                    "spacefree_kb": 6766544.0, 
+                    "spacetotal_kb": 7712284.0
+                }
+            }, 
+            "ansible_net_gather_network_resources": [], 
+            "ansible_net_gather_subset": [
+                "hardware", 
+                "default", 
+                "interfaces", 
+                "config"
+            ], 
+            "ansible_net_hostname": "ip-172-16-180-224", 
+            "ansible_net_image": "bootflash:packages.conf", 
+            "ansible_net_interfaces": {
+                "GigabitEthernet1": {
+                    "bandwidth": 1000000, 
+                    "description": null, 
+                    "duplex": "Full", 
+                    "ipv4": [
+                        {
+                            "address": "172.16.180.224", 
+                            "subnet": "16"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": "0a1b.63b4.b232", 
+                    "mediatype": "Virtual", 
+                    "mtu": 1500, 
+                    "operstatus": "up", 
+                    "type": "CSR vNIC"
+                }, 
+                "VirtualPortGroup0": {
+                    "bandwidth": 750000, 
+                    "description": null, 
+                    "duplex": null, 
+                    "ipv4": [
+                        {
+                            "address": "192.168.35.101", 
+                            "subnet": "24"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": "001e.e689.15bd", 
+                    "mediatype": null, 
+                    "mtu": 1500, 
+                    "operstatus": "up", 
+                    "type": "Virtual Port Group"
+                }
+            }, 
+            "ansible_net_iostype": "IOS-XE", 
+            "ansible_net_memfree_mb": 1903528.15625, 
+            "ansible_net_memtotal_mb": 2169857.0859375, 
+            "ansible_net_model": "CSR1000V", 
+            "ansible_net_neighbors": {}, 
+            "ansible_net_python_version": "2.7.16", 
+            "ansible_net_serialnum": "9AQIMJ231DI", 
+            "ansible_net_system": "ios", 
+            "ansible_net_version": "16.10.01", 
+            "ansible_network_resources": {}, 
+            "discovered_interpreter_python": "/usr/bin/python"
+        }, 
+        "changed": false, 
+        "failed": false, 
+        "warnings": [
+            "default value for `gather_subset` will be changed to `min` from `!config` v2.11 onwards", 
+            "Platform darwin on host rtr3 is using the discovered Python interpreter at /usr/bin/python, but future installation of another Python interpreter could change this. See https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information."
+        ]
+    }
+}
+2020-02-16 16:21:14,124 p=90605 u=mford n=ansible | ok: [rtr4] => {
+    "facts_output": {
+        "ansible_facts": {
+            "ansible_net_all_ipv4_addresses": [
+                "172.17.200.46", 
+                "192.168.35.101"
+            ], 
+            "ansible_net_all_ipv6_addresses": [], 
+            "ansible_net_api": "cliconf", 
+            "ansible_net_config": "!\n! Last configuration change at 19:49:36 UTC Sat Feb 15 2020\n!\nversion 16.10\nservice timestamps debug datetime msec\nservice timestamps log datetime msec\nservice call-home\nplatform qfp utilization monitor load 80\nno platform punt-keepalive disable-kernel-core\nplatform console virtual\n!\nhostname router_four\n!\nboot-start-marker\nboot-end-marker\n!\n!\nvrf definition GS\n rd 100:100\n !\n address-family ipv4\n exit-address-family\n!\nlogging persistent size 1000000 filesize 8192 immediate\n!\nno aaa new-model\ncall-home\n ! If contact email address in call-home is configured as sch-smart-licensing@cisco.com\n ! the email address configured in Cisco Smart License Portal will be used as contact email address to send SCH notifications.\n contact-email-addr sch-smart-licensing@cisco.com\n profile \"CiscoTAC-1\"\n  active\n  destination transport-method http\n  no destination transport-method email\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\nlogin on-success log\n!\n!\n!\n!\n!\n!\n!\nsubscriber templating\n! \n! \n! \n! \n!\nmultilink bundle-name authenticated\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\ncrypto pki trustpoint TP-self-signed-3254836008\n enrollment selfsigned\n subject-name cn=IOS-Self-Signed-Certificate-3254836008\n revocation-check none\n rsakeypair TP-self-signed-3254836008\n!\ncrypto pki trustpoint SLA-TrustPoint\n enrollment pkcs12\n revocation-check crl\n!\n!\ncrypto pki certificate chain TP-self-signed-3254836008\n certificate self-signed 01\n  30820330 30820218 A0030201 02020101 300D0609 2A864886 F70D0101 05050030 \n  31312F30 2D060355 04031326 494F532D 53656C66 2D536967 6E65642D 43657274 \n  69666963 6174652D 33323534 38333630 3038301E 170D3139 30323031 31373530 \n  31355A17 0D333030 31303130 30303030 305A3031 312F302D 06035504 03132649 \n  4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D33 32353438 \n  33363030 38308201 22300D06 092A8648 86F70D01 01010500 0382010F 00308201 \n  0A028201 0100BB4D 0BCD4989 63FB34DB 98127D70 CBDAAFD2 592E26C0 89E86347 \n  DDC66825 7BE5ACB2 6ADAAC89 05C13EB4 051B38CE AB6DCAFE 798C6D3F 7138186B \n  C1D8D740 BAD3DA0B BC51BEBD 7E97CF08 9C3A3940 34C4D9BF 6E1E2F93 623140F5 \n  C3035085 71A36FE9 9C1D2A28 26405B3A 4022567D 4F574291 CF6F849E 5911B2DF \n  A8CA3C9C A68A6C30 F7E65022 0BC3C924 110EAC9C AE259881 89403BC3 922CA51B \n  88D6953D 526E9B58 80348D72 0ADC0113 24B3BDF9 9B2B05B6 58A2B0C2 1F266F52 \n  2F0AE48E 6C9CECCF 9D84F3D2 E13F5C72 7754F3D2 8834D9F8 4A03C7BA 7F820004 \n  6E15EB01 687673B1 30DC19E9 5064100E E20E4B47 631F263B 123D613C 8915BAA9 \n  1FCC528E 86EF0203 010001A3 53305130 0F060355 1D130101 FF040530 030101FF \n  301F0603 551D2304 18301680 148CB9FC 4A598A57 FF1F5F9B 6C8ECA3A F7B370F4 \n  76301D06 03551D0E 04160414 8CB9FC4A 598A57FF 1F5F9B6C 8ECA3AF7 B370F476 \n  300D0609 2A864886 F70D0101 05050003 82010100 78C0B2F2 A5C23820 952C810A \n  9DEC2ECC F1578813 34A3063F F2F8AD00 C9410B0F B03C6604 E1531408 A51DF9C3 \n  4D740EBC 213121B0 969874C3 CDDD62BF DA36B2DD C712A1FC 5ABD18D8 4A5B96B6 \n  4EF11738 2683704C 8599B1E6 6A052E46 5030BD3F 71071604 FE040AA4 B783D0BF \n  1EF88EB4 DA2082EF 05459671 63F5FCAA 55A46BD9 49586DDE 77211C56 94A70961 \n  D54B602B B5F7AC02 3389505A 7A28C3FC B928B0B8 8E3B8235 35C21B81 CDBC37F4 \n  EA0D5540 0F674C2B 262FD7A4 0A5942F9 64AF462E 7F507DE1 C427270F 87C9A8B3 \n  FA02110B 5837A928 FE1769AE 356CD0A1 A5564A6F 404DCF30 52D41183 0D717E59 \n  758A21E7 AD452232 5589CB96 89477443 69FC662B\n  \tquit\ncrypto pki certificate chain SLA-TrustPoint\n certificate ca 01\n  30820321 30820209 A0030201 02020101 300D0609 2A864886 F70D0101 0B050030 \n  32310E30 0C060355 040A1305 43697363 6F312030 1E060355 04031317 43697363 \n  6F204C69 63656E73 696E6720 526F6F74 20434130 1E170D31 33303533 30313934 \n  3834375A 170D3338 30353330 31393438 34375A30 32310E30 0C060355 040A1305 \n  43697363 6F312030 1E060355 04031317 43697363 6F204C69 63656E73 696E6720 \n  526F6F74 20434130 82012230 0D06092A 864886F7 0D010101 05000382 010F0030 \n  82010A02 82010100 A6BCBD96 131E05F7 145EA72C 2CD686E6 17222EA1 F1EFF64D \n  CBB4C798 212AA147 C655D8D7 9471380D 8711441E 1AAF071A 9CAE6388 8A38E520 \n  1C394D78 462EF239 C659F715 B98C0A59 5BBB5CBD 0CFEBEA3 700A8BF7 D8F256EE \n  4AA4E80D DB6FD1C9 60B1FD18 FFC69C96 6FA68957 A2617DE7 104FDC5F EA2956AC \n  7390A3EB 2B5436AD C847A2C5 DAB553EB 69A9A535 58E9F3E3 C0BD23CF 58BD7188 \n  68E69491 20F320E7 948E71D7 AE3BCC84 F10684C7 4BC8E00F 539BA42B 42C68BB7 \n  C7479096 B4CB2D62 EA2F505D C7B062A4 6811D95B E8250FC4 5D5D5FB8 8F27D191 \n  C55F0D76 61F9A4CD 3D992327 A8BB03BD 4E6D7069 7CBADF8B DF5F4368 95135E44 \n  DFC7C6CF 04DD7FD1 02030100 01A34230 40300E06 03551D0F 0101FF04 04030201 \n  06300F06 03551D13 0101FF04 05300301 01FF301D 0603551D 0E041604 1449DC85 \n  4B3D31E5 1B3E6A17 606AF333 3D3B4C73 E8300D06 092A8648 86F70D01 010B0500 \n  03820101 00507F24 D3932A66 86025D9F E838AE5C 6D4DF6B0 49631C78 240DA905 \n  604EDCDE FF4FED2B 77FC460E CD636FDB DD44681E 3A5673AB 9093D3B1 6C9E3D8B \n  D98987BF E40CBD9E 1AECA0C2 2189BB5C 8FA85686 CD98B646 5575B146 8DFC66A8 \n  467A3DF4 4D565700 6ADF0F0D CF835015 3C04FF7C 21E878AC 11BA9CD2 55A9232C \n  7CA7B7E6 C1AF74F6 152E99B7 B1FCF9BB E973DE7F 5BDDEB86 C71E3B49 1765308B \n  5FB0DA06 B92AFE7F 494E8A9E 07B85737 F3A58BE1 1A48A229 C37C1E69 39F08678 \n  80DDCD16 D6BACECA EEBC7CF9 8428787B 35202CDC 60E4616A B623CDBD 230E3AFB \n  418616A9 4093E049 4D10AB75 27E86F73 932E35B5 8862FDAE 0275156F 719BB2F0 \n  D697DF7F 28\n  \tquit\n!\nlicense udi pid CSR1000V sn 97R651HNS7C\ndiagnostic bootup level minimal\n!\nspanning-tree extend system-id\n!\n!\n!\nusername ec2-user privilege 15 secret 9 $9$Q5lyS1S03LsiSU$R14WjHeQb8U3iy4FVpLmXbQASLaWvC9FipnIXghW96o\n!\nredundancy\n!\n!\n!\n!\n!\n!\n! \n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n! \n! \n!\n!\ninterface VirtualPortGroup0\n vrf forwarding GS\n ip address 192.168.35.101 255.255.255.0\n ip nat inside\n no mop enabled\n no mop sysid\n!\ninterface GigabitEthernet1\n ip address dhcp\n ip nat outside\n negotiation auto\n no mop enabled\n no mop sysid\n!\niox\nip forward-protocol nd\nip tcp window-size 8192\nip http server\nip http authentication local\nip http secure-server\nip nat inside source list GS_NAT_ACL interface GigabitEthernet1 vrf GS overload\nip route 0.0.0.0 0.0.0.0 GigabitEthernet1 172.17.0.1\nip route vrf GS 0.0.0.0 0.0.0.0 GigabitEthernet1 172.17.0.1 global\n!\nip ssh rsa keypair-name ssh-key\nip ssh version 2\nip ssh pubkey-chain\n  username ec2-user\n   key-hash ssh-rsa F85CADE9E5A721085B422BDA763609D4 ec2-user\nip scp server enable\n!\n!\nip access-list standard GS_NAT_ACL\n permit 192.168.35.0 0.0.0.255\n!\n!\n!\n!\ncontrol-plane\n!\n!\n!\n!\n!\n!\nline con 0\n stopbits 1\nline vty 0 4\n login local\n transport input ssh\n!\n!\n!\n!\n!\n!\napp-hosting appid guestshell\n app-vnic gateway1 virtualportgroup 0 guest-interface 0\n  guest-ipaddress 192.168.35.102 netmask 255.255.255.0\n app-default-gateway 192.168.35.101 guest-interface 0\n name-server0 8.8.8.8\nend", 
+            "ansible_net_filesystems": [
+                "bootflash:"
+            ], 
+            "ansible_net_filesystems_info": {
+                "bootflash:": {
+                    "spacefree_kb": 6766308.0, 
+                    "spacetotal_kb": 7712284.0
+                }
+            }, 
+            "ansible_net_gather_network_resources": [], 
+            "ansible_net_gather_subset": [
+                "hardware", 
+                "default", 
+                "interfaces", 
+                "config"
+            ], 
+            "ansible_net_hostname": "router_four", 
+            "ansible_net_image": "bootflash:packages.conf", 
+            "ansible_net_interfaces": {
+                "GigabitEthernet1": {
+                    "bandwidth": 1000000, 
+                    "description": null, 
+                    "duplex": "Full", 
+                    "ipv4": [
+                        {
+                            "address": "172.17.200.46", 
+                            "subnet": "16"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": "0a2c.cc73.eb04", 
+                    "mediatype": "Virtual", 
+                    "mtu": 1500, 
+                    "operstatus": "up", 
+                    "type": "CSR vNIC"
+                }, 
+                "VirtualPortGroup0": {
+                    "bandwidth": 750000, 
+                    "description": null, 
+                    "duplex": null, 
+                    "ipv4": [
+                        {
+                            "address": "192.168.35.101", 
+                            "subnet": "24"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": "001e.bd18.0abd", 
+                    "mediatype": null, 
+                    "mtu": 1500, 
+                    "operstatus": "up", 
+                    "type": "Virtual Port Group"
+                }
+            }, 
+            "ansible_net_iostype": "IOS-XE", 
+            "ansible_net_memfree_mb": 1903211.5, 
+            "ansible_net_memtotal_mb": 2169857.0859375, 
+            "ansible_net_model": "CSR1000V", 
+            "ansible_net_neighbors": {}, 
+            "ansible_net_python_version": "2.7.16", 
+            "ansible_net_serialnum": "97R651HNS7C", 
+            "ansible_net_system": "ios", 
+            "ansible_net_version": "16.10.01", 
+            "ansible_network_resources": {}, 
+            "discovered_interpreter_python": "/usr/bin/python"
+        }, 
+        "changed": false, 
+        "failed": false, 
+        "warnings": [
+            "default value for `gather_subset` will be changed to `min` from `!config` v2.11 onwards", 
+            "Platform darwin on host rtr4 is using the discovered Python interpreter at /usr/bin/python, but future installation of another Python interpreter could change this. See https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information."
+        ]
+    }
+}
+2020-02-16 16:21:14,127 p=90641 u=mford n=p=90641 u=mford | paramiko [100.25.213.180] | [chan 0] EOF sent (0)
+2020-02-16 16:21:14,209 p=90641 u=mford n=p=90641 u=mford | paramiko [100.25.213.180] | EOF in transport thread
+2020-02-16 16:21:14,244 p=90640 u=mford n=p=90640 u=mford | paramiko [52.207.224.201] | [chan 0] EOF sent (0)
+2020-02-16 16:21:14,280 p=90640 u=mford n=p=90640 u=mford | paramiko [52.207.224.201] | EOF in transport thread
+2020-02-16 16:21:14,310 p=90643 u=mford n=p=90643 u=mford | paramiko [3.94.166.65] | [chan 0] EOF sent (0)
+2020-02-16 16:21:14,344 p=90641 u=mford n=ansible | shutdown complete
+2020-02-16 16:21:14,353 p=90643 u=mford n=p=90643 u=mford | paramiko [3.94.166.65] | EOF in transport thread
+2020-02-16 16:21:14,377 p=90648 u=mford n=p=90648 u=mford | paramiko [52.54.127.146] | [chan 0] EOF sent (0)
+2020-02-16 16:21:14,410 p=90640 u=mford n=ansible | shutdown complete
+2020-02-16 16:21:14,460 p=90648 u=mford n=p=90648 u=mford | paramiko [52.54.127.146] | EOF in transport thread
+2020-02-16 16:21:14,477 p=90643 u=mford n=ansible | shutdown complete
+2020-02-16 16:21:14,497 p=90605 u=mford n=ansible | PLAY RECAP *********************************************************************************************************************
+2020-02-16 16:21:14,497 p=90605 u=mford n=ansible | rtr1                       : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-02-16 16:21:14,497 p=90605 u=mford n=ansible | rtr2                       : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-02-16 16:21:14,497 p=90605 u=mford n=ansible | rtr3                       : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-02-16 16:21:14,498 p=90605 u=mford n=ansible | rtr4                       : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-02-16 16:21:14,597 p=90648 u=mford n=ansible | shutdown complete
+2020-02-16 16:21:51,740 p=90804 u=mford n=ansible | PLAY [Gather IOS facts] ********************************************************************************************************
+2020-02-16 16:21:51,778 p=90804 u=mford n=ansible | TASK [Collect facts from Cisco IOS elements] ***********************************************************************************
+2020-02-16 16:21:53,536 p=90827 u=mford n=ansible | network_os is set to ios
+2020-02-16 16:21:53,628 p=90835 u=mford n=p=90835 u=mford | paramiko [100.25.213.180] | starting thread (client mode): 0x71e8210L
+2020-02-16 16:21:53,629 p=90835 u=mford n=p=90835 u=mford | paramiko [100.25.213.180] | Local version/idstring: SSH-2.0-paramiko_2.4.1
+2020-02-16 16:21:53,668 p=90835 u=mford n=p=90835 u=mford | paramiko [100.25.213.180] | Remote version/idstring: SSH-2.0-Cisco-1.25
+2020-02-16 16:21:53,669 p=90835 u=mford n=p=90835 u=mford | paramiko [100.25.213.180] | Connected (version 2.0, client Cisco-1.25)
+2020-02-16 16:21:53,708 p=90835 u=mford n=p=90835 u=mford | paramiko [100.25.213.180] | kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2020-02-16 16:21:53,709 p=90835 u=mford n=p=90835 u=mford | paramiko [100.25.213.180] | Kex agreed: diffie-hellman-group-exchange-sha1
+2020-02-16 16:21:53,710 p=90835 u=mford n=p=90835 u=mford | paramiko [100.25.213.180] | HostKey agreed: ssh-rsa
+2020-02-16 16:21:53,710 p=90835 u=mford n=p=90835 u=mford | paramiko [100.25.213.180] | Cipher agreed: aes128-ctr
+2020-02-16 16:21:53,711 p=90835 u=mford n=p=90835 u=mford | paramiko [100.25.213.180] | MAC agreed: hmac-sha2-256
+2020-02-16 16:21:53,711 p=90835 u=mford n=p=90835 u=mford | paramiko [100.25.213.180] | Compression agreed: none
+2020-02-16 16:21:53,755 p=90835 u=mford n=p=90835 u=mford | paramiko [100.25.213.180] | Got server p (2048 bits)
+2020-02-16 16:21:54,072 p=90835 u=mford n=p=90835 u=mford | paramiko [100.25.213.180] | kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2020-02-16 16:21:54,073 p=90835 u=mford n=p=90835 u=mford | paramiko [100.25.213.180] | Switch to new keys ...
+2020-02-16 16:21:54,093 p=90835 u=mford n=p=90835 u=mford | paramiko [100.25.213.180] | Trying discovered key f85cade9e5a721085b422bda763609d4 in /Users/mford/.ssh/maf-ios-demo-private.pem
+2020-02-16 16:21:54,432 p=90835 u=mford n=p=90835 u=mford | paramiko [100.25.213.180] | userauth is OK
+2020-02-16 16:21:54,473 p=90835 u=mford n=p=90835 u=mford | paramiko [100.25.213.180] | Authentication (publickey) successful!
+2020-02-16 16:21:54,497 p=90835 u=mford n=p=90835 u=mford | paramiko [100.25.213.180] | [chan 0] Max packet in: 32768 bytes
+2020-02-16 16:21:54,548 p=90835 u=mford n=p=90835 u=mford | paramiko [100.25.213.180] | [chan 0] Max packet out: 4096 bytes
+2020-02-16 16:21:54,548 p=90835 u=mford n=p=90835 u=mford | paramiko [100.25.213.180] | Secsh channel 0 opened.
+2020-02-16 16:21:54,607 p=90835 u=mford n=p=90835 u=mford | paramiko [100.25.213.180] | [chan 0] Sesch channel 0 request ok
+2020-02-16 16:21:54,658 p=90835 u=mford n=p=90835 u=mford | paramiko [100.25.213.180] | [chan 0] Sesch channel 0 request ok
+2020-02-16 16:21:59,900 p=90804 u=mford n=ansible | [WARNING]: default value for `gather_subset` will be changed to `min` from `!config` v2.11 onwards
+
+2020-02-16 16:21:59,901 p=90804 u=mford n=ansible | [WARNING]: Platform darwin on host rtr1 is using the discovered Python interpreter at /usr/bin/python, but future installation
+of another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+
+2020-02-16 16:21:59,901 p=90804 u=mford n=ansible | ok: [rtr1]
+2020-02-16 16:21:59,908 p=90804 u=mford n=ansible | TASK [Print out facts] *********************************************************************************************************
+2020-02-16 16:22:01,639 p=90804 u=mford n=ansible | ok: [rtr1] => {
+    "facts_output": {
+        "ansible_facts": {
+            "ansible_net_all_ipv4_addresses": [
+                "192.168.35.101", 
+                "172.16.153.183", 
+                "192.168.1.101", 
+                "10.1.1.101", 
+                "10.200.200.1", 
+                "10.100.100.1", 
+                "10.255.0.254"
+            ], 
+            "ansible_net_all_ipv6_addresses": [], 
+            "ansible_net_api": "cliconf", 
+            "ansible_net_config": "!\n! Last configuration change at 20:49:45 UTC Sat Feb 15 2020\n!\nversion 16.10\nservice timestamps debug datetime msec\nservice timestamps log datetime msec\nservice call-home\nplatform qfp utilization monitor load 80\nno platform punt-keepalive disable-kernel-core\nplatform console virtual\n!\nhostname mford_router\n!\nboot-start-marker\nboot-end-marker\n!\n!\nvrf definition GS\n rd 100:100\n !\n address-family ipv4\n exit-address-family\n!\nvrf definition bpx_vrf\n description oob mgmt vrf\n !\n address-family ipv4\n exit-address-family\n !\n address-family ipv6\n exit-address-family\n!\nvrf definition mford_vrf\n description oob mgmt vrf\n !\n address-family ipv4\n exit-address-family\n !\n address-family ipv6\n exit-address-family\n!\nvrf definition test_vrf\n description oob mgmt vrf\n !\n address-family ipv4\n exit-address-family\n !\n address-family ipv6\n exit-address-family\n!\nvrf definition united\n description oob mgmt vrf\n !\n address-family ipv4\n exit-address-family\n !\n address-family ipv6\n exit-address-family\n!\nvrf definition wageworks\n description oob mgmt vrf\n !\n address-family ipv4\n exit-address-family\n !\n address-family ipv6\n exit-address-family\n!\nlogging persistent size 1000000 filesize 8192 immediate\n!\nno aaa new-model\ncall-home\n ! If contact email address in call-home is configured as sch-smart-licensing@cisco.com\n ! the email address configured in Cisco Smart License Portal will be used as contact email address to send SCH notifications.\n contact-email-addr sch-smart-licensing@cisco.com\n profile \"CiscoTAC-1\"\n  active\n  destination transport-method http\n  no destination transport-method email\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\nlogin on-success log\n!\n!\n!\n!\n!\n!\n!\nsubscriber templating\n! \n! \n! \n! \n!\nmultilink bundle-name authenticated\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\ncrypto pki trustpoint TP-self-signed-824464578\n enrollment selfsigned\n subject-name cn=IOS-Self-Signed-Certificate-824464578\n revocation-check none\n rsakeypair TP-self-signed-824464578\n!\ncrypto pki trustpoint SLA-TrustPoint\n enrollment pkcs12\n revocation-check crl\n!\n!\ncrypto pki certificate chain TP-self-signed-824464578\n certificate self-signed 01\n  3082032E 30820216 A0030201 02020101 300D0609 2A864886 F70D0101 05050030 \n  30312E30 2C060355 04031325 494F532D 53656C66 2D536967 6E65642D 43657274 \n  69666963 6174652D 38323434 36343537 38301E17 0D313930 32303131 37343831 \n  335A170D 33303031 30313030 30303030 5A303031 2E302C06 03550403 1325494F \n  532D5365 6C662D53 69676E65 642D4365 72746966 69636174 652D3832 34343634 \n  35373830 82012230 0D06092A 864886F7 0D010101 05000382 010F0030 82010A02 \n  82010100 B619FE6E 2F6C6DA2 83E17237 94670FA6 CF2C3034 162B085D 8A40C90C \n  FE9605E5 A816CE38 708C01A3 075D09A9 6553F482 4B91AAB1 A4A0C683 7AF1591D \n  204EE15D D1A32D7F 463F0EB0 D2BCF63E 9CF2F842 3873C258 5E6E0682 8D01AE23 \n  9D1CB719 FC9CA732 3758D160 A3A9D560 DC023730 D737DBF6 B4A309D5 D8A4E037 \n  0CB17AF0 3EEE3170 0E3FBA89 F53346F8 E101AB66 C90ACE0C C2939960 6E472087 \n  F90D87DE 05E356A2 FDB8C238 E24EC362 5F23E612 E1FD65AB A5FB7423 C7D98298 \n  475905FF 5A8CC423 990E19E9 38BD35A0 96449D5B F0B76D97 7B336CF0 072DB670 \n  5C655638 AABC6732 8B01C01C A70E721F 07C33CDD 53B28B2F D0314E10 EC4BD9CD \n  3FF1EE81 02030100 01A35330 51300F06 03551D13 0101FF04 05300301 01FF301F \n  0603551D 23041830 168014D2 AC21C0C9 7E5D4DDB 869A3431 9AA27E55 F7314E30 \n  1D060355 1D0E0416 0414D2AC 21C0C97E 5D4DDB86 9A34319A A27E55F7 314E300D \n  06092A86 4886F70D 01010505 00038201 010004A2 F33DBB7A 881CB8B9 A146D722 \n  7FFAD7A0 3303140D C45A8F3D 023E4C49 DE544423 AE89990C 124B2761 BDD22715 \n  B0196E76 96DFB9C8 E02BC729 3B88CC55 E3D8AF0E 52177212 98C592FE 5940B4C5 \n  E99E85B9 C6C8C1AB D76D7F72 3E076B6C E39126B0 1B891E53 12028544 BDD86FAA \n  F0275559 3F9D8C36 36CCFF80 8BFCDEBF CC00D09B 5FBC2589 1BC266EF 8160F6EC \n  746A5B6D 3AC09707 4A1D2D7A 358DDCB3 F2A808B8 2F53D071 B6550516 986E7BD9 \n  8D460F21 59F3338A 324FDF59 5FC52730 EB9FEC98 147A367A 3BAB9E74 96595B2F \n  F70CC17C 58A84927 FD90049E 5CCB4B02 5EC6A91B 378202A4 FFE1CFDC 1D2BB31D \n  851FD17F CE3553F0 9A7D31A0 916A4864 0D42\n  \tquit\ncrypto pki certificate chain SLA-TrustPoint\n certificate ca 01\n  30820321 30820209 A0030201 02020101 300D0609 2A864886 F70D0101 0B050030 \n  32310E30 0C060355 040A1305 43697363 6F312030 1E060355 04031317 43697363 \n  6F204C69 63656E73 696E6720 526F6F74 20434130 1E170D31 33303533 30313934 \n  3834375A 170D3338 30353330 31393438 34375A30 32310E30 0C060355 040A1305 \n  43697363 6F312030 1E060355 04031317 43697363 6F204C69 63656E73 696E6720 \n  526F6F74 20434130 82012230 0D06092A 864886F7 0D010101 05000382 010F0030 \n  82010A02 82010100 A6BCBD96 131E05F7 145EA72C 2CD686E6 17222EA1 F1EFF64D \n  CBB4C798 212AA147 C655D8D7 9471380D 8711441E 1AAF071A 9CAE6388 8A38E520 \n  1C394D78 462EF239 C659F715 B98C0A59 5BBB5CBD 0CFEBEA3 700A8BF7 D8F256EE \n  4AA4E80D DB6FD1C9 60B1FD18 FFC69C96 6FA68957 A2617DE7 104FDC5F EA2956AC \n  7390A3EB 2B5436AD C847A2C5 DAB553EB 69A9A535 58E9F3E3 C0BD23CF 58BD7188 \n  68E69491 20F320E7 948E71D7 AE3BCC84 F10684C7 4BC8E00F 539BA42B 42C68BB7 \n  C7479096 B4CB2D62 EA2F505D C7B062A4 6811D95B E8250FC4 5D5D5FB8 8F27D191 \n  C55F0D76 61F9A4CD 3D992327 A8BB03BD 4E6D7069 7CBADF8B DF5F4368 95135E44 \n  DFC7C6CF 04DD7FD1 02030100 01A34230 40300E06 03551D0F 0101FF04 04030201 \n  06300F06 03551D13 0101FF04 05300301 01FF301D 0603551D 0E041604 1449DC85 \n  4B3D31E5 1B3E6A17 606AF333 3D3B4C73 E8300D06 092A8648 86F70D01 010B0500 \n  03820101 00507F24 D3932A66 86025D9F E838AE5C 6D4DF6B0 49631C78 240DA905 \n  604EDCDE FF4FED2B 77FC460E CD636FDB DD44681E 3A5673AB 9093D3B1 6C9E3D8B \n  D98987BF E40CBD9E 1AECA0C2 2189BB5C 8FA85686 CD98B646 5575B146 8DFC66A8 \n  467A3DF4 4D565700 6ADF0F0D CF835015 3C04FF7C 21E878AC 11BA9CD2 55A9232C \n  7CA7B7E6 C1AF74F6 152E99B7 B1FCF9BB E973DE7F 5BDDEB86 C71E3B49 1765308B \n  5FB0DA06 B92AFE7F 494E8A9E 07B85737 F3A58BE1 1A48A229 C37C1E69 39F08678 \n  80DDCD16 D6BACECA EEBC7CF9 8428787B 35202CDC 60E4616A B623CDBD 230E3AFB \n  418616A9 4093E049 4D10AB75 27E86F73 932E35B5 8862FDAE 0275156F 719BB2F0 \n  D697DF7F 28\n  \tquit\n!\nlicense udi pid CSR1000V sn 9QJ3N3B1IQZ\ndiagnostic bootup level minimal\n!\nspanning-tree extend system-id\n!\n!\n!\nusername ec2-user privilege 15 secret 9 $9$Glbw1Es4OUPhLU$TGoOiR6NEZH2BNlmcLU8hcEU9CeWuyqQk.X1VaLDdRY\n!\nredundancy\n!\n!\n!\n!\n!\n!\n! \n!\n!\n!\n!\n!\n!\ncrypto isakmp policy 10\n encr aes 256\n hash sha256\n authentication pre-share\n group 2\ncrypto isakmp key 640c8a5376aa12fa15cf02130ce239a6 address 0.0.0.0        \n!\n!\ncrypto ipsec transform-set xform esp-aes 256 esp-sha256-hmac \n mode transport\n!\n!\ncrypto ipsec profile ipsec-prof\n set transform-set xform \n!\n!\n!\n!\n!\n! \n! \n!\n!\ninterface Loopback0\n ip address 192.168.1.101 255.255.255.0\n!\ninterface Loopback1\n ip address 10.1.1.101 255.255.255.0\n!\ninterface Tunnel0\n ip address 10.100.100.1 255.255.255.0\n ip mtu 1476\n ip tcp adjust-mss 1360\n tunnel source GigabitEthernet1\n tunnel destination 34.229.215.199\n!\ninterface Tunnel1\n ip address 10.200.200.1 255.255.255.0\n tunnel source GigabitEthernet1\n tunnel destination 3.94.146.20\n!\ninterface Tunnel2\n ip address 10.255.0.254 255.255.255.0\n no ip redirects\n ip mtu 1400\n ip nhrp authentication xform\n ip nhrp network-id 1\n ip nhrp redirect\n ip tcp adjust-mss 1360\n ip ospf network broadcast\n ip ospf hello-interval 30\n ip ospf priority 255\n tunnel source GigabitEthernet1\n tunnel mode gre multipoint\n tunnel key 1\n tunnel protection ipsec profile ipsec-prof\n!\ninterface VirtualPortGroup0\n vrf forwarding GS\n ip address 192.168.35.101 255.255.255.0\n ip nat inside\n no mop enabled\n no mop sysid\n!\ninterface GigabitEthernet1\n ip address dhcp\n ip nat outside\n negotiation auto\n no mop enabled\n no mop sysid\n!\nrouter ospf 1\n redistribute bgp 65000\n network 10.1.1.0 0.0.0.255 area 0\n network 10.100.100.0 0.0.0.255 area 0\n network 10.255.0.0 0.0.0.255 area 1\n network 172.16.0.0 0.0.255.255 area 0\n network 192.168.1.0 0.0.0.255 area 0\n!\nrouter bgp 65000\n bgp router-id 1.1.1.1\n bgp log-neighbor-changes\n neighbor 10.200.200.2 remote-as 65001\n !\n address-family ipv4\n  network 10.1.1.0 mask 255.255.255.0\n  network 10.3.3.103 mask 255.255.255.255\n  network 10.100.100.0 mask 255.255.255.0\n  network 10.200.200.0 mask 255.255.255.0\n  network 172.16.0.0\n  network 192.168.1.0\n  neighbor 10.200.200.2 activate\n exit-address-family\n!\niox\nip forward-protocol nd\nip tcp window-size 8192\nip http server\nip http authentication local\nip http secure-server\nip nat inside source list GS_NAT_ACL interface GigabitEthernet1 vrf GS overload\nip route 0.0.0.0 0.0.0.0 GigabitEthernet1 172.16.0.1\nip route vrf GS 0.0.0.0 0.0.0.0 GigabitEthernet1 172.16.0.1 global\n!\nip ssh rsa keypair-name ssh-key\nip ssh version 2\nip ssh pubkey-chain\n  username ec2-user\n   key-hash ssh-rsa F85CADE9E5A721085B422BDA763609D4 ec2-user\nip scp server enable\n!\n!\nip access-list standard GS_NAT_ACL\n permit 192.168.35.0 0.0.0.255\n!\n!\n!\n!\ncontrol-plane\n!\n!\n!\n!\n!\n!\nline con 0\n stopbits 1\nline vty 0 4\n login local\n transport input ssh\n!\n!\n!\n!\n!\n!\napp-hosting appid guestshell\n app-vnic gateway1 virtualportgroup 0 guest-interface 0\n  guest-ipaddress 192.168.35.102 netmask 255.255.255.0\n app-default-gateway 192.168.35.101 guest-interface 0\n name-server0 8.8.8.8\nend", 
+            "ansible_net_filesystems": [
+                "bootflash:"
+            ], 
+            "ansible_net_filesystems_info": {
+                "bootflash:": {
+                    "spacefree_kb": 6765328.0, 
+                    "spacetotal_kb": 7712284.0
+                }
+            }, 
+            "ansible_net_gather_network_resources": [], 
+            "ansible_net_gather_subset": [
+                "hardware", 
+                "default", 
+                "interfaces", 
+                "config"
+            ], 
+            "ansible_net_hostname": "mford_router", 
+            "ansible_net_image": "bootflash:packages.conf", 
+            "ansible_net_interfaces": {
+                "GigabitEthernet1": {
+                    "bandwidth": 1000000, 
+                    "description": null, 
+                    "duplex": "Full", 
+                    "ipv4": [
+                        {
+                            "address": "172.16.153.183", 
+                            "subnet": "16"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": "0a01.614e.a60e", 
+                    "mediatype": "Virtual", 
+                    "mtu": 1500, 
+                    "operstatus": "up", 
+                    "type": "CSR vNIC"
+                }, 
+                "Loopback0": {
+                    "bandwidth": 8000000, 
+                    "description": null, 
+                    "duplex": null, 
+                    "ipv4": [
+                        {
+                            "address": "192.168.1.101", 
+                            "subnet": "24"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": null, 
+                    "mediatype": null, 
+                    "mtu": 1514, 
+                    "operstatus": "up", 
+                    "type": null
+                }, 
+                "Loopback1": {
+                    "bandwidth": 8000000, 
+                    "description": null, 
+                    "duplex": null, 
+                    "ipv4": [
+                        {
+                            "address": "10.1.1.101", 
+                            "subnet": "24"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": null, 
+                    "mediatype": null, 
+                    "mtu": 1514, 
+                    "operstatus": "up", 
+                    "type": null
+                }, 
+                "Tunnel0": {
+                    "bandwidth": 100, 
+                    "description": null, 
+                    "duplex": null, 
+                    "ipv4": [
+                        {
+                            "address": "10.100.100.1", 
+                            "subnet": "24"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": null, 
+                    "mediatype": null, 
+                    "mtu": 9976, 
+                    "operstatus": "up", 
+                    "type": null
+                }, 
+                "Tunnel1": {
+                    "bandwidth": 100, 
+                    "description": null, 
+                    "duplex": null, 
+                    "ipv4": [
+                        {
+                            "address": "10.200.200.1", 
+                            "subnet": "24"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": null, 
+                    "mediatype": null, 
+                    "mtu": 9976, 
+                    "operstatus": "up", 
+                    "type": null
+                }, 
+                "Tunnel2": {
+                    "bandwidth": 100, 
+                    "description": null, 
+                    "duplex": null, 
+                    "ipv4": [
+                        {
+                            "address": "10.255.0.254", 
+                            "subnet": "24"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": null, 
+                    "mediatype": null, 
+                    "mtu": 9972, 
+                    "operstatus": "up", 
+                    "type": null
+                }, 
+                "VirtualPortGroup0": {
+                    "bandwidth": 750000, 
+                    "description": null, 
+                    "duplex": null, 
+                    "ipv4": [
+                        {
+                            "address": "192.168.35.101", 
+                            "subnet": "24"
+                        }
+                    ], 
+                    "lineprotocol": "up", 
+                    "macaddress": "001e.7a74.31bd", 
+                    "mediatype": null, 
+                    "mtu": 1500, 
+                    "operstatus": "up", 
+                    "type": "Virtual Port Group"
+                }
+            }, 
+            "ansible_net_iostype": "IOS-XE", 
+            "ansible_net_memfree_mb": 1893175.296875, 
+            "ansible_net_memtotal_mb": 2169857.0859375, 
+            "ansible_net_model": "CSR1000V", 
+            "ansible_net_neighbors": {}, 
+            "ansible_net_python_version": "2.7.16", 
+            "ansible_net_serialnum": "9QJ3N3B1IQZ", 
+            "ansible_net_system": "ios", 
+            "ansible_net_version": "16.10.01", 
+            "ansible_network_resources": {}, 
+            "discovered_interpreter_python": "/usr/bin/python"
+        }, 
+        "changed": false, 
+        "failed": false, 
+        "warnings": [
+            "default value for `gather_subset` will be changed to `min` from `!config` v2.11 onwards", 
+            "Platform darwin on host rtr1 is using the discovered Python interpreter at /usr/bin/python, but future installation of another Python interpreter could change this. See https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information."
+        ]
+    }
+}
+2020-02-16 16:22:01,641 p=90835 u=mford n=p=90835 u=mford | paramiko [100.25.213.180] | [chan 0] EOF sent (0)
+2020-02-16 16:22:01,746 p=90835 u=mford n=p=90835 u=mford | paramiko [100.25.213.180] | EOF in transport thread
+2020-02-16 16:22:01,761 p=90804 u=mford n=ansible | PLAY RECAP *********************************************************************************************************************
+2020-02-16 16:22:01,762 p=90804 u=mford n=ansible | rtr1                       : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-02-16 16:22:01,861 p=90835 u=mford n=ansible | shutdown complete
+2020-02-16 16:23:12,411 p=90957 u=mford n=ansible | PLAY [Gather IOS facts] ********************************************************************************************************
+2020-02-16 16:23:12,447 p=90957 u=mford n=ansible | TASK [Collect facts from Cisco IOS elements] ***********************************************************************************
+2020-02-16 16:23:14,187 p=90965 u=mford n=ansible | network_os is set to ios
+2020-02-16 16:23:14,275 p=90973 u=mford n=p=90973 u=mford | paramiko [100.25.213.180] | starting thread (client mode): 0x8e2b210L
+2020-02-16 16:23:14,276 p=90973 u=mford n=p=90973 u=mford | paramiko [100.25.213.180] | Local version/idstring: SSH-2.0-paramiko_2.4.1
+2020-02-16 16:23:14,313 p=90973 u=mford n=p=90973 u=mford | paramiko [100.25.213.180] | Remote version/idstring: SSH-2.0-Cisco-1.25
+2020-02-16 16:23:14,314 p=90973 u=mford n=p=90973 u=mford | paramiko [100.25.213.180] | Connected (version 2.0, client Cisco-1.25)
+2020-02-16 16:23:14,315 p=90973 u=mford n=p=90973 u=mford | paramiko [100.25.213.180] | kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2020-02-16 16:23:14,316 p=90973 u=mford n=p=90973 u=mford | paramiko [100.25.213.180] | Kex agreed: diffie-hellman-group-exchange-sha1
+2020-02-16 16:23:14,317 p=90973 u=mford n=p=90973 u=mford | paramiko [100.25.213.180] | HostKey agreed: ssh-rsa
+2020-02-16 16:23:14,317 p=90973 u=mford n=p=90973 u=mford | paramiko [100.25.213.180] | Cipher agreed: aes128-ctr
+2020-02-16 16:23:14,318 p=90973 u=mford n=p=90973 u=mford | paramiko [100.25.213.180] | MAC agreed: hmac-sha2-256
+2020-02-16 16:23:14,318 p=90973 u=mford n=p=90973 u=mford | paramiko [100.25.213.180] | Compression agreed: none
+2020-02-16 16:23:14,586 p=90973 u=mford n=p=90973 u=mford | paramiko [100.25.213.180] | Got server p (2048 bits)
+2020-02-16 16:23:14,707 p=90973 u=mford n=p=90973 u=mford | paramiko [100.25.213.180] | kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2020-02-16 16:23:14,709 p=90973 u=mford n=p=90973 u=mford | paramiko [100.25.213.180] | Switch to new keys ...
+2020-02-16 16:23:14,717 p=90973 u=mford n=p=90973 u=mford | paramiko [100.25.213.180] | Trying discovered key f85cade9e5a721085b422bda763609d4 in /Users/mford/.ssh/maf-ios-demo-private.pem
+2020-02-16 16:23:14,977 p=90973 u=mford n=p=90973 u=mford | paramiko [100.25.213.180] | userauth is OK
+2020-02-16 16:23:15,017 p=90973 u=mford n=p=90973 u=mford | paramiko [100.25.213.180] | Authentication (publickey) successful!
+2020-02-16 16:23:15,020 p=90973 u=mford n=p=90973 u=mford | paramiko [100.25.213.180] | [chan 0] Max packet in: 32768 bytes
+2020-02-16 16:23:15,058 p=90973 u=mford n=p=90973 u=mford | paramiko [100.25.213.180] | [chan 0] Max packet out: 4096 bytes
+2020-02-16 16:23:15,059 p=90973 u=mford n=p=90973 u=mford | paramiko [100.25.213.180] | Secsh channel 0 opened.
+2020-02-16 16:23:15,122 p=90973 u=mford n=p=90973 u=mford | paramiko [100.25.213.180] | [chan 0] Sesch channel 0 request ok
+2020-02-16 16:23:15,157 p=90973 u=mford n=p=90973 u=mford | paramiko [100.25.213.180] | [chan 0] Sesch channel 0 request ok
+2020-02-16 16:23:19,539 p=90957 u=mford n=ansible | [WARNING]: default value for `gather_subset` will be changed to `min` from `!config` v2.11 onwards
+
+2020-02-16 16:23:19,539 p=90957 u=mford n=ansible | [WARNING]: Platform darwin on host rtr1 is using the discovered Python interpreter at /usr/bin/python, but future installation
+of another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+
+2020-02-16 16:23:19,539 p=90957 u=mford n=ansible | ok: [rtr1]
+2020-02-16 16:23:19,547 p=90957 u=mford n=ansible | TASK [Print out facts] *********************************************************************************************************
+2020-02-16 16:23:21,251 p=90957 u=mford n=ansible | ok: [rtr1] => {
+    "facts_output.ansible_facts.ansible_net_hostname": "mford_router"
+}
+2020-02-16 16:23:21,259 p=90957 u=mford n=ansible | TASK [Print out facts] *********************************************************************************************************
+2020-02-16 16:23:22,983 p=90957 u=mford n=ansible | ok: [rtr1] => {
+    "facts_output.ansible_facts.ansible_net_serialnum": "9QJ3N3B1IQZ"
+}
+2020-02-16 16:23:22,985 p=90973 u=mford n=p=90973 u=mford | paramiko [100.25.213.180] | [chan 0] EOF sent (0)
+2020-02-16 16:23:23,065 p=90973 u=mford n=p=90973 u=mford | paramiko [100.25.213.180] | EOF in transport thread
+2020-02-16 16:23:23,101 p=90957 u=mford n=ansible | PLAY RECAP *********************************************************************************************************************
+2020-02-16 16:23:23,101 p=90957 u=mford n=ansible | rtr1                       : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-02-16 16:23:23,202 p=90973 u=mford n=ansible | shutdown complete

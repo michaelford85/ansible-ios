@@ -1,0 +1,19 @@
+---
+- name: Gather IOS facts
+  hosts: ios
+  connection: network_cli
+  gather_facts: no
+
+  tasks:
+  - name: Collect facts from Cisco IOS elements
+    ios_facts:
+      gather_subset: all
+    # register: facts_output
+
+  # - name: Print out facts
+  #   debug:
+  #     var: facts_output.ansible_facts.ansible_net_hostname
+  #
+  # - name: Print out facts
+  #   debug:
+  #     var: facts_output.ansible_facts.ansible_net_serialnum
