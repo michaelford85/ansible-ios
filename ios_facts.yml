@@ -9,8 +9,16 @@
     ios_facts:
       gather_subset: "{{ subset }}"
       gather_network_resources: "{{ resource }}"
+    #   gather_subset: all
+    #   gather_network_resources: l3_interfaces
     register: facts_output
 
   - name: Print out facts
     debug:
-      var: facts_output
+      var: facts_output.ansible_facts.ansible_network_resources
+
+  # - name: Add facts to file
+  #   copy:
+  #     dest: "./data/{{ inventory_hostname}}data.json"
+  #     content: "{{ facts_output | to_nice_json }}"
+  #   delegate_to: localhost

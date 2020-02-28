@@ -7,10 +7,12 @@
   tasks:
 
   - name: Add loopback interfaces using aggregate
-    ios_interface:
-      aggregate:
-      - { name: Loopback20, mtu: 256, description: Loopback Interface 20 }
-      - { name: Loopback30, mtu: 256, description: Loopback Interface 30 }
-      - { name: Loopback40, mtu: 256, description: Loopback Interface 40 }
-      - { name: Loopback50, mtu: 256, description: Loopback Interface 50 }
-      state: present
+    debug:
+      var: "{{ lookup('file', './data/resource_modules/loopbacks.json') | to_nice_yaml }}"
+    tags: debug
+
+  - name: Add loopback interfaces using aggregate
+    ios_l3_interfaces:
+      config: "{{ lookup('file', './data/resource_modules/loopbacks.json') | to_nice_yaml }}"
+      state: merged
+    tags: run
