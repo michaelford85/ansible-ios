@@ -31,6 +31,7 @@
           - "{{ cur_date }}"
           - "{{ cur_time }}"
       run_once: yes
+      delegate_to: localhost
 
     - name: Create timestamped directory
       file:
@@ -45,7 +46,7 @@
         backup: yes
         backup_options:
           dir_path: "/tmp/{{ cur_date }}_{{ cur_time}}"
-          filename: "{{ inventory_hostname }}.cfg"      
+          filename: "{{ inventory_hostname }}.cfg"
 
 
     # - name: Ensure that running_config directory exists
