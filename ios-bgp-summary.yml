@@ -76,6 +76,7 @@
     loop_control:
       label: "{{ item.key }}"
     when: (item.value.session_state == "Active") or (item.value.session_state == "Idle")
+    ignore_errors: yes
 
   - name: CHECK show logging
     debug:
