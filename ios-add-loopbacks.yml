@@ -10,14 +10,14 @@
 
   tasks:
 
-  - name: Add loopback interfaces using aggregate
+  - name: Add loopback interfaces
     ios_interfaces:
       config: "{{ loopbacks }}"
       state: merged
     when: thestate == "merged"
 
-  - name: Add loopback interfaces using aggregate
-    ios_interfaces:
-      config: "{{ loopbacks }}"
-      state: deleted
+  - name: Delete loopback interfaces
+    ios_config:
+      lines: "no interface {{ item.name }}"
+    loop: "{{ loopbacks }}"
     when: thestate == "deleted"
