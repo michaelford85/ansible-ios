@@ -1,8 +1,0 @@
----
-
-ec2_region: us-east-1
-num_routers: 2
-ec2_name_prefix: maf-demo
-ec2_subnet: "172.16.0.0/16"
-ec2_az: "{{ec2_region}}a"
-teardown: false
