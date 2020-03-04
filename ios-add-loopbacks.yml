@@ -3,6 +3,8 @@
   hosts: ios
   connection: network_cli
   gather_facts: no
+  vars_files:
+    - ./data/resource_modules/loopbacks.yml
   vars:
     - merge: true
 
@@ -10,6 +12,6 @@
 
   - name: Add loopback interfaces using aggregate
     ios_l3_interfaces:
-      config: "{{ lookup('file', './data/resource_modules/loopbacks.yml') }}"
+      config: "{{ loopbacks }}"
       state: merged
     when: merge

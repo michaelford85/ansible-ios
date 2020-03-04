@@ -1,12 +1,13 @@
-- name: Loopback20
-  ipv4:
-  - address: 10.0.20.1/24
-- name: Loopback30
-  ipv4:
-  - address: 10.0.30.1/24
-- name: Loopback40
-  ipv4:
-  - address: 10.0.40.1/24
-- name: Loopback50
-  ipv4:
-  - address: 10.0.50.1/24
+loopbacks:
+  - name: Loopback20
+    ipv4:
+    - address: 10.0.20.1/24
+  - name: Loopback30
+    ipv4:
+    - address: 10.0.30.1/24
+  - name: Loopback40
+    ipv4:
+    - address: 10.0.40.1/24
+  - name: Loopback50
+    ipv4:
+    - address: 10.0.50.1/24
