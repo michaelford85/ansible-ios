@@ -1,0 +1,23 @@
+---
+- name: Manage VLANs on IOS devices
+  hosts: ios
+  connection: network_cli
+  gather_facts: no
+  vars:
+    - thestate: merged
+  vars_files:
+     - ./data/resource_modules/vlans.yml
+
+  tasks:
+
+  - name: Add VLANs to IOS devices
+    ios_vlans:
+      config: "{{ vlans }}"
+      state: merged
+    when: thestate == "merged"
+
+  - name: Remove VLANs from IOS devices
+    ios_vlans:
+      config: "{{ vlans }}"
+      state: deleted
+    when: thestate == "deleted"
