@@ -42,8 +42,8 @@
           tower_password: "{{ TOWER_PASSWORD }}"
           tower_host: https://ansibletower.michaelanthonyford.com
           validate_certs: no
-      # delegate_to: localhost
-      # run_once: yes
+      delegate_to: localhost
+      run_once: yes
 
     # - name: Clear existing backups from ios_backups directory
     #   file:
