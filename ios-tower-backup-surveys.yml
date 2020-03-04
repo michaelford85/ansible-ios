@@ -1,0 +1,28 @@
+---
+- name: Make Surveys based on backup directories
+  hosts: tower
+  gather_facts: no
+  vars_files:
+    - default_vars.yml
+
+  tasks:
+    - name: Find /tmp/ios_backups/ all directories, exclude nginx and mysql
+      find:
+        paths: /tmp/ios_backups/
+        recurse: no
+        file_type: directory
+      register: find_output
+
+
+    - debug:
+        var: find_output
+
+    # - name: Clear existing backups from ios_backups directory
+    #   file:
+    #     state: absent
+    #     path: ~/ios_backups/
+    #
+    # - name: Copy backups to webserver
+    #   copy:
+    #     src: /tmp/ios_backups/
+    #     dest: ~/ios_backups/

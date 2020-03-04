@@ -1,0 +1,15 @@
+{
+  "description": "",
+  "spec": [
+    {
+        "question_name": "What date and time for backups?",
+        "min": null,
+        "max": null,
+        "required": true,
+        "choices": "{% for host in groups['all'] %}{{ hostvars[host]['inventory_hostname'] }}\n{% endfor %}",
+        "variable": "network_target",
+        "type": "multiplechoice"
+    }
+  ],
+  "name": ""
+}
