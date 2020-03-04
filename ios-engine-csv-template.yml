@@ -6,7 +6,7 @@
   gather_facts: no
   vars:
     csvfile: "{{ lookup('file', '{{ playbook_dir }}/csv-files/loopbacks.csv') }}"
-    erase: false
+    thestate: add
 
   tasks:
 
@@ -23,7 +23,7 @@
     vars:
       config_manager_file: "{{ playbook_dir }}/templates/ios/greenfield_template.j2"
       config_manager_replace: False
-    when: not erase|bool
+    when: thestate == "add"
 
   - name: Remove standard router template
     include_role:
@@ -32,4 +32,4 @@
     vars:
       config_manager_file: "{{ playbook_dir }}/templates/ios/remove_greenfield_template.j2"
       config_manager_replace: False
-    when: erase|bool
+    when: thestate == "remove"
