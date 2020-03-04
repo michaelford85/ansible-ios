@@ -35,7 +35,7 @@
 
     - name: Create timestamped directory
       file:
-        path: "/tmp/{{ cur_date }}_{{ cur_time}}"
+        path: "/tmp/ios_backups/{{ cur_date }}_{{ cur_time}}"
         state: directory
         mode: '0755'
       delegate_to: localhost
@@ -45,7 +45,7 @@
       ios_config:
         backup: yes
         backup_options:
-          dir_path: "/tmp/{{ cur_date }}_{{ cur_time}}"
+          dir_path: "/tmp/ios_backups/{{ cur_date }}_{{ cur_time}}"
           filename: "{{ inventory_hostname }}.cfg"
 
 
