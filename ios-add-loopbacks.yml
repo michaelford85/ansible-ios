@@ -11,20 +11,20 @@
   tasks:
 
   - name: Add loopback interfaces using aggregate
-    ios_l3_interfaces:
-      # config: "{{ loopbacks }}"
-      config:
-        - name: Loopback20
-          ipv4:
-          - address: 10.0.20.1/24
-        - name: Loopback30
-          ipv4:
-          - address: 10.0.30.1/24
-        - name: Loopback40
-          ipv4:
-          - address: 10.0.40.1/24
-        - name: Loopback50
-          ipv4:
-          - address: 10.0.50.1/24
+    ios_interfaces:
+      config: "{{ loopbacks }}"
+      # config:
+      #   - name: Loopback20
+      #     ipv4:
+      #     - address: 10.0.20.1/24
+      #   - name: Loopback30
+      #     ipv4:
+      #     - address: 10.0.30.1/24
+      #   - name: Loopback40
+      #     ipv4:
+      #     - address: 10.0.40.1/24
+      #   - name: Loopback50
+      #     ipv4:
+      #     - address: 10.0.50.1/24
       state: merged
     when: merge
