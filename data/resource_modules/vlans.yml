@@ -3,10 +3,8 @@ vlans:
     vlan_id: 101
     state: active
     shutdown: disabled
-    remote_span: 10
   - name: Vlan_202
     vlan_id: 202
-    mtu: 610
     state: active
     shutdown: enabled
   - name: Vlan_303
