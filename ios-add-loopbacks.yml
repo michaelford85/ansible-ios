@@ -1,18 +1,15 @@
 ---
-- name: Add loopback interfaces
+- name: Add Loopback L3 Interfaces
   hosts: ios
   connection: network_cli
   gather_facts: no
+  vars:
+    - merge: true
 
   tasks:
 
   - name: Add loopback interfaces using aggregate
-    debug:
-      var: "{{ lookup('file', './data/resource_modules/loopbacks.json') | to_nice_yaml }}"
-    tags: debug
-
-  - name: Add loopback interfaces using aggregate
     ios_l3_interfaces:
-      config: "{{ lookup('file', './data/resource_modules/loopbacks.json') | to_nice_yaml }}"
+      config: "{{ lookup('file', './data/resource_modules/loopbacks.yml') }}"
       state: merged
-    tags: run
+    when: merge
