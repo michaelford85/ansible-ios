@@ -32,7 +32,7 @@
       tower_job_template:
           name: "IOS Check for Configuration Drift"
           job_type: "run"
-          inventory: "Demo Inventory"
+          inventory: "IOS Github-sourced Routers"
           project: "Ansible IOS Demo Exercises"
           playbook: "ios-drift-detect.yml"
           credential: "maf-ios-demo-private"
