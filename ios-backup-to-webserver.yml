@@ -1,0 +1,17 @@
+---
+- name: Move IOS backups from local to webserver
+  hosts: webserver
+  gather_facts: no
+  vars_files:
+    - default_vars.yml
+
+  tasks:
+    - name: Clear existing backups from ios_backups directory
+      file:
+        state: absent
+        path: ~/ios_backups/
+
+    - name: Copy backups to webserver
+      copy:
+        src: /tmp/ios_backups/
+        dest: ~/ios_backups/
