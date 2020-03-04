@@ -16,7 +16,6 @@
   - name: show ip bgp summary
     ios_command:
       commands:
-        # - show bgp all summary
         - show bgp ipv4 unicast neighbors
     register: bgp_sum_output
 
