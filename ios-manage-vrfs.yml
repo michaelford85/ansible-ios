@@ -5,13 +5,15 @@
   gather_facts: no
   vars:
     thestate: merged
+    vrf_name: sample_vrf
+    vrf_description: added by Ansible
 
   tasks:
 
   - name: "Configure the {{ vrf_name }} vrf"
     ios_vrf:
       name: "{{ vrf_name }}"
-      description: "VRF {{ vrf_name }} added by Ansible"
+      description: "{{ vrf_description }}"
       state: present
     when: thestate == "merged"
 
