@@ -20,5 +20,5 @@
   - name: "Remove the {{ vrf_name }} vrf"
     ios_vrf:
       name: "{{ vrf_name }}"
-      state: present
+      state: absent
     when: thestate == "deleted"
