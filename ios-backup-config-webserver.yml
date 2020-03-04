@@ -47,6 +47,19 @@
         backup_options:
           dir_path: "/tmp/ios_backups/{{ cur_date }}_{{ cur_time}}"
           filename: "{{ inventory_hostname }}.cfg"
+      register: config_output
+
+    - name: REMOVE NON CONFIG LINES
+      lineinfile:
+        path: "/tmp/ios_backups/{{ cur_date }}_{{ cur_time}}/{{inventory_hostname}}.cfg"
+        line: "Building configuration..."
+        state: absent
+
+    - name: REMOVE NON CONFIG LINES - REGEXP
+      lineinfile:
+        path: "/tmp/ios_backups/{{ cur_date }}_{{ cur_time}}/{{inventory_hostname}}.cfg"
+        regexp: 'Current configuration.*'
+        state: absent
 
 
     # - name: Ensure that running_config directory exists
