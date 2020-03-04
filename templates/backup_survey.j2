@@ -2,12 +2,12 @@
   "description": "",
   "spec": [
     {
-        "question_name": "What date and time for backups?",
+        "question_name": "What date and time for backups to compare to?",
         "min": null,
         "max": null,
         "required": true,
         "choices": "{% for item in find_output.files %}{{ item.path }}\n{% endfor %}",
-        "variable": "network_target",
+        "variable": "backup_path",
         "type": "multiplechoice"
     }
   ],

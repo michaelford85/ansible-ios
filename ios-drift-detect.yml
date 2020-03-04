@@ -1,0 +1,13 @@
+---
+- name: Detect configuration drift
+  hosts: ios
+  connection: network_cli
+  gather_facts: no
+  vars_files:
+    - default_vars.yml
+
+  tasks:
+    - name: check the running-config against saved config
+      ios_config:
+        diff_against: intended
+        intended_config: "{{ lookup('file', '{{backup_path}}/{{ inventory_hostname }}.cfg') }}"

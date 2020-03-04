@@ -18,9 +18,9 @@
     # - debug:
     #     var: find_output
 
-    - debug:
-        msg: "{{ item.path }}"
-      loop: "{{ find_output.files }}"
+    # - debug:
+    #     msg: "{{ item.path }}"
+    #   loop: "{{ find_output.files }}"
 
     - name: Build survey_spec from template
       template:
@@ -30,12 +30,12 @@
 
     - name: Build Ansible Tower template with Survey
       tower_job_template:
-          name: "DYNAMIC SURVEY TEMPLATE"
+          name: "IOS Check for Configuration Drift"
           job_type: "run"
           inventory: "Demo Inventory"
-          project: "Ansible General Demo Exercises"
-          playbook: "build_survey.yml"
-          credential: "Demo Credential"
+          project: "Ansible IOS Demo Exercises"
+          playbook: "ios-drift-detect.yml"
+          credential: "maf-ios-demo-private"
           survey_enabled: true
           survey_spec: "{{ lookup('template', '/tmp/survey.json') }}"
           tower_username: "{{ TOWER_USERNAME }}"
