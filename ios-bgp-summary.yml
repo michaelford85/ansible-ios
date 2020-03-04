@@ -38,6 +38,7 @@
     debug:
       msg: "BGP Neighbor is {{ item }}"
     loop: "{{ pyats_bgp_sum.list_of_neighbors }}"
+    ignore_errors: yes
 
   - set_fact:
       ip_address_list: "{{ pyats_bgp_sum.vrf.default.neighbor | dict2items }}"
