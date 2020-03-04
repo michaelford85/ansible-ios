@@ -10,4 +10,7 @@
     - name: check the running-config against saved config
       ios_config:
         diff_against: intended
+        diff_ignore_lines:
+          - "Building configuration..."
+          - 'Current configuration.*'
         intended_config: "{{ lookup('file', '{{backup_path}}/{{ inventory_hostname }}.cfg') }}"
