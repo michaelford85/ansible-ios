@@ -42,7 +42,7 @@
 
   - set_fact:
       ip_address_list: "{{ pyats_bgp_sum.vrf.default.neighbor | dict2items }}"
-      ignore_errors: yes
+    ignore_errors: yes
 
   - debug:
       var: ip_address_list

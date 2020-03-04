@@ -1,5 +1,5 @@
 ---
-- name: Check BGP Summary and Log
+- name: IOS show version genie example
   hosts: ios
   connection: network_cli
   gather_facts: no
