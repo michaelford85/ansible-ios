@@ -14,8 +14,12 @@
       register: find_output
 
 
+    # - debug:
+    #     var: find_output
+
     - debug:
-        var: find_output
+        msg: "{{ item.path }}"
+      loop: "{{ find_output.files }}"
 
     # - name: Clear existing backups from ios_backups directory
     #   file:
