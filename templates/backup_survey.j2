@@ -6,7 +6,7 @@
         "min": null,
         "max": null,
         "required": true,
-        "choices": "{% for host in groups['all'] %}{{ hostvars[host]['inventory_hostname'] }}\n{% endfor %}",
+        "choices": "{% for item in find_output.files %}{{ item.path }}\n{% endfor %}",
         "variable": "network_target",
         "type": "multiplechoice"
     }

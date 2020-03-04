@@ -4,6 +4,7 @@
   gather_facts: no
   vars_files:
     - default_vars.yml
+    - ./credentials/tower-credentials.yml
 
   tasks:
     - name: Find /tmp/ios_backups/ all directories, exclude nginx and mysql
@@ -20,6 +21,29 @@
     - debug:
         msg: "{{ item.path }}"
       loop: "{{ find_output.files }}"
+
+    - name: Build survey_spec from template
+      template:
+        src: ./templates/backup_survey.j2
+        dest: /tmp/survey.json
+      # delegate_to: localhost
+
+    - name: Build Ansible Tower template with Survey
+      tower_job_template:
+          name: "DYNAMIC SURVEY TEMPLATE"
+          job_type: "run"
+          inventory: "Demo Inventory"
+          project: "Ansible General Demo Exercises"
+          playbook: "build_survey.yml"
+          credential: "Demo Credential"
+          survey_enabled: true
+          survey_spec: "{{ lookup('template', '/tmp/survey.json') }}"
+          tower_username: "{{ TOWER_USERNAME }}"
+          tower_password: "{{ TOWER_PASSWORD }}"
+          tower_host: https://ansibletower.michaelanthonyford.com
+          validate_certs: no
+      # delegate_to: localhost
+      # run_once: yes
 
     # - name: Clear existing backups from ios_backups directory
     #   file:
