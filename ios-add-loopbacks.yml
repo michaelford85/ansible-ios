@@ -14,10 +14,10 @@
     ios_interfaces:
       config: "{{ loopbacks }}"
       state: merged
-    when: thestate == merged
+    when: thestate == "merged"
 
   - name: Add loopback interfaces using aggregate
     ios_interfaces:
       config: "{{ loopbacks }}"
       state: deleted
-    when: thestate == deleted
+    when: thestate == "deleted"
