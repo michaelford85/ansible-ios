@@ -1,0 +1,25 @@
+---
+- name: Restore router configurations from archive
+  hosts: ios
+  connection: network_cli
+  gather_facts: no
+
+  tasks:
+
+    # - name: Upload new configuration
+    #   ios_config:
+    #     src: "{{backup_path}}/{{ inventory_hostname }}.cfg"
+
+    - name: enable the ios scp server
+      ios_config:
+        commands: ip scp server enable
+
+    - name: Copy locally backed up config to router and config replace
+      net_put:
+        src: "{{backup_path}}/{{ inventory_hostname }}.cfg"
+        dest: "flash:{{ inventory_hostname }}.cfg"
+
+    - name: Apply configuration file
+      ios_command:
+        commands:
+          - config replace flash:{{inventory_hostname}}.cfg force

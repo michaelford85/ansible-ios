@@ -1,0 +1,15 @@
+{
+  "description": "",
+  "spec": [
+    {
+        "question_name": "What date and time for backups to restore from?",
+        "min": null,
+        "max": null,
+        "required": true,
+        "choices": "{% for item in find_output.files %}{{ item.path }}\n{% endfor %}",
+        "variable": "backup_path",
+        "type": "multiplechoice"
+    }
+  ],
+  "name": ""
+}
