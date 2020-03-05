@@ -13,7 +13,7 @@
     - name: Upload new configuration
       cli_config:
         # replace: yes
-        config: "{{ lookup('file', '{{backup_path}}/{{ inventory_hostname }}.cfg') }}"
+        replace: "{{ lookup('file', '{{backup_path}}/{{ inventory_hostname }}.cfg') }}"
 
 
     #
