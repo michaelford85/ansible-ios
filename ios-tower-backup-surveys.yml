@@ -24,8 +24,8 @@
 
     - name: Build survey_spec from template
       template:
-        src: ./templates/backup_survey.j2
-        dest: /tmp/survey.json
+        src: ./templates/drift_survey.j2
+        dest: /tmp/drift_survey.json
       # delegate_to: localhost
 
     - name: Build Ansible Tower template with Survey
@@ -37,7 +37,7 @@
           playbook: "ios-drift-detect.yml"
           credential: "maf-ios-demo-private"
           survey_enabled: true
-          survey_spec: "{{ lookup('template', '/tmp/survey.json') }}"
+          survey_spec: "{{ lookup('template', '/tmp/drift_survey.json') }}"
           tower_username: "{{ TOWER_USERNAME }}"
           tower_password: "{{ TOWER_PASSWORD }}"
           tower_host: https://ansibletower.michaelanthonyford.com
@@ -46,12 +46,7 @@
       delegate_to: localhost
       run_once: yes
 
-    # - name: Clear existing backups from ios_backups directory
-    #   file:
-    #     state: absent
-    #     path: ~/ios_backups/
-    #
-    # - name: Copy backups to webserver
-    #   copy:
-    #     src: /tmp/ios_backups/
-    #     dest: ~/ios_backups/
+    - name: Delete survey from /tmp directory
+      file:
+        state: absent
+        path: /tmp/drift_survey.json
