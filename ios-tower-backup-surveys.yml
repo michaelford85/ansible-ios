@@ -28,6 +28,11 @@
         dest: /tmp/drift_survey.json
       # delegate_to: localhost
 
+    - name: Build survey_spec from template
+      template:
+        src: ./templates/restore_survey.j2
+        dest: /tmp/restore_survey.json
+
     - name: Build Ansible Tower Config Drift template with Survey
       tower_job_template:
           name: "IOS Check for Configuration Drift"
