@@ -26,7 +26,7 @@
         path: /tmp/ios_backups/
       become: yes
 
-    - name: Build Ansible Tower Config Drift template with Survey
+    - name: Remove Ansible Tower Config Drift template
       tower_job_template:
           name: "IOS Check for Configuration Drift"
           job_type: "run"
@@ -44,7 +44,7 @@
           state: absent
       delegate_to: localhost
 
-    - name: Build Ansible Tower Config Restore template with Survey
+    - name: Remove Ansible Tower Config Restore template
       tower_job_template:
           name: "IOS Restore Config from Backup"
           job_type: "run"
