@@ -6,15 +6,22 @@
 
   tasks:
 
-    - name: enable the ios scp server
-      ios_config:
-        commands: ip scp server enable
+    # - name: enable the ios scp server
+    #   ios_config:
+    #     commands: ip scp server enable
+    #
+    # - name: Upload new configuration
+    #   cli_config:
+    #     # replace: yes
+    #     config: "{{ lookup('file', '{{backup_path}}/{{ inventory_hostname }}.cfg') }}"
 
-    - name: Upload new configuration
-      cli_config:
-        # replace: yes
-        config: "{{ lookup('file', '{{backup_path}}/{{ inventory_hostname }}.cfg') }}"
-
+    - name: Restore the backed up configuration
+      include_role:
+        name: ansible-network.config_manager
+        tasks_from: load
+      vars:
+        config_manager_file: "{{backup_path}}/{{ inventory_hostname }}.cfg"
+        config_manager_replace: True
 
     #
     # - name: Copy locally backed up config to router and config replace
