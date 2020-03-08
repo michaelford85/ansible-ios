@@ -1,0 +1,25 @@
+---
+- name: Clear IOS backups from webserver
+  hosts: webserver
+  gather_facts: no
+  vars_files:
+    - default_vars.yml
+
+  tasks:
+    - name: Clear existing backups from ios_backups directory
+      file:
+        state: absent
+        path: ~/ios_backups/
+
+
+- name: Clear IOS backups from Tower Server
+  hosts: tower
+  gather_facts: no
+  vars_files:
+    - default_vars.yml
+
+  tasks:
+    - name: Clear existing backups from ios_backups directory
+      file:
+        state: absent
+        path: /tmp/ios_backups/
