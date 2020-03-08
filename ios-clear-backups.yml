@@ -29,10 +29,10 @@
     - name: Build Ansible Tower Config Drift template with Survey
       tower_job_template:
           name: "IOS Check for Configuration Drift"
-          # job_type: "run"
+          job_type: "run"
           # inventory: "IOS Github-sourced Routers"
-          # project: "Ansible IOS Demo Exercises"
-          # playbook: "ios-drift-detect.yml"
+          project: "Ansible IOS Demo Exercises"
+          playbook: "ios-drift-detect.yml"
           # credential: "maf-ios-demo-private"
           # survey_enabled: true
           # survey_spec: "{{ lookup('template', '/tmp/drift_survey.json') }}"
@@ -46,10 +46,10 @@
     - name: Build Ansible Tower Config Restore template with Survey
       tower_job_template:
           name: "IOS Restore Config from Backup"
-          # job_type: "run"
+          job_type: "run"
           # inventory: "IOS Github-sourced Routers"
-          # project: "Ansible IOS Demo Exercises"
-          # playbook: "ios-restore-config.yml"
+          project: "Ansible IOS Demo Exercises"
+          playbook: "ios-restore-config.yml"
           # credential: "maf-ios-demo-private"
           # survey_enabled: true
           # survey_spec: "{{ lookup('template', '/tmp/restore_survey.json') }}"
