@@ -42,7 +42,7 @@
           validate_certs: no
           # diff_mode_enabled: yes
           state: absent
-          delegate_to: localhost
+      delegate_to: localhost
 
     - name: Build Ansible Tower Config Restore template with Survey
       tower_job_template:
@@ -59,4 +59,4 @@
           tower_host: https://ansibletower.michaelanthonyford.com
           validate_certs: no
           state: absent
-          delegate_to: localhost
+      delegate_to: localhost
