@@ -3,8 +3,8 @@
   hosts: ios
   connection: network_cli
   gather_facts: no
-  vars_files:
-    - default_vars.yml
+  # vars_files:
+  #   - default_vars.yml
 
   tasks:
     - name: Get date from the system
