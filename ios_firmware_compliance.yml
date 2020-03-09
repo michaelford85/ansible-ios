@@ -4,32 +4,16 @@
   connection: network_cli
   gather_facts: no
   vars:
-    compliant_ios_version: 16.08.01a
+    desired_ios_version: "16.08.01b"
 
   tasks:
     - name: GATHER ROUTER FACTS
       ios_facts:
+        gather_subset: all
 
-    - name: COPY OVER IOS IMAGE
-      net_put:
-        src: ./firmware/ios/system-image-filename.bin
-        dest: flash:system-image-filename.bin
-
-    - name: REBOOT ROUTER
-      ios_command:
-        commands:
-          - command: 'write memory'
-          - command: 'reload\n'
-            prompt: 'Proceed with reload\? \[confirm\]'
-            answer: "\r"
-
-    - name: WAIT FOR ROUTER TO RETURN
-      wait_for:
-        host: "{{inventory_hostname}}"
-        port: 22
-        delay: 60
+    - name: create HTML report
+      template:
+        src: ./templates/ios/report-ios.j2
+        dest: /tmp/inventory_report_ios.html
       delegate_to: localhost
-
-    - name: Indicate that the router is back up
-      debug:
-        msg: "Router is back online"
+      run_once: true

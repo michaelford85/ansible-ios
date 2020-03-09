@@ -1,0 +1,28 @@
+---
+- name: Copy inventory document to webserver
+  hosts: webserver
+  become: yes
+
+  tasks:
+
+  - name: copy file to webserver
+    copy:
+      src: /tmp/inventory_report_ios.html
+      dest: /var/www/html/report_ios.html
+    notify:
+      - restart_apache
+
+  handlers:
+    - name: restart_apache
+      service:
+        name: httpd
+        state: restarted
+
+# - name: Delete local copy of inventory
+#   hosts: localhost
+#
+#   tasks:
+#   - name: Delete local copy of inventory inventory
+#     file:
+#       name: /tmp/inventory_report_ios.html
+#       state: absent
