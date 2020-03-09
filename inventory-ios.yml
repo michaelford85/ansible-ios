@@ -1,22 +1,11 @@
 ---
-- name: build IOS XE inventory
-  hosts: ios
-  connection: network_cli
-  gather_facts:  False
-
+- name: Copy inventory document to webserver
+  hosts: webserver
+  become: yes
   vars:
     desired_ios_version: "16.08.01b"
 
   tasks:
-
-  - name: Gather IOS facts
-    ios_facts:
-      gather_subset: all
-    register: all_facts
-
-      # - name: Show all all facts
-      #   debug:
-      #     var: all_facts
 
   - name: create HTML report
     template:
@@ -24,12 +13,6 @@
       dest: /tmp/inventory_report_ios.html
     delegate_to: localhost
     run_once: true
-
-- name: Copy inventory document to webserver
-  hosts: webserver
-  become: yes
-
-  tasks:
 
   - name: copy file to webserver
     copy:
