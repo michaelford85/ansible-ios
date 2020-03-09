@@ -9,8 +9,9 @@
 
   tasks:
 
-  - name: gathering IOS XE facts
+  - name: Gather IOS facts
     ios_facts:
+      gather_subset: all
     register: all_facts
 
       # - name: Show all all facts
@@ -19,11 +20,10 @@
 
   - name: create HTML report
     template:
-      src: report-ios.j2
+      src: ./templates/ios/report-ios.j2
       dest: /tmp/inventory_report_ios.html
     delegate_to: localhost
     run_once: true
-        #provider: "{{login_info}}"
 
 - name: Copy inventory document to webserver
   hosts: webserver
@@ -34,7 +34,7 @@
   - name: copy file to webserver
     copy:
       src: /tmp/inventory_report_ios.html
-      dest: /var/www/html/index.html
+      dest: /var/www/html/report_ios.html
     notify:
       - restart_apache
 
@@ -46,7 +46,6 @@
 
 - name: Delete local copy of inventory
   hosts: localhost
-  connection: local
 
   tasks:
   - name: Delete local copy of inventory inventory
