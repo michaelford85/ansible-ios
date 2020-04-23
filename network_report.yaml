@@ -1,0 +1,61 @@
+---
+- name: Convert interface info to structured data
+  hosts: ios
+  gather_facts: no
+
+  tasks:
+    - name: load read interfaces role
+      include_role:
+        name: read_interfaces
+
+- name: Build report with facts and post to AWS S3
+  hosts: localhost
+
+  vars:
+    webpage_name: "os-report"
+    ec2_region: us-east-1
+    ec2_az: us-east-1a
+    dns_zone: "michaelanthonyford.com"
+    s3_state: present
+
+  tasks:
+    - name: build report
+      include_role:
+        name: build_report
+
+    - name: Ensure S3 bucket exists
+      s3_bucket:
+        name: "{{webpage_name|lower}}.{{dns_zone|lower}}"
+        state: "{{ s3_state }}"
+        region: "{{ec2_region}}"
+        force: yes
+
+    - name: Enable web hosting
+      s3_website:
+       name: "{{webpage_name|lower}}.{{dns_zone|lower}}"
+       state: "{{ s3_state }}"
+       region: "{{ec2_region}}"
+       suffix: "index.html"
+      register: s3_site
+      when: s3_state == 'present'
+
+    - name: DNS for webpage US-EAST-1
+      route53:
+        state: "{{ s3_state }}"
+        zone: "{{dns_zone}}"
+        record: "{{webpage_name|lower}}.{{dns_zone}}"
+        type: CNAME
+        overwrite: yes
+        value: "{{webpage_name|lower}}.{{dns_zone}}.s3-website-{{ec2_region}}.amazonaws.com"
+
+    - name: Put webpage
+      s3_sync:
+        bucket: "{{webpage_name|lower}}.{{dns_zone}}"
+        region: "{{ec2_region}}"
+        file_root: "{{ playbook_dir }}/reports/"
+        mime_map:
+          .html: text/html
+        permission: public-read
+        file_change_strategy: checksum
+        include: "*"
+      when: s3_state == 'present'

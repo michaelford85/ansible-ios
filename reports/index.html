@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+$("document").ready(function(){
+  $click =  $('.expandclass');   // Click selector
+
+
+  $click.click(function () {
+
+    $clicked = $(this);
+    $expand = $(this).parent('.expand').next();  // Expand and collapse content selector
+
+        //open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
+        $expand.slideToggle(500, function () {
+            //execute this after slideToggle is done
+            //change text of expand based on visibility of content div
+        });
+
+    });
+});
+</script>
+</head>
+<body>
+<center>
+<h1>Ansible Network Automation Example Report</h1>
+</center>
+<table>
+    <thead>
+        <tr>
+            <th>Hostname</th>
+            <th>Transport</th>
+            <th>Platform</th>
+            <th>Code Version</th>
+            <th>Serial Number</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><p class="hostname">Arista1</p>
+<!–– INTERNAL TABLE FOR INTERFACES --!>
+<div class="expand">
+  <p class="expandclass">>Interfaces Facts - Click to see details</p>
+</div>
+<div class="content">
+<table id="subtable">
+    <thead>
+        <tr>
+            <th>Interface Name</th>
+            <th>Description</th>
+            <th>Duplex</th>
+            <th>Enabled</th>
+            <th>MTU</th>
+            <th>Speed</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Ethernet1</td>
+            <td>none</td>
+            <td>default</td>
+            <td>True</td>
+            <td>default</td>
+            <td>default</td>
+        </tr>
+        <tr>
+            <td>Loopback0</td>
+            <td>none</td>
+            <td>default</td>
+            <td>True</td>
+            <td>default</td>
+            <td>default</td>
+        </tr>
+        <tr>
+            <td>Tunnel0</td>
+            <td>none</td>
+            <td>default</td>
+            <td>True</td>
+            <td>1394</td>
+            <td>default</td>
+        </tr>
+        <tr>
+            <td>Ethernet1</td>
+            <td>none</td>
+            <td>default</td>
+            <td>True</td>
+            <td>default</td>
+            <td>default</td>
+        </tr>
+        <tr>
+            <td>Tunnel1</td>
+            <td>none</td>
+            <td>default</td>
+            <td>True</td>
+            <td>default</td>
+            <td>default</td>
+        </tr>
+        <tr>
+            <td>Ethernet1</td>
+            <td>none</td>
+            <td>default</td>
+            <td>True</td>
+            <td>default</td>
+            <td>default</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+</div>
+<!–– END INTERNAL TABLE FOR INTERFACES --!>
+<!–– INTERNAL TABLE FOR L3_INTERFACES --!>
+<div class="expand">
+  <p class="expandclass">>Interfaces L3 Facts - Click to see details</p>
+</div>
+<div class="content">
+<table id="subtable">
+    <thead>
+        <tr>
+            <th>Interface Name</th>
+            <th>IPv4</th>
+            <th>IPv6</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Ethernet1</td>
+<!–– INTERNAL IPv4 LOOP FOR L3_INTERFACES --!>
+            <td>
+dhcp
+            </td>
+<!–– END IPv4 INTERNAL LOOP FOR L3_INTERFACES --!>
+<!–– INTERNAL IPv6 LOOP FOR L3_INTERFACES --!>
+            <td>
+            </td>
+<!–– END INTERNAL LOOP FOR L3_INTERFACES --!>
+        </tr>
+        <tr>
+            <td>Loopback0</td>
+<!–– INTERNAL IPv4 LOOP FOR L3_INTERFACES --!>
+            <td>
+192.168.2.2/32
+            </td>
+<!–– END IPv4 INTERNAL LOOP FOR L3_INTERFACES --!>
+<!–– INTERNAL IPv6 LOOP FOR L3_INTERFACES --!>
+            <td>
+            </td>
+<!–– END INTERNAL LOOP FOR L3_INTERFACES --!>
+        </tr>
+        <tr>
+            <td>Tunnel0</td>
+<!–– INTERNAL IPv4 LOOP FOR L3_INTERFACES --!>
+            <td>
+10.101.101.2/24
+            </td>
+<!–– END IPv4 INTERNAL LOOP FOR L3_INTERFACES --!>
+<!–– INTERNAL IPv6 LOOP FOR L3_INTERFACES --!>
+            <td>
+            </td>
+<!–– END INTERNAL LOOP FOR L3_INTERFACES --!>
+        </tr>
+        <tr>
+            <td>Tunnel1</td>
+<!–– INTERNAL IPv4 LOOP FOR L3_INTERFACES --!>
+            <td>
+10.200.200.2/24
+            </td>
+<!–– END IPv4 INTERNAL LOOP FOR L3_INTERFACES --!>
+<!–– INTERNAL IPv6 LOOP FOR L3_INTERFACES --!>
+            <td>
+            </td>
+<!–– END INTERNAL LOOP FOR L3_INTERFACES --!>
+        </tr>
+    </tbody>
+</table>
+</div>
+</div>
+ <!–– END INTERNAL TABLE FOR L3_INTERFACES --!>
+            </td>
+            <td>network_cli</td>
+            <td>Arista eos</td>
+            <td>4.22.1FX-VEOSRouter-cloud</td>
+            <td>F6370823AA165AA54A22DAE4432EB3A2</td>
+        </tr>
+        <tr>
+            <td><p class="hostname">Arista2</p>
+<!–– INTERNAL TABLE FOR INTERFACES --!>
+<div class="expand">
+  <p class="expandclass">>Interfaces Facts - Click to see details</p>
+</div>
+<div class="content">
+<table id="subtable">
+    <thead>
+        <tr>
+            <th>Interface Name</th>
+            <th>Description</th>
+            <th>Duplex</th>
+            <th>Enabled</th>
+            <th>MTU</th>
+            <th>Speed</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Ethernet1</td>
+            <td>none</td>
+            <td>default</td>
+            <td>True</td>
+            <td>default</td>
+            <td>default</td>
+        </tr>
+        <tr>
+            <td>Loopback0</td>
+            <td>none</td>
+            <td>default</td>
+            <td>True</td>
+            <td>default</td>
+            <td>default</td>
+        </tr>
+        <tr>
+            <td>Tunnel0</td>
+            <td>none</td>
+            <td>default</td>
+            <td>True</td>
+            <td>1394</td>
+            <td>default</td>
+        </tr>
+        <tr>
+            <td>Ethernet1</td>
+            <td>none</td>
+            <td>default</td>
+            <td>True</td>
+            <td>default</td>
+            <td>default</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+</div>
+<!–– END INTERNAL TABLE FOR INTERFACES --!>
+<!–– INTERNAL TABLE FOR L3_INTERFACES --!>
+<div class="expand">
+  <p class="expandclass">>Interfaces L3 Facts - Click to see details</p>
+</div>
+<div class="content">
+<table id="subtable">
+    <thead>
+        <tr>
+            <th>Interface Name</th>
+            <th>IPv4</th>
+            <th>IPv6</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Ethernet1</td>
+<!–– INTERNAL IPv4 LOOP FOR L3_INTERFACES --!>
+            <td>
+dhcp
+            </td>
+<!–– END IPv4 INTERNAL LOOP FOR L3_INTERFACES --!>
+<!–– INTERNAL IPv6 LOOP FOR L3_INTERFACES --!>
+            <td>
+            </td>
+<!–– END INTERNAL LOOP FOR L3_INTERFACES --!>
+        </tr>
+        <tr>
+            <td>Loopback0</td>
+<!–– INTERNAL IPv4 LOOP FOR L3_INTERFACES --!>
+            <td>
+192.168.4.4/32
+            </td>
+<!–– END IPv4 INTERNAL LOOP FOR L3_INTERFACES --!>
+<!–– INTERNAL IPv6 LOOP FOR L3_INTERFACES --!>
+            <td>
+            </td>
+<!–– END INTERNAL LOOP FOR L3_INTERFACES --!>
+        </tr>
+        <tr>
+            <td>Tunnel0</td>
+<!–– INTERNAL IPv4 LOOP FOR L3_INTERFACES --!>
+            <td>
+10.101.101.4/24
+            </td>
+<!–– END IPv4 INTERNAL LOOP FOR L3_INTERFACES --!>
+<!–– INTERNAL IPv6 LOOP FOR L3_INTERFACES --!>
+            <td>
+            </td>
+<!–– END INTERNAL LOOP FOR L3_INTERFACES --!>
+        </tr>
+    </tbody>
+</table>
+</div>
+</div>
+ <!–– END INTERNAL TABLE FOR L3_INTERFACES --!>
+            </td>
+            <td>network_cli</td>
+            <td>Arista eos</td>
+            <td>4.22.1FX-VEOSRouter-cloud</td>
+            <td>A3CA875CEAC8748CC4803EBDEC2AEDFD</td>
+        </tr>
+        <tr>
+            <td><p class="hostname">Cisco</p>
+<!–– INTERNAL TABLE FOR INTERFACES --!>
+<div class="expand">
+  <p class="expandclass">>Interfaces Facts - Click to see details</p>
+</div>
+<div class="content">
+<table id="subtable">
+    <thead>
+        <tr>
+            <th>Interface Name</th>
+            <th>Description</th>
+            <th>Duplex</th>
+            <th>Enabled</th>
+            <th>MTU</th>
+            <th>Speed</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>GigabitEthernet1</td>
+            <td>none</td>
+            <td>default</td>
+            <td>True</td>
+            <td>default</td>
+            <td>default</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+</div>
+<!–– END INTERNAL TABLE FOR INTERFACES --!>
+<!–– INTERNAL TABLE FOR L3_INTERFACES --!>
+<div class="expand">
+  <p class="expandclass">>Interfaces L3 Facts - Click to see details</p>
+</div>
+<div class="content">
+<table id="subtable">
+    <thead>
+        <tr>
+            <th>Interface Name</th>
+            <th>IPv4</th>
+            <th>IPv6</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>GigabitEthernet1</td>
+<!–– INTERNAL IPv4 LOOP FOR L3_INTERFACES --!>
+            <td>
+dhcp
+            </td>
+<!–– END IPv4 INTERNAL LOOP FOR L3_INTERFACES --!>
+<!–– INTERNAL IPv6 LOOP FOR L3_INTERFACES --!>
+            <td>
+            </td>
+<!–– END INTERNAL LOOP FOR L3_INTERFACES --!>
+        </tr>
+    </tbody>
+</table>
+</div>
+</div>
+ <!–– END INTERNAL TABLE FOR L3_INTERFACES --!>
+            </td>
+            <td>network_cli</td>
+            <td>Cisco ios</td>
+            <td>16.09.02</td>
+            <td>9U9D2V369UE</td>
+        </tr>
+        <tr>
+            <td><p class="hostname">Juniper</p>
+<!–– INTERNAL TABLE FOR INTERFACES --!>
+<div class="expand">
+  <p class="expandclass">>Interfaces Facts - Click to see details</p>
+</div>
+<div class="content">
+<table id="subtable">
+    <thead>
+        <tr>
+            <th>Interface Name</th>
+            <th>Description</th>
+            <th>Duplex</th>
+            <th>Enabled</th>
+            <th>MTU</th>
+            <th>Speed</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>gr-0/0/0</td>
+            <td>none</td>
+            <td>default</td>
+            <td>True</td>
+            <td>default</td>
+            <td>default</td>
+        </tr>
+        <tr>
+            <td>lo0</td>
+            <td>none</td>
+            <td>default</td>
+            <td>True</td>
+            <td>default</td>
+            <td>default</td>
+        </tr>
+        <tr>
+            <td>fxp0</td>
+            <td>none</td>
+            <td>default</td>
+            <td>True</td>
+            <td>default</td>
+            <td>default</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+</div>
+<!–– END INTERNAL TABLE FOR INTERFACES --!>
+<!–– INTERNAL TABLE FOR L3_INTERFACES --!>
+<div class="expand">
+  <p class="expandclass">>Interfaces L3 Facts - Click to see details</p>
+</div>
+<div class="content">
+<table id="subtable">
+    <thead>
+        <tr>
+            <th>Interface Name</th>
+            <th>IPv4</th>
+            <th>IPv6</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>gr-0/0/0</td>
+<!–– INTERNAL IPv4 LOOP FOR L3_INTERFACES --!>
+            <td>
+10.100.100.2/24
+            </td>
+<!–– END IPv4 INTERNAL LOOP FOR L3_INTERFACES --!>
+<!–– INTERNAL IPv6 LOOP FOR L3_INTERFACES --!>
+            <td>
+            </td>
+<!–– END INTERNAL LOOP FOR L3_INTERFACES --!>
+        </tr>
+        <tr>
+            <td>lo0</td>
+<!–– INTERNAL IPv4 LOOP FOR L3_INTERFACES --!>
+            <td>
+192.168.3.3/32
+            </td>
+<!–– END IPv4 INTERNAL LOOP FOR L3_INTERFACES --!>
+<!–– INTERNAL IPv6 LOOP FOR L3_INTERFACES --!>
+            <td>
+            </td>
+<!–– END INTERNAL LOOP FOR L3_INTERFACES --!>
+        </tr>
+    </tbody>
+</table>
+</div>
+</div>
+ <!–– END INTERNAL TABLE FOR L3_INTERFACES --!>
+            </td>
+            <td>netconf</td>
+            <td>Juniper junos</td>
+            <td>18.4R1.8</td>
+            <td>96ff037aa90c</td>
+        </tr>
+    </tbody>
+</table>
+<center><p>Created with</p><br><img src="webpage_logo.png" width="300">
+<p>The source code to create this report can be found at <a href="https://github.com/network-automation/tower_workshop">https://github.com/network-automation/tower_workshop</a></br><br>
+If you are new to Ansible Automation check out the following links:<br>
+<a href="https://docs.ansible.com/ansible/latest/user_guide/intro_getting_started.html">Getting Started</a"><br>
+<a href="https://ansible.com/workshops">Free hands-on workshops</a><br>
+<a href="https://youtube.com/ansibleautomation">Youtube Videos</a><br>
+</p>
+</center>
+<footer> Reported generated on: 2020-04-13 @ 11:18:12 </footer>
+</body>
+</html>
