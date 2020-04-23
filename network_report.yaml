@@ -1,6 +1,7 @@
 ---
 - name: Convert interface info to structured data
   hosts: ios
+  connection: network_cli
   gather_facts: no
 
   tasks:
