@@ -24,13 +24,19 @@
           - y
           - y
 
+    # - name: Wait for router to come back up
+    #   wait_for:
+    #     port: 22
+    #     state: started
+    #     timeout: 300
+    #     delay: 60
+    #     host: "{{ inventory_hostname }}"
+
     - name: Wait for router to come back up
-      wait_for:
-        port: 22
-        state: started
+      wait_for_connection:
+        connection_timeout: 120
         timeout: 300
         delay: 60
-        host: "{{ inventory_hostname }}"
 
     - name: Gather IOS facts after reload
       ios_facts:
