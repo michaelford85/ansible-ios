@@ -18,10 +18,8 @@
       cli_command:
         command: reload
         prompt:
-          - Save?
           - confirm
         answer:
-          - y
           - y
 
     # - name: Wait for router to come back up
