@@ -61,18 +61,25 @@
       cli_config:
         config: "boot system flash: {{ imagefile }}"
 
-    - name: reload router
+    - name: Copy the running-config to the startup-config
+      ios_config:
+        save_when: always
+
+    - name: Reload router
       cli_command:
         command: reload
+        prompt:
+          - confirm
+        answer:
+          - y
 
     - name: Wait for router to come back up
-      wait_for:
-        port: 22
-        state: started
+      wait_for_connection:
+        connect_timeout: 30
+        sleep: 10
         timeout: 300
         delay: 60
-        host: "{{ inventory_hostname }}"
-
+        
     - name: Check installed OS after upgrade
       ios_facts:
 
