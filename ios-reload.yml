@@ -32,7 +32,7 @@
 
     - name: Wait for router to come back up
       wait_for_connection:
-        connection_timeout: 30
+        connect_timeout: 30
         sleep: 10
         timeout: 300
         delay: 60
