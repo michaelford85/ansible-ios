@@ -11,6 +11,9 @@
 
   tasks:
 
+    - name: Check installed OS after upgrade
+      ios_facts:
+        
     - name: reload router
       cli_command:
         command: reload
