@@ -1,0 +1,31 @@
+---
+- name: Reload IOS Device
+  hosts: ios
+  connection: network_cli
+  gather_facts: no
+  vars:
+    connect_timeout: 50
+    command_timeout: 50
+  vars_files:
+    - default_vars.yml
+
+  tasks:
+
+    - name: reload router
+      cli_command:
+        command: reload
+
+    - name: Wait for router to come back up
+      wait_for:
+        port: 22
+        state: started
+        timeout: 300
+        delay: 60
+        host: "{{ inventory_hostname }}"
+
+    - name: Check installed OS after upgrade
+      ios_facts:
+
+    - name: Print installed OS
+      debug:
+        var: ansible_net_version
