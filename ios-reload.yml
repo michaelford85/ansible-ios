@@ -14,32 +14,36 @@
     - name: Gather IOS facts before reload
       ios_facts:
 
-    - name: Reload router
-      cli_command:
-        command: reload
-        prompt:
-          - confirm
-        answer:
-          - y
+    - name: check the startup-config against the running-config
+      ios_config:
+        diff_against: startup
+        diff_ignore_lines:
+          - "Building configuration..."
+          - 'Current configuration.*'
+      register: modified_output
+
+    - debug:
+        var: modified_output
+
+    # - name: Reload router
+    #   cli_command:
+    #     command: reload
+    #     prompt:
+    #       - confirm
+    #     answer:
+    #       - y
+
 
     # - name: Wait for router to come back up
-    #   wait_for:
-    #     port: 22
-    #     state: started
+    #   wait_for_connection:
+    #     connect_timeout: 30
+    #     sleep: 10
     #     timeout: 300
     #     delay: 60
-    #     host: "{{ inventory_hostname }}"
-
-    - name: Wait for router to come back up
-      wait_for_connection:
-        connect_timeout: 30
-        sleep: 10
-        timeout: 300
-        delay: 60
-
-    - name: Gather IOS facts after reload
-      ios_facts:
-
-    - name: Print installed OS
-      debug:
-        var: ansible_net_version
+    #
+    # - name: Gather IOS facts after reload
+    #   ios_facts:
+    #
+    # - name: Print installed OS
+    #   debug:
+    #     var: ansible_net_version
