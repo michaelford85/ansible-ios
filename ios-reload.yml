@@ -3,11 +3,6 @@
   hosts: ios
   connection: network_cli
   gather_facts: no
-  # vars:
-  #   connect_timeout: 50
-  #   command_timeout: 50
-  # vars_files:
-  #   - default_vars.yml
 
   tasks:
 
