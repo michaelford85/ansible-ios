@@ -9,32 +9,32 @@
 
   tasks:
 
-    # - name: Gather IOS facts before reload
-    #   ios_facts:
-    #
-    # - name: Copy the running-config to the startup-config
-    #   ios_config:
-    #     save_when: always
-    #
-    # - name: Reload router
-    #   cli_command:
-    #     command: reload
-    #     prompt:
-    #       - confirm
-    #     answer:
-    #       - y
-    #
-    # - name: Wait for router to come back up
-    #   wait_for_connection:
-    #     connect_timeout: 30
-    #     sleep: 10
-    #     timeout: 300
-    #     delay: 60
+    - name: Gather IOS facts before reload
+      ios_facts:
+
+    - name: Copy the running-config to the startup-config
+      ios_config:
+        save_when: always
+
+    - name: Reload router
+      cli_command:
+        command: reload
+        prompt:
+          - confirm
+        answer:
+          - y
+
+    - name: Wait for router to come back up
+      wait_for_connection:
+        connect_timeout: 30
+        sleep: 10
+        timeout: 300
+        delay: 60
 
     - name: Gather IOS facts after reload
       ios_facts:
 
     - name: Print installed OS
       debug:
-        msg: "The versions don't match!"
-      when: ansible_net_version != compliant_ios_version
+        msg: "The os has been updated."
+      when: ansible_net_version == compliant_ios_version
