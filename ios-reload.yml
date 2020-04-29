@@ -36,5 +36,5 @@
 
     - name: Print installed OS
       debug:
-        var: "The versions don't match!"
+        msg: "The versions don't match!"
       when: ansible_net_version != compliant_ios_version
