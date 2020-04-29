@@ -3,34 +3,38 @@
   hosts: ios
   connection: network_cli
   gather_facts: no
+  vars:
+    compliant_ios_version: 16.10.02
+
 
   tasks:
 
-    - name: Gather IOS facts before reload
-      ios_facts:
-
-    - name: Copy the running-config to the startup-config
-      ios_config:
-        save_when: always
-
-    - name: Reload router
-      cli_command:
-        command: reload
-        prompt:
-          - confirm
-        answer:
-          - y
-
-    - name: Wait for router to come back up
-      wait_for_connection:
-        connect_timeout: 30
-        sleep: 10
-        timeout: 300
-        delay: 60
+    # - name: Gather IOS facts before reload
+    #   ios_facts:
+    #
+    # - name: Copy the running-config to the startup-config
+    #   ios_config:
+    #     save_when: always
+    #
+    # - name: Reload router
+    #   cli_command:
+    #     command: reload
+    #     prompt:
+    #       - confirm
+    #     answer:
+    #       - y
+    #
+    # - name: Wait for router to come back up
+    #   wait_for_connection:
+    #     connect_timeout: 30
+    #     sleep: 10
+    #     timeout: 300
+    #     delay: 60
 
     - name: Gather IOS facts after reload
       ios_facts:
 
     - name: Print installed OS
       debug:
-        var: ansible_net_version
+        var: "The versions don't match!"
+      when: ansible_net_version != compliant_ios_version
