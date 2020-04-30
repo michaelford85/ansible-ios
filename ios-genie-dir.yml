@@ -1,0 +1,23 @@
+---
+- name: IOS show version genie example
+  hosts: ios
+  connection: network_cli
+  gather_facts: no
+  roles:
+    - parse_genie
+
+  tasks:
+
+  - name: show version
+    ios_command:
+      commands:
+        - "dir {{ directory }}"
+    register: dir_contents
+
+  - name: Set Fact Genie Filter
+    set_fact:
+      pyats_version: "{{ version['stdout'][0] | parse_genie(command='dir {directory}', os='iosxe') }}"
+
+  - name: Debug directory contents
+    debug:
+     var: dir_contents
