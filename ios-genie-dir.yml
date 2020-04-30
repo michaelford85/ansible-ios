@@ -12,11 +12,11 @@
     ios_command:
       commands:
         - "dir {{ directory }}"
-    register: dir_contents
+    register: dir_output
 
   - name: Set Fact Genie Filter
     set_fact:
-      pyats_version: "{{ version['stdout'][0] | parse_genie(command='dir {directory}', os='iosxe') }}"
+      dir_contents: "{{ dir_output['stdout'][0] | parse_genie(command='dir {directory}', os='iosxe') }}"
 
   - name: Debug directory contents
     debug:
