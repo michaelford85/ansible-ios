@@ -3,8 +3,8 @@
   hosts: ios
   connection: network_cli
   gather_facts: no
-  roles:
-    - parse_genie
+  # roles:
+  #   - parse_genie
 
   tasks:
 
