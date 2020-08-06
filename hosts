@@ -12,7 +12,7 @@ ansible_network_os=ios
 ansible_network_provider=ansible-network.cisco_ios
 
 [servers]
-webserver ansible_host=webserver.michaelanthonyford.com
+webserver ansible_host=webserver.mford.io
 tower ansible_host=ansibletower.michaelanthonyford.com
 
 [servers:vars]
