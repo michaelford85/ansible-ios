@@ -13,7 +13,7 @@ ansible_network_provider=ansible-network.cisco_ios
 
 [servers]
 webserver ansible_host=webserver.mford.io
-tower ansible_host=ansibletower.michaelanthonyford.com
+tower ansible_host=student1.75c3.rhdemo.io
 
 [servers:vars]
 ;ansible_user=ec2-user
