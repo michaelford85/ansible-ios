@@ -16,6 +16,10 @@
   #     dest: loopbacks.cfg
   #   delegate_to: localhost
 
+  - name: Turn off dns lookup
+    ios_config:
+      lines: no ip domain-lookup
+
   - name: Apply standard router template
     include_role:
       name: ansible-network.config_manager
