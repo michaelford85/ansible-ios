@@ -1,7 +1,7 @@
 [ios]
 
-rtr1 ansible_host=34.239.149.137 site=1
-rtr2 ansible_host=3.235.23.202 site=2
+rtr1 ansible_host=54.208.237.176 site=1
+;rtr2 ansible_host=3.235.23.202 site=2
 ;rtr3 ansible_host=3.236.145.22 site=3
 ;rtr4 ansible_host=3.236.98.105 site=4
 
@@ -13,7 +13,7 @@ ansible_network_provider=ansible-network.cisco_ios
 
 [servers]
 webserver ansible_host=webserver.mford.io
-tower ansible_host=ansibletower.michaelanthonyford.com
+tower ansible_host=ansibletower.mford.io
 
 [servers:vars]
 ;ansible_user=ec2-user
