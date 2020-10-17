@@ -1,0 +1,34 @@
+---
+- name: set role basic facts
+  set_fact:
+    ansible_network_ios_path: "{{ role_path }}"
+    ansible_network_ios_version: "v2.7.0"
+
+- name: display the role version to stdout
+  debug:
+    msg: "ansible_network.cisco_ios version is {{ ansible_network_ios_version }}"
+
+- name: validate ansible_network_os == 'ios'
+  fail:
+    msg: "expected ansible_network_os to be `ios`, got `{{ ansible_network_os }}`"
+  when: ansible_network_os != 'ios'
+
+- name: validate ansible_connection == 'network_cli'
+  fail:
+    msg: "expected ansible_network to be `network_cli`, got `{{ ansible_connection }}`"
+  when: ansible_connection != 'network_cli'
+
+- name: Validate we have required installed version of dependent roles
+  verify_dependent_role_version:
+    role_path: "{{ role_path }}"
+    depends_map:
+      - name: 'ansible-network.network-engine'
+        version: "{{ ios_network_engine_req_ver_override }}"
+  when: ios_dependent_role_check is defined and ios_dependent_role_check
+        and ios_network_engine_req_ver_override is defined
+
+- name: Validate we have required installed version of dependent roles from meta
+  verify_dependent_role_version:
+    role_path: "{{ role_path }}"
+  when: ios_dependent_role_check is defined and ios_dependent_role_check
+        and ios_network_engine_req_ver_override is not defined

@@ -1,0 +1,109 @@
+---
+- name: initialize function
+  include_tasks: includes/init.yaml
+
+- name: validate config_manager_text is defined
+  fail:
+    msg: "missing required arg: config_manager_text"
+  when: config_manager_text is undefined
+
+- name: set ios checkpoint filename
+  set_fact:
+    ios_checkpoint_filename: "chk_ansible"
+
+# initiate creating a checkpoint of the existing running-config
+- name: create checkpoint of current configuration
+  include_tasks: "{{ role_path }}/includes/checkpoint/create.yaml"
+
+# if running in check mode, the configuration should not be loaded on
+# the target device because that could have undesired results, so
+# just print a warning message here.
+- name: display message due to check mode
+  debug:
+    msg: not loading configuration due to check mode
+  when: ansible_check_mode
+
+- name: load configuration onto target device
+  block:
+    - name: replace current active configuration
+      include_tasks: "{{ role_path }}/includes/configure/replace.yaml"
+      when: ios_config_replace
+      vars:
+        ios_config_text: "{{ config_manager_text }}"
+
+    - name: merge with current active configuration
+      include_tasks: "{{ role_path }}/includes/configure/merge.yaml"
+      when: not ios_config_replace and not ios_config_use_terminal
+      vars:
+        ios_config_text: "{{ config_manager_text }}"
+
+    - name: load configuration using configure terminal
+      include_tasks: "{{ role_path }}/includes/configure/terminal.yaml"
+      when: not ios_config_replace and ios_config_use_terminal
+      vars:
+        ios_config_text: "{{ config_manager_text }}"
+
+  rescue:
+    # since the host has failed during the configuration load, the role by
+    # default will initiate a restore sequence.  the restore sequence will
+    # load the previous running-config with the replace option enabled.
+    - name: display message
+      debug:
+        msg: "error configuring device, starting rollback"
+      when: ios_config_rollback_enabled
+
+    - name: initiate configuration rollback
+      include_tasks: "{{ role_path }}/includes/checkpoint/restore.yaml"
+
+    - name: display message
+      debug:
+        msg: "successfully completed configuration rollback"
+      when: ios_config_rollback_enabled
+
+    - name: fail host due to config load error
+      fail:
+        msg: "error loading configuration onto target device"
+
+- name: set the ios_active_config fact
+  set_fact:
+    ios_active_config: "cfg_ansible"
+
+# copy the updated running-config to the local flash device to be used to
+# generate a configuration diff between the before and after
+# running-configurations.
+- name: copy running-config to active config
+  ios_command:
+    commands:
+      - command: "copy running-config flash:{{ ios_active_config }}"
+        prompt: ["\\? "]
+        answer: "{{ ios_active_config }}"
+
+# generate the configuration diff and display the diff to stdout.  only set
+# changed if there are lines in the diff that have changed
+- name: generate ios diff
+  cli:
+    command: "show archive config differences flash:{{ ios_checkpoint_filename }} flash:{{ ios_active_config }}"
+  register: ios_config_diff
+  changed_when: "'No changes were found' not in ios_config_diff.stdout"
+
+- name: display config diff
+  debug:
+    msg: "{{ ios_config_diff.stdout.splitlines() }}"
+  when: not ansible_check_mode
+
+# refresh the list of files currently on the target network device flash
+# drive and remote all temp files
+- name: update local directory listing
+  cli:
+    command: dir
+  register: ios_dir_listing
+
+- name: remove remote temp files from flash
+  cli:
+    command: "delete /force flash:/{{ filename }}"
+  loop:
+    - "{{ ios_active_config }}"
+    - "{{ ios_checkpoint_filename }}"
+  loop_control:
+    loop_var: filename
+  when: filename in ios_dir_listing.stdout

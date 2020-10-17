@@ -1,0 +1,138 @@
+---
+
+- name: show_ip_vrf_detail
+  parser_metadata:
+    version: 1.0
+    command: show ip vrf detail
+    network_os: ios
+
+- name: match vrf sections
+  register: vrf_section
+  pattern_match:
+    regex: "^VRF \\S+(?: \\(VRF Id = \\d+\\)|); default RD"
+    match_all: true
+    match_greedy: true
+
+- name: match vrf section values
+  loop: "{{ vrf_section }}"
+  register: vrf_section_values
+  pattern_group:
+
+    - name: match name
+      pattern_match:
+        regex: "^VRF (\\S+)(?: \\(VRF Id = \\d+\\)|); default RD"
+        content: "{{ item }}"
+      register: name
+
+    - name: match description
+      pattern_match:
+        regex: "^  Description: (.*)"
+        content: "{{ item }}"
+      register: description
+
+    - name: match route distinguisher
+      pattern_match:
+        regex: ".*; default RD (\\d+:\\d+|<not set>)"
+        content: "{{ item }}"
+      register: rd
+
+    - name: match interface section
+      pattern_match:
+        regex: "^  Interfaces:([\\s\\S]*)(?:Address family|VRF Table ID)"
+        content: "{{ item }}"
+        match_all: true
+        match_greedy: false
+      register: interface_section
+
+    - name: match export route target section
+      pattern_match:
+        regex: "(?:No|)Export VPN route-target communities([\\s\\S]*)  (?:No |)Import VPN"
+        content: "{{ item }}"
+        match_all: true
+        match_greedy: false
+      register: export_rt_section
+
+    - name: match import route target section
+      pattern_match:
+        regex: "Import VPN route-target communities([\\s\\S]*)  (?:No |)import"
+        content: "{{ item }}"
+        match_all: true
+        match_greedy: false
+      register: import_rt_section
+
+- name: match vrf nested section values
+  loop: "{{ vrf_section_values }}"
+  register: vrf_nested_section_values
+  loop_control:
+    loop_var: vrf_item
+  pattern_group:
+
+    - name: match vrf name
+      pattern_match:
+        regex: "(.*)"
+        content: "{{ vrf_item.name.matches.0 }}"
+      register: name
+
+    - name: match description
+      pattern_match:
+        regex: "(.*)"
+        content: "{{ vrf_item.description.matches.0 }}"
+      register: description
+
+    - name: match route distinguisher
+      pattern_match:
+        regex: "(.*)"
+        content: "{{ vrf_item.rd.matches.0 }}"
+      register: rd
+
+    - name: match interfaces
+      pattern_match:
+        regex: "\\s+(\\S+)\\s"
+        content: "{{ vrf_item.interface_section.0.matches }}"
+        match_all: true
+      register: interface
+
+    - name: match export route targets
+      pattern_match:
+        regex: "\\s+RT:(\\d+:\\d+)"
+        content: "{{ vrf_item.export_rt_section.0.matches }}"
+        match_all: true
+      register: export_rt
+
+    - name: match import route targets
+      pattern_match:
+        regex: "\\s+RT:(\\d+:\\d+)"
+        content: "{{ vrf_item.import_rt_section.0.matches }}"
+        match_all: true
+      register: import_rt
+
+- name: template export json object
+  export: true
+  loop: "{{ vrf_nested_section_values }}"
+  loop_control:
+    loop_var: vrf_nested_item
+  register: vrf
+  extend: cisco_ios
+  export_as: dict
+  json_template:
+    template:
+      - key: "{{ vrf_nested_item.name.matches.0 }}"
+        object:
+          - key: name
+            value: "{{ vrf_nested_item.name.matches.0 }}"
+          - key: description
+            value: "{{ vrf_nested_item.description.matches.0 }}"
+          - key: rd
+            value: "{{ vrf_nested_item.rd.matches.0 }}"
+          - key: export_rt
+            elements: "{{ export_rt_item.matches }}"
+            repeat_for: "{{ vrf_nested_item.export_rt }}"
+            repeat_var: export_rt_item
+          - key: import_rt
+            elements: "{{ import_rt_item.matches }}"
+            repeat_for: "{{ vrf_nested_item.import_rt }}"
+            repeat_var: import_rt_item
+          - key: interface
+            elements: "{{ interface_item.matches }}"
+            repeat_for: "{{ vrf_nested_item.interface }}"
+            repeat_var: interface_item

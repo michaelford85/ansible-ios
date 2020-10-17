@@ -1,0 +1,22 @@
+---
+# tasks file for ansible-network.cisco_ios
+#
+- name: initialize function
+  include_tasks: includes/init.yaml
+
+- name: set role supported functions
+  set_fact:
+    ios_functions:
+      - get_facts
+      - config_manager/get
+      - config_manager/load
+      - config_manager/save
+      - noop
+
+- name: validate the requested function is supported
+  fail:
+    msg: "invalid function specified, expected one of {{ ios_functions }}, got {{ function }}"
+  when: function | default('noop') not in ios_functions
+
+- name: include function specific tasks and run
+  include_tasks: "{{ function  | default('noop') }}.yaml"

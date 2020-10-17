@@ -975,3 +975,21 @@ See the timeout setting options in the Network Debug and Troubleshooting Guide.
 2020-05-04 12:20:23,910 p=45076 u=mford n=ansible | persistent connection idle timeout triggered, timeout value is 200 secs.
 See the timeout setting options in the Network Debug and Troubleshooting Guide.
 2020-05-04 12:20:24,012 p=45076 u=mford n=ansible | shutdown complete
+2020-10-17 13:01:58,764 p=43385 u=michaelford n=ansible | - downloading role 'network-engine', owned by ansible-network
+2020-10-17 13:01:59,355 p=43385 u=michaelford n=ansible | - downloading role from https://github.com/ansible-network/network-engine/archive/v2.7.5.tar.gz
+2020-10-17 13:01:59,847 p=43385 u=michaelford n=ansible | - extracting ansible-network.network-engine to /Users/michaelford/git-workspace/ansible-ios/roles/ansible-network.network-engine
+2020-10-17 13:01:59,967 p=43385 u=michaelford n=ansible | - ansible-network.network-engine (v2.7.5) was installed successfully
+2020-10-17 13:02:23,306 p=43405 u=michaelford n=ansible | - downloading role 'cisco_ios', owned by ansible-network
+2020-10-17 13:02:23,995 p=43405 u=michaelford n=ansible | - downloading role from https://github.com/ansible-network/cisco_ios/archive/v2.7.1.tar.gz
+2020-10-17 13:02:24,431 p=43405 u=michaelford n=ansible | - extracting ansible-network.cisco_ios to /Users/michaelford/git-workspace/ansible-ios/roles/ansible-network.cisco_ios
+2020-10-17 13:02:24,521 p=43405 u=michaelford n=ansible | - ansible-network.cisco_ios (v2.7.1) was installed successfully
+2020-10-17 13:02:24,524 p=43405 u=michaelford n=ansible | [WARNING]: - dependency ansible-network.network-engine (v2.7.3) (v2.7.3) from role ansible-
+network.cisco_ios differs from already installed version (v2.7.5), skipping
+
+2020-10-17 13:02:46,245 p=43421 u=michaelford n=ansible | - downloading role 'config_manager', owned by ansible-network
+2020-10-17 13:02:46,900 p=43421 u=michaelford n=ansible | - downloading role from https://github.com/ansible-network/config_manager/archive/v2.6.2.tar.gz
+2020-10-17 13:02:47,358 p=43421 u=michaelford n=ansible | - extracting ansible-network.config_manager to /Users/michaelford/git-workspace/ansible-ios/roles/ansible-network.config_manager
+2020-10-17 13:02:47,375 p=43421 u=michaelford n=ansible | - ansible-network.config_manager (v2.6.2) was installed successfully
+2020-10-17 13:02:47,377 p=43421 u=michaelford n=ansible | [WARNING]: - dependency ansible-network.network-engine (v2.6.4) (v2.6.4) from role ansible-
+network.config_manager differs from already installed version (v2.7.5), skipping
+
