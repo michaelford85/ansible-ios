@@ -28,32 +28,23 @@
 
     - name: Remove Ansible Tower Config Drift template
       tower_job_template:
-          name: "IOS Check for Configuration Drift"
+          name: "iosxe_check_for_configuration_drift"
           job_type: "run"
-          # inventory: "IOS Github-sourced Routers"
-          project: "Ansible IOS Demo Exercises"
+          project: "Cisco IOS-XE Administration"
           playbook: "ios-drift-detect.yml"
-          # credential: "maf-ios-demo-private"
-          # survey_enabled: true
-          # survey_spec: "{{ lookup('template', '/tmp/drift_survey.json') }}"
           tower_username: "{{ TOWER_USERNAME }}"
           tower_password: "{{ TOWER_PASSWORD }}"
           tower_host: "{{ TOWER_HOST }}"
           validate_certs: no
-          # diff_mode_enabled: yes
           state: absent
       delegate_to: localhost
 
     - name: Remove Ansible Tower Config Restore template
       tower_job_template:
-          name: "IOS Restore Config from Backup"
+          name: "iosxe_restore_config_from_backup"
           job_type: "run"
-          # inventory: "IOS Github-sourced Routers"
-          project: "Ansible IOS Demo Exercises"
+          project: "Cisco IOS-XE Administration"
           playbook: "ios-restore-config.yml"
-          # credential: "maf-ios-demo-private"
-          # survey_enabled: true
-          # survey_spec: "{{ lookup('template', '/tmp/restore_survey.json') }}"
           tower_username: "{{ TOWER_USERNAME }}"
           tower_password: "{{ TOWER_PASSWORD }}"
           tower_host: "{{ TOWER_HOST }}"

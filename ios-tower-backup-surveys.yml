@@ -35,12 +35,12 @@
 
     - name: Build Ansible Tower Config Drift template with Survey
       tower_job_template:
-          name: "IOS Check for Configuration Drift"
+          name: "iosxe_check_for_configuration_drift"
           job_type: "run"
-          inventory: "IOS Github-sourced Routers"
-          project: "Ansible IOS Demo Exercises"
+          inventory: "Cloud Cisco CSR 1000v Routers"
+          project: "Cisco IOS-XE Administration"
           playbook: "ios-drift-detect.yml"
-          credential: "maf-ios-demo-private"
+          credential: "Cloud Cisco CSR 1000v Routers"
           survey_enabled: true
           survey_spec: "{{ lookup('template', '/tmp/drift_survey.json') }}"
           tower_username: "{{ TOWER_USERNAME }}"
@@ -53,12 +53,12 @@
 
     - name: Build Ansible Tower Config Restore template with Survey
       tower_job_template:
-          name: "IOS Restore Config from Backup"
+          name: "iosxe_restore_config_from_backup"
           job_type: "run"
-          inventory: "IOS Github-sourced Routers"
-          project: "Ansible IOS Demo Exercises"
+          inventory: "Cloud Cisco CSR 1000v Routers"
+          project: "Cisco IOS-XE Administration"
           playbook: "ios-restore-config.yml"
-          credential: "maf-ios-demo-private"
+          credential: "Cloud Cisco CSR 1000v Routers"
           survey_enabled: true
           survey_spec: "{{ lookup('template', '/tmp/restore_survey.json') }}"
           tower_username: "{{ TOWER_USERNAME }}"
