@@ -45,7 +45,7 @@
           survey_spec: "{{ lookup('template', '/tmp/drift_survey.json') }}"
           tower_username: "{{ TOWER_USERNAME }}"
           tower_password: "{{ TOWER_PASSWORD }}"
-          tower_host: https://ansibletower.michaelanthonyford.com
+          tower_host: "{{ TOWER_HOST }}"
           validate_certs: no
           diff_mode_enabled: yes
       delegate_to: localhost
@@ -63,7 +63,7 @@
           survey_spec: "{{ lookup('template', '/tmp/restore_survey.json') }}"
           tower_username: "{{ TOWER_USERNAME }}"
           tower_password: "{{ TOWER_PASSWORD }}"
-          tower_host: https://ansibletower.michaelanthonyford.com
+          tower_host: "{{ TOWER_HOST }}"
           validate_certs: no
       delegate_to: localhost
       run_once: yes
