@@ -18,7 +18,7 @@
 
   - name: Turn off dns lookup
     ios_config:
-      lines: no ip domain-lookup
+      lines: no ip domain lookup
 
   - name: Apply standard router template
     include_role:
