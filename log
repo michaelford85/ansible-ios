@@ -993,3 +993,28 @@ network.cisco_ios differs from already installed version (v2.7.5), skipping
 2020-10-17 13:02:47,377 p=43421 u=michaelford n=ansible | [WARNING]: - dependency ansible-network.network-engine (v2.6.4) (v2.6.4) from role ansible-
 network.config_manager differs from already installed version (v2.7.5), skipping
 
+2021-01-21 10:58:04,391 p=55045 u=michaelford n=ansible | Process install dependency map
+2021-01-21 10:58:04,392 p=55045 u=michaelford n=ansible | |
+2021-01-21 10:58:04,494 p=55045 u=michaelford n=ansible | /
+2021-01-21 10:58:04,598 p=55045 u=michaelford n=ansible | -
+2021-01-21 10:58:04,701 p=55045 u=michaelford n=ansible | \
+2021-01-21 10:58:04,804 p=55045 u=michaelford n=ansible | |
+2021-01-21 10:58:04,906 p=55045 u=michaelford n=ansible | /
+2021-01-21 10:58:05,006 p=55045 u=michaelford n=ansible | -
+2021-01-21 10:58:05,112 p=55045 u=michaelford n=ansible | \
+2021-01-21 10:58:05,215 p=55045 u=michaelford n=ansible | |
+2021-01-21 10:58:05,319 p=55045 u=michaelford n=ansible | /
+2021-01-21 10:58:05,421 p=55045 u=michaelford n=ansible | -
+2021-01-21 10:58:05,523 p=55045 u=michaelford n=ansible | \
+2021-01-21 10:58:05,625 p=55045 u=michaelford n=ansible | |
+2021-01-21 10:58:05,730 p=55045 u=michaelford n=ansible | Starting collection install process
+2021-01-21 10:58:05,731 p=55045 u=michaelford n=ansible | |
+2021-01-21 10:58:05,833 p=55045 u=michaelford n=ansible | Installing 'clay584.genie:0.1.11' to '/Users/michaelford/git-workspace/ansible-ios/collections/ansible_collections/clay584/genie'
+2021-01-21 10:58:05,833 p=55045 u=michaelford n=ansible | /
+2021-01-21 10:58:05,938 p=55045 u=michaelford n=ansible | -
+2021-01-21 10:58:06,041 p=55045 u=michaelford n=ansible | \
+2021-01-21 10:58:06,147 p=55045 u=michaelford n=ansible | |
+2021-01-21 10:58:06,250 p=55045 u=michaelford n=ansible | /
+2021-01-21 10:58:06,355 p=55045 u=michaelford n=ansible | -
+2021-01-21 10:58:06,456 p=55045 u=michaelford n=ansible | \
+2021-01-21 10:58:06,560 p=55045 u=michaelford n=ansible | |
