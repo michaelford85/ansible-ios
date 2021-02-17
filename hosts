@@ -1,9 +1,9 @@
 [ios]
 
-rtr1 ansible_host=3.137.212.118 site=1
-rtr2 ansible_host=3.12.165.217 site=2
+rtr1 ansible_host=3.91.92.255 site=1
+rtr2 ansible_host=34.239.131.113 site=2
 rtr3 ansible_host=3.141.21.114 site=3
-;rtr4 ansible_host=18.223.149.25 site=4
+;rtr4 ansible_host=54.80.219.22 site=4
 
 [ios:vars]
 ansible_network_os=ios
