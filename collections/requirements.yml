@@ -4,5 +4,3 @@ collections:
     version: 2.0.1
   - name: clay584.genie
     version: 0.1.11
-  - name: ansible.netcommon
-    version: 2.0.1
