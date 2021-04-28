@@ -1,5 +1,5 @@
 ---
-- name: Convert interface info to structured data
+- name: Capture Router Information and Present in an HTML Report
   hosts: ios
   connection: network_cli
   gather_facts: no
