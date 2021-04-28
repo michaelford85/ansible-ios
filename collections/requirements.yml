@@ -2,3 +2,5 @@
 collections:
   - name: cisco.ios
     version: 2.0.1
+  - name: clay584.genie
+    version: 0.1.11
