@@ -12,18 +12,29 @@
         - show version
     register: version
 
-  - name: Set Fact Genie Filter
-    ansible.builtin.set_fact:
-      pyats_version: "{{ version['stdout'][0] | clay584.genie.parse_genie(command='show version', os='ios') }}"
+  - name: Run command and parse with pyats
+    ansible.netcommon.cli_parse:
+      command: "show version"
+      parser:
+          name: ansible.netcommon.pyats
+    register: parser_output
 
   - name: Debug Pyats facts - all
     ansible.builtin.debug:
-     var: pyats_version.version
+     var: parser_output
 
-  - name: Debug Pyats facts - version
-    ansible.builtin.debug:
-     var: pyats_version.version.version
-
-  - name: Debug Pyats facts - uptime
-    ansible.builtin.debug:
-     var: pyats_version.version.uptime
+  # - name: Set Fact Genie Filter
+  #   ansible.builtin.set_fact:
+  #     pyats_version: "{{ version['stdout'][0] | clay584.genie.parse_genie(command='show version', os='ios') }}"
+  #
+  # - name: Debug Pyats facts - all
+  #   ansible.builtin.debug:
+  #    var: pyats_version.version
+  #
+  # - name: Debug Pyats facts - version
+  #   ansible.builtin.debug:
+  #    var: pyats_version.version.version
+  #
+  # - name: Debug Pyats facts - uptime
+  #   ansible.builtin.debug:
+  #    var: pyats_version.version.uptime
