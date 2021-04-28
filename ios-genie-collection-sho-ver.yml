@@ -19,9 +19,20 @@
           name: ansible.netcommon.pyats
     register: parser_output
 
-  - name: Debug Pyats facts - all
+  - name: Show Version - all
     ansible.builtin.debug:
      var: parser_output
+
+  - name: Show Version Details
+    ansible.builtin.debug:
+     msg:
+     - "Hostname: {{ parser_output.parsed.version.hostname }}"
+     - "Model: {{ parser_output.parsed.version.chassis }}"
+     - "Operating System: {{ parser_output.parsed.version.os }}"
+     - "OS Version: {{ parser_output.parsed.version.version }}"
+     - "Serial Number: {{ parser_output.parsed.version.chassis_sn }}"
+     - "Configuration Register: {{ parser_output.parsed.version.curr_config_register }}"
+
 
   # - name: Set Fact Genie Filter
   #   ansible.builtin.set_fact:
