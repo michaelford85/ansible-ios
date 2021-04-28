@@ -18,7 +18,6 @@
       parser:
           name: ansible.netcommon.pyats
     register: parser_output
-    delegate_to
 
   - name: Debug Pyats facts - all
     ansible.builtin.debug:
