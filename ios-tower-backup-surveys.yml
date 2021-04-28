@@ -52,7 +52,7 @@
       run_once: yes
 
     - name: Build Ansible Tower Config Restore template with Survey
-      awx.awx.tower_job_template:
+      ansible.tower.tower_job_template:
           name: "iosxe_restore_config_from_backup"
           job_type: "run"
           inventory: "Cloud Cisco CSR 1000v Routers"
