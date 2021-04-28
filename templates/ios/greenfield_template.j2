@@ -83,7 +83,8 @@ control-plane
 !
 !
 banner exec ^C Configured by Ansible
-Host: {{ ansible_host }} ^C
+IP Address: {{ ansible_host }}
+Ansible Inventory Hostname: {{ inventory_hostname }} ^C
 !
 line con 0
  stopbits 1
