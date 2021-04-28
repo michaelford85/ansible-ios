@@ -4,3 +4,5 @@ collections:
     version: 2.0.1
   - name: clay584.genie
     version: 0.1.11
+  - name: ansible.tower
+    version: 3.8.2

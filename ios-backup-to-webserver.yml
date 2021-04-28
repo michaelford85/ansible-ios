@@ -7,11 +7,11 @@
 
   tasks:
     - name: Clear existing backups from ios_backups directory
-      file:
+      ansible.builtin.file:
         state: absent
         path: ~/ios_backups/
 
     - name: Copy backups to webserver
-      copy:
+      ansible.builtin.copy:
         src: /tmp/ios_backups/
         dest: ~/ios_backups/

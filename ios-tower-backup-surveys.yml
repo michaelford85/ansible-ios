@@ -8,7 +8,7 @@
 
   tasks:
     - name: Find /tmp/ios_backups/ all directories, exclude nginx and mysql
-      find:
+      ansible.builtin.find:
         paths: /tmp/ios_backups/
         recurse: no
         file_type: directory
@@ -23,18 +23,18 @@
     #   loop: "{{ find_output.files }}"
 
     - name: Build survey_spec from template
-      template:
+      ansible.builtin.template:
         src: ./templates/drift_survey.j2
         dest: /tmp/drift_survey.json
       # delegate_to: localhost
 
     - name: Build survey_spec from template
-      template:
+      ansible.builtin.template:
         src: ./templates/restore_survey.j2
         dest: /tmp/restore_survey.json
 
     - name: Build Ansible Tower Config Drift template with Survey
-      tower_job_template:
+      ansible.tower.tower_job_template:
           name: "iosxe_check_for_configuration_drift"
           job_type: "run"
           inventory: "Cloud Cisco CSR 1000v Routers"
@@ -52,7 +52,7 @@
       run_once: yes
 
     - name: Build Ansible Tower Config Restore template with Survey
-      tower_job_template:
+      awx.awx.tower_job_template:
           name: "iosxe_restore_config_from_backup"
           job_type: "run"
           inventory: "Cloud Cisco CSR 1000v Routers"
@@ -69,11 +69,11 @@
       run_once: yes
 
     - name: Delete drift survey from /tmp directory
-      file:
+      ansible.builtin.file:
         state: absent
         path: /tmp/drift_survey.json
 
     - name: Delete restore survey from /tmp directory
-      file:
+      ansible.builtin.file:
         state: absent
         path: /tmp/restore_survey.json
