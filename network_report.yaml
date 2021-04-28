@@ -13,16 +13,16 @@
   hosts: localhost
 
   vars:
-    webpage_name: "os-report"
+    webpage_name: "ios-report"
     ec2_region: us-east-1
     ec2_az: us-east-1a
-    dns_zone: "michaelanthonyford.com"
+    dns_zone: "mford.io"
     s3_state: present
 
   tasks:
     - name: build report
       include_role:
-        name: build_report
+        name: ios_report
 
     - name: Ensure S3 bucket exists
       s3_bucket:
