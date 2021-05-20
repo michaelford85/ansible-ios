@@ -1,8 +1,8 @@
 [ios]
 
-rtr1 ansible_host=3.15.41.16 site=1
-rtr2 ansible_host=18.189.29.252 site=2
-rtr3 ansible_host=18.222.147.192 site=3
+rtr1 ansible_host=18.191.105.181 site=1
+rtr2 ansible_host=18.219.241.232 site=2
+;rtr3 ansible_host=18.222.147.192 site=3
 ;rtr4 ansible_host=18.190.155.232 site=4
 
 [ios:vars]
