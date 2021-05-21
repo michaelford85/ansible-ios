@@ -1,0 +1,27 @@
+---
+- name: Remove Router from ServiceNow CMDB
+  hosts: ios
+  connection: network_cli
+  gather_facts: no
+  vars_files:
+    - ./credentials/servicenow-credentials.yml
+    - ./default_vars.yml
+
+  tasks:
+
+  - set_fact:
+      sys_id_query: "{{ result.records|json_query(query) }}"
+    vars:
+      serial_num: "{{ input_sn }}"
+      query: "[?serial_number=='{{ serial_num }}'].sys_id"
+
+  - name: Delete router if it is listed in the CMDB
+    servicenow.itsm.configuration_item:
+      instance:
+        host: "https://{{ SN_INSTANCE }}.service-now.com"
+        username: "{{ SN_USERNAME }}"
+        password: "{{ SN_PASSWORD }}"
+      sys_class_name: cmdb_ci_ip_router
+      sys_id: "{{sys_id_query[0]}}"
+    register: cmdb_router
+    when: (sys_id_query|length > 0)
