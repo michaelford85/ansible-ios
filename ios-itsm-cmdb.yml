@@ -36,19 +36,26 @@
      - "Serial Number: {{ parser_output.parsed.version.chassis_sn }}"
      - "Configuration Register: {{ parser_output.parsed.version.curr_config_register }}"
 
-  - name: Create a configuration item
-    servicenow.itsm.configuration_item:
-      instance:
-        host: "https://{{ SN_INSTANCE }}.service-now.com"
-        username: "{{ SN_USERNAME }}"
-        password: "{{ SN_PASSWORD }}"
-      name: "{{ parser_output.parsed.version.hostname }}"
-      short_description: "{{ parser_output.parsed.version.chassis }}"
+  - name: Retrieve a specific configuration item by its sys_id
+    servicenow.itsm.configuration_item_info:
       serial_number: "{{ parser_output.parsed.version.chassis_sn }}"
-      sys_class_name: cmdb_ci_ip_router
-      environment: production
-      category: Hardware
-    register: cmdb_router
+    register: result
+
+  - debug:
+      var: result
+  # - name: Create a configuration item
+  #   servicenow.itsm.configuration_item:
+  #     instance:
+  #       host: "https://{{ SN_INSTANCE }}.service-now.com"
+  #       username: "{{ SN_USERNAME }}"
+  #       password: "{{ SN_PASSWORD }}"
+  #     name: "{{ parser_output.parsed.version.hostname }}"
+  #     short_description: "{{ parser_output.parsed.version.chassis }}"
+  #     serial_number: "{{ parser_output.parsed.version.chassis_sn }}"
+  #     sys_class_name: cmdb_ci_ip_router
+  #     environment: production
+  #     category: Hardware
+  #   register: cmdb_router
 
   # - name: Set Fact Genie Filter
   #   ansible.builtin.set_fact:
