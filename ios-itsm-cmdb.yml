@@ -9,6 +9,12 @@
 
   tasks:
 
+
+  - name: Gather IOS facts
+    cisco.ios.ios_facts:
+      gather_subset: all
+    register: ios_facts_result
+
   - name: show version
     cisco.ios.ios_command:
       commands:
@@ -25,6 +31,9 @@
   - name: Show Version - all
     ansible.builtin.debug:
      var: parser_output
+
+  - debug:
+      var: ios_facts_result
 
   - name: Show Version Details
     ansible.builtin.debug:
@@ -72,6 +81,9 @@
       sys_class_name: cmdb_ci_ip_router
       environment: production
       category: Hardware
+      other:
+        manufacturer: Cisco
+        model_id: "{{ parser_output.parsed.version.chassis }}"
     register: cmdb_router
     when: (sys_id_query|length == 0)
 
@@ -88,6 +100,9 @@
       sys_id: "{{sys_id_query[0]}}"
       environment: production
       category: Hardware
+      other:
+        manufacturer: Cisco
+        model_id: "{{ parser_output.parsed.version.chassis }}"
     register: cmdb_router
     when: (sys_id_query|length > 0)
 
