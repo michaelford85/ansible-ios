@@ -45,14 +45,14 @@
       sys_class_name: cmdb_ci_ip_router
     register: result
 
-  - debug:
-      var: result
-
-  - debug:
-      msg: "{{ result.records|json_query(query) }}"
-    vars:
-      serial_num: "{{ parser_output.parsed.version.chassis_sn }}"
-      query: "[?serial_number=='{{ serial_num }}'].sys_id"
+  # - debug:
+  #     var: result
+  #
+  # - debug:
+  #     msg: "{{ result.records|json_query(query) }}"
+  #   vars:
+  #     serial_num: "{{ parser_output.parsed.version.chassis_sn }}"
+  #     query: "[?serial_number=='{{ serial_num }}'].sys_id"
 
   - set_fact:
       sys_id_query: "{{ result.records|json_query(query) }}"
