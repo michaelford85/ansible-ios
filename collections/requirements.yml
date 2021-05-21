@@ -6,3 +6,5 @@ collections:
     version: 0.1.11
   - name: ansible.tower
     version: 3.8.2
+  - name: servicenow.itsm
+    version: 1.0.0
