@@ -1,0 +1,138 @@
+---
+- name: Populate ServiceNow CMDB with Routers
+  hosts: ios
+  connection: network_cli
+  gather_facts: no
+  vars_files:
+    - ./credentials/servicenow-credentials.yml
+    - ./default_vars.yml
+
+  tasks:
+
+
+  - name: Gather IOS facts
+    cisco.ios.ios_facts:
+      gather_subset: all
+    register: ios_facts_result
+
+  - name: show version
+    cisco.ios.ios_command:
+      commands:
+        - show version
+    register: version
+
+  - name: Run command and parse with pyats
+    ansible.utils.cli_parse:
+      command: "show version"
+      parser:
+          name: ansible.netcommon.pyats
+    register: parser_output
+
+  - name: Show Version - all
+    ansible.builtin.debug:
+     var: parser_output
+
+  - debug:
+      var: ios_facts_result
+
+  - name: Show Version Details
+    ansible.builtin.debug:
+     msg:
+     - "Hostname: {{ parser_output.parsed.version.hostname }}"
+     - "Model: {{ parser_output.parsed.version.chassis }}"
+     - "Operating System: {{ parser_output.parsed.version.os }}"
+     - "OS Version: {{ parser_output.parsed.version.version }}"
+     - "Serial Number: {{ parser_output.parsed.version.chassis_sn }}"
+     - "Configuration Register: {{ parser_output.parsed.version.curr_config_register }}"
+
+  - name: Retrieve a specific configuration item by its sys_id
+    servicenow.itsm.configuration_item_info:
+      instance:
+        host: "https://{{ SN_INSTANCE }}.service-now.com"
+        username: "{{ SN_USERNAME }}"
+        password: "{{ SN_PASSWORD }}"
+      sys_class_name: cmdb_ci_ip_router
+    register: result
+
+  # - debug:
+  #     var: result
+  #
+  # - debug:
+  #     msg: "{{ result.records|json_query(query) }}"
+  #   vars:
+  #     serial_num: "{{ parser_output.parsed.version.chassis_sn }}"
+  #     query: "[?serial_number=='{{ serial_num }}'].sys_id"
+
+  - set_fact:
+      sys_id_query: "{{ result.records|json_query(query) }}"
+    vars:
+      serial_num: "{{ parser_output.parsed.version.chassis_sn }}"
+      query: "[?serial_number=='{{ serial_num }}'].sys_id"
+
+  - name: Create a configuration item
+    servicenow.itsm.configuration_item:
+      instance:
+        host: "https://{{ SN_INSTANCE }}.service-now.com"
+        username: "{{ SN_USERNAME }}"
+        password: "{{ SN_PASSWORD }}"
+      name: "{{ parser_output.parsed.version.hostname }}"
+      short_description: "{{ parser_output.parsed.version.chassis }}"
+      serial_number: "{{ parser_output.parsed.version.chassis_sn }}"
+      sys_class_name: cmdb_ci_ip_router
+      environment: production
+      category: Hardware
+      other:
+        manufacturer: Cisco
+        device_type: router
+        firmware_version: "{{ ios_facts_result.ansible_facts.ansible_net_version }}"
+        mac_address: "{{ ios_facts_result.ansible_facts.ansible_net_interfaces.GigabitEthernet1.macaddress }}"
+        ip_address: "{{ ios_facts_result.ansible_facts.ansible_net_interfaces.GigabitEthernet1.ipv4[0].address }}"
+        bandwidth: "{{ ios_facts_result.ansible_facts.ansible_net_interfaces.GigabitEthernet1.bandwidth }}"
+    register: cmdb_router
+    when: (sys_id_query|length == 0)
+
+  - name: Update configuration item
+    servicenow.itsm.configuration_item:
+      instance:
+        host: "https://{{ SN_INSTANCE }}.service-now.com"
+        username: "{{ SN_USERNAME }}"
+        password: "{{ SN_PASSWORD }}"
+      name: "{{ parser_output.parsed.version.hostname }}"
+      short_description: "{{ parser_output.parsed.version.chassis }}"
+      serial_number: "{{ parser_output.parsed.version.chassis_sn }}"
+      sys_class_name: cmdb_ci_ip_router
+      sys_id: "{{sys_id_query[0]}}"
+      environment: production
+      category: Hardware
+      other:
+        manufacturer: Cisco
+        device_type: router
+        firmware_version: "{{ ios_facts_result.ansible_facts.ansible_net_version }}"
+        mac_address: "{{ ios_facts_result.ansible_facts.ansible_net_interfaces.GigabitEthernet1.macaddress }}"
+        ip_address: "{{ ios_facts_result.ansible_facts.ansible_net_interfaces.GigabitEthernet1.ipv4[0].address }}"
+        bandwidth: "{{ ios_facts_result.ansible_facts.ansible_net_interfaces.GigabitEthernet1.bandwidth }}"
+    register: cmdb_router
+    when: (sys_id_query|length > 0)
+
+# 
+# - name: Create a network host record for each network element
+#   snow_record:
+#     state: present
+#     table: cmdb_ci_netgear
+#     username: "{{ SN_USERNAME }}"
+#     password: "{{ SN_PASSWORD }}"
+#     instance: "{{ SN_INSTANCE }}"
+#     data:
+#       name: "{{ inventory_hostname }}"
+#       manufacturer: cisco
+#       firmware_manufacturer: cisco
+#       device_type: router
+#       model_id: "{{ ansible_net_model }}"
+#       model_number: "{{ ansible_net_model }}"
+#       assigned_to: "Michael Hoefer"
+#       firmware_version: "{{ ansible_facts.net_version }}"
+#       serial_number: "{{ ansible_facts.net_serialnum }}"
+#       ip_address: "{{ ansible_host }}"
+#       mac_address: '{{ ansible_facts.net_interfaces["GigabitEthernet1"].macaddress }}'
+#       ports: '{{ ansible_facts.net_interfaces["GigabitEthernet1"].mediatype }}'
+#   register: new_host
