@@ -86,6 +86,7 @@
         firmware_version: "{{ ios_facts_result.ansible_facts.ansible_net_version }}"
         mac_address: "{{ ios_facts_result.ansible_facts.ansible_net_interfaces.GigabitEthernet1.macaddress }}"
         ip_address: "{{ ios_facts_result.ansible_facts.ansible_net_interfaces.GigabitEthernet1.ipv4[0].address }}"
+        bandwidth: "{{ ios_facts_result.ansible_facts.ansible_net_interfaces.GigabitEthernet1.bandwidth }}"
     register: cmdb_router
     when: (sys_id_query|length == 0)
 
@@ -107,6 +108,7 @@
         firmware_version: "{{ ios_facts_result.ansible_facts.ansible_net_version }}"
         mac_address: "{{ ios_facts_result.ansible_facts.ansible_net_interfaces.GigabitEthernet1.macaddress }}"
         ip_address: "{{ ios_facts_result.ansible_facts.ansible_net_interfaces.GigabitEthernet1.ipv4[0].address }}"
+        bandwidth: "{{ ios_facts_result.ansible_facts.ansible_net_interfaces.GigabitEthernet1.bandwidth }}"
     register: cmdb_router
     when: (sys_id_query|length > 0)
 
