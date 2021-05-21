@@ -45,7 +45,7 @@
      - "Serial Number: {{ parser_output.parsed.version.chassis_sn }}"
      - "Configuration Register: {{ parser_output.parsed.version.curr_config_register }}"
 
-  - name: Retrieve a specific configuration item by its sys_id
+  - name: Retrieve all routers
     servicenow.itsm.configuration_item_info:
       instance:
         host: "https://{{ SN_INSTANCE }}.service-now.com"
@@ -114,7 +114,7 @@
     register: cmdb_router
     when: (sys_id_query|length > 0)
 
-# 
+#
 # - name: Create a network host record for each network element
 #   snow_record:
 #     state: present

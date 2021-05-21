@@ -9,6 +9,15 @@
 
   tasks:
 
+  - name: Retrieve all routers
+    servicenow.itsm.configuration_item_info:
+      instance:
+        host: "https://{{ SN_INSTANCE }}.service-now.com"
+        username: "{{ SN_USERNAME }}"
+        password: "{{ SN_PASSWORD }}"
+      sys_class_name: cmdb_ci_ip_router
+    register: result
+    
   - set_fact:
       sys_id_query: "{{ result.records|json_query(query) }}"
     vars:
