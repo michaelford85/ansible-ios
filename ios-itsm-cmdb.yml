@@ -83,7 +83,9 @@
       category: Hardware
       other:
         manufacturer: Cisco
-        model_id: "{{ parser_output.parsed.version.chassis }}"
+        firmware_version: "{{ ios_facts_result.ansible_facts.ansible_net_version }}"
+        mac_address: "{{ ios_facts_result.ansible_facts.ansible_net_interfaces[0].macaddress }}"
+        ip_address: "{{ ios_facts_result.ansible_facts.ansible_net_interfaces[0].ipv4[0].address }}"
     register: cmdb_router
     when: (sys_id_query|length == 0)
 
@@ -102,7 +104,9 @@
       category: Hardware
       other:
         manufacturer: Cisco
-        model_id: "{{ parser_output.parsed.version.chassis }}"
+        firmware_version: "{{ ios_facts_result.ansible_facts.ansible_net_version }}"
+        mac_address: "{{ ios_facts_result.ansible_facts.ansible_net_interfaces[0].macaddress }}"
+        ip_address: "{{ ios_facts_result.ansible_facts.ansible_net_interfaces[0].ipv4[0].address }}"
     register: cmdb_router
     when: (sys_id_query|length > 0)
 
