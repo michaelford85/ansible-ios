@@ -38,7 +38,11 @@
 
   - name: Retrieve a specific configuration item by its sys_id
     servicenow.itsm.configuration_item_info:
-      serial_number: "{{ parser_output.parsed.version.chassis_sn }}"
+      instance:
+        host: "https://{{ SN_INSTANCE }}.service-now.com"
+        username: "{{ SN_USERNAME }}"
+        password: "{{ SN_PASSWORD }}"
+      sys_class_name: cmdb_ci_ip_router
     register: result
 
   - debug:
