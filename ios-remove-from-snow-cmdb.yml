@@ -17,7 +17,7 @@
         password: "{{ SN_PASSWORD }}"
       sys_class_name: cmdb_ci_ip_router
     register: result
-    
+
   - set_fact:
       sys_id_query: "{{ result.records|json_query(query) }}"
     vars:
@@ -32,5 +32,6 @@
         password: "{{ SN_PASSWORD }}"
       sys_class_name: cmdb_ci_ip_router
       sys_id: "{{sys_id_query[0]}}"
+      state: absent
     register: cmdb_router
     when: (sys_id_query|length > 0)
