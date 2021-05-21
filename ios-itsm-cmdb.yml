@@ -39,7 +39,7 @@
   - name: Create a configuration item
     servicenow.itsm.configuration_item:
       instance:
-        host: "{{ SN_INSTANCE }}.service-now.com"
+        host: "https://{{ SN_INSTANCE }}.service-now.com"
         username: "{{ SN_USERNAME }}"
         password: "{{ SN_PASSWORD }}"
       name: "{{ parser_output.parsed.version.hostname }}"
