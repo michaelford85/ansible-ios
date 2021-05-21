@@ -45,7 +45,7 @@
       name: "{{ parser_output.parsed.version.hostname }}"
       short_description: "{{ parser_output.parsed.version.chassis }}"
       serial_number: "{{ parser_output.parsed.version.chassis_sn }}"
-      class: cmdb_ci_ip_router
+      sys_class_name: cmdb_ci_ip_router
       environment: production
       category: Hardware
     register: cmdb_router
