@@ -54,19 +54,42 @@
       serial_num: "{{ parser_output.parsed.version.chassis_sn }}"
       query: "[?serial_number=='{{ serial_num }}'].sys_id"
 
-  # - name: Create a configuration item
-  #   servicenow.itsm.configuration_item:
-  #     instance:
-  #       host: "https://{{ SN_INSTANCE }}.service-now.com"
-  #       username: "{{ SN_USERNAME }}"
-  #       password: "{{ SN_PASSWORD }}"
-  #     name: "{{ parser_output.parsed.version.hostname }}"
-  #     short_description: "{{ parser_output.parsed.version.chassis }}"
-  #     serial_number: "{{ parser_output.parsed.version.chassis_sn }}"
-  #     sys_class_name: cmdb_ci_ip_router
-  #     environment: production
-  #     category: Hardware
-  #   register: cmdb_router
+  - set_fact:
+      sys_id_query: "{{ result.records|json_query(query) }}"
+    vars:
+      serial_num: "{{ parser_output.parsed.version.chassis_sn }}"
+      query: "[?serial_number=='{{ serial_num }}'].sys_id"
+
+  - name: Create a configuration item
+    servicenow.itsm.configuration_item:
+      instance:
+        host: "https://{{ SN_INSTANCE }}.service-now.com"
+        username: "{{ SN_USERNAME }}"
+        password: "{{ SN_PASSWORD }}"
+      name: "{{ parser_output.parsed.version.hostname }}"
+      short_description: "{{ parser_output.parsed.version.chassis }}"
+      serial_number: "{{ parser_output.parsed.version.chassis_sn }}"
+      sys_class_name: cmdb_ci_ip_router
+      environment: production
+      category: Hardware
+    register: cmdb_router
+    when: (sys_id_query|length == 0)
+
+  - name: Update configuration item
+    servicenow.itsm.configuration_item:
+      instance:
+        host: "https://{{ SN_INSTANCE }}.service-now.com"
+        username: "{{ SN_USERNAME }}"
+        password: "{{ SN_PASSWORD }}"
+      name: "{{ parser_output.parsed.version.hostname }}"
+      short_description: "{{ parser_output.parsed.version.chassis }}"
+      serial_number: "{{ parser_output.parsed.version.chassis_sn }}"
+      sys_class_name: cmdb_ci_ip_router
+      sys_id: "{{sys_id_query[0]}}"
+      environment: production
+      category: Hardware
+    register: cmdb_router
+    when: (sys_id_query|length > 0)
 
   # - name: Set Fact Genie Filter
   #   ansible.builtin.set_fact:
