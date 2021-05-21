@@ -47,6 +47,13 @@
 
   - debug:
       var: result
+
+  - debug:
+      msg: "{{ result.records|json_query(query) }}"
+    vars:
+      serial_num: "{{ parser_output.parsed.version.chassis_sn }}"
+      query: "[?serial_number=='{{ serial_num }}'].sys_id"
+
   # - name: Create a configuration item
   #   servicenow.itsm.configuration_item:
   #     instance:
