@@ -1,7 +1,7 @@
 {% for item in ip_interfaces %}
   interface {{ item.interface }}
     description {{ item.description }}
-    ipv4 address {{ item.ip }}{{ item.cidr }}
+    ip address {{ item.ip }} {{ item.cidr }}
 {% if item.mbps != "" %}
     service-policy input {{ item.mbps }}Mb
     service-policy output {{ item.mbps }}Mb
