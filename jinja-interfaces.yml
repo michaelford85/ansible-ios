@@ -14,4 +14,4 @@
 
   - name: Generate IOS-XR Config
     cli_config:
-      config: "{{ lookup('template', './templates/interfaces.j2') }}"
+      config: "{{ lookup('template', './templates/ios/interfaces.j2') }}"
