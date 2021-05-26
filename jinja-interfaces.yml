@@ -1,5 +1,5 @@
 - hosts: ios
-  connection: local
+  connection: network_cli
   vars_files:
     - ./vars/interfaces.yml
 
@@ -14,4 +14,4 @@
 
   - name: Generate IOS-XR Config
     cli_config:
-      config: "{{ lookup('template', './templates.interfaces.j2') }}"
+      config: "{{ lookup('template', './templates/interfaces.j2') }}"
