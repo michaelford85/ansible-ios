@@ -1,12 +1,12 @@
 ---
- ip_interfaces:
-   - interface: loopback40
-     description: This is interface number 1!
-     ip: 1.1.1.1
-     cidr: "/31"
-     mbps: "10"
-   - interface: loopback41
-     description: And this is interface number 2!
-     ip: 8.8.8.8
-     cidr: "/29"
-     mbps: "20"
+ip_interfaces:
+  - interface: loopback40
+    description: This is interface number 1!
+    ip: 1.1.1.1
+    cidr: "/31"
+    mbps: "10"
+  - interface: loopback41
+    description: And this is interface number 2!
+    ip: 8.8.8.8
+    cidr: "/29"
+    mbps: "20"
