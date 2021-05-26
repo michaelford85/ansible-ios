@@ -3,7 +3,7 @@ configure terminal
   interface {{ item.interface }}
     description {{ item.description }}
     ipv4 address {{ item.ip }}{{ item.cidr }}
-{% if feed.mbps != "" %}
+{% if item.mbps != "" %}
     service-policy input {{ item.mbps }}Mb
     service-policy output {{ item.mbps }}Mb
 {% endif %}
