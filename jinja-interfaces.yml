@@ -7,7 +7,7 @@
   - name: Generate IOS-XR Config
     template:
       src: ./templates/ios/interfaces.j2
-      dest: ./tmp/ios_interfaces.cfg
+      dest: /tmp/ios_interfaces.cfg
 
 
 - hosts: ios
