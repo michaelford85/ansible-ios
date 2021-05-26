@@ -8,5 +8,5 @@ ip_interfaces:
   - interface: loopback41
     description: And this is interface number 2!
     ip: 8.8.8.8
-    cidr: 255.255.255.248 #"/29"
+    cidr: 255.255.255.0 #"/24"
     mbps: "20"
