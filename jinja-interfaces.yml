@@ -1,3 +1,15 @@
+- hosts: localhost
+  connection: local
+  vars_files:
+    - ./vars/interfaces.yml
+
+  tasks:
+  - name: Generate IOS-XR Config
+    template:
+      src: ./templates/ios/interfaces.j2
+      dest: ./tmp/ios_interfaces.cfg
+
+
 - hosts: ios
   connection: network_cli
   vars_files:
