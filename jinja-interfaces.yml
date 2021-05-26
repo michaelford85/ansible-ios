@@ -16,13 +16,6 @@
     - ./vars/interfaces.yml
 
   tasks:
-  # - name: Generate IOS-XR Config
-  #   template:
-  #     src: "{{ item.src }}"
-  #     dest: "{{ item.dest }}"
-  #   with_items:
-  #     - {src: 'interface.j2',dest: 'interfaces.config'}
-
 
   - name: Generate IOS-XR Config
     cli_config:
