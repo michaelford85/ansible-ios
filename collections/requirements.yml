@@ -8,3 +8,5 @@ collections:
     version: 3.8.3
   - name: servicenow.itsm
     version: 1.1.0
+  - name: ansible.netcommon
+    version: 2.2.0
