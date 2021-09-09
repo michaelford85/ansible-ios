@@ -13,4 +13,4 @@ hostnames:
   - tag:Name
 compose:
   ansible_host: public_ip_address
-  ansible_network_os: ios
+  ansible_network_os: tags.demo
