@@ -4,6 +4,7 @@ regions:
   - us-east-2
 keyed_groups:
   - key: tags['demo']
+    separator: ""
 filters:
   instance-state-name: running
   tag:demo: ios
@@ -12,3 +13,4 @@ hostnames:
   - tag:Name
 compose:
   ansible_host: public_ip_address
+  ansible_network_os: ios
