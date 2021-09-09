@@ -60,3 +60,9 @@
         file_change_strategy: checksum
         include: "*"
       when: s3_state == 'present'
+
+    
+    - name: Print Network Report URL
+      debug:
+        msg: "Operator: The network report can be retrieved at {{webpage_name|lower}}.{{dns_zone|lower}}"
+      when: s3_state == 'present' 
