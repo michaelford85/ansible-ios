@@ -1,0 +1,14 @@
+plugin: amazon.aws.aws_ec2
+aws_profile: default
+regions:
+  - us-east-2
+keyed_groups:
+  - key: tags['demo']
+filters:
+  instance-state-name: running
+  tag:demo: ios
+  tag:platform: cisco1000v
+hostnames:
+  - tag:Name
+compose:
+  ansible_host: public_ip_address
